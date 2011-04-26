@@ -1,0 +1,1 @@
+{%load tagger%}{%root_url%} account registration

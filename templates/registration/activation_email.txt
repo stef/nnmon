@@ -1,0 +1,17 @@
+{% load i18n %}
+{% load tagger %}
+
+{% trans "Here's your activation key" %}
+{{activation_key}}
+
+{% trans "Please click on this link to activate your account" %}
+{%root_url%}{% url registration_activate activation_key %}
+
+{% trans "This link will expire in:" %} {{expiration_days}} {% trans "days." %}
+
+{% comment %}
+{{site}}
+{{site.name}}
+{{site.domain}}
+(by default name == domain)
+{% endcomment %}

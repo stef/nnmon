@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<form action="{% url django.contrib.auth.views.login %}" method="post">{% csrf_token %}
+{{form.as_p}}
+<input type="hidden" name="next" value="{{next}}" />
+<input type="submit" name="login" value="Login" />
+</form>
+
+<p>[<a href="{% url django.contrib.auth.views.password_reset %}">{% trans "Password reset" %}</a>]</p>
+
+{% endblock %}
