@@ -3,12 +3,13 @@ from django.db import models
 # Create your models here.
 
 class Attachment(models.Model):
-    attachment = models.EmailField()
+    attachment = models.FileField(upload_to='static')
 
 class Comment(models.Model):
     submitter = models.EmailField()
     comment = models.TextField()
-    comments = models.ForeignKey(Comment)
+    date = models.DateField()
+    attachments = models.ForeignKey(Attachment)
 
 class Violation(models.Model):
     COUNTRIES = (
@@ -43,14 +44,33 @@ class Violation(models.Model):
         ('1', 'Fixed'),
         ('2', 'Mobile'),
     )
-    country = models.CharField(max_length=2, choices=COUNTRIES)
-    operator = models.CharField()
-    contract = models.CharField()
-    comments = models.ForeignKey(Comment)
-    resource = models.CharField(max_length=1, choices=RESOURCES)
-    type = models.CharField(max_length=1, choices=RESOURCES)
-    media = models.CharField(max_length=1, choices=MEDIA)
-    temporary = models.BooleanField()
-    contractual = models.BooleanField()
-    contract = models.TextField()
-    loophole = models.BooleanField()
+    country = models.CharField(max_length=2,
+                               choices=COUNTRIES,
+                               help_text='',
+                               )
+    operator = models.CharField(max_length=256,
+                                help_text='')
+    contract = models.CharField(max_length=256,
+                                help_text='type of offer, i.e. the name of the subscription')
+    comments = models.ForeignKey(Comment,
+                                 help_text='')
+    resource = models.CharField(blank=True,
+                                max_length=1,
+                                choices=RESOURCES,
+                                help_text='')
+    type = models.CharField(blank=True,
+                            max_length=1,
+                            choices=RESOURCES,
+                            help_text='')
+    media = models.CharField(blank=True,
+                             max_length=1,
+                             choices=MEDIA,
+                             help_text='')
+    temporary = models.BooleanField(blank=True,
+                                    help_text='')
+    contractual = models.BooleanField(blank=True,
+                                      help_text='')
+    contract_excerpt = models.TextField(blank=True,
+                                        help_text='')
+    loophole = models.BooleanField(blank=True,
+                                   help_text='')

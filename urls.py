@@ -9,10 +9,8 @@ from bt import views as bt
 urlpatterns = patterns('',
     (r'^accounts/logout$', 'django.contrib.auth.views.logout', {'next_page' : '/'}),
     (r'^accounts/', include('registration.urls')),
-    (r'^u/(?P<user>.+)/(?P<tags>.+)?$', bt.edit),
-
-    # Uncomment the next line to enable the admin:
-    #(r'^admin/', include(admin.site.urls)),
+    (r'^add/$', bt.add),
+    (r'^edit/$', bt.edit),
 )
 
 if settings.DEV_SERVER:

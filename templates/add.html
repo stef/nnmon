@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load bt %}
+{% block scripts %}
+<script type="text/javascript" src="{%media_url%}/js/tinymce/tiny_mce.js"></script>
+<script type="text/javascript" src="{%media_url%}/js/editor.js"></script>
+<script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".id_contract_excerpt").hide()
+    $(".id_contract_excerpt_parent").hide()
+    $(".id_contractual").click(function(event) {
+      $(".id_contract_excerpt").toggle()
+      $(".id_contract_excerpt_parent").toggle()
+    });
+});
+</script>
+{% endblock %}
+
+{%block content%}
+<h2>New Violation</h2>
+<form name="addForm" action="{% root_url %}/add/" method="get">
+  {{ form.as_table }}
+  <input type="submit" value="save" />
+</form>
+{%endblock%}
