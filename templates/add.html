@@ -10,6 +10,20 @@
 <script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
 <script type="text/javascript" src="{%media_url%}/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="{%media_url%}/js/form.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  init_form();
+  {% if not form.is_bound %}
+  $(".fieldWrapper").hide();
+  $("#id_country").parent().show();
+  $("#save_button").hide();
+  {% else %}
+  if($("#id_contractual").attr('checked')==false) {
+    $("#id_contract_excerpt").parent().hide();
+  }
+  {% endif %}
+});
+</script>
 {% endblock %}
 
 {%block content%}
