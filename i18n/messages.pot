@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-04-29 18:00+0200\n"
+"POT-Creation-Date: 2011-04-29 20:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,62 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: bt/forms.py:18
+msgid "EU member state where the restriction is reported."
+msgstr ""
+
+#: bt/forms.py:19
+msgid "The ISP or operator providing the Internet service."
+msgstr ""
+
+#: bt/forms.py:20
+msgid ""
+"The specific contract at the ISP provider. (please be as specific as "
+"possible)"
+msgstr ""
+
+#: bt/forms.py:21
+msgid ""
+"Please describe the symptoms you are experiencing. What service or site, "
+"or person is unavailable or seems artificially slowed down."
+msgstr ""
+
+#: bt/forms.py:22
+msgid "The what is the affected resource."
+msgstr ""
+
+#: bt/forms.py:23
+msgid "Please specify the name of the affected resource."
+msgstr ""
+
+#: bt/forms.py:24
+msgid "Is the Resource Blocked or otherwise discrimated?"
+msgstr ""
+
+#: bt/forms.py:25
+msgid "Is the Internet connection over mobile or fixed line?"
+msgstr ""
+
+#: bt/forms.py:26
+msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgstr ""
+
+#: bt/forms.py:27
+msgid "Is the restriction described in the users contract?"
+msgstr ""
+
+#: bt/forms.py:28
+msgid ""
+"Please copy the relevant section describing the restriction from the user"
+" contract."
+msgstr ""
+
+#: bt/forms.py:29
+msgid ""
+"Is there another offer provided by this Operator which removes this "
+"restriction?"
+msgstr ""
 
 #: bt/models.py:5
 msgid "Belgium"
@@ -125,43 +181,43 @@ msgstr ""
 msgid "United Kingdom "
 msgstr ""
 
-#: bt/models.py:45
+#: bt/models.py:35
 msgid "port"
 msgstr ""
 
-#: bt/models.py:46
+#: bt/models.py:36
 msgid "protocol"
 msgstr ""
 
-#: bt/models.py:47
+#: bt/models.py:37
 msgid "service"
 msgstr ""
 
-#: bt/models.py:48
+#: bt/models.py:38
 msgid "site"
 msgstr ""
 
-#: bt/models.py:49
+#: bt/models.py:39
 msgid "user"
 msgstr ""
 
-#: bt/models.py:50
+#: bt/models.py:40
 msgid "ip"
 msgstr ""
 
-#: bt/models.py:53
+#: bt/models.py:43
 msgid "Blocking"
 msgstr ""
 
-#: bt/models.py:54
+#: bt/models.py:44
 msgid "Throttling"
 msgstr ""
 
-#: bt/models.py:57
+#: bt/models.py:47
 msgid "Fixed"
 msgstr ""
 
-#: bt/models.py:58
+#: bt/models.py:48
 msgid "Mobile"
 msgstr ""
 
