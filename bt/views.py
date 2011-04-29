@@ -27,3 +27,6 @@ def ajax(request, country=None, operator=None):
     else:
         print 'co', sorted(list(set([x.operator for x in Violation.objects.filter(country=country).filter(operator=operator)])))
         return HttpResponse('["Basic", "Surfer", "Gamer", "Pro", "Business"]')
+
+def index(request):
+    return HttpResponse("ohai, nothing to see here")
