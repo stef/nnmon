@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-04-29 21:17+0200\n"
+"POT-Creation-Date: 2011-04-30 00:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,60 +17,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: bt/forms.py:18
+#: bt/forms.py:20
 msgid "EU member state where the restriction is reported."
 msgstr ""
 
-#: bt/forms.py:19
+#: bt/forms.py:21
 msgid "The ISP or operator providing the Internet service."
 msgstr ""
 
-#: bt/forms.py:20
+#: bt/forms.py:22
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
 
-#: bt/forms.py:21
+#: bt/forms.py:23
 msgid ""
 "Please describe the symptoms you are experiencing. What service or site, "
 "or person is unavailable or seems artificially slowed down."
 msgstr ""
 
-#: bt/forms.py:22
-msgid "The what is the affected resource."
-msgstr ""
-
-#: bt/forms.py:23
-msgid "Please specify the name of the affected resource."
-msgstr ""
-
 #: bt/forms.py:24
-msgid "Is the Resource Blocked or otherwise discrimated?"
+msgid ""
+"We need your email to validate your report. We're not storing the email "
+"later on."
 msgstr ""
 
 #: bt/forms.py:25
-msgid "Is the Internet connection over mobile or fixed line?"
+msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
 #: bt/forms.py:26
-msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgid "The what is the affected resource."
 msgstr ""
 
 #: bt/forms.py:27
-msgid "Is the restriction described in the users contract?"
+msgid "Please specify the name of the affected resource."
 msgstr ""
 
 #: bt/forms.py:28
+msgid "Is the Resource Blocked or otherwise discrimated?"
+msgstr ""
+
+#: bt/forms.py:29
+msgid "Is the Internet connection over mobile or fixed line?"
+msgstr ""
+
+#: bt/forms.py:30
+msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgstr ""
+
+#: bt/forms.py:31
+msgid "Is the restriction described in the users contract?"
+msgstr ""
+
+#: bt/forms.py:32
 msgid ""
 "Please copy the relevant section describing the restriction from the user"
 " contract."
 msgstr ""
 
-#: bt/forms.py:29
+#: bt/forms.py:33
 msgid ""
 "Is there another offer provided by this Operator which removes this "
 "restriction?"
+msgstr ""
+
+#: bt/forms.py:34
+msgid ""
+"Unfortunately we must protect against automatic attack, please forgive us"
+" this inconvenience."
 msgstr ""
 
 #: bt/models.py:5
@@ -221,12 +237,28 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
+#: bt/multifile.py:135
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: bt/multifile.py:137
+msgid "No file was submitted."
+msgstr ""
+
+#: bt/multifile.py:141
+msgid "The submitted file is empty."
+msgstr ""
+
+#: bt/multifile.py:144
+msgid "An incorrect number of files were uploaded."
+msgstr ""
+
 #: templates/add.html:16
 msgid "New Violation"
 msgstr ""
 
 #: templates/add.html:19
-msgid "Show expert details"
+msgid "Provide optional details"
 msgstr ""
 
 #: templates/add.html:28
