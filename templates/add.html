@@ -16,11 +16,11 @@
   <h2>{% trans "New Violation" %}</h2>
 <form id='addForm' name="addForm" action="{% root_url %}/add/" method="post">
   {% for field in form %}
-      {% if field.label = 'Resource' %}<div id="show_optionals">{% trans "Show expert details" %}</div><div id="optional">{%endif%}
+      {% if field.label = 'Resource' %}<div id="show_optionals">{% trans "Provide optional details" %}</div><div id="optional">{%endif%}
       <div class="fieldWrapper">
           {{ field.errors }}
           <div class="help_text">{{ field.help_text }}</div>
-          {{ field.label_tag }} {{ field }}
+          {{ field.label_tag }} {{ field|safe }}
       </div>
   {% endfor %}
   </div>

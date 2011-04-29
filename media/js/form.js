@@ -35,6 +35,8 @@ $(document).ready(function(){
                     $('#id_contract').change(function() {
                                                if($(this).val().length>0) {
                                                  $('#id_comment').parent().show();
+                                                 $('#id_email').parent().show();
+                                                 $('#id_attachments0').parent().show();
                                                  $('#save_button').show();
                                                  $("#show_optionals").show();
                                                }
