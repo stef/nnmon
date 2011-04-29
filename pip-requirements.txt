@@ -6,3 +6,4 @@ django-simple-captcha>=0.2.0
 django-tinymce>=1.5
 pysqlite>=1.0.1
 BabelDjango>=0.2.2
+PIL>=1.1.7

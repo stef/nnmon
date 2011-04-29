@@ -4,6 +4,7 @@ from django.utils.translation import ugettext as _
 from bt.models import Violation, COUNTRIES, RESOURCES, TYPES, MEDIA
 from bt.multifile import MultiFileField
 from operator import itemgetter
+from captcha.fields import CaptchaField
 
 class AdvancedEditor(forms.Textarea):
 	class Media:
@@ -30,3 +31,4 @@ class AddViolation(forms.Form):
    contractual = forms.BooleanField(required=False, help_text=_('Is the restriction described in the users contract?'))
    contract_excerpt = forms.CharField(required=False, widget=AdvancedEditor(), help_text=_('Please copy the relevant section describing the restriction from the user contract.'))
    loophole = forms.BooleanField(required=False, help_text=_('Is there another offer provided by this Operator which removes this restriction?'))
+   captcha = CaptchaField(help_text=_("Unfortunately we must protect against automatic attack, please forgive us this inconvenience."))

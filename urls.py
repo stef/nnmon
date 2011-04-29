@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     (r'^$', bt.index),
     (r'^accounts/logout$', 'django.contrib.auth.views.logout', {'next_page' : '/'}),
     (r'^accounts/', include('registration.urls')),
+    url(r'^captcha/', include('captcha.urls')),
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
 )

@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'registration',
     'bt',
     'babeldjango',
+    'captcha',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -166,6 +167,9 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.file'
 
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_REDIRECT_URL = '/'
+
+CAPTCHA_NOISE_FUNCTIONS = ('captcha.helpers.noise_dots',)
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
 
 try:
     from local_settings import *
