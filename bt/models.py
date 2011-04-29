@@ -32,20 +32,20 @@ COUNTRIES = (
     )
 
 RESOURCES = (
-    ('1', _('port')),
-    ('2', _('protocol')),
-    ('3', _('service')),
-    ('4', _('site')),
-    ('5', _('user')),
-    ('6', _('ip')),
+    ('port', _('port')),
+    ('protocol', _('protocol')),
+    ('service', _('service')),
+    ('site', _('site')),
+    ('user', _('user')),
+    ('ip', _('ip')),
     )
 TYPES = (
-    ('1', _('Blocking')),
-    ('2', _('Throttling')),
+    ('blocking', _('Blocking')),
+    ('throttling', _('Throttling')),
     )
 MEDIA = (
-    ('1', _('Fixed')),
-    ('2', _('Mobile')),
+    ('fixed', _('Fixed')),
+    ('mobile', _('Mobile')),
     )
 
 class Attachment(models.Model):
