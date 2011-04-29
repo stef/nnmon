@@ -1,7 +1,7 @@
 from django import forms
 from django.conf import settings
-from django.forms import ModelForm
-from bt.models import Violation
+from bt.models import Violation, COUNTRIES
+from operator import itemgetter
 
 class AdvancedEditor(forms.Textarea):
 	class Media:
@@ -13,9 +13,15 @@ class AdvancedEditor(forms.Textarea):
 		if attrs: self.attrs.update(attrs)
 		super(AdvancedEditor, self).__init__(attrs)
 
-class AddViolation(ModelForm):
-   class Meta:
-      model = Violation
-      widgets = {
-         'comments': AdvancedEditor,
-      }
+class AddViolation(forms.Form):
+   country = forms.ChoiceField(choices=(('',''),)+tuple(sorted(COUNTRIES,key=itemgetter(1))))
+   operator = forms.CharField(max_length=256)
+   contract = forms.CharField(max_length=256)
+   comment = forms.CharField(required=True, widget=AdvancedEditor())
+   resource = forms.CharField(required=False, max_length=1)
+   type = forms.CharField(max_length=1)
+   media = forms.CharField(required=False, max_length=1)
+   temporary = forms.BooleanField(required=False )
+   contractual = forms.BooleanField(required=False)
+   contract_excerpt = forms.CharField(required=False, widget=AdvancedEditor())
+   loophole = forms.BooleanField(required=False)

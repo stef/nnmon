@@ -1,6 +1,34 @@
 from django.db import models
 
-# Create your models here.
+COUNTRIES = (
+    ('BE', 'Belgium'),
+    ('BG', 'Bulgaria'),
+    ('CZ', 'Czech Republic'),
+    ('DK', 'Denmark'),
+    ('DE', 'Germany'),
+    ('EE', 'Estonia'),
+    ('IE', 'Ireland'),
+    ('EL', 'Greece'),
+    ('ES', 'Spain'),
+    ('FR', 'France'),
+    ('IT', 'Italy'),
+    ('CY', 'Cyprus'),
+    ('LV', 'Latvia'),
+    ('LT', 'Lithuania'),
+    ('LU', 'Luxembourg'),
+    ('HU', 'Hungary'),
+    ('MT', 'Malta'),
+    ('NL', 'Netherlands'),
+    ('AT', 'Austria'),
+    ('PL', 'Poland'),
+    ('PT', 'Portugal'),
+    ('RO', 'Romania'),
+    ('SI', 'Slovenia'),
+    ('SK', 'Slovakia'),
+    ('FI', 'Finland'),
+    ('SE', 'Sweden'),
+    ('UK', 'United Kingdom '),
+    )
 
 class Attachment(models.Model):
     attachment = models.FileField(upload_to='static')
@@ -12,22 +40,6 @@ class Comment(models.Model):
     attachments = models.ForeignKey(Attachment)
 
 class Violation(models.Model):
-    COUNTRIES = (
-        # TODO complete and sort
-        ('A', 'Austria'),
-        ('B', 'Belgium'),
-        ('CZ', 'Czech Republic'),
-        ('HU', 'Hungary'),
-        ('RO', 'Romania'),
-        ('SE', 'Sweden'),
-        ('PL', 'Poland'),
-        ('ES', 'Spain'),
-        ('PT', 'Portugal'),
-        ('I', 'Italy'),
-        ('DE', 'Germany'),
-        ('SK', 'Slovakia'),
-        ('FR', 'France'),
-    )
     RESOURCES = (
         ('1', 'port'),
         ('2', 'protocol'),
@@ -44,33 +56,14 @@ class Violation(models.Model):
         ('1', 'Fixed'),
         ('2', 'Mobile'),
     )
-    country = models.CharField(max_length=2,
-                               choices=COUNTRIES,
-                               help_text='',
-                               )
-    operator = models.CharField(max_length=256,
-                                help_text='')
-    contract = models.CharField(max_length=256,
-                                help_text='type of offer, i.e. the name of the subscription')
-    comments = models.ForeignKey(Comment,
-                                 help_text='')
-    resource = models.CharField(blank=True,
-                                max_length=1,
-                                choices=RESOURCES,
-                                help_text='')
-    type = models.CharField(blank=True,
-                            max_length=1,
-                            choices=RESOURCES,
-                            help_text='')
-    media = models.CharField(blank=True,
-                             max_length=1,
-                             choices=MEDIA,
-                             help_text='')
-    temporary = models.BooleanField(blank=True,
-                                    help_text='')
-    contractual = models.BooleanField(blank=True,
-                                      help_text='')
-    contract_excerpt = models.TextField(blank=True,
-                                        help_text='')
-    loophole = models.BooleanField(blank=True,
-                                   help_text='')
+    country = models.CharField(max_length=2, choices=COUNTRIES)
+    operator = models.CharField(max_length=256)
+    contract = models.CharField(max_length=256)
+    comments = models.ForeignKey(Comment)
+    resource = models.CharField(max_length=1, choices=RESOURCES)
+    type = models.CharField(max_length=1, choices=TYPES)
+    media = models.CharField( max_length=1, choices=MEDIA)
+    temporary = models.BooleanField( )
+    contractual = models.BooleanField()
+    contract_excerpt = models.TextField()
+    loophole = models.BooleanField()

@@ -1,16 +1,45 @@
 {% extends "base.html" %}
 {% load bt %}
+{% block styles %}
+  <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/jquery.autocomplete.css" />
+{% endblock %}
 {% block scripts %}
 <script type="text/javascript" src="{%media_url%}/js/tinymce/tiny_mce.js"></script>
 <script type="text/javascript" src="{%media_url%}/js/editor.js"></script>
 <script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
+<script type="text/javascript" src="{%media_url%}/js/jquery.autocomplete.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
-    $(".id_contract_excerpt").hide()
-    $(".id_contract_excerpt_parent").hide()
-    $(".id_contractual").click(function(event) {
-      $(".id_contract_excerpt").toggle()
-      $(".id_contract_excerpt_parent").toggle()
+    $(".fieldWrapper").hide();
+    $("#id_country").parent().show();
+    $("#save_button").hide();
+    $("#id_contractual").click(function(event) {
+      $("#id_contract_excerpt_parent").parent().toggle()
+    });
+    $('#id_country').change(function() {
+      var country=$(this).attr('value');
+      if(country.length>0) {
+        $('#id_operator').parent().show();
+        $.getJSON('/ajax/'+country, function(data) {
+          $("#id_operator").autocomplete(data);
+        });
+      }
+    });
+    $('#id_operator').change(function() {
+      var country=$('#id_country').attr('value');
+      var operator=$(this).attr('value');
+      if(operator.length>0) {
+        $('#id_contract').parent().show();
+        $.getJSON('/ajax/'+country+'/'+operator, function(data) {
+          $("#id_contract").autocomplete(data);
+        });
+      }
+    });
+    $('#id_contract').change(function() {
+      if($(this).attr('value').length>0) {
+        $('#id_comments').parent().show();
+        $('#save_button').show();
+      }
     });
 });
 </script>
@@ -18,8 +47,14 @@
 
 {%block content%}
 <h2>New Violation</h2>
-<form name="addForm" action="{% root_url %}/add/" method="get">
-  {{ form.as_table }}
-  <input type="submit" value="save" />
+<form id='addForm' name="addForm" action="{% root_url %}/add/" method="post">
+  {% for field in form %}
+      <div class="fieldWrapper">
+          {{ field.errors }}
+          {{ field.label_tag }} {{ field }}
+      </div>
+  {% endfor %}
+  {% csrf_token %}
+  <input id="save_button" type="submit" value="save" />
 </form>
 {%endblock%}
