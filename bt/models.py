@@ -1,33 +1,51 @@
 from django.db import models
+from django.utils.translation import ugettext as _
 
 COUNTRIES = (
-    ('BE', 'Belgium'),
-    ('BG', 'Bulgaria'),
-    ('CZ', 'Czech Republic'),
-    ('DK', 'Denmark'),
-    ('DE', 'Germany'),
-    ('EE', 'Estonia'),
-    ('IE', 'Ireland'),
-    ('EL', 'Greece'),
-    ('ES', 'Spain'),
-    ('FR', 'France'),
-    ('IT', 'Italy'),
-    ('CY', 'Cyprus'),
-    ('LV', 'Latvia'),
-    ('LT', 'Lithuania'),
-    ('LU', 'Luxembourg'),
-    ('HU', 'Hungary'),
-    ('MT', 'Malta'),
-    ('NL', 'Netherlands'),
-    ('AT', 'Austria'),
-    ('PL', 'Poland'),
-    ('PT', 'Portugal'),
-    ('RO', 'Romania'),
-    ('SI', 'Slovenia'),
-    ('SK', 'Slovakia'),
-    ('FI', 'Finland'),
-    ('SE', 'Sweden'),
-    ('UK', 'United Kingdom '),
+    ('BE', _('Belgium')),
+    ('BG', _('Bulgaria')),
+    ('CZ', _('Czech Republic')),
+    ('DK', _('Denmark')),
+    ('DE', _('Germany')),
+    ('EE', _('Estonia')),
+    ('IE', _('Ireland')),
+    ('EL', _('Greece')),
+    ('ES', _('Spain')),
+    ('FR', _('France')),
+    ('IT', _('Italy')),
+    ('CY', _('Cyprus')),
+    ('LV', _('Latvia')),
+    ('LT', _('Lithuania')),
+    ('LU', _('Luxembourg')),
+    ('HU', _('Hungary')),
+    ('MT', _('Malta')),
+    ('NL', _('Netherlands')),
+    ('AT', _('Austria')),
+    ('PL', _('Poland')),
+    ('PT', _('Portugal')),
+    ('RO', _('Romania')),
+    ('SI', _('Slovenia')),
+    ('SK', _('Slovakia')),
+    ('FI', _('Finland')),
+    ('SE', _('Sweden')),
+    ('UK', _('United Kingdom ')),
+    )
+
+RESOURCES = (
+    ('1', _('port')),
+    ('2', _('protocol')),
+    ('3', _('service')),
+    ('4', _('site')),
+    ('5', _('user')),
+    ('6', _('ip')),
+    )
+TYPES = (
+    ('1', _('Blocking')),
+    ('2', _('Throttling')),
+    )
+MEDIA = (
+    ('1', _('Fixed')),
+    ('2', _('Mobile')),
     )
 
 class Attachment(models.Model):
@@ -40,22 +58,6 @@ class Comment(models.Model):
     attachments = models.ForeignKey(Attachment)
 
 class Violation(models.Model):
-    RESOURCES = (
-        ('1', 'port'),
-        ('2', 'protocol'),
-        ('3', 'service'),
-        ('4', 'site'),
-        ('5', 'user'),
-        ('6', 'ip'),
-    )
-    TYPES = (
-        ('1', 'Blocking'),
-        ('2', 'Throttling'),
-    )
-    MEDIA = (
-        ('1', 'Fixed'),
-        ('2', 'Mobile'),
-    )
     country = models.CharField(max_length=2, choices=COUNTRIES)
     operator = models.CharField(max_length=256)
     contract = models.CharField(max_length=256)

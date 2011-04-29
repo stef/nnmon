@@ -11,7 +11,6 @@ urlpatterns = patterns('',
     (r'^accounts/', include('registration.urls')),
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
-    (r'^edit/$', bt.edit),
 )
 
 if settings.DEV_SERVER:

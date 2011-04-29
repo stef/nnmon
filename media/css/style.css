@@ -5,3 +5,5 @@ h2 { margin: auto; width: 50%; padding 4em; }
 #addForm { margin: auto; width: 50%; padding 4em; }
 .fieldWrapper { margin: 1em; }
 .fieldWrapper label { width: 120px; display: inline-block; }
+#show_optionals { text-decoration: underline; color: blue; cursor: pointer; }
+.help_text { font-size: 0.7em; left: 30px; width: 20%; position: absolute; }

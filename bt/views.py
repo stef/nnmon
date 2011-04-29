@@ -8,24 +8,17 @@ import json
 def add(request):
     if request.method == 'POST': # If the form has been submitted...
         form = AddViolation(request.POST) # A form bound to the POST data
-        print form.errors
-        v=Violation(**form.cleaned_data)
-        print 'v',v
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
             # ...
-            v=Violation(**form.values)
-            print 'v',v
+            print 'asdf',form.cleaned_data
             return HttpResponseRedirect('/') # Redirect after POST
     else:
         form = AddViolation() # An unbound form
 
-    return render_to_response('add.html', {
-        'form': form,
-    }, context_instance=RequestContext(request))
-
-def edit(request):
-    return add(request)
+    return render_to_response('add.html',
+                              { 'form': form, },
+                              context_instance=RequestContext(request))
 
 def ajax(request, country=None, operator=None):
     if not operator:
