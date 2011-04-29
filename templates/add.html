@@ -14,7 +14,7 @@
 
 {%block content%}
   <h2>{% trans "New Violation" %}</h2>
-<form id='addForm' name="addForm" action="{% root_url %}/add/" method="post">
+<form id='addForm' name="addForm" enctype="multipart/form-data" action="{% root_url %}/add/" method="post">
   {% for field in form %}
       {% if field.label = 'Resource' %}<div id="show_optionals">{% trans "Provide optional details" %}</div><div id="optional">{%endif%}
       <div class="fieldWrapper">
