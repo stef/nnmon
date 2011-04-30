@@ -15,7 +15,7 @@ function init_form() {
                             if(country.length>0) {
                               $('#id_operator').parent().show();
                               $.getJSON('/ajax/'+country, function(data) {
-                                          $("#id_operator").autocomplete(data, { minChars: 0, autoFill: true, });
+                                          $("#id_operator").autocomplete(data, { minChars: 0, autoFill: true });
                                         });
                             }
                           });
@@ -25,7 +25,7 @@ function init_form() {
                              if(operator.length>0) {
                                $('#id_contract').parent().show();
                                $.getJSON('/ajax/'+country+'/'+operator, function(data) {
-                                           $("#id_contract").autocomplete(data,{ minChars: 0, });
+                                           $("#id_contract").autocomplete(data,{ minChars: 0 });
                                          });
                              }
                            });
@@ -33,6 +33,7 @@ function init_form() {
                              if($(this).val().length>0) {
                                $('#id_comment').parent().show();
                                $('#id_email').parent().show();
+                               $('#id_nick').parent().show();
                                $('#id_attachments0').parent().show();
                              }
                            });
