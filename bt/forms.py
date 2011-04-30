@@ -22,6 +22,7 @@ class AddViolation(forms.Form):
    contract = forms.CharField(required=True, max_length=256, help_text=_('The specific contract at the ISP provider. (please be as specific as possible)'))
    comment = forms.CharField(required=True, widget=AdvancedEditor(), help_text=_('Please describe the symptoms you are experiencing. What service or site, or person is unavailable or seems artificially slowed down.'))
    email = forms.EmailField(required=True, help_text=_("We need your email to validate your report. We're not storing the email later on."))
+   nick = forms.CharField(required=False, help_text=_("We need your some name to identify you later on."))
    attachments = MultiFileField(required=False, help_text=_("Attach screenshot, document or any other relevant information."))
    resource = forms.ChoiceField(required=False, choices=(('',''),)+tuple(sorted(RESOURCES,key=itemgetter(1))), help_text=_('The what is the affected resource.'))
    resource_name = forms.CharField(required=False, max_length=4096, help_text=_('Please specify the name of the affected resource.'))

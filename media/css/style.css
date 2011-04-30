@@ -2,15 +2,23 @@ body { border: 0; padding: 0; font-family: Verdana,Arial,Helvetica,sans-serif; }
 img { border: 0; }
 h1, h2, h3, h4, div, ul { padding: 0; margin: 0; }
 h2 { margin: auto; width: 50%; padding 4em; }
+li { list-style: none; }
+
 
 .fieldWrapper { margin: 1em; width: 100%; }
 .fieldWrapper label { width: 200px; display: inline-block; }
 .help_text { font-size: 0.7em; left: 30px; width: 20%; position: absolute; }
 .attachments { float: right; margin-top: 0.4em; display: block; clear: both; }
-table.listing, .pagination { width: 90%; margin: auto; }
-table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
+.comment-node { margin: 1em; padding-bottom: 0.4em; border-bottom: 1px solid black; width: 500px;}
+.comment { margin: 1em; }
+.atttachsg { margin: 1em; }
 
 #addForm { margin: auto; width: 50%; padding 4em; }
 #add_attach { cursor: pointer; }
 #show_optionals { text-decoration: underline; color: blue; cursor: pointer; clear: both; }
 #optional { clear: both; }
+
+table.listing, .pagination { width: 90%; margin: auto; }
+table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
+dt { display: inline-block; width: 14em; }
+dd { display: inline; }

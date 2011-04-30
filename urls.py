@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^captcha/', include('captcha.urls')),
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
+    (r'^view/(?P<id>[0-9]*)$', bt.view),
 )
 
 if settings.DEV_SERVER:

@@ -1,10 +1,11 @@
 from forms import AddViolation
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.files import File
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.core.exceptions import ObjectDoesNotExist
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
@@ -29,7 +30,8 @@ def add(request):
             v.save()
             c = Comment(
                 comment=form.cleaned_data['comment'],
-                submitter=form.cleaned_data['email'],
+                submitter_email=form.cleaned_data['email'],
+                submitter_name=form.cleaned_data['nick'],
                 timestamp=datetime.now(),
                 violation=v,
                 )
@@ -68,3 +70,7 @@ def index(request):
         violations = paginator.page(paginator.num_pages)
 
     return render_to_response('list.html', {"violations": violations})
+
+def view(request,id):
+    v = get_object_or_404(Violation, pk=id)
+    return render_to_response('view.html', { 'v': v, })

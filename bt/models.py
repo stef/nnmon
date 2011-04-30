@@ -53,6 +53,7 @@ class Violation(models.Model):
     operator = models.CharField(max_length=256)
     contract = models.CharField(max_length=256)
     resource = models.CharField(max_length=20, choices=RESOURCES)
+    resource_name = models.CharField(max_length=4096)
     type = models.CharField(max_length=20, choices=TYPES)
     media = models.CharField( max_length=20, choices=MEDIA)
     temporary = models.BooleanField( )
@@ -61,9 +62,10 @@ class Violation(models.Model):
     loophole = models.BooleanField()
 
 class Comment(models.Model):
-    submitter = models.EmailField()
+    submitter_email = models.EmailField()
+    submitter_name = models.CharField(max_length=20)
     comment = models.TextField()
-    timestamp = models.DateField()
+    timestamp = models.DateTimeField()
     violation = models.ForeignKey(Violation)
 
 class Attachment(models.Model):

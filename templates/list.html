@@ -30,6 +30,7 @@ $(document).ready(function(){
   <tbody>
 {% for violation in violations.object_list %}
 <tr>
+    <td><a href="/view/{{violation.pk}}">#{{ violation.pk }}</a></td>
     <td>{{ violation.country }}</td>
     <td>{{ violation.operator }}</td>
     <td>{{ violation.contract }}</td>
