@@ -8,3 +8,4 @@ pysqlite>=1.0.1
 BabelDjango>=0.2.2
 PIL>=1.1.7
 flup>=1.0.3.dev-20110405
+BeautifulSoup>=3.2.0
