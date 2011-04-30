@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
-import hashlib, os, re
+import hashlib, os, re, json
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup, Comment as BComment
 
@@ -78,11 +78,9 @@ def add(request):
 
 def ajax(request, country=None, operator=None):
     if not operator:
-        print 'c',sorted(list(set([x.operator for x in Violation.objects.filter(country=country)])))
-        return HttpResponse('["Vodafone", "T-Mobile", "T-Home", "UPC Chello", "Orange"]')
+        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country)])))))
     else:
-        print 'co', sorted(list(set([x.operator for x in Violation.objects.filter(country=country).filter(operator=operator)])))
-        return HttpResponse('["Basic", "Surfer", "Gamer", "Pro", "Business"]')
+        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country).filter(operator=operator)])))))
 
 def index(request):
     v_list = Violation.objects.all()
