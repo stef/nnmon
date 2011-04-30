@@ -48,20 +48,10 @@ MEDIA = (
     ('mobile', _('Mobile')),
     )
 
-class Attachment(models.Model):
-    attachment = models.FileField(upload_to='static')
-
-class Comment(models.Model):
-    submitter = models.EmailField()
-    comment = models.TextField()
-    date = models.DateField()
-    attachments = models.ForeignKey(Attachment)
-
 class Violation(models.Model):
     country = models.CharField(max_length=2, choices=COUNTRIES)
     operator = models.CharField(max_length=256)
     contract = models.CharField(max_length=256)
-    comments = models.ForeignKey(Comment)
     resource = models.CharField(max_length=1, choices=RESOURCES)
     type = models.CharField(max_length=1, choices=TYPES)
     media = models.CharField( max_length=1, choices=MEDIA)
@@ -69,3 +59,13 @@ class Violation(models.Model):
     contractual = models.BooleanField()
     contract_excerpt = models.TextField()
     loophole = models.BooleanField()
+
+class Comment(models.Model):
+    submitter = models.EmailField()
+    comment = models.TextField()
+    timestamp = models.DateField()
+    violation = models.ForeignKey(Violation)
+
+class Attachment(models.Model):
+    storage = models.FileField(upload_to='static')
+    comment = models.ForeignKey(Comment)
