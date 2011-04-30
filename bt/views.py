@@ -47,6 +47,7 @@ def add(request):
                 operator = form.cleaned_data['operator'],
                 contract = form.cleaned_data['contract'],
                 resource = form.cleaned_data['resource'],
+                resource_name = form.cleaned_data['resource_name'],
                 type = form.cleaned_data['type'],
                 media = form.cleaned_data['media'],
                 temporary = form.cleaned_data['temporary'],
@@ -98,4 +99,4 @@ def index(request):
 
 def view(request,id):
     v = get_object_or_404(Violation, pk=id)
-    return render_to_response('view.html', { 'v': v, })
+    return render_to_response('view.html', { 'v': v, },context_instance=RequestContext(request))
