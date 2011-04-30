@@ -18,11 +18,10 @@
 </head>
 <body>
 	<div id="auth" class="menu">
-		<a href="{%root_url%}/add/">Report restriction</a>
-		<a href="{%root_url%}/">List reports</a>
 	{% if user.is_authenticated %}
 		<a href="{%root_url%}/accounts/settings">{{ user.username }}</a>
 		<a href="{%root_url%}/accounts/logout">Logout</a>
+		<a href="{%root_url%}/admin/">Admin</a>
 	{% else %}
 		<a href="{%root_url%}/accounts/login">Login</a>
 		<a href="{%root_url%}/accounts/register">Register</a>
@@ -30,10 +29,8 @@
 	</div>
 
 	<div id="menu" class="menu">
-	{% if user.is_authenticated %}
-		<a href="{%root_url%}/report">Report</a>
-		<a href="{%root_url%}">List</a>
-	{%endif%}
+		<a href="{%root_url%}/add/">Report restriction</a>
+		<a href="{%root_url%}/">List reports</a>
 	</div>
 
 {% block content %}
