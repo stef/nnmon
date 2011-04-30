@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% load bt %}
+{% load i18n %}
+{% block styles %}
+{% endblock %}
+{% block scripts %}
+<script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+});
+</script>
+{% endblock %}
+
+{%block content%}
+<table class="listing">
+  <thead>
+<tr>
+    <td>country</td>
+    <td>operator</td>
+    <td>contract</td>
+    <td>resource</td>
+    <td>type</td>
+    <td>media</td>
+    <td>temporary</td>
+    <td>contractual</td>
+    <td>contractual_excerpt</td>
+    <td>loophole</td>
+</tr>
+  </thead>
+  <tbody>
+{% for violation in violations.object_list %}
+<tr>
+    <td>{{ violation.country }}</td>
+    <td>{{ violation.operator }}</td>
+    <td>{{ violation.contract }}</td>
+    <td>{{ violation.resource }}</td>
+    <td>{{ violation.type }}</td>
+    <td>{{ violation.media }}</td>
+    <td>{{ violation.temporary }}</td>
+    <td>{{ violation.contractual }}</td>
+    <td>{{ violation.contractual_excerpt }}</td>
+    <td>{{ violation.loophole }}</td>
+</tr>
+{% endfor %}
+  </tbody>
+</table>
+
+<div class="pagination">
+    <span class="step-links">
+        {% if violations.has_previous %}
+            <a href="?page={{ violations.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ violations.number }} of {{ violations.paginator.num_pages }}.
+        </span>
+
+        {% if violations.has_next %}
+            <a href="?page={{ violations.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+{%endblock%}
