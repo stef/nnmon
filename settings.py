@@ -5,6 +5,7 @@ BASE_PATH = os.path.dirname(__file__)
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
+FORCE_SCRIPT_NAME = ''
 DEV_SERVER = True
 MEDIA_PATH = BASE_PATH+'/media'
 ROOT_URL = ''
