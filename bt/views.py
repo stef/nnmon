@@ -9,7 +9,34 @@ from django.core.exceptions import ObjectDoesNotExist
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
-import hashlib, os
+import hashlib, os, re
+from urlparse import urljoin
+from BeautifulSoup import BeautifulSoup, Comment as BComment
+
+def sanitizeHtml(value, base_url=None):
+    rjs = r'[\s]*(&#x.{1,7})?'.join(list('javascript:'))
+    rvb = r'[\s]*(&#x.{1,7})?'.join(list('vbscript:'))
+    re_scripts = re.compile('(%s)|(%s)' % (rjs, rvb), re.IGNORECASE)
+    validTags = 'p i strong b u a h1 h2 h3 pre br img'.split()
+    validAttrs = 'href src width height'.split()
+    urlAttrs = 'href src'.split() # Attributes which should have a URL
+    soup = BeautifulSoup(value)
+    for comment in soup.findAll(text=lambda text: isinstance(text, BComment)):
+        # Get rid of comments
+        comment.extract()
+    for tag in soup.findAll(True):
+        if tag.name not in validTags:
+            tag.hidden = True
+        attrs = tag.attrs
+        tag.attrs = []
+        for attr, val in attrs:
+            if attr in validAttrs:
+                val = re_scripts.sub('', val) # Remove scripts (vbs & js)
+                if attr in urlAttrs:
+                    val = urljoin(base_url, val) # Calculate the absolute url
+                tag.attrs.append((attr, val))
+
+    return soup.renderContents().decode('utf8')
 
 def add(request):
     if request.method == 'POST':
@@ -24,7 +51,7 @@ def add(request):
                 media = form.cleaned_data['media'],
                 temporary = form.cleaned_data['temporary'],
                 contractual = form.cleaned_data['contractual'],
-                contract_excerpt = form.cleaned_data['contract_excerpt'],
+                contract_excerpt = sanitizeHtml(form.cleaned_data['contract_excerpt']),
                 loophole = form.cleaned_data['loophole']
                 )
             v.save()

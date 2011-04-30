@@ -16,7 +16,7 @@
   {%if v.media%}<li><dl><dt>Media</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
   {%if v.temporary%}<li><dl><dt>Temporary restriction</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
   {%if v.contractual%}<li><dl><dt>Contractual restriction</dt><dd>{{v.Contractual}}</dd></dl></li>{%endif%}
-  {%if v.contract_excerpt%}<li><dl><dt>Contract excerpt</dt><dd>{{v.contract_excerpt}}</dd></dl></li>{%endif%}
+  {%if v.contract_excerpt%}<li><dl><dt>Contract excerpt</dt><dd>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
   {%if v.loophole%}<li><dl><dt>Loophole offering</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
   {%if v.comment_set.all%}
   <div id="comments">
@@ -24,7 +24,7 @@
     {%for c in v.comment_set.all%}
     <div class="comment-node">
       <span class="commenter">{%if c.submitter_nick%}{{c.submitter_nick}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
-      <div class="comment">{{c.comment}}</div>
+      <div class="comment">{{c.comment|safe}}</div>
       {%if c.attachment_set.all%}
       <div class="attachs">
         Attachments
