@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.core.files import File
 from django.conf import settings
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
@@ -55,4 +56,15 @@ def ajax(request, country=None, operator=None):
         return HttpResponse('["Basic", "Surfer", "Gamer", "Pro", "Business"]')
 
 def index(request):
-    return HttpResponse("ohai, nothing to see here")
+    v_list = Violation.objects.all()
+    paginator = Paginator(v_list, 25)
+
+    page = request.GET.get('page','1')
+    try:
+        violations = paginator.page(page)
+    except PageNotAnInteger:
+        violations = paginator.page(1)
+    except EmptyPage:
+        violations = paginator.page(paginator.num_pages)
+
+    return render_to_response('list.html', {"violations": violations})
