@@ -11,7 +11,7 @@ MEDIA_PATH = BASE_PATH+'/media'
 ROOT_URL = ''
 
 ADMINS = (
-    # ('stef', 'stef@ctrlc.hu'),
+    ('stef', 'stef@ctrlc.hu'),
 )
 
 MANAGERS = ADMINS
@@ -128,13 +128,14 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.comments',
     'tinymce',
     'registration',
     'bt',
     'babeldjango',
     'captcha',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )

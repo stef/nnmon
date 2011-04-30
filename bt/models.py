@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext as _
+from django.contrib.comments.moderation import CommentModerator, moderator
 
 COUNTRIES = (
     ('BE', _('Belgium')),
@@ -71,3 +72,12 @@ class Comment(models.Model):
 class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
     comment = models.ForeignKey(Comment)
+
+class ViolationModerator(CommentModerator):
+    email_notification = True
+    moderate_after        = 0
+    def moderate(self, comment, content_object, request):
+        return True
+
+if Violation not in moderator._registry:
+    moderator.register(Violation, ViolationModerator)

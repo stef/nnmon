@@ -1,19 +1,20 @@
 from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
+from django.contrib import admin
 from bt import views as bt
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', bt.index),
-    (r'^accounts/logout$', 'django.contrib.auth.views.logout', {'next_page' : '/'}),
-    (r'^accounts/', include('registration.urls')),
-    url(r'^captcha/', include('captcha.urls')),
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
     (r'^view/(?P<id>[0-9]*)$', bt.view),
+    (r'^accounts/logout$', 'django.contrib.auth.views.logout', {'next_page' : '/'}),
+    (r'^accounts/', include('registration.urls')),
+    (r'^comments/', include('django.contrib.comments.urls')),
+    url(r'^captcha/', include('captcha.urls')),
+    url(r'^admin/', include(admin.site.urls)),
 )
 
 if settings.DEV_SERVER:

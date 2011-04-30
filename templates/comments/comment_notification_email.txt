@@ -1,0 +1,7 @@
+{%load bt%}
+A comment has been posted on {{ content_object }}.
+The comment reads as follows:
+{{ comment }}
+
+Approve: {%root_url%}/comments/approve/{{ comment.id }}/
+Delete: {%root_url%}/comments/delete/{{ comment.id }}/

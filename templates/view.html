@@ -2,16 +2,46 @@
 {% load bt %}
 {% load i18n %}
 {% load babel %}
+{% load comments %}
 {% block styles %}
 {% endblock %}
 {% block scripts %}
+<script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+function bindPostCommentHandler() {
+    $('#comment_form form input.submit-preview').remove();
+    $('#comment_form form').submit(function() {
+        var postdata=$('#comment_form form').serialize()+'&csrftoken={{csrf_token}}';
+        $.ajax({
+            type: "POST",
+            data: postdata,
+            url: "{% comment_form_target %}",
+            cache: false,
+            dataType: "html",
+            success: function(html, textStatus) {
+                $('#comment_form form').replaceWith(html);
+                bindPostCommentHandler();
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                $('#comment_form form').replaceWith('Your comment was unable to be posted at this time.  We apologise for the inconvenience.');
+            }
+        });
+        return false;
+    });
+}
+
+$(document).ready(function() {
+    bindPostCommentHandler();
+});
+</script>
 {% endblock %}
 
 {%block content%}
-<ul>
+<ul id="report">
   <li><dl><dt>Operator</dt><dd>{{v.operator}} ({{v.country}})</dd></dl></li>
   <li><dl><dt>Contract</dt><dd>{{v.contract}}</dd></dl></li>
   {%if v.resource%}<li><dl><dt>Resource</dt><dd>{{v.resource}}</dd></dl></li>{%endif%}
+  {%if v.resource_name%}<li><dl><dt>Resource name</dt><dd>{{v.resource_name}}</dd></dl></li>{%endif%}
   {%if v.type%}<li><dl><dt>Type</dt><dd>{{v.type}}</dd></dl></li>{%endif%}
   {%if v.media%}<li><dl><dt>Media</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
   {%if v.temporary%}<li><dl><dt>Temporary restriction</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
@@ -19,12 +49,12 @@
   {%if v.contract_excerpt%}<li><dl><dt>Contract excerpt</dt><dd>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
   {%if v.loophole%}<li><dl><dt>Loophole offering</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
   {%if v.comment_set.all%}
-  <div id="comments">
-    Comments
+  <li id="description">
+    <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
-    <div class="comment-node">
-      <span class="commenter">{%if c.submitter_nick%}{{c.submitter_nick}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
-      <div class="comment">{{c.comment|safe}}</div>
+    <div class="description-node">
+      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
+      <div class="description">{{c.comment|safe}}</div>
       {%if c.attachment_set.all%}
       <div class="attachs">
         Attachments
@@ -35,7 +65,16 @@
         </ul>
       </div>
       {%endif%}
+    </div>
     {%endfor%}
-  </div>
+  </li>
+</ul>
   {%endif%}
+  <h3>Comments</h3>
+  {% render_comment_list for v %}
+  <h3>Comment</h3>
+  {% get_comment_form for v as form %}
+  <div id="comment_form">
+    {% render_comment_form for v %}
+  </div>
 {%endblock%}

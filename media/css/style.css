@@ -9,16 +9,17 @@ li { list-style: none; }
 .fieldWrapper label { width: 200px; display: inline-block; }
 .help_text { font-size: 0.7em; left: 30px; width: 20%; position: absolute; }
 .attachments { float: right; margin-top: 0.4em; display: block; clear: both; }
-.comment-node { margin: 1em; padding-bottom: 0.4em; border-bottom: 1px solid black; width: 500px;}
-.comment { margin: 1em; }
+.report-node { margin: 1em; padding-bottom: 0.4em; border-bottom: 1px solid black; width: 500px;}
+.report { margin: 1em; }
 .atttachsg { margin: 1em; }
 
 #addForm { margin: auto; width: 50%; padding 4em; }
 #add_attach { cursor: pointer; }
 #show_optionals { text-decoration: underline; color: blue; cursor: pointer; clear: both; }
 #optional { clear: both; }
+#report dt { display: inline-block; width: 14em; }
+#report dd { display: inline; }
+#auth { float: right; clear: both; }
 
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
-dt { display: inline-block; width: 14em; }
-dd { display: inline; }
