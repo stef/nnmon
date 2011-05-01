@@ -14,9 +14,9 @@ function init_form() {
                             var country=$(this).attr('value');
                             if(country.length>0) {
                               $('#id_operator').parent().show();
-                              $('#id_operator').focus();
                               $.getJSON('/ajax/'+country, function(data) {
                                           $("#id_operator").autocomplete(data, { minChars: 0, autoFill: true });
+                                          $('#id_operator').focus();
                                         });
                             }
                           });
@@ -25,9 +25,9 @@ function init_form() {
                              var operator=$(this).val();
                              if(operator.length>0) {
                                $('#id_contract').parent().show();
-                               $('#id_contract').focus();
                                $.getJSON('/ajax/'+country+'/'+operator, function(data) {
                                            $("#id_contract").autocomplete(data,{ minChars: 0 });
+                                           $('#id_contract').focus();
                                          });
                              }
                            });
