@@ -45,9 +45,9 @@ $(document).ready(function() {
   {%if v.type%}<li><dl><dt>Type</dt><dd>{{v.type}}</dd></dl></li>{%endif%}
   {%if v.media%}<li><dl><dt>Media</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
   {%if v.temporary%}<li><dl><dt>Temporary restriction</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
+  {%if v.loophole%}<li><dl><dt>Loophole offering</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
   {%if v.contractual%}<li><dl><dt>Contractual restriction</dt><dd>{{v.Contractual}}</dd></dl></li>{%endif%}
   {%if v.contract_excerpt%}<li><dl><dt>Contract excerpt</dt><dd>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
-  {%if v.loophole%}<li><dl><dt>Loophole offering</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
   {%if v.comment_set.all%}
   <li id="description">
     <h3>{%trans "Description" %}</h3>

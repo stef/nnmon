@@ -29,7 +29,7 @@ class AddViolation(forms.Form):
    type = forms.ChoiceField(required=False, choices=(('',''),)+tuple(sorted(TYPES,key=itemgetter(1))), help_text=_('Is the Resource Blocked or otherwise discrimated?'))
    media = forms.ChoiceField(required=False, choices=(('',''),)+tuple(sorted(MEDIA,key=itemgetter(1))), help_text=_('Is the Internet connection over mobile or fixed line?'))
    temporary = forms.BooleanField(required=False, help_text=_('Is the restriction only temporary, e.g. due to network overload?'))
+   loophole = forms.BooleanField(required=False, help_text=_('Is there another offer provided by this Operator which removes this restriction?'))
    contractual = forms.BooleanField(required=False, help_text=_('Is the restriction described in the users contract?'))
    contract_excerpt = forms.CharField(required=False, widget=AdvancedEditor(), help_text=_('Please copy the relevant section describing the restriction from the user contract.'))
-   loophole = forms.BooleanField(required=False, help_text=_('Is there another offer provided by this Operator which removes this restriction?'))
    captcha = CaptchaField(help_text=_("Unfortunately we must protect against automatic attack, please forgive us this inconvenience."))
