@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
-import hashlib, os, re, json
+import hashlib, os, re, json, hashlib
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup, Comment as BComment
 
@@ -65,8 +65,12 @@ def add(request):
                 )
             c.save()
             for f in request.FILES.getlist('attachments[]'):
-                a=Attachment(comment=c)
-                a.storage.save(f.name,f)
+                a=Attachment(comment=c, name=f.name)
+                m = hashlib.sha256()
+                for chunk in f.chunks():
+                    m.update(chunk)
+                sname=m.hexdigest()
+                a.storage.save(sname,f)
                 a.save()
             return HttpResponseRedirect('/') # Redirect after POST
     else:

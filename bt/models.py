@@ -71,6 +71,7 @@ class Comment(models.Model):
 
 class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
+    name= models.CharField(max_length=512)
     comment = models.ForeignKey(Comment)
 
 class ViolationModerator(CommentModerator):
