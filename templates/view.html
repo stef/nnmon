@@ -38,16 +38,16 @@ $(document).ready(function() {
 
 {%block content%}
 <ul id="report">
-  <li><dl><dt>Operator</dt><dd>{{v.operator}} ({{v.country}})</dd></dl></li>
-  <li><dl><dt>Contract</dt><dd>{{v.contract}}</dd></dl></li>
-  {%if v.resource%}<li><dl><dt>Resource</dt><dd>{{v.resource}}</dd></dl></li>{%endif%}
-  {%if v.resource_name%}<li><dl><dt>Resource name</dt><dd>{{v.resource_name}}</dd></dl></li>{%endif%}
-  {%if v.type%}<li><dl><dt>Type</dt><dd>{{v.type}}</dd></dl></li>{%endif%}
-  {%if v.media%}<li><dl><dt>Media</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
-  {%if v.temporary%}<li><dl><dt>Temporary restriction</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
-  {%if v.loophole%}<li><dl><dt>Loophole offering</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
-  {%if v.contractual%}<li><dl><dt>Contractual restriction</dt><dd>{{v.Contractual}}</dd></dl></li>{%endif%}
-  {%if v.contract_excerpt%}<li><dl><dt>Contract excerpt</dt><dd>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
+   <li><dl><dt>{% trans "Operator" %}</dt><dd>{{v.operator}} ({{v.country}})</dd></dl></li>
+   <li><dl><dt>{% trans "Contract" %}</dt><dd>{{v.contract}}</dd></dl></li>
+   {%if v.resource%}<li><dl><dt>{% trans "Resource" %}</dt><dd>{{v.resource}}</dd></dl></li>{%endif%}
+   {%if v.resource_name%}<li><dl><dt>{% trans "Resource name" %}</dt><dd>{{v.resource_name}}</dd></dl></li>{%endif%}
+   {%if v.type%}<li><dl><dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd></dl></li>{%endif%}
+   {%if v.media%}<li><dl><dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
+   {%if v.temporary%}<li><dl><dt>{% trans "Temporary restriction" %}r</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
+   {%if v.loophole%}<li><dl><dt>{% trans "Loophole offering" %}</dt><dd>{{v.loophole}}</dd></dl></li>{%endif%}
+   {%if v.contractual%}<li><dl><dt>{% trans "Contractual restriction" %}</dt><dd>{{v.Contractual}}</dd></dl></li>{%endif%}
+   {%if v.contract_excerpt%}<li><dl><dt>{% trans "Contract excerpt" %}</dt><dd>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
   {%if v.comment_set.all%}
   <li id="description">
     <h3>{%trans "Description" %}</h3>
@@ -57,7 +57,7 @@ $(document).ready(function() {
       <div class="description">{{c.comment|safe}}</div>
       {%if c.attachment_set.all%}
       <div class="attachs">
-        Attachments
+         {% trans "Attachments" %}
         <ul>
           {%for a in c.attachment_set.all%}
           <li><a href="{{a.storage.url}}">{{a.storage.name}}</a></li>
@@ -70,9 +70,9 @@ $(document).ready(function() {
   </li>
 </ul>
   {%endif%}
-  <h3>Comments</h3>
+  <h3>{% trans "Comments" %}</h3>
   {% render_comment_list for v %}
-  <h3>Comment</h3>
+  <h3>{% trans "Comment" %}</h3>
   {% get_comment_form for v as form %}
   <div id="comment_form">
     {% render_comment_form for v %}

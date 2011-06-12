@@ -1,4 +1,4 @@
-{% load bt %}<?xml version="1.0" encoding="utf-8"?>
+{% load i18n %}{% load bt %}<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="hu" xml:lang="hu">
 <head>
@@ -20,17 +20,17 @@
 	<div id="auth" class="menu">
 	{% if user.is_authenticated %}
 		<a href="{%root_url%}/accounts/settings">{{ user.username }}</a>
-		<a href="{%root_url%}/accounts/logout">Logout</a>
-		<a href="{%root_url%}/admin/">Admin</a>
+      <a href="{%root_url%}/accounts/logout">{% trans "Logout" %}</a>
+      <a href="{%root_url%}/admin/">{% trans "Admin" %}</a>
 	{% else %}
-		<a href="{%root_url%}/accounts/login">Login</a>
-		<a href="{%root_url%}/accounts/register">Register</a>
+   <a href="{%root_url%}/accounts/login">{% trans "Login" %}</a>
+   <a href="{%root_url%}/accounts/register">{% trans "Register" %}</a>
 	{% endif %}
 	</div>
 
 	<div id="menu" class="menu">
-		<a href="{%root_url%}/add/">Report restriction</a>
-		<a href="{%root_url%}/">List reports</a>
+      <a href="{%root_url%}/add/">{% trans "Report restriction" %}</a>
+      <a href="{%root_url%}/">{% trans "List reports" %}</a>
 	</div>
 
 {% block content %}

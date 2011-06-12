@@ -24,17 +24,17 @@
 <table class="listing tablesorter" id='sortedlist'>
   <thead>
 <tr>
-    <th>id</th>
-    <th>country</th>
-    <th>operator</th>
-    <th>contract</th>
-    <th>resource</th>
-    <th>type</th>
-    <th>media</th>
-    <th>temporary</th>
-    <th>contractual</th>
-    <th>contractual_excerpt</th>
-    <th>loophole</th>
+   <th>{% trans "id" %}</th>
+   <th>{% trans "country" %}</th>
+   <th>{% trans "operator" %}</th>
+   <th>{% trans "contract" %}</th>
+   <th>{% trans "resource" %}</th>
+   <th>{% trans "type" %}</th>
+   <th>{% trans "media" %}</th>
+   <th>{% trans "temporary" %}</th>
+   <th>{% trans "contractual" %}</th>
+   <th>{% trans "contractual_excerpt" %}</th>
+   <th>{% trans "loophole" %}</th>
 </tr>
   </thead>
   <tbody>
@@ -63,11 +63,11 @@
         {% endif %}
 
         <span class="current">
-            Page {{ violations.number }} of {{ violations.paginator.num_pages }}.
+           {% trans "Page" %} {{ violations.number }} {% trans "of" %} {{ violations.paginator.num_pages }}.
         </span>
 
         {% if violations.has_next %}
-            <a href="?page={{ violations.next_page_number }}">next</a>
+        <a href="?page={{ violations.next_page_number }}">{% trans "next" %}</a>
         {% endif %}
     </span>
 </div>

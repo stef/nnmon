@@ -45,7 +45,7 @@ def activate(request):
     v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     v.activationid=''
     v.save()
-    messages.add_message(request, messages.INFO, 'Thank you for verifying your submission.')
+    messages.add_message(request, messages.INFO, _('Thank you for verifying your submission.'))
     return HttpResponseRedirect('/') # Redirect after POST
 
 def add(request):
@@ -53,8 +53,8 @@ def add(request):
         form = AddViolation(request.POST)
         if form.is_valid():
             actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-            msg = MIMEText("Your verification key is %s/activate?key=%s\n" % (settings.ROOT_URL or 'http://localhost:8001/',actid))
-            msg['Subject'] = 'NNMon submission verification'
+            msg = MIMEText(_("Your verification key is %s/activate?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/',actid))
+            msg['Subject'] = _('NNMon submission verification')
             msg['From'] = 'nnmon@nnmon.lqdn.fr'
             msg['To'] = form.cleaned_data['email']
             s = smtplib.SMTP('localhost')
@@ -92,7 +92,7 @@ def add(request):
                 a.storage.save(sname,f)
                 a.save()
 
-            messages.add_message(request, messages.INFO, 'Thank you for submitting this report, you will receive a verification email shortly.')
+            messages.add_message(request, messages.INFO, _('Thank you for submitting this report, you will receive a verification email shortly.'))
             return HttpResponseRedirect('/') # Redirect after POST
     else:
         form = AddViolation()
