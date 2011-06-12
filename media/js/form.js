@@ -1,6 +1,7 @@
 function init_form() {
   $('.help_text').hide();
-  $(".fieldWrapper").hover(function(event) {$(this).find('.help_text').toggle();});
+  $(".fieldWrapper").focusin(function(event) {$(this).find('.help_text').show();});
+  $(".fieldWrapper").focusout(function(event) {$(this).find('.help_text').hide();});
   $("#show_optionals").hide();
   $("#id_contractual").click(function(event) {
                                $("#id_contract_excerpt_parent").parent().toggle();
