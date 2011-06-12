@@ -12,6 +12,7 @@ from django.forms.fields import Field, EMPTY_VALUES
 from django.core.files.uploadedfile import UploadedFile
 from django.forms.widgets import FileInput
 from django.forms.util import ErrorList, ValidationError, flatatt
+from django.utils.safestring import mark_safe
 
 class MultiFileInput(FileInput):
     """
@@ -45,7 +46,7 @@ class MultiFileInput(FileInput):
         link = self.link(name, value, count, final_attrs)
         fields = self.fields(name, value, count, final_attrs)
 
-        return js+link+fields
+        return mark_safe(js+link+fields)
 
     def fields(self, name, value, count, attrs=None):
         """
