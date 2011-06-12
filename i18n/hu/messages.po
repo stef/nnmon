@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-04-29 21:17+0200\n"
+"POT-Creation-Date: 2011-06-13 00:34+0200\n"
 "PO-Revision-Date: 2011-04-29 17:53+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -17,383 +17,401 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
 
-#: bt/forms.py:18
+#: bt/forms.py:20
 msgid "EU member state where the restriction is reported."
 msgstr ""
 
-#: bt/forms.py:19
+#: bt/forms.py:21
 msgid "The ISP or operator providing the Internet service."
 msgstr ""
 
-#: bt/forms.py:20
+#: bt/forms.py:22
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
 
-#: bt/forms.py:21
+#: bt/forms.py:23
 msgid ""
 "Please describe the symptoms you are experiencing. What service or site, "
 "or person is unavailable or seems artificially slowed down."
 msgstr ""
 
-#: bt/forms.py:22
-msgid "The what is the affected resource."
-msgstr ""
-
-#: bt/forms.py:23
-msgid "Please specify the name of the affected resource."
-msgstr ""
-
 #: bt/forms.py:24
-msgid "Is the Resource Blocked or otherwise discrimated?"
+msgid ""
+"We need your email to validate your report. We're not storing the email "
+"later on."
 msgstr ""
 
 #: bt/forms.py:25
-msgid "Is the Internet connection over mobile or fixed line?"
+msgid "We need your some name to identify you later on."
 msgstr ""
 
 #: bt/forms.py:26
-msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
 #: bt/forms.py:27
-msgid "Is the restriction described in the users contract?"
+msgid "The what is the affected resource."
 msgstr ""
 
 #: bt/forms.py:28
-msgid ""
-"Please copy the relevant section describing the restriction from the user"
-" contract."
+msgid "Please specify the name of the affected resource."
 msgstr ""
 
 #: bt/forms.py:29
+msgid "Is the Resource Blocked or otherwise discrimated?"
+msgstr ""
+
+#: bt/forms.py:30
+msgid "Is the Internet connection over mobile or fixed line?"
+msgstr ""
+
+#: bt/forms.py:31
+msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgstr ""
+
+#: bt/forms.py:32
 msgid ""
 "Is there another offer provided by this Operator which removes this "
 "restriction?"
 msgstr ""
 
-#: bt/models.py:5
-msgid "Belgium"
+#: bt/forms.py:33
+msgid "Is the restriction described in the users contract?"
+msgstr ""
+
+#: bt/forms.py:34
+msgid ""
+"Please copy the relevant section describing the restriction from the user"
+" contract."
+msgstr ""
+
+#: bt/forms.py:35
+msgid ""
+"Unfortunately we must protect against automatic attack, please forgive us"
+" this inconvenience."
 msgstr ""
 
 #: bt/models.py:6
-msgid "Bulgaria"
+msgid "Belgium"
 msgstr ""
 
 #: bt/models.py:7
-msgid "Czech Republic"
+msgid "Bulgaria"
 msgstr ""
 
 #: bt/models.py:8
-msgid "Denmark"
+msgid "Czech Republic"
 msgstr ""
 
 #: bt/models.py:9
-msgid "Germany"
+msgid "Denmark"
 msgstr ""
 
 #: bt/models.py:10
-msgid "Estonia"
+msgid "Germany"
 msgstr ""
 
 #: bt/models.py:11
-msgid "Ireland"
+msgid "Estonia"
 msgstr ""
 
 #: bt/models.py:12
-msgid "Greece"
+msgid "Ireland"
 msgstr ""
 
 #: bt/models.py:13
-msgid "Spain"
+msgid "Greece"
 msgstr ""
 
 #: bt/models.py:14
-msgid "France"
+msgid "Spain"
 msgstr ""
 
 #: bt/models.py:15
-msgid "Italy"
+msgid "France"
 msgstr ""
 
 #: bt/models.py:16
-msgid "Cyprus"
+msgid "Italy"
 msgstr ""
 
 #: bt/models.py:17
-msgid "Latvia"
+msgid "Cyprus"
 msgstr ""
 
 #: bt/models.py:18
-msgid "Lithuania"
+msgid "Latvia"
 msgstr ""
 
 #: bt/models.py:19
-msgid "Luxembourg"
+msgid "Lithuania"
 msgstr ""
 
 #: bt/models.py:20
-msgid "Hungary"
+msgid "Luxembourg"
 msgstr ""
 
 #: bt/models.py:21
-msgid "Malta"
+msgid "Hungary"
 msgstr ""
 
 #: bt/models.py:22
-msgid "Netherlands"
+msgid "Malta"
 msgstr ""
 
 #: bt/models.py:23
-msgid "Austria"
+msgid "Netherlands"
 msgstr ""
 
 #: bt/models.py:24
-msgid "Poland"
+msgid "Austria"
 msgstr ""
 
 #: bt/models.py:25
-msgid "Portugal"
+msgid "Poland"
 msgstr ""
 
 #: bt/models.py:26
-msgid "Romania"
+msgid "Portugal"
 msgstr ""
 
 #: bt/models.py:27
-msgid "Slovenia"
+msgid "Romania"
 msgstr ""
 
 #: bt/models.py:28
-msgid "Slovakia"
+msgid "Slovenia"
 msgstr ""
 
 #: bt/models.py:29
-msgid "Finland"
+msgid "Slovakia"
 msgstr ""
 
 #: bt/models.py:30
-msgid "Sweden"
+msgid "Finland"
 msgstr ""
 
 #: bt/models.py:31
+msgid "Sweden"
+msgstr ""
+
+#: bt/models.py:32
 msgid "United Kingdom "
 msgstr ""
 
-#: bt/models.py:35
+#: bt/models.py:36
 msgid "port"
 msgstr ""
 
-#: bt/models.py:36
+#: bt/models.py:37
 msgid "protocol"
 msgstr ""
 
-#: bt/models.py:37
+#: bt/models.py:38
 msgid "service"
 msgstr ""
 
-#: bt/models.py:38
+#: bt/models.py:39
 msgid "site"
 msgstr ""
 
-#: bt/models.py:39
+#: bt/models.py:40
 msgid "user"
 msgstr ""
 
-#: bt/models.py:40
+#: bt/models.py:41
 msgid "ip"
 msgstr ""
 
-#: bt/models.py:43
+#: bt/models.py:44
 msgid "Blocking"
 msgstr ""
 
-#: bt/models.py:44
+#: bt/models.py:45
 msgid "Throttling"
 msgstr ""
 
-#: bt/models.py:47
+#: bt/models.py:48
 msgid "Fixed"
 msgstr ""
 
-#: bt/models.py:48
+#: bt/models.py:49
 msgid "Mobile"
 msgstr ""
 
-#: templates/add.html:16
-msgid "New Violation"
+#: bt/multifile.py:135
+msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
 
-#: templates/add.html:19
-msgid "Show expert details"
+#: bt/multifile.py:137
+msgid "No file was submitted."
 msgstr ""
 
-#: templates/add.html:28
-msgid "save"
+#: bt/multifile.py:141
+msgid "The submitted file is empty."
 msgstr ""
 
-#: templates/registration/activate.html:8
-msgid "Your account activation might work now. If not mail me."
+#: bt/multifile.py:144
+msgid "An incorrect number of files were uploaded."
 msgstr ""
 
-#: templates/registration/activation_complete.html:8
-msgid "Your account is now active."
+#: bt/views.py:48
+msgid "Thank you for verifying your submission."
 msgstr ""
 
-#: templates/registration/activation_email.txt:4
-msgid "Here's your activation key"
-msgstr ""
-
-#: templates/registration/activation_email.txt:7
-msgid "Please click on this link to activate your account"
-msgstr ""
-
-#: templates/registration/activation_email.txt:10
-msgid "This link will expire in:"
-msgstr ""
-
-#: templates/registration/activation_email.txt:10
-msgid "days."
-msgstr ""
-
-#: templates/registration/login.html:13
-#: templates/registration/password_reset_confirm.html:4
-#: templates/registration/password_reset_form.html:4
-msgid "Password reset"
-msgstr ""
-
-#: templates/registration/password_change_done.html:4
-msgid "Password change successful"
-msgstr ""
-
-#: templates/registration/password_change_done.html:8
-msgid "Your password was changed."
-msgstr ""
-
-#: templates/registration/password_change_form.html:4
-msgid "Password change"
-msgstr ""
-
-#: templates/registration/password_change_form.html:12
-msgid "Please correct the error below."
-msgid_plural "Please correct the errors below."
-msgstr[0] ""
-
-#: templates/registration/password_change_form.html:16
-msgid ""
-"Please enter your old password, for security's sake, and then enter your "
-"new password twice so we can verify you typed it in correctly."
-msgstr ""
-
-#: templates/registration/password_change_form.html:22
-msgid "Old password"
-msgstr ""
-
-#: templates/registration/password_change_form.html:27
-msgid "New password"
-msgstr ""
-
-#: templates/registration/password_change_form.html:32
-msgid "Password (again)"
-msgstr ""
-
-#: templates/registration/password_change_form.html:38
-#: templates/registration/password_reset_confirm.html:19
-msgid "Change my password"
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:4
-msgid "Password reset complete"
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:8
-msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:10
-msgid "Log in"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:10
-msgid "Enter new password"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:12
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:16
-msgid "New password:"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:18
-msgid "Confirm password:"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:24
-msgid "Password reset unsuccessful"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:26
-msgid ""
-"The password reset link was invalid, possibly because it has already been"
-" used.  Please request a new password reset."
-msgstr ""
-
-#: templates/registration/password_reset_done.html:4
-msgid "Password reset successful"
-msgstr ""
-
-#: templates/registration/password_reset_done.html:8
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-
-#: templates/registration/password_reset_email.html:2
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:3
+#: bt/views.py:56
 #, python-format
-msgid "for your user account at %(site_name)s"
+msgid "Your verification key is %s/activate?key=%s\n"
 msgstr ""
 
-#: templates/registration/password_reset_email.html:5
-msgid "Please go to the following page and choose a new password:"
+#: bt/views.py:57
+msgid "NNMon submission verification"
 msgstr ""
 
-#: templates/registration/password_reset_email.html:9
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:11
-msgid "Thanks for using our site!"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:13
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
-
-#: templates/registration/password_reset_form.html:8
+#: bt/views.py:95
 msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions for setting a new one."
+"Thank you for submitting this report, you will receive a verification "
+"email shortly."
 msgstr ""
 
-#: templates/registration/password_reset_form.html:12
-msgid "E-mail address:"
-msgstr ""
+#~ msgid "New Violation"
+#~ msgstr ""
 
-#: templates/registration/password_reset_form.html:12
-msgid "Reset my password"
-msgstr ""
+#~ msgid "Show expert details"
+#~ msgstr ""
 
-#: templates/registration/registration_complete.html:8
-msgid "An email containing account-activation information has been sent."
-msgstr ""
+#~ msgid "save"
+#~ msgstr ""
+
+#~ msgid "Your account activation might work now. If not mail me."
+#~ msgstr ""
+
+#~ msgid "Your account is now active."
+#~ msgstr ""
+
+#~ msgid "Here's your activation key"
+#~ msgstr ""
+
+#~ msgid "Please click on this link to activate your account"
+#~ msgstr ""
+
+#~ msgid "This link will expire in:"
+#~ msgstr ""
+
+#~ msgid "days."
+#~ msgstr ""
+
+#~ msgid "Password reset"
+#~ msgstr ""
+
+#~ msgid "Password change successful"
+#~ msgstr ""
+
+#~ msgid "Your password was changed."
+#~ msgstr ""
+
+#~ msgid "Password change"
+#~ msgstr ""
+
+#~ msgid "Please correct the error below."
+#~ msgid_plural "Please correct the errors below."
+#~ msgstr[0] ""
+
+#~ msgid ""
+#~ "Please enter your old password, for "
+#~ "security's sake, and then enter your "
+#~ "new password twice so we can "
+#~ "verify you typed it in correctly."
+#~ msgstr ""
+
+#~ msgid "Old password"
+#~ msgstr ""
+
+#~ msgid "New password"
+#~ msgstr ""
+
+#~ msgid "Password (again)"
+#~ msgstr ""
+
+#~ msgid "Change my password"
+#~ msgstr ""
+
+#~ msgid "Password reset complete"
+#~ msgstr ""
+
+#~ msgid "Your password has been set.  You may go ahead and log in now."
+#~ msgstr ""
+
+#~ msgid "Log in"
+#~ msgstr ""
+
+#~ msgid "Enter new password"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please enter your new password twice "
+#~ "so we can verify you typed it "
+#~ "in correctly."
+#~ msgstr ""
+
+#~ msgid "New password:"
+#~ msgstr ""
+
+#~ msgid "Confirm password:"
+#~ msgstr ""
+
+#~ msgid "Password reset unsuccessful"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The password reset link was invalid, "
+#~ "possibly because it has already been "
+#~ "used.  Please request a new password "
+#~ "reset."
+#~ msgstr ""
+
+#~ msgid "Password reset successful"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We've e-mailed you instructions for "
+#~ "setting your password to the e-mail "
+#~ "address you submitted. You should be "
+#~ "receiving it shortly."
+#~ msgstr ""
+
+#~ msgid "You're receiving this e-mail because you requested a password reset"
+#~ msgstr ""
+
+#~ msgid "for your user account at %(site_name)s"
+#~ msgstr ""
+
+#~ msgid "Please go to the following page and choose a new password:"
+#~ msgstr ""
+
+#~ msgid "Your username, in case you've forgotten:"
+#~ msgstr ""
+
+#~ msgid "Thanks for using our site!"
+#~ msgstr ""
+
+#~ msgid "The %(site_name)s team"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Forgotten your password? Enter your "
+#~ "e-mail address below, and we'll e-mail"
+#~ " instructions for setting a new one."
+#~ msgstr ""
+
+#~ msgid "E-mail address:"
+#~ msgstr ""
+
+#~ msgid "Reset my password"
+#~ msgstr ""
+
+#~ msgid "An email containing account-activation information has been sent."
+#~ msgstr ""
 
