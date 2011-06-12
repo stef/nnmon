@@ -61,6 +61,7 @@ class Violation(models.Model):
     contractual = models.BooleanField()
     contract_excerpt = models.TextField()
     loophole = models.BooleanField()
+    activationid= models.CharField(max_length=128)
 
 class Comment(models.Model):
     submitter_email = models.EmailField()

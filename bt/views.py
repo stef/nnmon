@@ -6,10 +6,13 @@ from django.core.files import File
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
+from django.contrib import messages
 from models import Violation, Attachment, Comment
 from tempfile import mkstemp
 from datetime import datetime
-import hashlib, os, re, json, hashlib
+import hashlib, os, re, json, smtplib
+from random import randint
+from email.mime.text import MIMEText
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup, Comment as BComment
 
@@ -38,10 +41,25 @@ def sanitizeHtml(value, base_url=None):
 
     return soup.renderContents().decode('utf8')
 
+def activate(request):
+    v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    v.activationid=''
+    v.save()
+    messages.add_message(request, messages.INFO, 'Thank you for verifying your submission.')
+    return HttpResponseRedirect('/') # Redirect after POST
+
 def add(request):
     if request.method == 'POST':
         form = AddViolation(request.POST)
         if form.is_valid():
+            actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
+            msg = MIMEText("Your verification key is %s/activate?key=%s\n" % (settings.ROOT_URL or 'http://localhost:8001/',actid))
+            msg['Subject'] = 'NNMon submission verification'
+            msg['From'] = 'nnmon@nnmon.lqdn.fr'
+            msg['To'] = form.cleaned_data['email']
+            s = smtplib.SMTP('localhost')
+            s.sendmail('nnmon@nnmon.lqdn.fr', [form.cleaned_data['email']], msg.as_string())
+            s.quit()
             v=Violation(
                 country = form.cleaned_data['country'],
                 operator = form.cleaned_data['operator'],
@@ -53,7 +71,8 @@ def add(request):
                 temporary = form.cleaned_data['temporary'],
                 contractual = form.cleaned_data['contractual'],
                 contract_excerpt = sanitizeHtml(form.cleaned_data['contract_excerpt']),
-                loophole = form.cleaned_data['loophole']
+                loophole = form.cleaned_data['loophole'],
+                activationid = actid
                 )
             v.save()
             c = Comment(
@@ -72,6 +91,8 @@ def add(request):
                 sname=m.hexdigest()
                 a.storage.save(sname,f)
                 a.save()
+
+            messages.add_message(request, messages.INFO, 'Thank you for submitting this report, you will receive a verification email shortly.')
             return HttpResponseRedirect('/') # Redirect after POST
     else:
         form = AddViolation()
@@ -83,12 +104,12 @@ def add(request):
 
 def ajax(request, country=None, operator=None):
     if not operator:
-        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country)])))))
+        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country,activationid='')])))))
     else:
-        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country).filter(operator=operator)])))))
+        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
 
 def index(request):
-    v_list = Violation.objects.all()
+    v_list = Violation.objects.filter(activationid='')
     paginator = Paginator(v_list, 25)
 
     page = request.GET.get('page','1')
@@ -99,7 +120,7 @@ def index(request):
     except EmptyPage:
         violations = paginator.page(paginator.num_pages)
 
-    return render_to_response('list.html', {"violations": violations})
+    return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
 
 def view(request,id):
     v = get_object_or_404(Violation, pk=id)
