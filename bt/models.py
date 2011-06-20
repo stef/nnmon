@@ -98,7 +98,7 @@ class Attachment(models.Model):
         return self.name
 
 class Confirmation(models.Model):
-    key=models.CharField(max_length=64)
+    key=models.CharField(max_length=64, blank=True)
     email=models.EmailField()
     violation = models.ForeignKey(Violation)
 
