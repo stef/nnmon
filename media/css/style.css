@@ -21,6 +21,11 @@ li { list-style: none; }
 #report dd { display: inline; }
 #auth { float: right; clear: both; }
 
+.confirm { display: inline; position: relative; }
+.confirm:hover > div { display: block; }
+.confirm_popup { display: none; position: absolute; right: 0; border: 2px solid #454545; padding: 10px; background: #F7F7F7; z-index: 20; }
+.confirm_thanks { width: 17.2em; height: 6.7em; }
+
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
 

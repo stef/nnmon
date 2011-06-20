@@ -7,7 +7,8 @@ from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
-from models import Violation, Attachment, Comment
+from django.utils.translation import ugettext_lazy as _
+from models import Violation, Attachment, Comment, Confirmation
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json, smtplib
@@ -48,18 +49,35 @@ def activate(request):
     messages.add_message(request, messages.INFO, _('Thank you for verifying your submission.'))
     return HttpResponseRedirect('/') # Redirect after POST
 
+def confirm(request, id, name=None):
+    if name:
+        if Confirmation.objects.filter(email=name, violation=id).count()==0:
+            actid=sendverifymail('confirm/',name)
+            c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
+            c.save()
+        return HttpResponse('<div class="confirm_thanks">Thank you for your confirmation</div>')
+    c=Confirmation.objects.get(key=id)
+    if c:
+        c.key=''
+        c.save()
+    return HttpResponse('<div class="confirm_thanks">Thank you for verifying your confirmation</div>')
+
+def sendverifymail(service,to):
+    actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
+    msg = MIMEText(_("Your verification key is %s/%s%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
+    msg['Subject'] = _('NNMon submission verification')
+    msg['From'] = 'nnmon@nnmon.lqdn.fr'
+    msg['To'] = to
+    s = smtplib.SMTP('localhost')
+    s.sendmail('nnmon@nnmon.lqdn.fr', [to], msg.as_string())
+    s.quit()
+    return actid
+
 def add(request):
     if request.method == 'POST':
         form = AddViolation(request.POST)
         if form.is_valid():
-            actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-            msg = MIMEText(_("Your verification key is %s/activate?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/',actid))
-            msg['Subject'] = _('NNMon submission verification')
-            msg['From'] = 'nnmon@nnmon.lqdn.fr'
-            msg['To'] = form.cleaned_data['email']
-            s = smtplib.SMTP('localhost')
-            s.sendmail('nnmon@nnmon.lqdn.fr', [form.cleaned_data['email']], msg.as_string())
-            s.quit()
+            actid=sendverifymail('activate?key=',form.cleaned_data['email'])
             v=Violation(
                 country = form.cleaned_data['country'],
                 operator = form.cleaned_data['operator'],

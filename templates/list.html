@@ -9,7 +9,12 @@
     <script type="text/javascript">
      $(document).ready(function() {
            $("#sortedlist").tablesorter();
-     });
+           $('.confirm_form').submit(function() {
+              var self=this;
+              $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
+              return false;
+              });
+           });
     </script>
 {% endblock %}
 
@@ -35,6 +40,7 @@
    <th>{% trans "contractual" %}</th>
    <th>{% trans "contractual_excerpt" %}</th>
    <th>{% trans "loophole" %}</th>
+   <th>{% trans "confirmations" %}</th>
 </tr>
   </thead>
   <tbody>
@@ -51,6 +57,20 @@
     <td>{{ violation.contractual }}</td>
     <td>{{ violation.contractual_excerpt }}</td>
     <td>{{ violation.loophole }}</td>
+    <td>{{ violation.confirmations }} <div class="confirm"><a>Confirm this violation</a>
+          <div class="hidden confirm_popup">
+             <h3>Confirmation</h3>
+             <p>
+             <form method="get" class="confirm_form" id="{{ violation.pk }}">
+                E-mail: <input type="text" name="email" /><br />
+                //required<br />
+                <input type="hidden" value="{{ violation.pk }}" />
+                <input type="submit" value="confirm" />
+             </form>
+             </p>
+          </div>
+       </div>
+    </td>
 </tr>
 {% endfor %}
   </tbody>

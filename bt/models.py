@@ -63,6 +63,9 @@ class Violation(models.Model):
     loophole = models.BooleanField()
     activationid= models.CharField(max_length=128)
 
+    def confirmations(self):
+        return self.confirmation_set.filter(key='').count()
+
 class Comment(models.Model):
     submitter_email = models.EmailField()
     submitter_name = models.CharField(max_length=20)
@@ -74,6 +77,11 @@ class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
     name= models.CharField(max_length=512)
     comment = models.ForeignKey(Comment)
+
+class Confirmation(models.Model):
+    key=models.CharField(max_length=64)
+    email=models.EmailField()
+    violation = models.ForeignKey(Violation)
 
 class ViolationModerator(CommentModerator):
     email_notification = True
