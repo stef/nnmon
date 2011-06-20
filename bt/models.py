@@ -66,6 +66,13 @@ class Violation(models.Model):
     def confirmations(self):
         return self.confirmation_set.filter(key='').count()
 
+    class Admin:
+        pass
+
+    def __unicode__(self):
+        return "#%s %s/%s" % (self.pk, self.country, self.operator)
+
+
 class Comment(models.Model):
     submitter_email = models.EmailField()
     submitter_name = models.CharField(max_length=20)
@@ -73,15 +80,30 @@ class Comment(models.Model):
     timestamp = models.DateTimeField()
     violation = models.ForeignKey(Violation)
 
+    class Admin:
+        pass
+
+    def __unicode__(self):
+        return "Comment #%s" % (self.pk)
+
 class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
     name= models.CharField(max_length=512)
     comment = models.ForeignKey(Comment)
 
+    class Admin:
+        pass
+
+    def __unicode__(self):
+        return self.name
+
 class Confirmation(models.Model):
     key=models.CharField(max_length=64)
     email=models.EmailField()
     violation = models.ForeignKey(Violation)
+
+    class Admin:
+        pass
 
 class ViolationModerator(CommentModerator):
     email_notification = True
