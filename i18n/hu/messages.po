@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-06-13 00:41+0200\n"
+"POT-Creation-Date: 2011-07-04 23:50+0200\n"
 "PO-Revision-Date: 2011-04-29 17:53+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -52,7 +52,7 @@ msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
 #: bt/forms.py:27
-msgid "The what is the affected resource."
+msgid "What is the affected resource."
 msgstr ""
 
 #: bt/forms.py:28
@@ -89,8 +89,8 @@ msgstr ""
 
 #: bt/forms.py:35
 msgid ""
-"Unfortunately we must protect against automatic attack, please forgive us"
-" this inconvenience."
+"Unfortunately we must protect against automatic attacks, please forgive "
+"us this inconvenience."
 msgstr ""
 
 #: bt/models.py:6
@@ -257,22 +257,58 @@ msgstr ""
 msgid "An incorrect number of files were uploaded."
 msgstr ""
 
-#: bt/views.py:48
+#: bt/views.py:51
+#, python-format
+msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
+msgstr ""
+
+#: bt/views.py:52
+msgid "NNMon submission approval"
+msgstr ""
+
+#: bt/views.py:60
 msgid "Thank you for verifying your submission."
 msgstr ""
 
-#: bt/views.py:56
-#, python-format
-msgid "Your verification key is %s/activate?key=%s\n"
+#: bt/views.py:66
+msgid "No such key"
 msgstr ""
 
-#: bt/views.py:57
+#: bt/views.py:73
+msgid "Thank you for approving the submission."
+msgstr ""
+
+#: bt/views.py:77
+msgid "Thank you for deleting the submission."
+msgstr ""
+
+#: bt/views.py:96
+#, python-format
+msgid ""
+"Thank you for submitting a new report. To finalize your submission please"
+" confirm using your validation key.\n"
+"Your verification key is %s/%s%s\n"
+msgstr ""
+
+#: bt/views.py:97
 msgid "NNMon submission verification"
 msgstr ""
 
-#: bt/views.py:95
+#: bt/views.py:144
 msgid ""
 "Thank you for submitting this report, you will receive a verification "
 "email shortly."
 msgstr ""
+
+#~ msgid "The what is the affected resource."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Unfortunately we must protect against "
+#~ "automatic attack, please forgive us this"
+#~ " inconvenience."
+#~ msgstr ""
+
+#~ msgid "Your verification key is %s/activate?key=%s\n"
+#~ msgstr ""
 
