@@ -4,18 +4,20 @@
 {% block styles %}
 {% endblock %}
 {% block scripts %}
-<script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
-    <script type="text/javascript" src="{%media_url%}/js/jquery.tablesorter.min.js"> </script>
-    <script type="text/javascript">
-     $(document).ready(function() {
-           $("#sortedlist").tablesorter();
-           $('.confirm_form').submit(function() {
-              var self=this;
-              $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
-              return false;
-              });
-           });
-    </script>
+  <script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
+  <script type="text/javascript" src="{%media_url%}/js/jquery.tablesorter.min.js"> </script>
+  <script type="text/javascript" src="{%media_url%}/js/picnet.table.filter.min.js"></script>
+  <script type="text/javascript">
+   $(document).ready(function() {
+     $("#sortedlist").tablesorter();
+     $('#sortedlist').tableFilter();
+     $('.confirm_form').submit(function() {
+       var self=this;
+       $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
+       return false;
+     });
+   });
+  </script>
 {% endblock %}
 
 {%block content%}
@@ -30,18 +32,18 @@
 <table class="listing tablesorter" id='sortedlist'>
   <thead>
 <tr>
-   <th>{% trans "id" %}</th>
-   <th>{% trans "country" %}</th>
-   <th>{% trans "operator" %}</th>
-   <th>{% trans "contract" %}</th>
-   <th>{% trans "resource" %}</th>
-   <th>{% trans "type" %}</th>
-   <th>{% trans "media" %}</th>
-   <th>{% trans "temporary" %}</th>
-   <th>{% trans "contractual" %}</th>
-   <th>{% trans "contractual_excerpt" %}</th>
-   <th>{% trans "loophole" %}</th>
-   <th>{% trans "confirmations" %}</th>
+   <th filter='false'>{% trans "id" %}</th>
+   <th filter-type='ddl'>{% trans "country" %}</th>
+   <th filter-type='ddl'>{% trans "operator" %}</th>
+   <th filter-type='ddl'>{% trans "contract" %}</th>
+   <th filter-type='ddl'>{% trans "resource" %}</th>
+   <th filter-type='ddl'>{% trans "type" %}</th>
+   <th filter-type='ddl'>{% trans "media" %}</th>
+   <th filter-type='ddl'>{% trans "temporary" %}</th>
+   <th filter-type='ddl'>{% trans "contractual" %}</th>
+   <th filter='false'>{% trans "contractual_excerpt" %}</th>
+   <th filter-type='ddl'>{% trans "loophole" %}</th>
+   <th filter='false'>{% trans "confirmations" %}</th>
 </tr>
   </thead>
   <tbody>
