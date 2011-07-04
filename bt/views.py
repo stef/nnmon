@@ -7,6 +7,7 @@ from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from models import Violation, Attachment, Comment, Confirmation
 from tempfile import mkstemp
@@ -44,10 +45,38 @@ def sanitizeHtml(value, base_url=None):
 
 def activate(request):
     v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
-    v.activationid=''
-    v.save()
-    messages.add_message(request, messages.INFO, _('Thank you for verifying your submission.'))
+    if v:
+        actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
+        to=[x.email for x in User.objects.filter(groups__name='moderator')]
+        msg = MIMEText(_("A new report was submitted. To approve click here: %s/moderate/?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', actid))
+        msg['Subject'] = _('NNMon submission approval')
+        msg['From'] = 'nnmon@nnmon.lqdn.fr'
+        msg['To'] = ', '.join(to)
+        s = smtplib.SMTP('localhost')
+        s.sendmail('nnmon@nnmon.lqdn.fr', to, msg.as_string())
+        s.quit()
+        v.activationid=actid
+        v.save()
+        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission.'))
     return HttpResponseRedirect('/') # Redirect after POST
+
+def moderate(request):
+    v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    if not v:
+        messages.add_message(request, messages.INFO, _('No such key'))
+        return HttpResponseRedirect('/') # Redirect after POST
+    if request.GET.get('action','')=='approve':
+        if settings.TWITTER_API:
+            settings.TWITTER_API.PostUpdate("New infringement reported for %s (%s) %s" % (v.operator, v.country, v.contract))
+        v.activationid=''
+        v.save()
+        messages.add_message(request, messages.INFO, _('Thank you for approving the submission.'))
+        return HttpResponseRedirect('/') # Redirect after POST
+    if request.GET.get('action','')=='delete':
+        v.delete()
+        messages.add_message(request, messages.INFO, _('Thank you for deleting the submission.'))
+        return HttpResponseRedirect('/') # Redirect after POST
+    return render_to_response('view.html', { 'v': v, 'key': request.GET.get('key') },context_instance=RequestContext(request))
 
 def confirm(request, id, name=None):
     if name:

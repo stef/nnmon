@@ -70,6 +70,7 @@ $(document).ready(function() {
   </li>
 </ul>
   {%endif%}
+  {% if not key %}
   <h3>{% trans "Comments" %}</h3>
   {% render_comment_list for v %}
   <h3>{% trans "Comment" %}</h3>
@@ -77,4 +78,8 @@ $(document).ready(function() {
   <div id="comment_form">
     {% render_comment_form for v %}
   </div>
+  {% else %}
+  <a href='/moderate/?key={{key}}&action=approve'>Approve Submission</a>
+  <a href='/moderate/?key={{key}}&action=delete'>Delete Submission</a>
+  {% endif %}
 {%endblock%}
