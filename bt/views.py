@@ -64,7 +64,7 @@ def confirm(request, id, name=None):
 
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(_("Your verification key is %s/%s%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
+    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
     msg['Subject'] = _('NNMon submission verification')
     msg['From'] = 'nnmon@nnmon.lqdn.fr'
     msg['To'] = to
