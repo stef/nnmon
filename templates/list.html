@@ -19,6 +19,7 @@
 {% endblock %}
 
 {%block content%}
+<div id='container'>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
@@ -90,5 +91,6 @@
         <a href="?page={{ violations.next_page_number }}">{% trans "next" %}</a>
         {% endif %}
     </span>
+</div>
 </div>
 {%endblock%}
