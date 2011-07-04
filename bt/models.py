@@ -59,9 +59,9 @@ class Violation(models.Model):
     media = models.CharField( max_length=20, choices=MEDIA)
     temporary = models.BooleanField( )
     contractual = models.BooleanField()
-    contract_excerpt = models.TextField()
+    contract_excerpt = models.TextField(blank=True)
     loophole = models.BooleanField()
-    activationid= models.CharField(max_length=128)
+    activationid= models.CharField(max_length=128, blank=True)
 
     def confirmations(self):
         return self.confirmation_set.filter(key='').count()
