@@ -16,13 +16,13 @@ function focushandlers(ed) {
     var realID = $('#'+ed.id+'_tbl');
     tinymce.dom.Event.add(ed.getWin(), 'focus', function(e) {
         if($(realID)) {
-            console.log(realID);
+            //console.log(realID);
             realID.parents('.fieldWrapper').find('.help_text').show();
         }
     });
     tinymce.dom.Event.add(ed.getWin(), 'blur', function(e) {
         if($(realID)) {
-            console.log(realID);
+            //console.log(realID);
             realID.parents('.fieldWrapper').find('.help_text').hide();
         }
     });
