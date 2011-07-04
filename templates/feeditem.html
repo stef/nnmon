@@ -1,0 +1,29 @@
+{% load bt %}
+{% load babel %}
+{% load i18n %}
+{%if obj.comment_set.all.0%}
+ <h3>{%trans "Description" %}</h3>
+ <div class="description-node">
+   <div class="description">{{obj.comment_set.all.0.comment|safe}}</div>
+   <span class="submitter">Submitter: {%if obj.comment_set.all.0.submitter_name%}{{obj.comment_set.all.0.submitter_name}}{%else%}{{obj.comment_set.all.0.submitter_email}}{%endif%}</span> - <span class="comment_date">{{obj.comment_set.all.0.timestamp|datetimefmt:"short" }}</span>
+   {%if obj.comment_set.all.0.attachment_set.all%}
+   <div class="attachs">
+      {% trans "Attachments" %}
+     <ul>
+       {%for a in obj.comment_set.all.0.attachment_set.all%}
+       <li><a href="{{a.storage.url}}">{{a.storage.name}}</a></li>
+       {%endfor%}
+     </ul>
+   </div>
+   {%endif%}
+ </div>
+{%endif%}
+<ul>
+{%if obj.media%}<li>{% trans "Media" %}: {{obj.media}}</li>{%endif%}
+{%if obj.resource_name%}<li>{% trans "Affected Resource/service" %}: {{obj.resource_name}}</li>{%endif%}
+{%if obj.type%}<li>{% trans "Type" %}: {{obj.type}}</li>{%endif%}
+{%if obj.temporary%}<li>{% trans "Temporary restriction" %}: {% trans "yes" %}</li>{%endif%}
+{%if obj.loophole%}<li>{% trans "Loophole offering" %}: {% trans yes %}}</li>{%endif%}
+{%if obj.contractual%}<li>{% trans "Contractual restriction" %}: {% trans "yes" %}</li>{%endif%}
+</ul>
+{%if obj.contract_excerpt%}{% trans "Contract excerpt" %}: {{obj.contract_excerpt|safe}}{%endif%}

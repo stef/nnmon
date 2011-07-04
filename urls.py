@@ -2,6 +2,8 @@ from django.conf.urls.defaults import patterns, include, url
 from django.conf import settings
 from django.contrib import admin
 from bt import views as bt
+from bt.feeds import RssSiteNewsFeed, AtomSiteNewsFeed
+
 
 admin.autodiscover()
 
@@ -11,6 +13,8 @@ urlpatterns = patterns('',
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
     (r'^view/(?P<id>[0-9]*)$', bt.view),
+    (r'^rss/$', RssSiteNewsFeed()),
+    (r'^atom/$', AtomSiteNewsFeed()),
     (r'^activate/$', bt.activate),
     (r'^confirm/(?P<id>[0-9a-z]*)$', bt.confirm),
     (r'^confirm/(?P<id>[0-9]*)/(?P<name>.*)$', bt.confirm),
