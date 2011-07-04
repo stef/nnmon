@@ -58,7 +58,7 @@ class MultiFileInput(FileInput):
         """
         Renders a link to add more file input boxes.
         """
-        return u"<a id='add_attach' onclick=\"javascript:new_%(name)s()\">+</a>" % {'name':name}
+        return u"<div><a id='add_attach' onclick=\"javascript:new_%(name)s()\">Add more attachments</a></div>" % {'name':name}
 
     def js(self, name, value, count, attrs=None):
         """
@@ -72,7 +72,7 @@ class MultiFileInput(FileInput):
             b=document.getElementById('%(id)s0');
             c=b.cloneNode(false);
             c.id='%(id)s'+(%(id)s_counter++);
-            b.parentNode.insertBefore(c,b.parentNode.lastChild.nextSibling);
+            b.parentNode.insertBefore(c,b);
         }
         -->
         </script>
