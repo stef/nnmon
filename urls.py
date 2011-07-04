@@ -7,6 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     (r'^$', bt.index),
+    (r'^list/$', bt.list_violations),
     (r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$', bt.ajax),
     (r'^add/$', bt.add),
     (r'^view/(?P<id>[0-9]*)$', bt.view),

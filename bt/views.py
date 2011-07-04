@@ -129,6 +129,16 @@ def ajax(request, country=None, operator=None):
         return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
 
 def index(request):
+    v_list = Violation.objects.filter(activationid='').order_by('id').reverse()[:3]
+    form = AddViolation()
+
+    return render_to_response(
+        'index.html',
+        { 'form': form,
+          'violations': v_list },
+        context_instance=RequestContext(request))
+
+def list_violations(request):
     v_list = Violation.objects.filter(activationid='')
     paginator = Paginator(v_list, 25)
 
