@@ -89,7 +89,8 @@ def confirm(request, id, name=None):
     if c:
         c.key=''
         c.save()
-    return HttpResponse('<div class="confirm_thanks">Thank you for verifying your confirmation</div>')
+    messages.add_message(request, messages.INFO, _('Thank you for verifying your confirmation'))
+    return HttpResponseRedirect('/') # Redirect after POST
 
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
@@ -168,19 +169,11 @@ def index(request):
         context_instance=RequestContext(request))
 
 def list_violations(request):
-    v_list = Violation.objects.filter(activationid='')
-    paginator = Paginator(v_list, 25)
-
-    page = request.GET.get('page','1')
-    try:
-        violations = paginator.page(page)
-    except PageNotAnInteger:
-        violations = paginator.page(1)
-    except EmptyPage:
-        violations = paginator.page(paginator.num_pages)
-
+    violations = Violation.objects.filter(activationid='')
     return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
 
 def view(request,id):
     v = get_object_or_404(Violation, pk=id)
+    if v.activationid:
+        raise Http404
     return render_to_response('view.html', { 'v': v, },context_instance=RequestContext(request))
