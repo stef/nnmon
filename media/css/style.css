@@ -14,25 +14,29 @@ li { list-style: none; }
 #add_attach { cursor: pointer; }
 #show_optionals { text-decoration: underline; color: blue; cursor: pointer; clear: both; }
 #optional { clear: both; }
-#report dt { display: inline-block; }
-#report dd { display: inline; }
+#report dt { display: inline-block; width: 10em; }
+#report dd { display: inline; padding: 0; }
 #auth { float: right; clear: both; }
 
 #container { margin: 2em; }
-#addForm.index { min-height: 700px; width: 40%; padding: 0; margin: 0 1em 0 1em; float: right; }
+#addForm.index { min-height: 300px; width: 40%; padding: 0; margin: 0 1em 0 1em; float: right; }
 #addForm .fieldWrapper label { display: inline-block; min-width: 6em; }
 #addForm.index .help_text { font-size: 0.7em; width: 30%; position: relative; float: right; left: 0; }
 .index #add_attach { cursor: pointer; }
 #id_captcha_1 { width: 2em; }
 .innerfield { display: inline-block; width: 65%; }
 .align-right { text-align: right;}
+dd.text { width: 30%; display: block !important; }
+p label { width: 7em; display: inline-block; }
+.button, #add_attach { display: inline-block; border: 1px solid black; padding: 3px; background: #f5f5f5; }
 
 #content ol li { list-style: decimal; }
 
 .confirm { display: inline; position: relative; }
 .confirm:hover > div { display: block; }
-.confirm_popup { display: none; position: absolute; left: 1.7em; border: 2px solid #454545; padding: 10px; background: #F7F7F7; z-index: 20; }
+.confirm_popup { display: none; position: absolute; left: 0; border: 2px solid #454545; padding: 10px; background: #F7F7F7; z-index: 20; }
 .confirm_thanks { width: 17.2em; height: 6.7em; }
+#footer { text-align: center; }
 
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
