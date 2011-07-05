@@ -98,22 +98,22 @@ $(document).ready(function(){
     </form>
 </div>
 <div id='content'>
-   <h2>How is this working?</h2>
+   <h2>{% trans "How is this working?" %}</h2>
    <ol>
-      <li>People experience some kind of network neutrality violation such as blocking, filtering or throttling, they report their findings on our site.</li>
-      <li>we advertise the new violations to ellicit further confirmations and technical analysis by other customers of the same provider.</li>
-      <li>we assemble a complete dossier on the violation and submit it to the responsible National Regulatory Authority (NRA)</li>
-      <li>in 6 months from the start we submit a complete list to Commissioner Kroes.</li>
+      <li>{% trans "People experience some kind of network neutrality violation such as blocking, filtering or throttling, they report their findings on our site." %}</li>
+      <li>{% trans "we advertise the new violations to ellicit further confirmations and technical analysis by other customers of the same provider." %}</li>
+      <li>{% trans "we assemble a complete dossier on the violation and submit it to the responsible National Regulatory Authority (NRA)" %}</li>
+      <li>{% trans "in 6 months from the start we submit a complete list to Commissioner Kroes." %}</li>
    </ol>
 </div>
 <div id='latest3'>
-   <h2>Latest Infringements</h2>
+   <h2>{% trans "Latest Infringements" %}</h2>
 <table>
   <thead>
     <tr>
-      <th>Infringing offering</th>
-      <th>Confirmed</th>
-      <th>I Confirm</th>
+      <th>{% trans "Infringing offering" %}</th>
+      <th>{% trans "Confirmed" %}</th>
+      <th>{% trans "I Confirm" %}</th>
     </tr>
   </thead>
   {% for violation in violations %}
@@ -123,11 +123,12 @@ $(document).ready(function(){
       <td class='align-right'>{{ violation.confirmations }}</td>
       <td class='align-right'><div class="confirm"><a>+1</a>
       <div class="hidden confirm_popup">
-        <h3>Confirmation</h3>
+        <h3>{% trans "Confirmation" %}</h3>
         <p>
+          <small>{% trans "I attest the existence of this infringement" %}</small>
           <form method="get" class="confirm_form" id="{{ violation.pk }}">
-            E-mail: <input type="text" name="email" /><br />
-            //required<br />
+            {% trans "E-mail" %}: <input type="text" name="email" /><br />
+            //{% trans "required" %}<br />
             <input type="hidden" value="{{ violation.pk }}" />
             <input type="submit" value="confirm" />
           </form>
