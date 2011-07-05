@@ -175,6 +175,8 @@ CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
+DEFAULT_FROM_EMAIL = 'nnmon@nnmon.lqdn.fr'
+
 try:
     from local_settings import *
 except:
