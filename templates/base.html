@@ -19,17 +19,13 @@
     {% endblock %}
 </head>
 <body>
-	<div id="auth" class="menu">
 	{% if user.is_authenticated %}
-		<a href="{%root_url%}/accounts/settings">{{ user.username }}</a>
+     <div id="auth" class="menu">
+		{{ user.username }}
       <a href="{%root_url%}/accounts/logout">{% trans "Logout" %}</a>
       <a href="{%root_url%}/admin/">{% trans "Admin" %}</a>
-	{% else %}
-   <a href="{%root_url%}/accounts/login">{% trans "Login" %}</a>
-   <a href="{%root_url%}/accounts/register">{% trans "Register" %}</a>
+	  </div>
 	{% endif %}
-	</div>
-
 	<div id="menu" class="menu">
       <a href="{%root_url%}/">{% trans "Home" %}</a>
       <a href="{%root_url%}/list">{% trans "Infringements" %}</a>
@@ -42,6 +38,13 @@
 {% endblock %}
 {% block other_content %}
 {% endblock %}
-  </div>
+<hr style="clear: both" />
+<div id='footer'>
+{% if not user.is_authenticated %}
+  <a href="{%root_url%}/accounts/login">{% trans "Login" %}</a>
+{% endif %}
+{% block footer %}
+{% endblock %}
+</div>
 </body>
 </html>
