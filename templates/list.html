@@ -41,13 +41,12 @@
    <th filter-type='ddl'>{% trans "media" %}</th>
    <th filter-type='ddl'>{% trans "temporary" %}</th>
    <th filter-type='ddl'>{% trans "contractual" %}</th>
-   <th filter='false'>{% trans "contractual_excerpt" %}</th>
    <th filter-type='ddl'>{% trans "loophole" %}</th>
    <th filter='false'>{% trans "confirmations" %}</th>
 </tr>
   </thead>
   <tbody>
-{% for violation in violations.object_list %}
+{% for violation in violations %}
 <tr>
     <td><a href="/view/{{violation.pk}}">#{{ violation.pk }}</a></td>
     <td>{{ violation.country }}</td>
@@ -58,7 +57,6 @@
     <td>{{ violation.media }}</td>
     <td>{{ violation.temporary }}</td>
     <td>{{ violation.contractual }}</td>
-    <td>{{ violation.contractual_excerpt }}</td>
     <td>{{ violation.loophole }}</td>
     <td>{{ violation.confirmations }} <div class="confirm"><a>+1</a>
           <div class="hidden confirm_popup">
@@ -78,21 +76,5 @@
 {% endfor %}
   </tbody>
 </table>
-
-<div class="pagination">
-    <span class="step-links">
-        {% if violations.has_previous %}
-            <a href="?page={{ violations.previous_page_number }}">previous</a>
-        {% endif %}
-
-        <span class="current">
-           {% trans "Page" %} {{ violations.number }} {% trans "of" %} {{ violations.paginator.num_pages }}.
-        </span>
-
-        {% if violations.has_next %}
-        <a href="?page={{ violations.next_page_number }}">{% trans "next" %}</a>
-        {% endif %}
-    </span>
-</div>
 </div>
 {%endblock%}
