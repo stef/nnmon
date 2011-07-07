@@ -121,7 +121,7 @@ $(document).ready(function(){
     <tr>
       <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a></td>
       <td class='align-right'>{{ violation.confirmations }}</td>
-      <td class='align-right'><div class="confirm"><a>+1</a>
+      <td class='align-right'><div class="confirm"><a class="button">+1</a>
       <div class="hidden confirm_popup">
         <h3>{% trans "Confirmation" %}</h3>
         <p>
