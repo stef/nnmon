@@ -57,7 +57,7 @@ def activate(request):
         s.quit()
         v.activationid=actid
         v.save()
-        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission.'))
+        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after verifying it\'s a valid report.'))
     return HttpResponseRedirect('/') # Redirect after POST
 
 def moderate(request):
@@ -94,7 +94,7 @@ def confirm(request, id, name=None):
 
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
+    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nYour report will be listed after we assured it is valid.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
     msg['Subject'] = _('NNMon submission verification')
     msg['From'] = 'nnmon@nnmon.lqdn.fr'
     msg['To'] = to
