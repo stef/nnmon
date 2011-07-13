@@ -67,7 +67,10 @@ def moderate(request):
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
         if settings.TWITTER_API:
-            settings.TWITTER_API.PostUpdate("New infringement reported for %s (%s) %s" % (v.operator, v.country, v.contract))
+            try:
+                settings.TWITTER_API.PostUpdate("New infringement reported for %s (%s) %s" % (v.operator, v.country, v.contract))
+            except:
+                pass
         v.activationid=''
         v.save()
         messages.add_message(request, messages.INFO, _('Thank you for approving the submission.'))
