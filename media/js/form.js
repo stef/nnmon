@@ -35,10 +35,6 @@ function init_form() {
   $('#id_contract').change(function() {
                              if($(this).val().length>0) {
                                $('#id_media').parent().parent().show();
-                             }
-                           });
-  $('#id_media').change(function() {
-                             if($(this).val().length>0) {
                                $('#id_comment').parent().parent().show();
                                $('#id_email').parent().parent().show();
                                $('#id_nick').parent().parent().show();
