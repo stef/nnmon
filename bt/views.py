@@ -44,7 +44,10 @@ def sanitizeHtml(value, base_url=None):
     return soup.renderContents().decode('utf8')
 
 def activate(request):
-    v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    try:
+        v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    except:
+        return HttpResponse("Thank you, this has been already activated")
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
@@ -61,7 +64,10 @@ def activate(request):
     return HttpResponseRedirect('/') # Redirect after POST
 
 def moderate(request):
-    v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    try:
+        v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
+    except:
+        return HttpResponse("Thank you, this has been already activated")
     if not v:
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
@@ -85,7 +91,10 @@ def confirm(request, id, name=None):
     if name:
         if Confirmation.objects.filter(email=name, violation=id).count()==0:
             actid=sendverifymail('confirm/',name)
-            c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
+            try:
+                c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
+            except:
+                return HttpResponse("Thank you, this has been already confirmed")
             c.save()
         return HttpResponse('<div class="confirm_thanks">Thank you for your confirmation</div>')
     c=Confirmation.objects.get(key=id)
