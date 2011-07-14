@@ -56,9 +56,9 @@
     <td>{{ violation.resource }}</td>
     <td>{{ violation.type }}</td>
     <td>{{ violation.media }}</td>
-    <td>{{ violation.temporary }}</td>
-    <td>{{ violation.contractual }}</td>
-    <td>{{ violation.loophole }}</td>
+    <td>{% if violation.temporary %}&#10003;{%else%}&#10007;{%endif%}</td>
+    <td>{% if violation.contractual %}&#10003;{%else%}&#10007;{%endif%}</td>
+    <td>{% if violation.loophole %}&#10003;{%else%}&#10007;{%endif%}</td>
     <td>{{ violation.confirmations }} <div class="confirm"><a>+1</a>
           <div class="hidden confirm_popup">
              <h3>Confirmation</h3>
