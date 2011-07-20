@@ -4,6 +4,7 @@
 {% block styles %}
   <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/jquery.autocomplete.css" />
 {% endblock %}
+
 {% block scripts %}
 <script type="text/javascript" src="{%media_url%}/js/tinymce/tiny_mce.js"></script>
 <script type="text/javascript" src="{%media_url%}/js/jquery.1.4.2.min.js"></script>
@@ -71,7 +72,7 @@ $(document).ready(function(){
 {% endblock %}
 
 {%block content%}
-<div id='container'>
+<div id='global'>
   {% if messages %}
   <ul class="messages">
     {% for message in messages %}
@@ -96,24 +97,24 @@ $(document).ready(function(){
     {% csrf_token %}
     <input id="save_button" type="submit" value="{% trans "save" %}" />
     </form>
-</div>
-<div id='content'>
+  </div>
+  <div id='content'>
    <h2>{% trans "On Internet, you decide what you do, right? Not anymore!" %}</h2>
      <p>{% trans "Large telecommunication providers want to control what you do online. They want to block and throttle some of your communications, and charge you for using some online services, content and applications." %}</p>
      <p>{% trans "Now is the time to fight back!" %}</p>
      <p>{% trans "Help us chart all the ways that internet providers are violating our online freedom. Tell us about how *your* landline or mobile Internet provider restricts your connection. You can do so in less than two minutes!" %}</p>
      <p>{% trans "We will report these violations to the European Commission and national authorities and require action to address them." %}</p>
-</div>
-<div id='latest3'>
+  </div>
+  <div id='latest3'>
    <h2>{% trans "Latest Infringements" %}</h2>
-<table>
-  <thead>
-    <tr>
-      <th>{% trans "Infringing offering" %}</th>
-      <th>{% trans "Confirmed" %}</th>
-      <th>{% trans "I Confirm" %}</th>
-    </tr>
-  </thead>
+  <table>
+    <thead>
+      <tr>
+        <th>{% trans "Infringing offering" %}</th>
+        <th>{% trans "Confirmed" %}</th>
+        <th>{% trans "I Confirm" %}</th>
+      </tr>
+    </thead>
   {% for violation in violations %}
   <tbody>
     <tr>
