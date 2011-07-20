@@ -43,6 +43,8 @@ table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
 table.listing div.confirm_popup { right: 0; }
 div#latest3 div.confirm_popup { left: 0; }
 
+.cell-link { display: block; text-decoration: none; color: #000; }
+
 /* tables */
 table.tablesorter {
 	font-family:arial;
