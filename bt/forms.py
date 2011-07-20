@@ -20,7 +20,7 @@ class AddViolation(forms.Form):
    country = forms.ChoiceField(required=True, choices=(('',''),)+tuple(sorted(COUNTRIES,key=itemgetter(1))), help_text=_('EU member state where the restriction is reported.'))
    operator = forms.CharField(required=True, max_length=256, help_text=_('The ISP or operator providing the Internet service.'))
    contract = forms.CharField(required=True, max_length=256, help_text=_('The specific contract at the ISP provider. (please be as specific as possible)'))
-   media = forms.ChoiceField(required=False, choices=(('',''),)+tuple(sorted(MEDIA,key=itemgetter(1))), help_text=_('Is the Internet connection over mobile or fixed line?'))
+   media = forms.ChoiceField(required=False, choices=(('',''),)+tuple(sorted(MEDIA,key=itemgetter(1))), label=_('Is the Internet connection over mobile or fixed line?'))
    comment = forms.CharField(required=True, widget=AdvancedEditor(), label=_('Please describe the symptoms you are experiencing. What service or site, or person is unavailable or seems artificially slowed down.'))
    email = forms.EmailField(required=True, help_text=_("We need your email to validate your report. We're not storing the email later on."))
    nick = forms.CharField(required=False, help_text=_("We need your some name to identify you later on."))
