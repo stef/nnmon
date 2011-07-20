@@ -247,7 +247,7 @@ h1 span {
 
 /* Infrigement form */
 
-#report, #addForm.index {
+#addForm.index {
   position: absolute;
   top: -62px; right: 0;
   width: 300px;
