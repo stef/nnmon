@@ -102,18 +102,41 @@ img {
   border: 0;
   vertical-align: middle;
 }
-h1, h2, h3, h4, div, ul {
-  margin: 0; padding: 0;
-}
 blockquote {
   font-style: italic;
+}
+
+/* Fonts
+---------------------------*/
+
+@font-face {
+  font-family: 'DroidSansRegular';
+  src: url('../fonts/DroidSans-webfont.eot');
+  src:
+    url('../fonts/DroidSans-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/DroidSans-webfont.woff') format('woff'),
+    url('../fonts/DroidSans-webfont.ttf') format('truetype'),
+    url('../fonts/DroidSans-webfont.svg#DroidSansRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'DroidSansBold';
+  src: url('../fonts/DroidSans-Bold-webfont.eot');
+  src:
+    url('../fonts/DroidSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/DroidSans-Bold-webfont.woff') format('woff'),
+    url('../fonts/DroidSans-Bold-webfont.ttf') format('truetype'),
+    url('../fonts/DroidSans-Bold-webfont.svg#DroidSansBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Header
 ---------------------------*/
 
 #header-container {
-  background: url('../images/background.png') repeat-x bottom #f9f9f9;
+  background: url('../img/background.png') repeat-x bottom #f9f9f9;
 }
 #header {
   max-width: 960px;
@@ -121,10 +144,15 @@ blockquote {
   background: #f9f9f9;
 }
 h1 {
-  margin: 25px 0 0 0; padding: .8em 0;
+  margin: 25px 0 0 0; padding: 30px 0;
+  font-family: 'DroidSansBold', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 35px;
+  line-height: 1;
+  font-weight: normal;
 }
 h1 span {
   display: block;
+  font-family: 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: .8em;
   font-weight: normal;
 }
@@ -234,6 +262,9 @@ h1 span {
 #content {
   width: 610px;
 }
+#content h2:first-child {
+  margin-top: 0;
+}
 #content a {
   color: #4183c4;
   text-decoration: none;
@@ -243,6 +274,12 @@ h1 span {
 #content a:focus {
   text-decoration: underline;
   outline: none;
+}
+#content h2 {
+  margin: .9em 0; padding: 0;
+  font-family: 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
 }
 
 /* Infrigement form */
@@ -261,5 +298,8 @@ h1 span {
   border-radius: 2px;
 }
 #report h2 {
-  margin: 0;
+  margin:  0 0 .9em 0; padding: 0;
+  font-family: 'DroidSansBold', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 20px;
+  font-weight: normal;
 }
