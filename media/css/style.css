@@ -3,7 +3,7 @@ img { border: 0; vertical-align: middle; }
 h1, h2, h3, h4, div, ul { padding: 0; margin: 0; }
 li { list-style: none; }
 
-.fieldWrapper { margin: 1.6em; width: 100%; }
+.fieldWrapper { width: 100%; position: relative; }
 .fieldWrapper label { display: inline-block; }
 .help_text { font-size: 0.7em; left: 30px; width: 20%; position: absolute; margin-right: 1em; }
 .attachments { margin-top: 0.4em; margin-bottom: 1em; display: block; clear: both; }
@@ -93,7 +93,7 @@ html {
 body {
   margin: 0; padding: 0;
   font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
-  font-size: .9em;
+  font-size: 14.4px;
   line-height: 1.4;
   color: #231f20;
   background: #fff;
@@ -297,9 +297,126 @@ h1 span {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
+#addForm.index fieldset {
+  margin: 0; padding: 0;
+  border: none;
+}
+#addForm.index legend {
+  width: 280px;
+  padding: 7px 10px;
+  text-shadow: 0 1px 0 #000;
+  color: #fff;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.24, rgb(66,92,108)),
+    color-stop(1, rgb(129,153,168))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(66,92,108) 24%,
+    rgb(129,153,168) 100%
+  );
+  border: 1px solid #677c89;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
 #report h2 {
   margin:  0 0 .9em 0; padding: 0;
   font-family: 'DroidSansBold', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: 20px;
   font-weight: normal;
+}
+#addForm.index input,
+#addForm.index select,
+#addForm.index textarea {
+  width: 294px;
+  padding: 3px;
+  font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 14.4px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top-color: #c0c0c0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+#addForm.index select,
+#addForm.index input[type=submit] {
+  width: 302px;
+}
+#addForm.index input:hover,
+#addForm.index select:hover,
+#addForm.index textarea:hover {
+  border-color: #b9b9b9;
+  border-top-color: #a0a0a0;
+}
+#addForm.index input:active,
+#addForm.index input:focus,
+#addForm.index select:active,
+#addForm.index select:focus,
+#addForm.index textarea:active,
+#addForm.index textarea:focus {
+  border-color: orange;
+}
+#addForm.index input[type=submit] {
+  float: right;
+  display: inline-block;
+  right: 0;
+  width: 40%;
+  margin-top: 1em;
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.43, rgb(227,227,227)),
+    color-stop(1, rgb(249,249,249))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(227,227,227) 43%,
+    rgb(249,249,249) 100%
+  );
+  border-color: #bbbbbb;
+  border-bottom-color: #a0a0a0;
+}
+#addForm.index input[type=submit]:hover {
+  border-color: #939393;
+}
+#addForm.index input[type=submit]:active,
+#addForm.index input[type=submit]:focus {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.2, rgb(249,249,249)),
+    color-stop(0.7, rgb(238,238,238))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(249,249,249) 20%,
+    rgb(238,238,238) 70%
+  );
+  border-color: #444444;
+}
+#addForm.index label {
+  font-weight: bold;
+}
+#addForm.index p {
+  position: relative;
+}
+#addForm.index .help_text {
+  position: absolute;
+  top: 5px; left: -330px;
+  display: none;
+  width: 286px;
+  margin-top: .5em; padding: 7px;
+  font-size: .9em;
+  color: #fff;
+  background: rgba(0, 0, 0, .9);
+}
 }

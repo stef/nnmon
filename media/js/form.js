@@ -1,7 +1,11 @@
+function empty(node) {
+   if(node.text().trim()) return false;
+   return true;
+}
 function init_form() {
   $('.help_text').hide();
-  $(".fieldWrapper").focusin(function(event) {$(this).find('.help_text').show();});
-  $(".fieldWrapper").focusout(function(event) {$(this).find('.help_text').hide();});
+  $(".fieldWrapper").focusin(function(event) {if(!empty($(this).find('.help_text'))) $(this).find('.help_text').show();});
+  $(".fieldWrapper").focusout(function(event) {if(!empty($(this).find('.help_text'))) $(this).find('.help_text').hide();});
   $("#show_optionals").hide();
   $("#id_contractual").click(function(event) {
                                $("#id_contract_excerpt_parent").parent().parent().toggle();
