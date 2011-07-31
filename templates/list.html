@@ -13,9 +13,20 @@
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
        var self=this;
-       $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
+       var email=$(this).find('input:first').attr('value');
+       if(email) {
+          $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+email, success: function(data) { $(self).html(data); }});
+       } else {
+          $(this).parent().find('.email-box').css('color','red');
+       };
        return false;
      });
+     $(".confirm > .button").click(function(){
+            $(this).next().toggleClass('hidden');
+         });
+     $(".cancel-button").click(function(){
+            $(this).parent().parent().parent().parent().addClass('hidden');
+         });
    });
   </script>
 {% endblock %}
@@ -51,19 +62,23 @@
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
-    <td>{{ violation.confirmations }} <div class="confirm"><a>confirm</a>
-          <div class="hidden confirm_popup">
-             <h3>Confirmation</h3>
-             <p>
-             <form method="get" class="confirm_form" id="{{ violation.pk }}">
-                E-mail: <input type="text" name="email" /><br />
-                //required<br />
-                <input type="hidden" value="{{ violation.pk }}" />
-                <input type="submit" value="confirm" />
-             </form>
-             </p>
-          </div>
-       </div>
+    <td>{{ violation.confirmations }} <div class="confirm"><a class="button">+1</a>
+      <div class="hidden confirm_popup alpha60">
+         <div>
+            <h3>{% trans "Confirmation" %}</h3>
+            <div>
+            <small>{% trans "I attest the existence of this infringement" %}<br />
+            <a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a></small>
+            <form method="get" class="confirm_form" id="{{ violation.pk }}">
+               <div class="email-box">{% trans "E-mail" %}: <input type="text" name="email" /></div>
+               //{% trans "required" %}<br />
+               <input type="hidden" value="{{ violation.pk }}" />
+               <input type="submit" value="confirm" />
+               <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
+            </form>
+            </div>
+         </div>
+      </div>
     </td>
 </tr>
 {% endfor %}

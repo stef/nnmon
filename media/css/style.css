@@ -33,17 +33,30 @@ p label { width: 7em; display: inline-block; }
 #content ol li { list-style: decimal; }
 
 .confirm { display: inline; position: relative; }
-.confirm:hover > div { display: block; }
-.confirm_popup { display: none; position: absolute; border: 2px solid #454545; padding: 10px; background: #F7F7F7; z-index: 20; }
+/*.confirm:hover > div { display: block; }*/
+.confirm_popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; opacity: 30%; }
+.confirm_popup > div { background: #F7F7F7; border: 2px solid #454545; height: 133px; left: 50%; margin-left: -130px; margin-top: -66px; padding: 10px; position: absolute; top: 50%; width: 260px; }
 .confirm_thanks { width: 17.2em; height: 6.7em; }
 #footer { text-align: center; }
+.hidden { display: none; }
 
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
-table.listing div.confirm_popup { right: 0; }
+table.listing div.confirm_popup { right: 0; text-align: right; }
 div#latest3 div.confirm_popup { left: 0; }
 
 .cell-link { display: block; text-decoration: none; color: #000; }
+
+.alpha60 {
+/* Fallback for web browsers that doesn't support RGBa */
+background: rgb(0, 0, 0) transparent;
+/* RGBa with 0.6 opacity */
+background: rgba(0, 0, 0, 0.6);
+/* For IE 5.5 - 7*/
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+/* For IE 8*/
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
 
 /* tables */
 table.tablesorter {
