@@ -198,6 +198,11 @@ blockquote {
   margin: 0 auto;
   background: #f9f9f9;
 }
+#header a {
+    color: #222;
+    text-decoration: none;
+}
+
 h1 {
   margin: 25px 0 0 0; padding: 30px 0;
   font-family: 'DroidSansBold', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -310,7 +315,7 @@ h1 span {
 #global {
   position: relative;
   width: 960px;
-  margin: 25px auto 0 auto;
+  margin: 25px auto 50px auto;
 }
 
 /* Content */
@@ -345,6 +350,20 @@ h1 span {
   font-size: 20px;
   font-weight: normal;
 }
+
+
+/* View page */
+
+div#comments {
+    border: 5px solid #f0f0f0;
+    padding: 0.5em;
+}
+
+dl#comments {
+    background-color: #f5f5f5;
+    padding: 0.5em;
+}
+
 
 /* Infrigement form */
 

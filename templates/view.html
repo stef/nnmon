@@ -74,6 +74,7 @@ $(document).ready(function() {
 </ul>
   {%endif%}
   {% if not key %}
+  <div id="comments">
   <h3>{% trans "Comments" %}</h3>
   {% render_comment_list for v %}
   <div class="toggle button">{% trans "Add comment" %}</div>
@@ -83,6 +84,7 @@ $(document).ready(function() {
   {% else %}
   <a class="button" href='/moderate/?key={{key}}&action=approve'>Approve Submission</a>
   <a class="button" href='/moderate/?key={{key}}&action=delete'>Delete Submission</a>
+  </div>
   {% endif %}
 </div>
 {%endblock%}
