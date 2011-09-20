@@ -67,14 +67,14 @@ def moderate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse("Thank you, this has been already activated")
+        return HttpResponse(_("Thank you, this has been already activated"))
     if not v:
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
         if settings.TWITTER_API:
             try:
-                settings.TWITTER_API.PostUpdate("New infringement reported for %s (%s) %s" % (v.operator, v.country, v.contract))
+                settings.TWITTER_API.PostUpdate(_("New infringement reported for %s (%s) %s") % (v.operator, v.country, v.contract))
             except:
                 pass
         v.activationid=''
@@ -94,9 +94,9 @@ def confirm(request, id, name=None):
             try:
                 c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
             except:
-                return HttpResponse("Thank you, this has been already confirmed")
+                return HttpResponse(_("Thank you, this has been already confirmed"))
             c.save()
-        return HttpResponse('<div class="confirm_thanks">Thank you for your confirmation</div>')
+        return HttpResponse(_('<div class="confirm_thanks">Thank you for your confirmation</div>'))
     c=Confirmation.objects.get(key=id)
     if c:
         c.key=''
