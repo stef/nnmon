@@ -50,7 +50,7 @@ p label { width: 7em; display: inline-block; }
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
 table.listing div.confirm_popup { right: 0; text-align: right; }
-div#latest3 div.confirm_popup { left: 0; }
+#content div.confirm_popup { left: 0; }
 
 .cell-link { display: block; text-decoration: none; color: #000; }
 
