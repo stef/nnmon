@@ -483,4 +483,80 @@ h1 span {
   color: #fff;
   background: rgba(0, 0, 0, .9);
 }
+
+#content table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
+#content table {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 0;
+  border-collapse: separate;
+  *border-collapse: collapse;
+  font-size: 13px;
+  border: 1px solid #ddd;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+#content table th, table td {
+  padding: 10px 10px 9px;
+  line-height: 18px;
+  text-align: left;
+}
+#content table th {
+  padding-top: 9px;
+  font-weight: bold;
+  vertical-align: middle;
+  border-bottom: 1px solid #ddd;
+}
+#content table td {
+  vertical-align: top;
+}
+#content table th + th, table td + td {
+  border-left: 1px solid #ddd;
+}
+#content table tr + tr td {
+  border-top: 1px solid #ddd;
+}
+#content table tbody tr:first-child td:first-child {
+  -webkit-border-radius: 4px 0 0 0;
+  -moz-border-radius: 4px 0 0 0;
+  border-radius: 4px 0 0 0;
+}
+#content table tbody tr:first-child td:last-child {
+  -webkit-border-radius: 0 4px 0 0;
+  -moz-border-radius: 0 4px 0 0;
+  border-radius: 0 4px 0 0;
+}
+#content table tbody tr:last-child td:first-child {
+  -webkit-border-radius: 0 0 0 4px;
+  -moz-border-radius: 0 0 0 4px;
+  border-radius: 0 0 0 4px;
+}
+#content table tbody tr:last-child td:last-child {
+  -webkit-border-radius: 0 0 4px 0;
+  -moz-border-radius: 0 0 4px 0;
+  border-radius: 0 0 4px 0;
+}
+#content .zebra-striped tbody tr:nth-child(odd) td {
+  background-color: #f9f9f9;
+}
+#content .zebra-striped tbody tr:hover td {
+  background-color: #f5f5f5;
+}
+#content .zebra-striped .header {
+  cursor: pointer;
+}
+#content .zebra-striped .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000 transparent;
+  visibility: hidden;
+}
+
+/* Infrigement form */
