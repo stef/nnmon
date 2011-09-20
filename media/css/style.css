@@ -450,6 +450,7 @@ dl#comments {
   font-size: .9em;
   color: #fff;
   background: rgba(0, 0, 0, .9);
+  z-index: 99;
 }
 
 #content table {
