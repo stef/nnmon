@@ -28,9 +28,16 @@ li { list-style: none; }
 .align-right { text-align: right;}
 dd.text { width: 30%; display: block !important; }
 p label { width: 7em; display: inline-block; }
-.button, #add_attach { display: inline-block; border: 1px solid black; padding: 3px; background: #f5f5f5; }
+.button, #add_attach {
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    display: inline-block;
+    padding: 0.3em;
+}
 
-#content ol li { list-style: decimal; }
+#global ol li { list-style: decimal; }
 
 .confirm { display: inline; position: relative; }
 /*.confirm:hover > div { display: block; }*/
@@ -60,31 +67,57 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endCo
 
 /* tables */
 table.tablesorter {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 50px;
+}
+
+table.tablesorter tr th, table.tablesorter tr td {
+    min-width: 75px;
+    padding: 0.5em;
+}
+
+table.tablesorter tr th {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    text-transform: capitalize;
+    font-weight: normal;
+    text-align: center;
+}
+
+table.tablesorter tr td, table tr td {
+    text-align: left;
+}
+
+/*table.tablesorter {
 	font-family:arial;
-	background-color: #CDCDCD;
 	margin:10px 0pt 15px;
 	font-size: 8pt;
 	width: 100%;
 	text-align: left;
-}
-table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+}*/
+/*table.tablesorter thead tr th, table.tablesorter tfoot tr th {
 	background-color: #e6EEEE;
 	border: 1px solid #FFF;
 	font-size: 8pt;
 	padding: 4px;
-}
+}*/
 table.tablesorter thead tr .header {
 	background-image: url(/site_media/img/bg.gif);
 	background-repeat: no-repeat;
 	background-position: center right;
 	cursor: pointer;
 }
-table.tablesorter tbody td {
+/*table.tablesorter tbody td {
 	color: #3D3D3D;
 	padding: 4px;
 	background-color: #FFF;
 	vertical-align: top;
-}
+}*/
 table.tablesorter tbody tr.odd td {
 	background-color:#F0F0F6;
 }
@@ -97,6 +130,15 @@ table.tablesorter thead tr .headerSortDown {
 table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
 background-color: #8dbdd8;
 }
+
+table tr.filters {
+    background: #ddd;
+}
+
+table tr.filters td{
+    padding: 0.5em;
+}
+
 /* Main and bug fix
 ---------------------------*/
 
@@ -179,6 +221,7 @@ h1 span {
   margin: 0; padding: .3em 0;
   color: #fff;
   background: #2d2d2d;
+  box-shadow: 0px 2px 5px #aaa;
 }
 #user p {
   width: 960px;
@@ -236,7 +279,7 @@ h1 span {
 #nav #current:hover,
 #nav #current:active,
 #nav #current:focus {
-  font-weight: bold;
+  color: orange;
 }
 #nav a {
   display: block;
@@ -275,20 +318,28 @@ h1 span {
 #content {
   width: 610px;
 }
-#content h2:first-child {
+#global h2:first-child {
   margin-top: 0;
 }
-#content a {
+#global a {
   color: #4183c4;
   text-decoration: none;
 }
-#content a:hover,
-#content a:active,
-#content a:focus {
-  text-decoration: underline;
+
+#global a:hover,
+#global a:active,
+#global a:focus {
+  border-bottom: thin dashed;
   outline: none;
 }
-#content h2 {
+
+#global a.button:hover {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: -1px;
+}
+
+
+#global h2 {
   margin: .9em 0; padding: 0;
   font-family: 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: 20px;
