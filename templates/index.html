@@ -92,7 +92,7 @@ $(document).ready(function(){
       {% for field in form %}
       {% if field.html_name = 'resource' %}<div id="show_optionals">{% trans "Provide optional details" %}</div><div id="optional">{%endif%}
       <div class="fieldWrapper">
-        <span class="help_text">{{ field.help_text }}</span>
+         {% if field.help_text %}<span class="help_text">{{ field.help_text }}</span>{% endif %}
         <span class="innerfield">
           {{ field.errors }}
           {{ field.label_tag }} {{ field }}
