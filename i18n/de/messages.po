@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-07-04 23:50+0200\n"
+"POT-Creation-Date: 2011-09-20 23:34+0200\n"
 "PO-Revision-Date: 2011-04-29 17:53+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: de <LL@li.org>\n"
@@ -32,39 +32,40 @@ msgid ""
 msgstr ""
 
 #: bt/forms.py:23
+msgid "Is the Internet connection over mobile or fixed line?"
+msgstr ""
+
+#: bt/forms.py:24
 msgid ""
 "Please describe the symptoms you are experiencing. What service or site, "
 "or person is unavailable or seems artificially slowed down."
 msgstr ""
 
-#: bt/forms.py:24
-msgid ""
-"We need your email to validate your report. We're not storing the email "
-"later on."
-msgstr ""
-
 #: bt/forms.py:25
-msgid "We need your some name to identify you later on."
+msgid ""
+"We need your email to validate your report. Your email address is "
+"obligatory, but we willl never use your personal data for anything else "
+"than checking the submission."
 msgstr ""
 
 #: bt/forms.py:26
-msgid "Attach screenshot, document or any other relevant information."
+msgid "We need some name to display that instead of an email address."
 msgstr ""
 
 #: bt/forms.py:27
-msgid "What is the affected resource."
+msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
 #: bt/forms.py:28
-msgid "Please specify the name of the affected resource."
+msgid "What is the affected resource."
 msgstr ""
 
 #: bt/forms.py:29
-msgid "Is the Resource Blocked or otherwise discrimated?"
+msgid "Please specify the name of the affected resource."
 msgstr ""
 
 #: bt/forms.py:30
-msgid "Is the Internet connection over mobile or fixed line?"
+msgid "Is the Resource Blocked or otherwise discrimated?"
 msgstr ""
 
 #: bt/forms.py:31
@@ -90,7 +91,7 @@ msgstr ""
 #: bt/forms.py:35
 msgid ""
 "Unfortunately we must protect against automatic attacks, please forgive "
-"us this inconvenience."
+"us this inconvenience. (note the + and the * are somewhat confusing)"
 msgstr ""
 
 #: bt/models.py:6
@@ -257,58 +258,96 @@ msgstr ""
 msgid "An incorrect number of files were uploaded."
 msgstr ""
 
-#: bt/views.py:51
+#: bt/views.py:54
 #, python-format
 msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
 msgstr ""
 
-#: bt/views.py:52
+#: bt/views.py:55
 msgid "NNMon submission approval"
 msgstr ""
 
-#: bt/views.py:60
-msgid "Thank you for verifying your submission."
+#: bt/views.py:63
+msgid ""
+"Thank you for verifying your submission. It will be listed shortly, after"
+" verifying it's a valid report."
 msgstr ""
 
-#: bt/views.py:66
+#: bt/views.py:70
+msgid "Thank you, this has been already activated"
+msgstr ""
+
+#: bt/views.py:72
 msgid "No such key"
 msgstr ""
 
-#: bt/views.py:73
+#: bt/views.py:77
+#, python-format
+msgid "New infringement reported for %s (%s) %s"
+msgstr ""
+
+#: bt/views.py:82
 msgid "Thank you for approving the submission."
 msgstr ""
 
-#: bt/views.py:77
+#: bt/views.py:86
 msgid "Thank you for deleting the submission."
 msgstr ""
 
-#: bt/views.py:96
+#: bt/views.py:97
+msgid "Thank you, this has been already confirmed"
+msgstr ""
+
+#: bt/views.py:99
+msgid "<div class=\"confirm_thanks\">Thank you for your confirmation</div>"
+msgstr ""
+
+#: bt/views.py:104
+msgid "Thank you for verifying your confirmation"
+msgstr ""
+
+#: bt/views.py:109
 #, python-format
 msgid ""
 "Thank you for submitting a new report. To finalize your submission please"
 " confirm using your validation key.\n"
 "Your verification key is %s/%s%s\n"
+"Your report will be listed after we assured it is valid."
 msgstr ""
 
-#: bt/views.py:97
+#: bt/views.py:110
 msgid "NNMon submission verification"
 msgstr ""
 
-#: bt/views.py:144
+#: bt/views.py:157
 msgid ""
 "Thank you for submitting this report, you will receive a verification "
 "email shortly."
 msgstr ""
 
-#~ msgid "The what is the affected resource."
+#~ msgid ""
+#~ "We need your email to validate "
+#~ "your report. We're not storing the "
+#~ "email later on."
+#~ msgstr ""
+
+#~ msgid "We need your some name to identify you later on."
 #~ msgstr ""
 
 #~ msgid ""
 #~ "Unfortunately we must protect against "
-#~ "automatic attack, please forgive us this"
-#~ " inconvenience."
+#~ "automatic attacks, please forgive us "
+#~ "this inconvenience."
 #~ msgstr ""
 
-#~ msgid "Your verification key is %s/activate?key=%s\n"
+#~ msgid "Thank you for verifying your submission."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Thank you for submitting a new "
+#~ "report. To finalize your submission "
+#~ "please confirm using your validation "
+#~ "key.\n"
+#~ "Your verification key is %s/%s%s\n"
 #~ msgstr ""
 
