@@ -24,7 +24,7 @@ li { list-style: none; }
 #addForm.index .help_text { font-size: 0.7em; width: 30%; position: relative; float: right; left: 0; }
 .index #add_attach { cursor: pointer; }
 #id_captcha_1 { width: 2em; }
-.innerfield { display: inline-block; width: 65%; }
+.innerfield { display: inline-block; }
 .align-right { text-align: right;}
 dd.text { width: 30%; display: block !important; }
 p label { width: 7em; display: inline-block; }
