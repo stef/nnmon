@@ -76,7 +76,15 @@ $(document).ready(function() {
   {% if not key %}
   <div id="comments">
   <h3>{% trans "Comments" %}</h3>
-  {% render_comment_list for v %}
+  {% get_comment_list for v as cmt_list %}
+  {% for comment in cmt_list %}
+  <div class="comment">
+     <p><a href="{{ comment.user_url }}">{{
+        comment.user_name }}</a> - {{ comment.submit_date
+     }}</p>
+     {{ comment.comment }}
+  </div>
+  {% endfor %}
   <div class="toggle button">{% trans "Add comment" %}</div>
   <div id="comment_form" style="display: none;">
     {% render_comment_form for v %}
