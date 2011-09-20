@@ -23,7 +23,7 @@ function bindPostCommentHandler() {
             cache: false,
             dataType: "html",
             success: function(html, textStatus) {
-                $('#comment_form form').replaceWith(html);
+                $('#comment_form form').replaceWith(html+"It will appear here after moderation.");
                 bindPostCommentHandler();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
