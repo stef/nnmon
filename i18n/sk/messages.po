@@ -1,19 +1,15 @@
-# Slovak translations for PROJECT.
-# Copyright (C) 2011 ORGANIZATION
-# This file is distributed under the same license as the PROJECT project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+# Translation for nmon
+# This file is distributed under the same license as the nnmon project.
+# Juraj Bednar <jooray@gmail.com>
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PROJECT VERSION\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 01:01+0200\n"
-"PO-Revision-Date: 2011-09-22 01:00+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: sk <LL@li.org>\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"Project-Id-Version: nnmon 0.00000000000001\n"
+"Report-Msgid-Bugs-To: jooray@gmail.com\n"
+"POT-Creation-Date: 2011-09-22 00:43+0200\n"
+"PO-Revision-Date: 2011-09-22 00:55+0200\n"
+"Last-Translator: Juraj Bednar <jooray@gmail.com>\n"
+"Language-Team: Slovak <sk@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,307 +17,323 @@ msgstr ""
 
 #: bt/forms.py:20
 msgid "EU member state where the restriction is reported."
-msgstr ""
+msgstr "Členský štát EÚ, kde nahlasujete obmedzenie"
 
 #: bt/forms.py:21
 msgid "The ISP or operator providing the Internet service."
-msgstr ""
+msgstr "Poskytovateľ pripojenia na Internet alebo operátor"
 
 #: bt/forms.py:22
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
+"Typ zmluvy u poskytovateľa pripojenia. (Prosím buďte čo najpresnejší)"
 
 #: bt/forms.py:23
 msgid "Is the Internet connection over mobile or fixed line?"
-msgstr ""
+msgstr "Je Internet cez mobilnú alebo pevnú linku?"
 
 #: bt/forms.py:24
 msgid ""
 "Please describe the symptoms you are experiencing. What service or site, "
 "or person is unavailable or seems artificially slowed down."
 msgstr ""
+"Prosím opíšte symptómy. Ktorá služba, stránka alebo osoba sú nedostupné "
+"alebo sa javia byť umelo spomalené."
 
 #: bt/forms.py:25
 msgid "Email (set this to enable saving)"
-msgstr ""
+msgstr "E-mail (vyplňte ak chcete umožniť ukladanie)"
 
 #: bt/forms.py:25
 msgid ""
 "We need your email to validate your report. Your email address is "
-"obligatory, but we willl never use your personal data for anything else "
+"obligatory, but we will never use your personal data for anything else "
 "than checking the submission."
 msgstr ""
+"Potrebujeme vašu e-mailovú adresu na overenie vášho ohlásenia. Vaša "
+"e-mailová adresa je povinná, ale nikdy nepoužijeme vaše osobné údaje "
+"na nič iné ako kontrolu tohto príspevku."
 
 #: bt/forms.py:26
 msgid "Name or nickname"
-msgstr ""
+msgstr "Meno alebo prezývka"
 
 #: bt/forms.py:26
 msgid "We need some name to display that instead of an email address."
-msgstr ""
+msgstr "Potrebujeme nejaké meno na zobrazenie namiesto e-mailovej adresy."
 
 #: bt/forms.py:27
 msgid "Attach screenshot, document or any other relevant information."
-msgstr ""
+msgstr "Priložte snímku obrazovky, dokument alebo akékoľvek iné relevantné informácie"
 
 #: bt/forms.py:28
 msgid "What is the affected resource. (optional)"
-msgstr ""
+msgstr "Aký zdroj je zasiahnutý obmedzením. (voliteľné)"
 
 #: bt/forms.py:29
 msgid "Please specify the name of the affected resource. (optional)"
-msgstr ""
+msgstr "Prosím špecifikujte zdroj zasiahnutý obmedzením. (voliteľné)"
 
 #: bt/forms.py:30
 msgid "Is the Resource Blocked or otherwise discrimated? (optional)"
-msgstr ""
+msgstr "Je zdroj blokovaný alebo nejak inak obmedzený? (voliteľné)"
 
 #: bt/forms.py:31
 msgid ""
 "Is the restriction only temporary, e.g. due to network overload? "
 "(optional)"
 msgstr ""
+"Je obmedzenie iba dočasné, napríklad kvôli preťaženiu siete? "
+"(voliteľné)"
 
 #: bt/forms.py:32
 msgid ""
 "Is there another offer provided by this Operator which removes this "
 "restriction? (optional)"
 msgstr ""
+"Existuje iná ponuka poskytovaná týmto operátorom, ktorá zruší toto "
+"obmedzenie? (voliteľné)"
 
 #: bt/forms.py:33
 msgid "Is the restriction described in the subscribers contract? (optional)"
-msgstr ""
+msgstr "Je toto obmedzenie popísané v zmluve o pripojení? (voliteľné)"
 
 #: bt/forms.py:34
 msgid ""
 "Please copy the relevant section describing the restriction from the user"
 " contract. (optional)"
 msgstr ""
+"Prosím skopírujte príslušnú časť, ktorá popisuje toto obmedzenie zo zmluvy"
+" o pripojení. (voliteľné)"
 
 #: bt/forms.py:35
 msgid ""
 "Unfortunately we must protect against automatic attacks, please forgive "
 "us this inconvenience. (note the + and the * are somewhat confusing)"
 msgstr ""
+"Je nám ľúto, že sa musíme chrániť pred automatickými útokmi, prosím "
+"prepáčte nám toto nepohodlie. (pozor, + a * sú si trochu podobné)"
 
 #: bt/models.py:6
 msgid "Belgium"
-msgstr ""
+msgstr "Belgicko"
 
 #: bt/models.py:7
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulharsko"
 
 #: bt/models.py:8
 msgid "Czech Republic"
-msgstr ""
+msgstr "Česká Republika"
 
 #: bt/models.py:9
 msgid "Denmark"
-msgstr ""
+msgstr "Dánsko"
 
 #: bt/models.py:10
 msgid "Germany"
-msgstr ""
+msgstr "Nemecko"
 
 #: bt/models.py:11
 msgid "Estonia"
-msgstr ""
+msgstr "Estónsko"
 
 #: bt/models.py:12
 msgid "Ireland"
-msgstr ""
+msgstr "Írsko"
 
 #: bt/models.py:13
 msgid "Greece"
-msgstr ""
+msgstr "Grécko"
 
 #: bt/models.py:14
 msgid "Spain"
-msgstr ""
+msgstr "Španielsko"
 
 #: bt/models.py:15
 msgid "France"
-msgstr ""
+msgstr "Francúzsko"
 
 #: bt/models.py:16
 msgid "Italy"
-msgstr ""
+msgstr "Taliansko"
 
 #: bt/models.py:17
 msgid "Cyprus"
-msgstr ""
+msgstr "Cyprus"
 
 #: bt/models.py:18
 msgid "Latvia"
-msgstr ""
+msgstr "Lotyšsko"
 
 #: bt/models.py:19
 msgid "Lithuania"
-msgstr ""
+msgstr "Litva"
 
 #: bt/models.py:20
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembursko"
 
 #: bt/models.py:21
 msgid "Hungary"
-msgstr ""
+msgstr "Maďarsko"
 
 #: bt/models.py:22
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 #: bt/models.py:23
 msgid "Netherlands"
-msgstr ""
+msgstr "Holandsko"
 
 #: bt/models.py:24
 msgid "Austria"
-msgstr ""
+msgstr "Rakúsko"
 
 #: bt/models.py:25
 msgid "Poland"
-msgstr ""
+msgstr "Poľsko"
 
 #: bt/models.py:26
 msgid "Portugal"
-msgstr ""
+msgstr "Portugalsko"
 
 #: bt/models.py:27
 msgid "Romania"
-msgstr ""
+msgstr "Rumunsko"
 
 #: bt/models.py:28
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovinsko"
 
 #: bt/models.py:29
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovensko"
 
 #: bt/models.py:30
 msgid "Finland"
-msgstr ""
+msgstr "Fínsko"
 
 #: bt/models.py:31
 msgid "Sweden"
-msgstr ""
+msgstr "Švédsko"
 
 #: bt/models.py:32
 msgid "United Kingdom "
-msgstr ""
+msgstr "Veľká Británia "
 
 #: bt/models.py:36
 msgid "port"
-msgstr ""
+msgstr "port"
 
 #: bt/models.py:37
 msgid "protocol"
-msgstr ""
+msgstr "protokol"
 
 #: bt/models.py:38
 msgid "service"
-msgstr ""
+msgstr "služba"
 
 #: bt/models.py:39
 msgid "site"
-msgstr ""
+msgstr "stránka"
 
 #: bt/models.py:40
 msgid "user"
-msgstr ""
+msgstr "užívateľ"
 
 #: bt/models.py:41
 msgid "ip"
-msgstr ""
+msgstr "ip"
 
 #: bt/models.py:44
 msgid "Blocking"
-msgstr ""
+msgstr "Blokovanie"
 
 #: bt/models.py:45
 msgid "Throttling"
-msgstr ""
+msgstr "Obmedzenie"
 
 #: bt/models.py:48
 msgid "Fixed"
-msgstr ""
+msgstr "Pevné"
 
 #: bt/models.py:49
 msgid "Mobile"
-msgstr ""
+msgstr "Mobilné"
 
 #: bt/models.py:87
 #, python-format
 msgid "Comment #%s"
-msgstr ""
+msgstr "Komentár #%s"
 
 #: bt/multifile.py:135
 msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+msgstr "Žiadný súbor nebol pripojený. Prosím skontrolujte kódovanie formulára."
 
 #: bt/multifile.py:137
 msgid "No file was submitted."
-msgstr ""
+msgstr "Žiadny súbor nebol pripojený."
 
 #: bt/multifile.py:141
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Pripojený súbor je prázdny."
 
 #: bt/multifile.py:144
 msgid "An incorrect number of files were uploaded."
-msgstr ""
+msgstr "Bol pripojený nesprávny počet súborov."
 
 #: bt/views.py:50 bt/views.py:70
 msgid "Thank you, this has been already activated"
-msgstr ""
+msgstr "Ďakujeme, toto bolo už aktivované"
 
 #: bt/views.py:54
 #, python-format
 msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
-msgstr ""
+msgstr "Nové ohlásenie bolo pridané. Pre schválenie kliknite sem: %s/moderate/?key=%s\n"
 
 #: bt/views.py:55
 msgid "NNMon submission approval"
-msgstr ""
+msgstr "NNMon schválenie príspevku"
 
 #: bt/views.py:63
 msgid ""
 "Thank you for verifying your submission. It will be listed shortly, after"
 " we've checked that the report is valid."
 msgstr ""
+"Ďakujeme vám za schválenie vášho príspevku. Čoskoro bude zverejnený, potom"
+" ako skontrolujeme, či je príspevok platný."
 
 #: bt/views.py:72
 msgid "No such key"
-msgstr ""
+msgstr "Taký kľúč neexistuje"
 
 #: bt/views.py:77
 #, python-format
 msgid "New infringement reported for %s (%s) %s"
-msgstr ""
+msgstr "Nové porušenie bolo ohlásené pre %s (%s) %s"
 
 #: bt/views.py:82
 msgid "Thank you for approving the submission."
-msgstr ""
+msgstr "Ďakujeme vám za schválenie vášho príspevku."
 
 #: bt/views.py:86
 msgid "Thank you for deleting the submission."
-msgstr ""
+msgstr "Ďakujeme vám za zmazanie príspevku."
 
 #: bt/views.py:97
 msgid "Thank you, this has been already confirmed"
-msgstr ""
+msgstr "Ďakujeme, tento príspevok bol už potvrdený"
 
 #: bt/views.py:99
 msgid "Thank you for your confirmation"
-msgstr ""
+msgstr "Ďakujeme vám za potvrdenie"
 
 #: bt/views.py:104
 msgid "Thank you for verifying your confirmation"
-msgstr ""
+msgstr "Ďakujeme za overenie vášho potvrdenia"
 
 #: bt/views.py:109
 #, python-format
@@ -332,14 +344,20 @@ msgid ""
 "Please note that reports are moderated, it might take some time before "
 "your report appears online. Thank you for your patience."
 msgstr ""
+"Ďakujeme za odoslanie nového príspevku. Pre finalizáciu vášho príspevku"
+" ho prosím potvrďte pomocou overovacieho kľúča.\n"
+"Váš overovací kľúč je %s/%s%s\n"
+"Prosím berte na vedomie, že príspevky sú moderované, takže môže chvíľu "
+"trvať, kým sa váš príspevok objaví on-line. Ďakujeme za trpezlivosť."
 
 #: bt/views.py:110
 msgid "NNMon submission verification"
-msgstr ""
+msgstr "NNMon kontrola príspevku"
 
 #: bt/views.py:157
 msgid ""
 "Thank you for submitting this report, you will receive a verification "
 "email shortly."
 msgstr ""
+"Ďakujeme za odoslanie tohto príspevku, čoskoro dostanete verifikačný e-mail."
 
