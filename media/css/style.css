@@ -529,3 +529,83 @@ dl#comments {
 }
 
 /* Infrigement form */
+.info-validate {
+  margin-top: .7em; padding: 7px 15px;
+  background-color: #EEDC94;
+  background-image: -moz-linear-gradient(center top , #FCEEC1, #EEDC94);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  color: #404040;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+.info-validate input[type=text],
+.info-validate input[type=submit] {
+  width: 75%;
+  padding: 3px;
+  font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 14.4px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top-color: #c0c0c0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+.info-validate input[type=submit] {
+  width: 21%;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+.info-validate input[type=submit] {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.43, rgb(227,227,227)),
+    color-stop(1, rgb(249,249,249))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(227,227,227) 43%,
+    rgb(249,249,249) 100%
+  );
+  border-color: #bbbbbb;
+  border-bottom-color: #a0a0a0;
+}
+.info-validate input[type=submit]:hover {
+  border-color: #939393;
+}
+.info-validate input[type=submit]:active,
+.info-validate input[type=submit]:focus {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.2, rgb(249,249,249)),
+    color-stop(0.7, rgb(238,238,238))
+  );
+  background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(249,249,249) 20%,
+    rgb(238,238,238) 70%
+  );
+  border-color: #444444;
+}
+.info-validate input:hover {
+  border-color: #b9b9b9;
+  border-top-color: #a0a0a0;
+}
+.info-validate input[type=text]:focus {
+  border-color: orange;
+}
+.info-validate {
+  display: none;
+}
+.info-validate:target {
+  display: block;
+}

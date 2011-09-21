@@ -43,6 +43,11 @@ $(document).ready(function(){
   }
   $("#show_optionals").show();
   $("#optional .fieldWrapper").hide();
+  if ($('#id_email').val().length>0) {
+                               $('#id_captcha_0').parent().parent().show();
+                               $('#save_button').removeAttr('disabled');
+                               $("#show_optionals").show();
+                             }
   {% endif %}
   $("#sortedlist").tablesorter();
   $('.confirm_form').submit(function() {
@@ -73,10 +78,10 @@ $(document).ready(function(){
                                 + "del[datetime|cite],ins[datetime|cite]",
              });
    $(".confirm > .button").click(function(){
-            $(this).next().toggleClass('hidden');
+            $(this).parent().parent().parent().find('.info-validate').toggle();
          });
    $(".cancel-button").click(function(){
-            $(this).parent().parent().parent().parent().addClass('hidden');
+            $(this).parent().parent().hide();
          });
 });
 </script>
@@ -122,28 +127,22 @@ $(document).ready(function(){
         <th>{% trans "I Confirm" %}</th>
       </tr>
     </thead>
-  {% for violation in violations %}
   <tbody>
+  {% for violation in violations %}
     <tr>
-      <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a></td>
-      <td class='align-right'>{{ violation.confirmations }}</td>
-      <td class='align-right'><div class="confirm"><a class="button">+1</a>
-      <div class="hidden confirm_popup alpha60">
-         <div>
-            <h3>{% trans "Confirmation" %}</h3>
-            <div>
-            <small>{% trans "I attest the existence of this infringement" %}<br />
-            <a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a></small>
-            <form method="get" class="confirm_form" id="{{ violation.pk }}">
-               {% trans "E-mail" %}: <input type="text" name="email" /><br />
-               //{% trans "required" %}<br />
-               <input type="hidden" value="{{ violation.pk }}" />
-               <input type="submit" value="confirm" />
-               <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
-            </form>
+       <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a>
+          <div class="info-validate">
+            <form method="get" id="{{ violation.pk }}" class="confirm_form" >
+                <label>{% trans "In order to <strong>validate your action</strong>, please fill this form" %}</label>
+                <input type="text" name="email" />
+                <input type="hidden" value="{{ violation.pk }}" />
+                <input type="submit" value="{% trans "confirm" %}" />
+                <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
+              </form>
             </div>
-         </div>
-      </div>
+       </td>
+      <td class='align-right'>{{ violation.confirmations }}</td>
+      <td class='align-right'><div class="confirm"><a class="button">confirm</a></div>
       </td>
     </tr>
     {% endfor %}
