@@ -40,6 +40,8 @@ p label { width: 7em; display: inline-block; }
 #footer { text-align: center; }
 .hidden { display: none; }
 
+.errorlist { font-size: .8em; color: red; }
+
 table.listing, .pagination { width: 90%; margin: auto; }
 table.listing thead td { font-weight: bold; border-bottom: 1px solid black; }
 table.listing div.confirm_popup { right: 0; text-align: right; }
