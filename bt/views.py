@@ -60,7 +60,7 @@ def activate(request):
         s.quit()
         v.activationid=actid
         v.save()
-        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after verifying it\'s a valid report.'))
+        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after we\'ve checked that the report is valid.'))
     return HttpResponseRedirect('/') # Redirect after POST
 
 def moderate(request):
