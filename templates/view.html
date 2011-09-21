@@ -92,10 +92,8 @@ $(document).ready(function() {
   {% get_comment_list for v as cmt_list %}
   {% for comment in cmt_list %}
   <div class="comment">
-     <p><a href="{{ comment.user_url }}">{{
-        comment.user_name }}</a> - {{ comment.submit_date
-     }}</p>
-     {{ comment.comment }}
+     <p><a href="{{ comment.user_url }}">{{ comment.user_name }}</a> - {{ comment.submit_date }}</p>
+     <p>{{ comment.comment }}</p>
   </div>
   {% endfor %}
   <div class="toggle button">{% trans "Add comment" %}</div>
