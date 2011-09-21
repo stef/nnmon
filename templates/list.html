@@ -9,11 +9,11 @@
   <script type="text/javascript" src="{%media_url%}/js/picnet.table.filter.min.js"></script>
   <script type="text/javascript">
    $(document).ready(function() {
-     $("#sortedlist").tablesorter();
+     $("#sortedlist").tablesorter({ headers: { 0: { sorter: false }, 8: { sorter: false }, }});
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
         var self=this;
-        $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).find('.info-validate').html(data); }});
+        $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
         return false;
      });
      $(".confirm > .button").click(function(){
@@ -39,6 +39,7 @@
 <table class="listing tablesorter" id='sortedlist'>
   <thead>
 <tr>
+   <th filter='false'></th>
    <th filter-type='ddl'>{% trans "country" %}</th>
    <th filter-type='ddl'>{% trans "operator" %}</th>
    <th filter-type='ddl'>{% trans "contract" %}</th>
@@ -52,23 +53,24 @@
 {% for violation in violations %}
 <tr>
    <td>
-      <a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country }}</a>
-          <div class="info-validate">
-            <form method="get" id="{{ violation.pk }}" class="confirm_form" >
-                <label>{% trans "In order to <strong>validate your action</strong>, please enter your email address" %}</label>
-                <input type="text" name="email" />
-                <input type="hidden" value="{{ violation.pk }}" />
-                <input type="submit" value="{% trans "confirm" %}" />
-                <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
-              </form>
-            </div>
-   </td>
+    <div class="confirm"><a class="button">+1</a>
+    <div class="info-validate float-confirm">
+      <form method="get" id="{{ violation.pk }}" class="confirm_form" >
+          <label>{% trans "In order to <strong>validate your action</strong>, please enter your email address" %}</label>
+          <input type="text" name="email" />
+          <input type="hidden" value="{{ violation.pk }}" />
+          <input type="submit" value="{% trans "confirm" %}" />
+          <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
+       </form>
+     </div>
+    </td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
-    <td>{{ violation.confirmations }} <div class="confirm"><a class="button">confirm</a></td>
+    <td>{{ violation.confirmations }}</td>
 </tr>
 {% endfor %}
   </tbody>
