@@ -36,6 +36,11 @@ function bindPostCommentHandler() {
 
 $(document).ready(function() {
     bindPostCommentHandler();
+  $('.confirm_form').submit(function() {
+     var self=this;
+     $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
+     return false;
+     });
 });
 </script>
 {% endblock %}
@@ -45,7 +50,7 @@ $(document).ready(function() {
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
 <ul id="report">
   {%if v.comment_set.all%}
-  <li id="description">
+  <li id="description" class='round-box'>
     <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
     <div class="description-node">
@@ -56,7 +61,7 @@ $(document).ready(function() {
          {% trans "Attachments" %}
         <ul>
           {%for a in c.attachment_set.all%}
-          <li><a href="{{a.storage.url}}">{{a.storage.name}}</a></li>
+          <li><a href="{%media_url%}/{{a.storage.url}}">{{a.name}}</a></li>
           {%endfor%}
         </ul>
       </div>
@@ -72,11 +77,27 @@ $(document).ready(function() {
    {%if v.contractual%}<li><dl><dt>{% trans "Contractual restriction" %}</dt><dd>{% trans "yes" %}</dd></dl></li>{%endif%}
    {%if v.contract_excerpt%}<li><dl><dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
 </ul>
+  <div class="info-validate" style="display: inline-block;">
+    <form method="get" id="{{ violation.pk }}" class="confirm_form" >
+        <label>{% trans "In order to <strong>validate your confirmation</strong>, please enter your email address" %}</label>
+        <input type="text" name="email" />
+        <input type="hidden" value="{{ violation.pk }}" />
+        <input type="submit" value="{% trans "confirm" %}" />
+      </form>
+   </div>
   {%endif%}
   {% if not key %}
   <div id="comments">
   <h3>{% trans "Comments" %}</h3>
-  {% render_comment_list for v %}
+  {% get_comment_list for v as cmt_list %}
+  {% for comment in cmt_list %}
+  <div class="comment">
+     <p><a href="{{ comment.user_url }}">{{
+        comment.user_name }}</a> - {{ comment.submit_date
+     }}</p>
+     {{ comment.comment }}
+  </div>
+  {% endfor %}
   <div class="toggle button">{% trans "Add comment" %}</div>
   <div id="comment_form" style="display: none;">
     {% render_comment_form for v %}
