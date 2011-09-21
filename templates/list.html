@@ -9,7 +9,7 @@
   <script type="text/javascript" src="{%media_url%}/js/picnet.table.filter.min.js"></script>
   <script type="text/javascript">
    $(document).ready(function() {
-     $("#sortedlist").tablesorter({ headers: { 0: { sorter: false }, 8: { sorter: false }, }});
+     $("#sortedlist").tablesorter({ headers: { 7: { sorter: false }, }});
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
         var self=this;
@@ -39,7 +39,6 @@
 <table class="listing tablesorter" id='sortedlist'>
   <thead>
 <tr>
-   <th filter='false'></th>
    <th filter-type='ddl'>{% trans "country" %}</th>
    <th filter-type='ddl'>{% trans "operator" %}</th>
    <th filter-type='ddl'>{% trans "contract" %}</th>
@@ -47,11 +46,19 @@
    <th filter-type='ddl'>{% trans "type" %}</th>
    <th filter-type='ddl'>{% trans "fixed / wireless" %}</th>
    <th filter='false'>{% trans "confirmations" %}</th>
+   <th filter='false'></th>
 </tr>
   </thead>
   <tbody>
 {% for violation in violations %}
 <tr>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
+    <td>{{ violation.confirmations }}</td>
    <td>
     <div class="confirm"><a class="button">+1</a>
     <div class="info-validate float-confirm">
@@ -64,13 +71,6 @@
        </form>
      </div>
     </td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
-    <td>{{ violation.confirmations }}</td>
 </tr>
 {% endfor %}
   </tbody>
