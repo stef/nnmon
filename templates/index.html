@@ -33,11 +33,16 @@ $(document).ready(function(){
   {% if not form.is_bound %}
   $(".fieldWrapper").hide();
   $("#id_country").parent().parent().show();
+  $("#id_operator").parent().parent().show();
+  $("#id_contract").parent().parent().show();
+  $("#id_media").parent().parent().show();
   $("#save_button").hide();
   {% else %}
   if($("#id_contractual").attr('checked')==false) {
     $("#id_contract_excerpt").parent().parent().hide();
   }
+  $("#show_optionals").show();
+  $("#optional .fieldWrapper").hide();
   {% endif %}
   $("#sortedlist").tablesorter();
   $('.confirm_form').submit(function() {

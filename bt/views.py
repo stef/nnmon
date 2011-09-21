@@ -47,7 +47,7 @@ def activate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse("Thank you, this has been already activated")
+        return HttpResponse(_("Thank you, this has been already activated"))
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
@@ -106,7 +106,7 @@ def confirm(request, id, name=None):
 
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nYour report will be listed after we assured it is valid.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
+    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
     msg['Subject'] = _('NNMon submission verification')
     msg['From'] = 'nnmon@nnmon.lqdn.fr'
     msg['To'] = to
@@ -160,7 +160,7 @@ def add(request):
         form = AddViolation()
 
     return render_to_response(
-        'add.html',
+        'index.html',
         { 'form': form, },
         context_instance=RequestContext(request))
 
