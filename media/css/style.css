@@ -56,7 +56,7 @@ table.listing div.confirm_popup { right: 0; text-align: right; }
 
 .cell-link { display: block; text-decoration: none; color: #000; }
 
-.float-confirm { position: absolute; top: 1em; width: 360px; z-index: 99; }
+.float-confirm { position: absolute; top: 1em; width: 360px; z-index: 99; right: 0px;}
 
 .alpha60 {
 /* Fallback for web browsers that doesn't support RGBa */
