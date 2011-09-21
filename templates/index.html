@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
+{% load babel %}
 {% block styles %}
   <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/jquery.autocomplete.css" />
 {% endblock %}
@@ -118,7 +119,7 @@ $(document).ready(function(){
    <h2>{% trans "On Internet, you decide what you do, right? Not anymore!" %}</h2>
      <p>{% trans "We all rely more and more on our access to Internet to do serious things like find jobs and fun things like chat with friends. But telco's are increasingly trying to control your behavior online, by restricting the things you are doing on the internet. Now you have a chance to do something about that!" %}</p>
      <p>{% trans "Help us chart all the ways that internet providers are violating our online freedom: Is your operator blocking or throttling your Internet communications, for instance by making it impossible to use chat programs or charging extra for Internet telephony? Let us know by filling up this form (it takes less than two minutes!). We will make sure that the relevant authorities are informed, so that we can put an end to this." %}</p>
-   <h2>{% trans "Latest Infringements" %}</h2>
+   <h2>{% trans "Featured Infringements" %}</h2>
   <table>
     <thead>
       <tr>
@@ -144,6 +145,17 @@ $(document).ready(function(){
       <td class='align-right'>{{ violation.confirmations }}</td>
       <td class='align-right'><input type="button" class="confirm button" value="confirm" />
       </td>
+    </tr>
+    <tr>
+       <td colspan="3">
+          <div id="description" class='round-box'>
+            {%for c in violation.comment_set.all%}
+            <div class="description">{{c.comment|safe}}</div>
+            <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
+            </div>
+            {%endfor%}
+          </div>
+       </td>
     </tr>
     {% endfor %}
   </tbody>

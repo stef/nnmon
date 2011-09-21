@@ -113,3 +113,12 @@ class ViolationModerator(CommentModerator):
 
 if Violation not in moderator._registry:
     moderator.register(Violation, ViolationModerator)
+
+class FeaturedCase(models.Model):
+    case = models.OneToOneField(Violation)
+
+    class Admin:
+        pass
+
+    def __unicode__(self):
+        return u"*%s*" % self.case
