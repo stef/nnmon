@@ -159,9 +159,11 @@ def add(request):
     else:
         form = AddViolation()
 
+    v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
     return render_to_response(
         'index.html',
-        { 'form': form, },
+        { 'form': form,
+          'violations': v_list },
         context_instance=RequestContext(request))
 
 def ajax(request, country=None, operator=None):
@@ -171,7 +173,7 @@ def ajax(request, country=None, operator=None):
         return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
 
 def index(request):
-    v_list = Violation.objects.filter(activationid='').order_by('id').reverse()[:3]
+    v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
     form = AddViolation()
 
     return render_to_response(

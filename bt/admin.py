@@ -16,3 +16,7 @@ admin.site.register(models.Attachment, AttachmentAdmin)
 class ConfirmationAdmin(admin.ModelAdmin):
     pass
 admin.site.register(models.Confirmation, ConfirmationAdmin)
+
+class FeaturedCaseAdmin(admin.ModelAdmin):
+    pass
+admin.site.register(models.FeaturedCase, FeaturedCaseAdmin)
