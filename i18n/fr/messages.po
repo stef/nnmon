@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 00:39+0200\n"
+"POT-Creation-Date: 2011-09-22 00:43+0200\n"
 "PO-Revision-Date: 2011-04-29 17:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -289,7 +289,7 @@ msgstr ""
 #: bt/views.py:63
 msgid ""
 "Thank you for verifying your submission. It will be listed shortly, after"
-" verifying it's a valid report."
+" we've checked that the report is valid."
 msgstr ""
 
 #: bt/views.py:72
@@ -341,33 +341,9 @@ msgid ""
 "email shortly."
 msgstr ""
 
-#~ msgid "What is the affected resource."
-#~ msgstr ""
-
-#~ msgid "Please specify the name of the affected resource."
-#~ msgstr ""
-
-#~ msgid "Is the Resource Blocked or otherwise discrimated?"
-#~ msgstr ""
-
-#~ msgid "Is the restriction only temporary, e.g. due to network overload?"
-#~ msgstr ""
-
 #~ msgid ""
-#~ "Is there another offer provided by "
-#~ "this Operator which removes this "
-#~ "restriction?"
-#~ msgstr ""
-
-#~ msgid "Is the restriction described in the users contract?"
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Please copy the relevant section "
-#~ "describing the restriction from the user"
-#~ " contract."
-#~ msgstr ""
-
-#~ msgid "<div class=\"confirm_thanks\">Thank you for your confirmation</div>"
+#~ "Thank you for verifying your submission."
+#~ " It will be listed shortly, after "
+#~ "verifying it's a valid report."
 #~ msgstr ""
 
