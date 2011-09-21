@@ -77,8 +77,8 @@ $(document).ready(function(){
                                 + "-h6,hr[size|noshade],dd,dl,dt,cite,abbr,acronym,"
                                 + "del[datetime|cite],ins[datetime|cite]",
              });
-   $(".confirm > .button").click(function(){
-            $(this).parent().parent().parent().find('.info-validate').toggle();
+   $(".confirm").click(function(){
+            $(this).parent().parent().find('.info-validate').toggle();
          });
    $(".cancel-button").click(function(){
             $(this).parent().parent().hide();
@@ -137,12 +137,12 @@ $(document).ready(function(){
                 <input type="text" name="email" />
                 <input type="hidden" value="{{ violation.pk }}" />
                 <input type="submit" value="{% trans "confirm" %}" />
-                <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
+                <input class="cancel-button button" type="button" value="{% trans "cancel" %}" />
               </form>
             </div>
        </td>
       <td class='align-right'>{{ violation.confirmations }}</td>
-      <td class='align-right'><div class="confirm"><a class="button">confirm</a></div>
+      <td class='align-right'><input type="button" class="confirm button" value="confirm" />
       </td>
     </tr>
     {% endfor %}
