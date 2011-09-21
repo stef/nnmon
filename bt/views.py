@@ -94,14 +94,14 @@ def confirm(request, id, name=None):
             try:
                 c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
             except:
-                return HttpResponse(_("Thank you, this has been already confirmed"))
+                return HttpResponse(unicode(_("Thank you, this has been already confirmed")))
             c.save()
-        return HttpResponse(_('<div class="confirm_thanks">Thank you for your confirmation</div>'))
+        return HttpResponse('<div class="confirm_thanks">%s</div>' % unicode(_('Thank you for your confirmation')) )
     c=Confirmation.objects.get(key=id)
     if c:
         c.key=''
         c.save()
-    messages.add_message(request, messages.INFO, _('Thank you for verifying your confirmation'))
+    messages.add_message(request, messages.INFO, unicode(_('Thank you for verifying your confirmation')))
     return HttpResponseRedirect('/') # Redirect after POST
 
 def sendverifymail(service,to):
