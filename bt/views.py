@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from models import Violation, Attachment, Comment, Confirmation
+from models import Violation, Attachment, Comment, Confirmation, COUNTRIES
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json, smtplib
