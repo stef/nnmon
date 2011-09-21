@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-21 03:38+0200\n"
+"POT-Creation-Date: 2011-09-22 00:39+0200\n"
 "PO-Revision-Date: 2011-04-29 17:49+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: fr <LL@li.org>\n"
@@ -53,6 +53,10 @@ msgid ""
 msgstr ""
 
 #: bt/forms.py:26
+msgid "Name or nickname"
+msgstr ""
+
+#: bt/forms.py:26
 msgid "We need some name to display that instead of an email address."
 msgstr ""
 
@@ -61,35 +65,37 @@ msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
 #: bt/forms.py:28
-msgid "What is the affected resource."
+msgid "What is the affected resource. (optional)"
 msgstr ""
 
 #: bt/forms.py:29
-msgid "Please specify the name of the affected resource."
+msgid "Please specify the name of the affected resource. (optional)"
 msgstr ""
 
 #: bt/forms.py:30
-msgid "Is the Resource Blocked or otherwise discrimated?"
+msgid "Is the Resource Blocked or otherwise discrimated? (optional)"
 msgstr ""
 
 #: bt/forms.py:31
-msgid "Is the restriction only temporary, e.g. due to network overload?"
+msgid ""
+"Is the restriction only temporary, e.g. due to network overload? "
+"(optional)"
 msgstr ""
 
 #: bt/forms.py:32
 msgid ""
 "Is there another offer provided by this Operator which removes this "
-"restriction?"
+"restriction? (optional)"
 msgstr ""
 
 #: bt/forms.py:33
-msgid "Is the restriction described in the users contract?"
+msgid "Is the restriction described in the subscribers contract? (optional)"
 msgstr ""
 
 #: bt/forms.py:34
 msgid ""
 "Please copy the relevant section describing the restriction from the user"
-" contract."
+" contract. (optional)"
 msgstr ""
 
 #: bt/forms.py:35
@@ -246,6 +252,11 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
+#: bt/models.py:87
+#, python-format
+msgid "Comment #%s"
+msgstr ""
+
 #: bt/multifile.py:135
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
@@ -303,7 +314,7 @@ msgid "Thank you, this has been already confirmed"
 msgstr ""
 
 #: bt/views.py:99
-msgid "<div class=\"confirm_thanks\">Thank you for your confirmation</div>"
+msgid "Thank you for your confirmation"
 msgstr ""
 
 #: bt/views.py:104
@@ -329,4 +340,34 @@ msgid ""
 "Thank you for submitting this report, you will receive a verification "
 "email shortly."
 msgstr ""
+
+#~ msgid "What is the affected resource."
+#~ msgstr ""
+
+#~ msgid "Please specify the name of the affected resource."
+#~ msgstr ""
+
+#~ msgid "Is the Resource Blocked or otherwise discrimated?"
+#~ msgstr ""
+
+#~ msgid "Is the restriction only temporary, e.g. due to network overload?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Is there another offer provided by "
+#~ "this Operator which removes this "
+#~ "restriction?"
+#~ msgstr ""
+
+#~ msgid "Is the restriction described in the users contract?"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Please copy the relevant section "
+#~ "describing the restriction from the user"
+#~ " contract."
+#~ msgstr ""
+
+#~ msgid "<div class=\"confirm_thanks\">Thank you for your confirmation</div>"
+#~ msgstr ""
 
