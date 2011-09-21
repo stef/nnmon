@@ -84,7 +84,7 @@ class Comment(models.Model):
         pass
 
     def __unicode__(self):
-        return "Comment #%s" % (self.pk)
+        return _("Comment #%s") % (self.pk)
 
 class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
