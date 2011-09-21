@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-20 23:34+0200\n"
+"POT-Creation-Date: 2011-09-21 02:23+0200\n"
 "PO-Revision-Date: 2011-04-29 17:53+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -39,6 +39,10 @@ msgstr ""
 msgid ""
 "Please describe the symptoms you are experiencing. What service or site, "
 "or person is unavailable or seems artificially slowed down."
+msgstr ""
+
+#: bt/forms.py:25
+msgid "Email (set this to enable saving)"
 msgstr ""
 
 #: bt/forms.py:25
@@ -258,6 +262,10 @@ msgstr ""
 msgid "An incorrect number of files were uploaded."
 msgstr ""
 
+#: bt/views.py:50 bt/views.py:70
+msgid "Thank you, this has been already activated"
+msgstr ""
+
 #: bt/views.py:54
 #, python-format
 msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
@@ -271,10 +279,6 @@ msgstr ""
 msgid ""
 "Thank you for verifying your submission. It will be listed shortly, after"
 " verifying it's a valid report."
-msgstr ""
-
-#: bt/views.py:70
-msgid "Thank you, this has been already activated"
 msgstr ""
 
 #: bt/views.py:72
@@ -312,7 +316,8 @@ msgid ""
 "Thank you for submitting a new report. To finalize your submission please"
 " confirm using your validation key.\n"
 "Your verification key is %s/%s%s\n"
-"Your report will be listed after we assured it is valid."
+"Please note that reports are moderated, it might take some time before "
+"your report appears online. Thank you for your patience."
 msgstr ""
 
 #: bt/views.py:110
@@ -326,28 +331,11 @@ msgid ""
 msgstr ""
 
 #~ msgid ""
-#~ "We need your email to validate "
-#~ "your report. We're not storing the "
-#~ "email later on."
-#~ msgstr ""
-
-#~ msgid "We need your some name to identify you later on."
-#~ msgstr ""
-
-#~ msgid ""
-#~ "Unfortunately we must protect against "
-#~ "automatic attacks, please forgive us "
-#~ "this inconvenience."
-#~ msgstr ""
-
-#~ msgid "Thank you for verifying your submission."
-#~ msgstr ""
-
-#~ msgid ""
 #~ "Thank you for submitting a new "
 #~ "report. To finalize your submission "
 #~ "please confirm using your validation "
 #~ "key.\n"
 #~ "Your verification key is %s/%s%s\n"
+#~ "Your report will be listed after we assured it is valid."
 #~ msgstr ""
 
