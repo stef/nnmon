@@ -50,7 +50,7 @@ $(document).ready(function() {
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
 <ul id="report">
   {%if v.comment_set.all%}
-  <li id="description">
+  <li id="description" class='round-box'>
     <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
     <div class="description-node">
@@ -79,7 +79,7 @@ $(document).ready(function() {
 </ul>
   <div class="info-validate" style="display: inline-block;">
     <form method="get" id="{{ violation.pk }}" class="confirm_form" >
-        <label>{% trans "In order to <strong>validate your action</strong>, please enter your email address" %}</label>
+        <label>{% trans "In order to <strong>validate your confirmation</strong>, please enter your email address" %}</label>
         <input type="text" name="email" />
         <input type="hidden" value="{{ violation.pk }}" />
         <input type="submit" value="{% trans "confirm" %}" />
