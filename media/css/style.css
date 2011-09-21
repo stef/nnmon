@@ -555,6 +555,7 @@ dl#comments {
   -webkit-border-radius: 2px;
   -o-border-radius: 2px;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .info-validate input[type=text],
