@@ -542,6 +542,19 @@ dl#comments {
   color: #404040;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
+.button{
+  padding: 3px;
+  font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  font-size: 14.4px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top-color: #c0c0c0;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+}
+
 .info-validate input[type=text],
 .info-validate input[type=submit] {
   width: 75%;
@@ -561,6 +574,7 @@ dl#comments {
   padding-top: 2px;
   padding-bottom: 2px;
 }
+.button,
 .info-validate input[type=submit] {
   background-image: -webkit-gradient(
     linear,
@@ -577,9 +591,12 @@ dl#comments {
   border-color: #bbbbbb;
   border-bottom-color: #a0a0a0;
 }
+.button:hover,
 .info-validate input[type=submit]:hover {
   border-color: #939393;
 }
+.button:active,
+.button:focus,
 .info-validate input[type=submit]:active,
 .info-validate input[type=submit]:focus {
   background-image: -webkit-gradient(
