@@ -35,7 +35,7 @@
 
   <ul id="nav">
      <li><a {% if request.path == '/' %}id="current" {% endif %}href="{%root_url%}/">{% trans "Home" %}</a></li>
-     <li><a {% if request.path == '/list/' %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Violations" %}</a></li>
+     <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Violations" %}</a></li>
      <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What's Net Neutrality" %}</a></li>
      <li><a {% if request.path == '/start/' %}id="current" {% endif %}href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
      <li><a {% if request.path == '/contact/' %}id="current" {% endif %}href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
