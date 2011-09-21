@@ -56,7 +56,7 @@ $(document).ready(function() {
          {% trans "Attachments" %}
         <ul>
           {%for a in c.attachment_set.all%}
-          <li><a href="{{a.storage.url}}">{{a.storage.name}}</a></li>
+          <li><a href="{%media_url%}/{{a.storage.url}}">{{a.name}}</a></li>
           {%endfor%}
         </ul>
       </div>
