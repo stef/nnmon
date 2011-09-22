@@ -619,7 +619,8 @@ div.comment {
 }
 
 .info-validate input[type=text],
-.info-validate input[type=submit] {
+.info-validate input[type=submit],
+.info-validate input[type=button] {
   width: 60%;
   padding: 3px;
   font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -632,13 +633,15 @@ div.comment {
   -o-border-radius: 2px;
   border-radius: 2px;
 }
-.info-validate input[type=submit] {
-  width: 21%;
+.info-validate input[type=submit],
+.info-validate input[type=button] {
+  width: 15%;
   padding-top: 2px;
   padding-bottom: 2px;
 }
 .button,
-.info-validate input[type=submit] {
+.info-validate input[type=submit],
+.info-validate input[type=button] {
   background-image: -webkit-gradient(
     linear,
     left bottom,
@@ -655,13 +658,16 @@ div.comment {
   border-bottom-color: #a0a0a0;
 }
 .button:hover,
-.info-validate input[type=submit]:hover {
+.info-validate input[type=submit]:hover,
+.info-validate input[type=button]:hover {
   border-color: #939393;
 }
 .button:active,
 .button:focus,
 .info-validate input[type=submit]:active,
-.info-validate input[type=submit]:focus {
+.info-validate input[type=submit]:focus,
+.info-validate input[type=button]:active,
+.info-validate input[type=button]:focus {
   background-image: -webkit-gradient(
     linear,
     left bottom,
