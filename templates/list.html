@@ -60,7 +60,7 @@
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
     <td>{{ violation.confirmations }}</td>
    <td>
-    <div class="confirm"><a class="button">+1</a>
+      <div class="confirm"><a class="button">{% trans "confirm" %}</a>
     <div class="info-validate float-confirm">
       <form method="get" id="{{ violation.pk }}" class="confirm_form" >
           <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
