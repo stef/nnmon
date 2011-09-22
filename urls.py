@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.views.generic.simple import direct_to_template
 from django.conf import settings
 from django.contrib import admin
 from bt import views as bt
@@ -22,6 +23,9 @@ urlpatterns = patterns('',
     (r'^accounts/logout$', 'django.contrib.auth.views.logout', {'next_page' : '/'}),
     (r'^accounts/', include('registration.urls')),
     (r'^comments/', include('django.contrib.comments.urls')),
+    (r'^about/$', direct_to_template, {'template': 'nn.html'}),
+    (r'^start/$', direct_to_template, {'template': 'start.html'}),
+    (r'^contact/$', direct_to_template, {'template': 'about.html'}),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
