@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 16:20+0200\n"
+"POT-Creation-Date: 2011-09-22 16:27+0200\n"
 "PO-Revision-Date: 2011-09-22 01:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: se <LL@li.org>\n"
@@ -395,7 +395,7 @@ msgid "Home"
 msgstr ""
 
 #: templates/base.html:38
-msgid "Violations"
+msgid "Cases"
 msgstr ""
 
 #: templates/base.html:39
@@ -452,7 +452,7 @@ msgid "Contract excerpt"
 msgstr ""
 
 #: templates/index.html:101
-msgid "Add New Infringement"
+msgid "Add New Case"
 msgstr ""
 
 #: templates/index.html:119
@@ -479,7 +479,7 @@ msgid ""
 msgstr ""
 
 #: templates/index.html:122
-msgid "Featured Infringements"
+msgid "Featured Cases"
 msgstr ""
 
 #: templates/index.html:126
@@ -967,4 +967,13 @@ msgstr ""
 #: templates/registration/registration_complete.html:8
 msgid "An email containing account-activation information has been sent."
 msgstr ""
+
+#~ msgid "Violations"
+#~ msgstr ""
+
+#~ msgid "Add New Infringement"
+#~ msgstr ""
+
+#~ msgid "Featured Infringements"
+#~ msgstr ""
 

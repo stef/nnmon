@@ -6,7 +6,7 @@
     <meta http-equiv="content-language" content="en" />
     <meta name="description" content="The Internet bugtracker" />
     <meta name="keywords" content="internet network neutrality" />
-    <title>{% block title %}[!] NNMon {% endblock %}</title>
+    <title>{% block title %}[!] Repect My Net {% endblock %}</title>
     <meta name="robots" content="noarchive,noindex,nofollow">
     <link rel="alternate" type="application/atom+xml" title="Atom feed" href="/atom/">
     <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss/">
@@ -20,7 +20,7 @@
 <div id="wrapper">
 <div id="header-container">
 <div id="header">
-   <h1><a href="/">NNMon <span>Net Neutrality Monitor</span></a></h1>
+   <h1><a href="/">Repect My Net <span>name and shame operators restricting access to the Internet</span></a></h1>
 
   <div id="user"><p>
 	{% if user.is_authenticated %}
@@ -35,7 +35,7 @@
 
   <ul id="nav">
      <li><a {% if request.path == '/' %}id="current" {% endif %}href="{%root_url%}/">{% trans "Home" %}</a></li>
-     <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Violations" %}</a></li>
+     <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Cases" %}</a></li>
      <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What's Net Neutrality" %}</a></li>
      <li><a {% if request.path == '/start/' %}id="current" {% endif %}href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
      <li><a {% if request.path == '/contact/' %}id="current" {% endif %}href="{%root_url%}/contact">{% trans "Contact" %}</a></li>

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: jooray@gmail.com\n"
-"POT-Creation-Date: 2011-09-22 16:20+0200\n"
+"POT-Creation-Date: 2011-09-22 16:27+0200\n"
 "PO-Revision-Date: 2011-09-22 00:55+0200\n"
 "Last-Translator: Juraj Bednar <jooray@gmail.com>\n"
 "Language-Team: Slovak <sk@li.org>\n"
@@ -408,13 +408,11 @@ msgstr ""
 
 #: templates/base.html:30
 #, fuzzy
-#| msgid "Spain"
 msgid "Admin"
 msgstr "Španielsko"
 
 #: templates/base.html:32
 #, fuzzy
-#| msgid "Blocking"
 msgid "Login"
 msgstr "Blokovanie"
 
@@ -423,7 +421,7 @@ msgid "Home"
 msgstr ""
 
 #: templates/base.html:38
-msgid "Violations"
+msgid "Cases"
 msgstr ""
 
 #: templates/base.html:39
@@ -480,7 +478,7 @@ msgid "Contract excerpt"
 msgstr ""
 
 #: templates/index.html:101
-msgid "Add New Infringement"
+msgid "Add New Case"
 msgstr ""
 
 #: templates/index.html:119
@@ -507,7 +505,7 @@ msgid ""
 msgstr ""
 
 #: templates/index.html:122
-msgid "Featured Infringements"
+msgid "Featured Cases"
 msgstr ""
 
 #: templates/index.html:126
@@ -530,7 +528,6 @@ msgstr ""
 
 #: templates/index.html:140 templates/list.html:70
 #, fuzzy
-#| msgid "France"
 msgid "cancel"
 msgstr "Francúzsko"
 
@@ -826,8 +823,7 @@ msgid ""
 msgstr ""
 
 #: templates/view.html:91
-#, fuzzy, python-format
-#| msgid "Comment #%s"
+#, fuzzy
 msgid "Comments"
 msgstr "Komentár #%s"
 
@@ -1000,4 +996,13 @@ msgstr ""
 #: templates/registration/registration_complete.html:8
 msgid "An email containing account-activation information has been sent."
 msgstr ""
+
+#~ msgid "Violations"
+#~ msgstr ""
+
+#~ msgid "Add New Infringement"
+#~ msgstr ""
+
+#~ msgid "Featured Infringements"
+#~ msgstr ""
 
