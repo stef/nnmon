@@ -131,7 +131,7 @@ $(document).ready(function(){
   <tbody>
   {% for violation in violations %}
     <tr>
-       <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country }}) {{ violation.contract }}</a>
+       <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country|country }}) {{ violation.contract }}</a>
           <div class="info-validate">
             <form method="get" id="{{ violation.pk }}" class="confirm_form" >
                 <label>{% trans "In order to <strong>validate your action</strong>, please enter your email address" %}</label>

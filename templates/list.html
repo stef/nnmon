@@ -52,7 +52,7 @@
   <tbody>
 {% for violation in violations %}
 <tr>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country|country }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource }}</a></td>
