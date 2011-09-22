@@ -136,14 +136,14 @@ $(document).ready(function(){
             <form method="get" id="{{ violation.pk }}" class="confirm_form" >
                 <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
                 <br/><input type="text" name="email" />
-                <input type="submit" value="{% trans "confirm" %}" />
+                <input type="submit" value="{% trans "ok" %}" />
                 <input type="button" value="{% trans "cancel" %}" class="cancel-button" />
                 <input type="hidden" value="{{ violation.pk }}" />
               </form>
             </div>
        </td>
       <td class='align-right'>{{ violation.confirmations }}</td>
-      <td class='align-right'><input type="button" class="confirm button" value="OK" />
+      <td class='align-right'><input type="button" class="confirm button" value="{% trans "Confirm" %}" />
       </td>
     </tr>
     <tr>
