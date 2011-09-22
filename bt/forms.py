@@ -32,4 +32,4 @@ class AddViolation(forms.Form):
    loophole = forms.BooleanField(required=False, label=_('Is there another offer provided by this Operator which removes this restriction? (optional)'))
    contractual = forms.BooleanField(required=False, label=_('Is the restriction described in the subscribers contract? (optional)'))
    contract_excerpt = forms.CharField(required=False, widget=AdvancedEditor(), label=_('Please copy the relevant section describing the restriction from the user contract. (optional)'))
-   captcha = CaptchaField(label=_("Unfortunately we must protect against automatic attacks, please forgive us this inconvenience. (note the + and the * are somewhat confusing)"))
+   captcha = CaptchaField(label=_("In order to protect against spam, please fill in the result of the following calculation. (note the + and the * are somewhat confusing)"))

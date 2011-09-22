@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 02:54+0200\n"
+"POT-Creation-Date: 2011-09-22 02:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -100,8 +100,8 @@ msgstr ""
 
 #: bt/forms.py:35
 msgid ""
-"Unfortunately we must protect against automatic attacks, please forgive "
-"us this inconvenience. (note the + and the * are somewhat confusing)"
+"In order to protect against spam, please fill in the result of the "
+"following calculation. (note the + and the * are somewhat confusing)"
 msgstr ""
 
 #: bt/models.py:6
