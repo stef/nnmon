@@ -123,9 +123,9 @@ $(document).ready(function(){
   <table>
     <thead>
       <tr>
-        <th>{% trans "Infringing offering" %}</th>
+        <th style="width: 70%;">{% trans "Infringing offering" %}</th>
         <th>{% trans "Confirmed" %}</th>
-        <th>{% trans "I Confirm" %}</th>
+        <th></th>
       </tr>
     </thead>
   <tbody>
@@ -137,7 +137,7 @@ $(document).ready(function(){
                 <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
                 <br/><input type="text" name="email" />
                 <input type="submit" value="{% trans "confirm" %}" />
-                <input class="cancel-button button" type="button" value="{% trans "cancel" %}" />
+                <input type="button" value="{% trans "cancel" %}" />
                 <input type="hidden" value="{{ violation.pk }}" />
               </form>
             </div>
