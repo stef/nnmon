@@ -2,6 +2,7 @@ from django.template import Library, Variable
 from django.conf import settings
 from django import template
 import random
+from nnmon.bt.models import COUNTRIES
 
 register = Library()
 
@@ -13,3 +14,7 @@ def root_url():
 def media_url():
     return settings.MEDIA_URL
 
+country_map=dict(COUNTRIES)
+@register.filter(name='country')
+def country(code):
+    return country_map[code]
