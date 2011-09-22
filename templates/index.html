@@ -134,7 +134,8 @@ $(document).ready(function(){
        <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country|country }}) {{ violation.contract }}</a>
           <div class="info-validate">
             <form method="get" id="{{ violation.pk }}" class="confirm_form" >
-                <label>{% trans "In order to <strong>validate your action</strong>, please enter your email address" %}</label>
+                <label>{% trans "In order to <strong>validate your
+                      confirmation</strong> of this case, please enter your email address" %}</label>
                 <input type="text" name="email" />
                 <input type="hidden" value="{{ violation.pk }}" />
                 <input type="submit" value="{% trans "confirm" %}" />
