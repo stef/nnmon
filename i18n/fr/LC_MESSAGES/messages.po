@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  nnmon\n"
 "Report-Msgid-Bugs-To: https://github.com/stef/nnmon/issues\n"
-"POT-Creation-Date: 2011-09-22 16:27+0200\n"
+"POT-Creation-Date: 2011-09-22 16:33+0200\n"
 "PO-Revision-Date: 2011-09-22 09:14+0000\n"
 "Last-Translator: Benjamin <benjamin@sonntag.fr>\n"
 "Language-Team: French "
@@ -709,6 +709,12 @@ msgid ""
 "connections."
 msgstr ""
 
+#: templates/start.html:29
+msgid ""
+"runs on <a "
+"href=\"http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk\">Android</a>"
+msgstr ""
+
 #: templates/start.html:30
 msgid ""
 "Test your connection speed and receive sophisticated diagnosis of "
@@ -1012,13 +1018,4 @@ msgstr ""
 #: templates/registration/registration_complete.html:8
 msgid "An email containing account-activation information has been sent."
 msgstr ""
-
-#~ msgid "Violations"
-#~ msgstr ""
-
-#~ msgid "Add New Infringement"
-#~ msgstr ""
-
-#~ msgid "Featured Infringements"
-#~ msgstr ""
 
