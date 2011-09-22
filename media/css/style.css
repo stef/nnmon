@@ -621,7 +621,7 @@ div.comment {
 .info-validate input[type=text],
 .info-validate input[type=submit],
 .info-validate input[type=button] {
-  width: 68%;
+  width: 65%;
   padding: 3px;
   font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: 14.4px;
