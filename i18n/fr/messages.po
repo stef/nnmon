@@ -1,343 +1,378 @@
-# French translations for nnmon.
+# Translations template for nnmon.
 # Copyright (C) 2011 ORGANIZATION
 # This file is distributed under the same license as the nnmon project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
+# 
+# Translators:
+# axx <stuff@axelsimon.net>, 2011.
+# Benjamin <benjamin@sonntag.fr>, 2011.
+# FULL NAME <EMAIL@ADDRESS>, 2011.
+#   <stuff@axelsimon.net>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: nnmon 0.00000000000001\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 03:31+0200\n"
-"PO-Revision-Date: 2011-04-29 17:49+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: fr <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n > 1)\n"
+"Project-Id-Version: nnmon\n"
+"Report-Msgid-Bugs-To: https://github.com/stef/nnmon/issues\n"
+"POT-Creation-Date: 2011-09-22 01:01+0200\n"
+"PO-Revision-Date: 2011-09-22 09:14+0000\n"
+"Last-Translator: Benjamin <benjamin@sonntag.fr>\n"
+"Language-Team: French (http://www.transifex.net/projects/p/nnmon/team/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: fr\n"
+"Plural-Forms: nplurals=2; plural=(n > 1)\n"
 
 #: bt/forms.py:20
 msgid "EU member state where the restriction is reported."
-msgstr ""
+msgstr "État membre de l'UE où la restriction est détectée."
 
 #: bt/forms.py:21
 msgid "The ISP or operator providing the Internet service."
-msgstr ""
+msgstr "Le FAI ou opérateur fournissant le service Internet."
 
 #: bt/forms.py:22
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
+"Le contrat spécifique au fournisseur d'accès (soyez aussi précis que "
+"possible)."
 
 #: bt/forms.py:23
 msgid "Is the Internet connection over mobile or fixed line?"
-msgstr ""
+msgstr "S'agit-il d'une connexion Internet sur une ligne fixe ou mobile ?"
 
 #: bt/forms.py:24
 msgid ""
-"Please describe the symptoms you are experiencing. What service or site, "
-"or person is unavailable or seems artificially slowed down."
+"Please describe the symptoms you are experiencing. What service or site, or "
+"person is unavailable or seems artificially slowed down."
 msgstr ""
+"Merci de décrire les symptômes que vous remarquez. Quel service, site ou "
+"personne n'est pas accessible ou semble artificiellement ralenti."
 
 #: bt/forms.py:25
 msgid "Email (set this to enable saving)"
-msgstr ""
+msgstr "Email (remplir pour permettre la sauvegarde)"
 
 #: bt/forms.py:25
 msgid ""
 "We need your email to validate your report. Your email address is "
-"obligatory, but we will never use your personal data for anything else "
-"than checking the submission."
+"obligatory, but we willl never use your personal data for anything else than"
+" checking the submission."
 msgstr ""
+"Nous avons besoin de votre email pour valider ce rapport. L'adresse email "
+"est obligatoire, mais nous n'utiliserons jamais vos données personnelles "
+"pour autre chose que pour vérifier votre envoi."
 
 #: bt/forms.py:26
 msgid "Name or nickname"
-msgstr ""
+msgstr "Nom ou pseudo"
 
 #: bt/forms.py:26
 msgid "We need some name to display that instead of an email address."
 msgstr ""
+"Nous avons besoin d'un nom afin d'afficher un nom plutôt que votre adresse "
+"email sur le site."
 
 #: bt/forms.py:27
 msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
+"Joindre une capture d'écran, un document ou tout autre information "
+"apropriée."
 
 #: bt/forms.py:28
 msgid "What is the affected resource. (optional)"
-msgstr ""
+msgstr "Quelle est la ressource concernée (facultatif)"
 
 #: bt/forms.py:29
 msgid "Please specify the name of the affected resource. (optional)"
-msgstr ""
+msgstr "Merci de préciser le nom de la ressource concernée (facultatif)"
 
 #: bt/forms.py:30
 msgid "Is the Resource Blocked or otherwise discrimated? (optional)"
 msgstr ""
+"La ressource est-elle bloquée ou discriminée d'une certaine façon ? "
+"(facultatif)"
 
 #: bt/forms.py:31
 msgid ""
-"Is the restriction only temporary, e.g. due to network overload? "
-"(optional)"
+"Is the restriction only temporary, e.g. due to network overload? (optional)"
 msgstr ""
+"La restriction est-elle temporaire, par exemple du fait d'une saturation du "
+"réseau ? (facultatif)"
 
 #: bt/forms.py:32
 msgid ""
 "Is there another offer provided by this Operator which removes this "
 "restriction? (optional)"
 msgstr ""
+"Existe-t-il une autre offre de cet opérateur qui permet de lever cette "
+"restriction ? (facultatif)"
 
 #: bt/forms.py:33
 msgid "Is the restriction described in the subscribers contract? (optional)"
 msgstr ""
+"Cette restriction est-elle décrite dans votre contrat client ? (facultatif)"
 
 #: bt/forms.py:34
 msgid ""
-"Please copy the relevant section describing the restriction from the user"
-" contract. (optional)"
+"Please copy the relevant section describing the restriction from the user "
+"contract. (optional)"
 msgstr ""
+"Merci de recopier la section de vote contrat client décrivant cette "
+"restriction. (facultatif)"
 
 #: bt/forms.py:35
 msgid ""
-"In order to protect against spam, please fill in the result of the "
-"following calculation. (note the + and the * are somewhat confusing)"
+"Unfortunately we must protect against automatic attacks, please forgive us "
+"this inconvenience. (note the + and the * are somewhat confusing)"
 msgstr ""
+"Nous devons malheureusement nous protéger contre les attaques automatiques, "
+"merci de nous excuser pour ce désagrément. (Notez que les + et * portent "
+"parfois à confusion)"
 
 #: bt/models.py:6
 msgid "Belgium"
-msgstr ""
+msgstr "Belgique"
 
 #: bt/models.py:7
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarie"
 
 #: bt/models.py:8
 msgid "Czech Republic"
-msgstr ""
+msgstr "République Tchèque"
 
 #: bt/models.py:9
 msgid "Denmark"
-msgstr ""
+msgstr "Danemark"
 
 #: bt/models.py:10
 msgid "Germany"
-msgstr ""
+msgstr "Allemagne"
 
 #: bt/models.py:11
 msgid "Estonia"
-msgstr ""
+msgstr "Estonie"
 
 #: bt/models.py:12
 msgid "Ireland"
-msgstr ""
+msgstr "Irlande"
 
 #: bt/models.py:13
 msgid "Greece"
-msgstr ""
+msgstr "Grèce"
 
 #: bt/models.py:14
 msgid "Spain"
-msgstr ""
+msgstr "Espagne"
 
 #: bt/models.py:15
 msgid "France"
-msgstr ""
+msgstr "France"
 
 #: bt/models.py:16
 msgid "Italy"
-msgstr ""
+msgstr "Italie"
 
 #: bt/models.py:17
 msgid "Cyprus"
-msgstr ""
+msgstr "Chypre"
 
 #: bt/models.py:18
 msgid "Latvia"
-msgstr ""
+msgstr "Lettonie"
 
 #: bt/models.py:19
 msgid "Lithuania"
-msgstr ""
+msgstr "Lituanie"
 
 #: bt/models.py:20
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 #: bt/models.py:21
 msgid "Hungary"
-msgstr ""
+msgstr "Hongrie"
 
 #: bt/models.py:22
 msgid "Malta"
-msgstr ""
+msgstr "Malte"
 
 #: bt/models.py:23
 msgid "Netherlands"
-msgstr ""
+msgstr "Hollande"
 
 #: bt/models.py:24
 msgid "Austria"
-msgstr ""
+msgstr "Autriche"
 
 #: bt/models.py:25
 msgid "Poland"
-msgstr ""
+msgstr "Pologne"
 
 #: bt/models.py:26
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: bt/models.py:27
 msgid "Romania"
-msgstr ""
+msgstr "Roumanie"
 
 #: bt/models.py:28
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovénie"
 
 #: bt/models.py:29
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovaquie"
 
 #: bt/models.py:30
 msgid "Finland"
-msgstr ""
+msgstr "Finlande"
 
 #: bt/models.py:31
 msgid "Sweden"
-msgstr ""
+msgstr "Suède"
 
 #: bt/models.py:32
 msgid "United Kingdom "
-msgstr ""
+msgstr "Royaume-Uni"
 
 #: bt/models.py:36
 msgid "port"
-msgstr ""
+msgstr "port"
 
 #: bt/models.py:37
 msgid "protocol"
-msgstr ""
+msgstr "protocole"
 
 #: bt/models.py:38
 msgid "service"
-msgstr ""
+msgstr "service"
 
 #: bt/models.py:39
 msgid "site"
-msgstr ""
+msgstr "site"
 
 #: bt/models.py:40
 msgid "user"
-msgstr ""
+msgstr "utilisateur"
 
 #: bt/models.py:41
 msgid "ip"
-msgstr ""
+msgstr "IP"
 
 #: bt/models.py:44
 msgid "Blocking"
-msgstr ""
+msgstr "Blocage"
 
 #: bt/models.py:45
 msgid "Throttling"
-msgstr ""
+msgstr "Limitation"
 
 #: bt/models.py:48
 msgid "Fixed"
-msgstr ""
+msgstr "Fixe"
 
 #: bt/models.py:49
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
 #: bt/models.py:87
 #, python-format
 msgid "Comment #%s"
-msgstr ""
+msgstr "Commentaire N°%s"
 
 #: bt/multifile.py:135
 msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
+msgstr "Aucun fichier n'a été envoyé. Vérifiez l'encodage du formulaire."
 
 #: bt/multifile.py:137
 msgid "No file was submitted."
-msgstr ""
+msgstr "Aucun fichier n'a été envoyé."
 
 #: bt/multifile.py:141
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Le fichier envoyé est vide."
 
 #: bt/multifile.py:144
 msgid "An incorrect number of files were uploaded."
-msgstr ""
+msgstr "Un nombre de fichiers incorrect a été envoyé."
 
 #: bt/views.py:50 bt/views.py:70
 msgid "Thank you, this has been already activated"
-msgstr ""
+msgstr "Merci, l'activation a déjà été effectuée"
 
 #: bt/views.py:54
 #, python-format
 msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
 msgstr ""
+"Un nouveau rapport a été envoyé. Pour l'approuver cliquer ici : "
+"%s/moderate?key=%s\n"
 
 #: bt/views.py:55
 msgid "NNMon submission approval"
-msgstr ""
+msgstr "Approbation des envois NNMon"
 
 #: bt/views.py:63
 msgid ""
-"Thank you for verifying your submission. It will be listed shortly, after"
-" we've checked that the report is valid."
+"Thank you for verifying your submission. It will be listed shortly, after "
+"we've checked that the report is valid."
 msgstr ""
+"Merci de vérifier votre envoi. Il sera mis en ligne rapidement, après "
+"vérification de sa validité."
 
 #: bt/views.py:72
 msgid "No such key"
-msgstr ""
+msgstr "Clé non trouvée"
 
 #: bt/views.py:77
 #, python-format
 msgid "New infringement reported for %s (%s) %s"
-msgstr ""
+msgstr "Un nouvelle violation a été rapportée pour %s (%s) %s"
 
 #: bt/views.py:82
 msgid "Thank you for approving the submission."
-msgstr ""
+msgstr "Merci d'avoir approuvé cet envoi."
 
 #: bt/views.py:86
 msgid "Thank you for deleting the submission."
-msgstr ""
+msgstr "Merci d'avoir supprimé cet envoi."
 
 #: bt/views.py:97
 msgid "Thank you, this has been already confirmed"
-msgstr ""
+msgstr "Merci, cet envoi a déjà été confirmé"
 
 #: bt/views.py:99
 msgid "Thank you for your confirmation"
-msgstr ""
+msgstr "Merci de votre confirmation "
 
 #: bt/views.py:104
 msgid "Thank you for verifying your confirmation"
-msgstr ""
+msgstr "Merci d'avoir vérifié votre confirmation"
 
 #: bt/views.py:109
 #, python-format
 msgid ""
-"Thank you for submitting a new report. To finalize your submission please"
-" confirm using your validation key.\n"
+"Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\n"
 "Your verification key is %s/%s%s\n"
-"Please note that reports are moderated, it might take some time before "
-"your report appears online. Thank you for your patience."
+"Please note that reports are moderated, it might take some time before your report appears online. Thank you for your patience."
 msgstr ""
+"Merci d'avoir envoyé ce nouveau rapport. Pour terminer votre envoi, merci de confirmer en utilisant la clé de validation ci-dessous.\n"
+"Votre clé de vérification est %s/%s%s\n"
+"Notez que les envois sont modérés, votre envoi apparaîtra en ligne plus tard. Merci de votre patience."
 
 #: bt/views.py:110
 msgid "NNMon submission verification"
-msgstr ""
+msgstr "vérification des envois à NNMon"
 
 #: bt/views.py:157
 msgid ""
-"Thank you for submitting this report, you will receive a verification "
-"email shortly."
+"Thank you for submitting this report, you will receive a verification email "
+"shortly."
 msgstr ""
+"Merci de nous avoir envoyé votre rapport. Vous recevrez un email de "
+"vérification sous peu."
+
 
