@@ -9,7 +9,10 @@
   <script type="text/javascript" src="{%media_url%}/js/picnet.table.filter.min.js"></script>
   <script type="text/javascript">
    $(document).ready(function() {
-     $("#sortedlist").tablesorter({ headers: { 7: { sorter: false }, }});
+         $("#sortedlist").tablesorter({ 
+            headers: { 7: { sorter: false },},
+            sortList: [[0,0],[1,0]],
+         });
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
         var self=this;
