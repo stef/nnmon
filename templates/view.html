@@ -23,11 +23,11 @@ function bindPostCommentHandler() {
             cache: false,
             dataType: "html",
             success: function(html, textStatus) {
-                $('#comment_form form').replaceWith(html+"It will appear here after moderation.");
+                $('#comment_form form').replaceWith(html+" "+"{% trans "It will appear here after moderation." %}");
                 bindPostCommentHandler();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                $('#comment_form form').replaceWith('Your comment was unable to be posted at this time.  We apologise for the inconvenience.');
+                $('#comment_form form').replaceWith('{% trans "Your comment was unable to be posted at this time.  We apologise for the inconvenience." %}');
             }
         });
         return false;
@@ -101,8 +101,8 @@ $(document).ready(function() {
     {% render_comment_form for v %}
   </div>
   {% else %}
-  <a class="button" href='/moderate/?key={{key}}&action=approve'>Approve Submission</a>
-  <a class="button" href='/moderate/?key={{key}}&action=delete'>Delete Submission</a>
+  <a class="button" href='/moderate/?key={{key}}&action=approve'>{% trans "Approve Submission" %}</a>
+  <a class="button" href='/moderate/?key={{key}}&action=delete'>{% trans "Delete Submission" %}</a>
   </div>
   {% endif %}
 </div>

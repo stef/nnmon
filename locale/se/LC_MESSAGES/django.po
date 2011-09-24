@@ -1,0 +1,1116 @@
+# Northern Sami translations for PROJECT.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2011-09-22 18:16+0200\n"
+"PO-Revision-Date: 2011-09-22 01:00+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: se <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: bt/forms.py:20
+msgid "EU member state where the restriction is reported."
+msgstr ""
+
+#: bt/forms.py:21
+msgid "The ISP or operator providing the Internet service."
+msgstr ""
+
+#: bt/forms.py:22
+msgid ""
+"The specific contract at the ISP provider. (please be as specific as "
+"possible)"
+msgstr ""
+
+#: bt/forms.py:23
+msgid "Is the Internet connection over mobile or fixed line?"
+msgstr ""
+
+#: bt/forms.py:24
+msgid ""
+"Please describe the symptoms you are experiencing. What service or site, "
+"or person is unavailable or seems artificially slowed down."
+msgstr ""
+
+#: bt/forms.py:25
+msgid "Email (set this to enable saving)"
+msgstr ""
+
+#: bt/forms.py:25
+msgid ""
+"We need your email to validate your report. Your email address is "
+"obligatory, but we will never use your personal data for anything else "
+"than checking the submission."
+msgstr ""
+
+#: bt/forms.py:26
+msgid "Name or nickname"
+msgstr ""
+
+#: bt/forms.py:26
+msgid "We need some name to display that instead of an email address."
+msgstr ""
+
+#: bt/forms.py:27
+msgid "Attach screenshot, document or any other relevant information."
+msgstr ""
+
+#: bt/forms.py:28
+msgid "What is the affected resource. (optional)"
+msgstr ""
+
+#: bt/forms.py:29
+msgid "Please specify the name of the affected resource. (optional)"
+msgstr ""
+
+#: bt/forms.py:30
+msgid "Is the Resource Blocked or otherwise discrimated? (optional)"
+msgstr ""
+
+#: bt/forms.py:31
+msgid ""
+"Is the restriction only temporary, e.g. due to network overload? "
+"(optional)"
+msgstr ""
+
+#: bt/forms.py:32
+msgid ""
+"Is there another offer provided by this Operator which removes this "
+"restriction? (optional)"
+msgstr ""
+
+#: bt/forms.py:33
+msgid "Is the restriction described in the subscribers contract? (optional)"
+msgstr ""
+
+#: bt/forms.py:34
+msgid ""
+"Please copy the relevant section describing the restriction from the user"
+" contract. (optional)"
+msgstr ""
+
+#: bt/forms.py:35
+msgid ""
+"In order to protect against spam, please fill in the result of the "
+"following calculation. (note the + and the * are somewhat confusing)"
+msgstr ""
+
+#: bt/models.py:6
+msgid "Belgium"
+msgstr ""
+
+#: bt/models.py:7
+msgid "Bulgaria"
+msgstr ""
+
+#: bt/models.py:8
+msgid "Czech Republic"
+msgstr ""
+
+#: bt/models.py:9
+msgid "Denmark"
+msgstr ""
+
+#: bt/models.py:10
+msgid "Germany"
+msgstr ""
+
+#: bt/models.py:11
+msgid "Estonia"
+msgstr ""
+
+#: bt/models.py:12
+msgid "Ireland"
+msgstr ""
+
+#: bt/models.py:13
+msgid "Greece"
+msgstr ""
+
+#: bt/models.py:14
+msgid "Spain"
+msgstr ""
+
+#: bt/models.py:15 templates/about.html:12
+msgid "France"
+msgstr ""
+
+#: bt/models.py:16
+msgid "Italy"
+msgstr ""
+
+#: bt/models.py:17
+msgid "Cyprus"
+msgstr ""
+
+#: bt/models.py:18
+msgid "Latvia"
+msgstr ""
+
+#: bt/models.py:19
+msgid "Lithuania"
+msgstr ""
+
+#: bt/models.py:20
+msgid "Luxembourg"
+msgstr ""
+
+#: bt/models.py:21
+msgid "Hungary"
+msgstr ""
+
+#: bt/models.py:22
+msgid "Malta"
+msgstr ""
+
+#: bt/models.py:23 templates/about.html:13
+msgid "Netherlands"
+msgstr ""
+
+#: bt/models.py:24
+msgid "Austria"
+msgstr ""
+
+#: bt/models.py:25
+msgid "Poland"
+msgstr ""
+
+#: bt/models.py:26
+msgid "Portugal"
+msgstr ""
+
+#: bt/models.py:27
+msgid "Romania"
+msgstr ""
+
+#: bt/models.py:28
+msgid "Slovenia"
+msgstr ""
+
+#: bt/models.py:29
+msgid "Slovakia"
+msgstr ""
+
+#: bt/models.py:30
+msgid "Finland"
+msgstr ""
+
+#: bt/models.py:31
+msgid "Sweden"
+msgstr ""
+
+#: bt/models.py:32
+msgid "United Kingdom "
+msgstr ""
+
+#: bt/models.py:36
+msgid "port"
+msgstr ""
+
+#: bt/models.py:37
+msgid "protocol"
+msgstr ""
+
+#: bt/models.py:38
+msgid "service"
+msgstr ""
+
+#: bt/models.py:39
+msgid "site"
+msgstr ""
+
+#: bt/models.py:40
+msgid "user"
+msgstr ""
+
+#: bt/models.py:41
+msgid "ip"
+msgstr ""
+
+#: bt/models.py:44
+msgid "Blocking"
+msgstr ""
+
+#: bt/models.py:45
+msgid "Throttling"
+msgstr ""
+
+#: bt/models.py:48
+msgid "Fixed"
+msgstr ""
+
+#: bt/models.py:49
+msgid "Mobile"
+msgstr ""
+
+#: bt/models.py:87
+#, python-format
+msgid "Comment #%s"
+msgstr ""
+
+#: bt/multifile.py:135
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: bt/multifile.py:137
+msgid "No file was submitted."
+msgstr ""
+
+#: bt/multifile.py:141
+msgid "The submitted file is empty."
+msgstr ""
+
+#: bt/multifile.py:144
+msgid "An incorrect number of files were uploaded."
+msgstr ""
+
+#: bt/views.py:50 bt/views.py:70
+msgid "Thank you, this has been already activated"
+msgstr ""
+
+#: bt/views.py:54
+#, python-format
+msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
+msgstr ""
+
+#: bt/views.py:55
+msgid "NNMon submission approval"
+msgstr ""
+
+#: bt/views.py:63
+msgid ""
+"Thank you for verifying your submission. It will be listed shortly, after"
+" we've checked that the report is valid."
+msgstr ""
+
+#: bt/views.py:72
+msgid "No such key"
+msgstr ""
+
+#: bt/views.py:77
+#, python-format
+msgid "New infringement reported for %s (%s) %s"
+msgstr ""
+
+#: bt/views.py:82
+msgid "Thank you for approving the submission."
+msgstr ""
+
+#: bt/views.py:86
+msgid "Thank you for deleting the submission."
+msgstr ""
+
+#: bt/views.py:97
+msgid "Thank you, this has been already confirmed"
+msgstr ""
+
+#: bt/views.py:99
+msgid "Thank you for your confirmation"
+msgstr ""
+
+#: bt/views.py:104
+msgid "Thank you for verifying your confirmation"
+msgstr ""
+
+#: bt/views.py:109
+#, python-format
+msgid ""
+"Thank you for submitting a new report. To finalize your submission please"
+" confirm using your validation key.\n"
+"Your verification key is %s/%s%s\n"
+"Please note that reports are moderated, it might take some time before "
+"your report appears online. Thank you for your patience."
+msgstr ""
+
+#: bt/views.py:110
+msgid "NNMon submission verification"
+msgstr ""
+
+#: bt/views.py:157
+msgid ""
+"Thank you for submitting this report, you will receive a verification "
+"email shortly."
+msgstr ""
+
+#: templates/about.html:7
+msgid ""
+"RespectMyNet.eu is an online platform enabling citizens to become the "
+"watchmen of the Internet by reporting Net Neutrality violations. Everyone"
+" is invited to report undue blocking or throttling of their Internet "
+"access, and help  name and shame operators' harmful practices."
+msgstr ""
+
+#: templates/about.html:8
+msgid ""
+"This platform is a joint project by La Quadrature du Net, Bits of Freedom"
+" and individual contributors. It was launched on September 22nd, 2011."
+msgstr ""
+
+#: templates/about.html:9
+msgid ""
+"Organisations will submit reports to national and EU regulatory "
+"authorities if appropriate."
+msgstr ""
+
+#: templates/about.html:10
+msgid "For enquiries about the project, please contact:"
+msgstr ""
+
+#: templates/add.html:31
+msgid "New Violation"
+msgstr ""
+
+#: templates/add.html:34 templates/index.html:104
+msgid "Provide optional details"
+msgstr ""
+
+#: templates/add.html:45 templates/index.html:115
+msgid "save"
+msgstr ""
+
+#: templates/base.html:24
+msgid "name and shame operators restricting access to the Internet"
+msgstr ""
+
+#: templates/base.html:29
+msgid "Logout"
+msgstr ""
+
+#: templates/base.html:31
+msgid "Admin"
+msgstr ""
+
+#: templates/base.html:33
+msgid "Login"
+msgstr ""
+
+#: templates/base.html:38
+msgid "Home"
+msgstr ""
+
+#: templates/base.html:39
+msgid "Cases"
+msgstr ""
+
+#: templates/base.html:40
+msgid "What's Net Neutrality"
+msgstr ""
+
+#: templates/base.html:41
+msgid "Start Monitoring"
+msgstr ""
+
+#: templates/base.html:42
+msgid "Contact"
+msgstr ""
+
+#: templates/feeditem.html:5 templates/view.html:54
+msgid "Description"
+msgstr ""
+
+#: templates/feeditem.html:11 templates/view.html:61
+msgid "Attachments"
+msgstr ""
+
+#: templates/feeditem.html:22 templates/view.html:74
+msgid "Media"
+msgstr ""
+
+#: templates/feeditem.html:23
+msgid "Affected Resource/service"
+msgstr ""
+
+#: templates/feeditem.html:24 templates/view.html:73
+msgid "Type"
+msgstr ""
+
+#: templates/feeditem.html:25 templates/view.html:75
+msgid "Temporary restriction"
+msgstr ""
+
+#: templates/feeditem.html:25 templates/feeditem.html:27 templates/view.html:76
+#: templates/view.html:77
+msgid "yes"
+msgstr ""
+
+#: templates/feeditem.html:26 templates/view.html:76
+msgid "Loophole offering"
+msgstr ""
+
+#: templates/feeditem.html:27 templates/view.html:77
+msgid "Contractual restriction"
+msgstr ""
+
+#: templates/feeditem.html:29 templates/view.html:78
+msgid "Contract excerpt"
+msgstr ""
+
+#: templates/index.html:101
+msgid "Add New Case"
+msgstr ""
+
+#: templates/index.html:119
+msgid "On the Internet, <b>you</b> decide what you do, right? <i>Not anymore!</i>"
+msgstr ""
+
+#: templates/index.html:120
+msgid ""
+"Large telecommunication providers want to control what you do online. "
+"They want to block and throttle some of your communications, and charge "
+"you to use certain online services, content and applications."
+msgstr ""
+
+#: templates/index.html:121
+msgid "Now is the time to fight back!"
+msgstr ""
+
+#: templates/index.html:122
+msgid ""
+"Help us chart all the ways that internet providers are violating our "
+"online freedom. Tell us about how your landline or mobile operator "
+"Internet provider restricts your connection. You can do so in less than "
+"two minutes!"
+msgstr ""
+
+#: templates/index.html:123
+msgid ""
+"We will report these violations to the European Commission and national "
+"authorities and demand action to address them."
+msgstr ""
+
+#: templates/index.html:124
+msgid ""
+"Don't hesitate to give us feedback on this application by reporting any "
+"idea or issue with RespectMyNet.eu here : <a "
+"href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>"
+msgstr ""
+
+#: templates/index.html:125
+msgid "Featured Cases"
+msgstr ""
+
+#: templates/index.html:129
+msgid "Infringing offering"
+msgstr ""
+
+#: templates/index.html:130
+msgid "Confirmed"
+msgstr ""
+
+#: templates/index.html:140 templates/list.html:70
+msgid ""
+"In order to <strong>validate your confirmation</strong> of this case, "
+"please enter your email address"
+msgstr ""
+
+#: templates/index.html:142
+msgid "ok"
+msgstr ""
+
+#: templates/index.html:143 templates/list.html:74
+msgid "cancel"
+msgstr ""
+
+#: templates/index.html:149
+msgid "Confirm"
+msgstr ""
+
+#: templates/list.html:42
+msgid ""
+"This is a list of all reported violations of net neutrality. See <a "
+"href='/about'>What is net neutrality</a> for a short explanation. "
+msgstr ""
+
+#: templates/list.html:46
+msgid "country"
+msgstr ""
+
+#: templates/list.html:47
+msgid "operator"
+msgstr ""
+
+#: templates/list.html:48
+msgid "contract"
+msgstr ""
+
+#: templates/list.html:49
+msgid "resource"
+msgstr ""
+
+#: templates/list.html:50
+msgid "type"
+msgstr ""
+
+#: templates/list.html:51
+msgid "fixed / wireless"
+msgstr ""
+
+#: templates/list.html:52
+msgid "confirmations"
+msgstr ""
+
+#: templates/list.html:67 templates/view.html:85
+msgid "confirm"
+msgstr ""
+
+#: templates/list.html:73
+msgid "OK"
+msgstr ""
+
+#: templates/nn.html:7
+msgid ""
+"On the Internet, <strong>you</strong> decide what you do, right? Not "
+"anymore!"
+msgstr ""
+
+#: templates/nn.html:8
+msgid ""
+"Large telecommunication providers want to control what you do online. "
+"They want to restrict access to internet telephony in order to force you "
+"to use their telephone services. They want to charge you for viewing of "
+"videos. They want to prohibit the use of specific software on their "
+"networks, or throttle innovative applications such as peer-to-peer "
+"filesharing."
+msgstr ""
+
+#: templates/nn.html:9
+msgid ""
+"This must stop. We want to ensure that your freedom online is protected "
+"and that you decide which content you access, and which applications and "
+"services you use. Net neutrality is about your freedom online."
+msgstr ""
+
+#: templates/nn.html:10
+msgid ""
+"Violations on Net Neutrality are bad for freedom of communication, "
+"freedom of choice, innovation and communication costs. They lead to a "
+"situation where the provider can decide what you do online, not you, and "
+"this restricts your freedom. It becomes more difficult for innovative "
+"companies to offer their services via the internet, because they may be "
+"blocked or slowed down by providers. And it leads to higher communication"
+" costs because you may have to pay extra to use cheap services such as "
+"internet telephony."
+msgstr ""
+
+#: templates/nn.html:11
+msgid ""
+"We need to ensure that the Internet remains free, open and accessible for"
+" all. This is what Net Neutrality is about. The European Commission and "
+"national regulators need to prohibit providers from restricting your "
+"online traffic and do so before it is too late. In order to convince them"
+" about the urgency of this problem, we aim to create a comprehensive "
+"report of Net Neutrality violations in Europe. This website is the way to"
+" report these violations."
+msgstr ""
+
+#: templates/start.html:7
+msgid ""
+"Do you want to check whether your access provider is manipulating your "
+"internet traffic? Great!"
+msgstr ""
+
+#: templates/start.html:8
+msgid ""
+"There are a lot of tools which make life easier for you. Here is a short "
+"selection."
+msgstr ""
+
+#: templates/start.html:9
+msgid "Recommended tools"
+msgstr ""
+
+#: templates/start.html:10
+msgid ""
+"These tools are probably the most helpful when it comes to tracking "
+"traffic discrimination."
+msgstr ""
+
+#: templates/start.html:13
+msgid "Available for Mac OS X, Ubuntu (GNU/Linux) and Windows."
+msgstr ""
+
+#: templates/start.html:14
+msgid ""
+"Neubot is a research project on network neutrality of the NEXA Center for"
+" Internet & Society at Politecnico di Torino. The project is based on a "
+"lightweight open-source program that interested users can download and "
+"install on their computers. The program runs in background and "
+"periodically performs transmission tests with some test servers and with "
+"other instances of the program itself. These transmission tests probe the"
+" Internet using various application level protocols. The program saves "
+"tests results locally and uploads them on the project servers. The "
+"collected dataset contains samples from various Providers and allows to "
+"monitor network neutrality."
+msgstr ""
+
+#: templates/start.html:17
+msgid "In-browser Java."
+msgstr ""
+
+#: templates/start.html:18
+msgid ""
+"Test whether certain applications or traffic are being blocked or "
+"throttled on your broadband connection.  Glasnost attempts to detect "
+"whether your Internet access provider is performing application-specific "
+"traffic shaping. Currently, you can test if your ISP is throttling or "
+"blocking email, HTTP or SSH transfer, Flash video, and P2P apps including"
+" BitTorrent, eMule and Gnutella."
+msgstr ""
+
+#: templates/start.html:21
+msgid "Runs on PocketPCs."
+msgstr ""
+
+#: templates/start.html:22
+msgid ""
+"Detect whether your mobile broadband provider is performing application "
+"or service specific differentiation."
+msgstr ""
+
+#: templates/start.html:26
+msgid "Additional tools"
+msgstr ""
+
+#: templates/start.html:27
+msgid ""
+"These tools are interesting to test the overall quality of your Internet "
+"connections."
+msgstr ""
+
+#: templates/start.html:30
+msgid "Runs on <a href=\\"
+msgstr ""
+
+#: templates/start.html:31
+msgid ""
+"Test your connection speed and receive sophisticated diagnosis of "
+"problems limiting speed."
+msgstr ""
+
+#: templates/start.html:34
+msgid "Diagnose common problems that impact last-mile broadband networks."
+msgstr ""
+
+#: templates/start.html:37 templates/start.html:41
+msgid "Runs on Mac OS X, GNU/Linux and Windows"
+msgstr ""
+
+#: templates/start.html:38
+msgid "See how much bandwidth your connection provides"
+msgstr ""
+
+#: templates/start.html:42
+msgid ""
+"Determine whether an ISP is performing traffic shaping. ShaperProbe "
+"detects whether your ISP performs \"traffic shaping\". Traffic shaping "
+"means that your ISP automatically drops your access rate after you have "
+"downloaded or uploaded a certain number of bytes. ShaperProbe detects "
+"whether traffic shaping is used in either the upload or download "
+"directions, and in that case that it is used, ShaperProbe reports the "
+"shaping rate and the \"maximum burst size\" before shaping begins."
+msgstr ""
+
+#: templates/start.html:45
+msgid ""
+"Passive monitoring by NANO-agent: NANO-agent monitors the number of "
+"packets transferred for each active flow per unit time, as well as tracks"
+" for unexpected events like packet loss, and TCP RST packets.  NANO-agent"
+" coallates each flow with the application that owns the flow.  NANO agent"
+" also monitors the load on the client computer.  All these statistics are"
+" reported to collection servers located at Georgia Tech.  You may "
+"visualize your data by visiting this page."
+msgstr ""
+
+#: templates/start.html:46
+msgid ""
+"Privacy: NANO will monitor all of your Internet traffic and send back "
+"limited statistics, but does not collect data on what is being sent."
+msgstr ""
+
+#: templates/start.html:49
+msgid ""
+"Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client "
+"using a crowd approach sharing data with peers."
+msgstr ""
+
+#: templates/start.html:52
+msgid "Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client."
+msgstr ""
+
+#: templates/start.html:55
+msgid "browser java applet"
+msgstr ""
+
+#: templates/start.html:56
+msgid ""
+"comprehensive tcp/udp and protocol level sensor see <a "
+"href=\"http://netalyzr.icsi.berkeley.edu/restore/id=example-"
+"session\">example report</a> for capabilities"
+msgstr ""
+
+#: templates/start.html:59
+msgid "What not to report"
+msgstr ""
+
+#: templates/start.html:60
+msgid ""
+"Sample of common ISP issues that DO NOT require a formal complaint (from:"
+" http://www.ispreview.co.uk/new/complain/complain.shtml)"
+msgstr ""
+
+#: templates/start.html:63
+msgid ""
+"<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
+"Outages.</b>"
+msgstr ""
+
+#: templates/start.html:64
+msgid ""
+"Sadly, ISPs experience occasional problems with online services, such as "
+"email access. These are  usually resolved after a few minutes or hours, "
+"an only very occasionally will they last longer than a day. Don't get too"
+" frustrated, inform them of your problem and allow some time for it to be"
+" resolved."
+msgstr ""
+
+#: templates/start.html:67
+msgid "<b>General Fluctuations in Broadband Speed.</b>"
+msgstr ""
+
+#: templates/start.html:68
+msgid ""
+"Broadband is a so-called \"best efforts\" service, which means it is "
+"shared between many users and open to fluctuations in performance (often "
+"more so in dense urban areas). For example, if you have an 8Mbps package "
+"but your line is only rated to cope with 2Mbps then you should not be "
+"surprised to see speeds vary from around 1 to 1.5Mbps (potentially lower "
+"during peak periods). Few get the advertised or even best estimated speed"
+" for their line."
+msgstr ""
+
+#: templates/start.html:71
+msgid "<b>Short and Uncommon Broadband Connection Problems.</b>"
+msgstr ""
+
+#: templates/start.html:72
+msgid ""
+"Once again, connections do sometimes go down and fail to "
+"connect/reconnect, though usually for no more than one day at most. These"
+" issues should be very rare and 9 times out of 10 they will be fixed "
+"within a few minutes or hours."
+msgstr ""
+
+#: templates/view.html:26
+msgid "It will appear here after moderation."
+msgstr ""
+
+#: templates/view.html:30
+msgid ""
+"Your comment was unable to be posted at this time.  We apologise for the "
+"inconvenience."
+msgstr ""
+
+#: templates/view.html:72
+msgid "Resource"
+msgstr ""
+
+#: templates/view.html:82
+msgid ""
+"In order to <strong>validate your confirmation</strong>, please enter "
+"your email address"
+msgstr ""
+
+#: templates/view.html:91
+msgid "Comments"
+msgstr ""
+
+#: templates/view.html:99
+msgid "Add comment"
+msgstr ""
+
+#: templates/view.html:104
+msgid "Approve Submission"
+msgstr ""
+
+#: templates/view.html:105
+msgid "Delete Submission"
+msgstr ""
+
+#: templates/registration/activate.html:8
+msgid "Your account activation might work now. If not mail me."
+msgstr ""
+
+#: templates/registration/activation_complete.html:8
+msgid "Your account is now active."
+msgstr ""
+
+#: templates/registration/activation_email.txt:4
+msgid "Here's your activation key"
+msgstr ""
+
+#: templates/registration/activation_email.txt:7
+msgid "Please click on this link to activate your account"
+msgstr ""
+
+#: templates/registration/activation_email.txt:10
+msgid "This link will expire in:"
+msgstr ""
+
+#: templates/registration/activation_email.txt:10
+msgid "days."
+msgstr ""
+
+#: templates/registration/login.html:13
+#: templates/registration/password_reset_confirm.html:4
+#: templates/registration/password_reset_form.html:4
+msgid "Password reset"
+msgstr ""
+
+#: templates/registration/password_change_done.html:4
+msgid "Password change successful"
+msgstr ""
+
+#: templates/registration/password_change_done.html:8
+msgid "Your password was changed."
+msgstr ""
+
+#: templates/registration/password_change_form.html:4
+msgid "Password change"
+msgstr ""
+
+#: templates/registration/password_change_form.html:12
+msgid "Please correct the error below."
+msgid_plural "Please correct the errors below."
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/registration/password_change_form.html:16
+msgid ""
+"Please enter your old password, for security's sake, and then enter your "
+"new password twice so we can verify you typed it in correctly."
+msgstr ""
+
+#: templates/registration/password_change_form.html:22
+msgid "Old password"
+msgstr ""
+
+#: templates/registration/password_change_form.html:27
+msgid "New password"
+msgstr ""
+
+#: templates/registration/password_change_form.html:32
+msgid "Password (again)"
+msgstr ""
+
+#: templates/registration/password_change_form.html:38
+#: templates/registration/password_reset_confirm.html:19
+msgid "Change my password"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:4
+msgid "Password reset complete"
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:8
+msgid "Your password has been set.  You may go ahead and log in now."
+msgstr ""
+
+#: templates/registration/password_reset_complete.html:10
+msgid "Log in"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:10
+msgid "Enter new password"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:12
+msgid ""
+"Please enter your new password twice so we can verify you typed it in "
+"correctly."
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:16
+msgid "New password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:18
+msgid "Confirm password:"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:24
+msgid "Password reset unsuccessful"
+msgstr ""
+
+#: templates/registration/password_reset_confirm.html:26
+msgid ""
+"The password reset link was invalid, possibly because it has already been"
+" used.  Please request a new password reset."
+msgstr ""
+
+#: templates/registration/password_reset_done.html:4
+msgid "Password reset successful"
+msgstr ""
+
+#: templates/registration/password_reset_done.html:8
+msgid ""
+"We've e-mailed you instructions for setting your password to the e-mail "
+"address you submitted. You should be receiving it shortly."
+msgstr ""
+
+#: templates/registration/password_reset_email.html:2
+msgid "You're receiving this e-mail because you requested a password reset"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:3
+#, python-format
+msgid "for your user account at %(site_name)s"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:5
+msgid "Please go to the following page and choose a new password:"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:9
+msgid "Your username, in case you've forgotten:"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:11
+msgid "Thanks for using our site!"
+msgstr ""
+
+#: templates/registration/password_reset_email.html:13
+#, python-format
+msgid "The %(site_name)s team"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:8
+msgid ""
+"Forgotten your password? Enter your e-mail address below, and we'll "
+"e-mail instructions for setting a new one."
+msgstr ""
+
+#: templates/registration/password_reset_form.html:12
+msgid "E-mail address:"
+msgstr ""
+
+#: templates/registration/password_reset_form.html:12
+msgid "Reset my password"
+msgstr ""
+
+#: templates/registration/registration_complete.html:8
+msgid "An email containing account-activation information has been sent."
+msgstr ""
+
+#~ msgid ""
+#~ "RespecyMyNet.eu is an online platform "
+#~ "enabling citizens to become the watchmen"
+#~ " of the Internet by reporting Net "
+#~ "Neutrality violations. Everyone is invited "
+#~ "to report undue blocking or throttling"
+#~ " of their Internet access, and help"
+#~ "  name and shame operators' harmful "
+#~ "practices."
+#~ msgstr ""
+
+#~ msgid "On Internet, you decide what you do, right? Not anymore!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We all rely more and more on "
+#~ "our access to Internet to do "
+#~ "serious things like find jobs and "
+#~ "fun things like chat with friends. "
+#~ "But telco's are increasingly trying to"
+#~ " control your behavior online, by "
+#~ "restricting the things you are doing "
+#~ "on the internet. Now you have a"
+#~ " chance to do something about that!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Help us chart all the ways that"
+#~ " internet providers are violating our "
+#~ "online freedom: Is your operator "
+#~ "blocking or throttling your Internet "
+#~ "communications, for instance by making "
+#~ "it impossible to use chat programs "
+#~ "or charging extra for Internet "
+#~ "telephony? Let us know by filling "
+#~ "up this form (it takes less than"
+#~ " two minutes!). We will make sure "
+#~ "that the relevant authorities are "
+#~ "informed, so that we can put an"
+#~ " end to this."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do you want to check whether your"
+#~ " access provider is manipulating your "
+#~ "internet traffic? Great! There are a "
+#~ "lot of tools which make life "
+#~ "easier for you. Here is a short"
+#~ " selection."
+#~ msgstr ""
+
+#~ msgid "available for MacOS Ubuntu Windows"
+#~ msgstr ""
+
+#~ msgid "in-browser java"
+#~ msgstr ""
+
+#~ msgid "runs on PocketPCs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "runs on <a "
+#~ "href=\"http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk\">Android</a>"
+#~ msgstr ""
+
+#~ msgid "Windows, MacOSX, Linux"
+#~ msgstr ""
+
+#~ msgid "runs on Linux, MacOSX, Windows"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "torrent-protocol based sensor plugin for"
+#~ " vuze/azareus bittorrent client using a "
+#~ "crowd approach sharing data with peers."
+#~ msgstr ""
+
+#~ msgid "torrent-protocol based sensor plugin for vuze/azareus bittorrent client"
+#~ msgstr ""
+
+#~ msgid "what not to report"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Brief and Uncommon Critical Service "
+#~ "(Email, Website Browsing etc.) Outages."
+#~ msgstr ""
+
+#~ msgid "General Fluctuations in Broadband Speed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Short and Uncommon Broadband Connection "
+#~ "Problems.  Once again, connections do "
+#~ "sometimes go down and fail to "
+#~ "connect/reconnect, though usually for no "
+#~ "more than one day at most. These"
+#~ " issues should be very rare and "
+#~ "9 times out of 10 they will "
+#~ "be fixed within a few minutes or"
+#~ " hours."
+#~ msgstr ""
+
