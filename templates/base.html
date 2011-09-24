@@ -1,15 +1,16 @@
 {% load i18n %}{% load babel %}{% load bt %}<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="{{LANGUAGE_CODE}}" xml:lang="{{LANGUAGE_CODE}}">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="content-language" content="en" />
     <meta name="description" content="The Internet bugtracker" />
     <meta name="keywords" content="internet network neutrality" />
     <title>{% block title %}[!] Respect My Net {% endblock %}</title>
-    <meta name="robots" content="noarchive,noindex,nofollow">
+    <meta name="robots" content="archive,index,follow">
     <link rel="alternate" type="application/atom+xml" title="Atom feed" href="/atom/">
     <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss/">
+    <meta http-equiv="content-language" content="{{LANGUAGE_CODE}}">
     {% block rss %}
     {% endblock %}
     <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/style.css" />
@@ -20,7 +21,7 @@
 <div id="wrapper">
 <div id="header-container">
 <div id="header">
-   <h1><a href="/">Respect My Net <span>name and shame operators restricting access to the Internet</span></a></h1>
+   <h1><a href="/">Respect My Net <span>{% trans "name and shame operators restricting access to the Internet" %}</span></a></h1>
 
   <div id="user"><p>
 	{% if user.is_authenticated %}
@@ -36,7 +37,7 @@
   <ul id="nav">
      <li><a {% if request.path == '/' %}id="current" {% endif %}href="{%root_url%}/">{% trans "Home" %}</a></li>
      <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Cases" %}</a></li>
-     <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What's Net Neutrality" %}</a></li>
+     <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What is Net Neutrality?" %}</a></li>
      <li><a {% if request.path == '/start/' %}id="current" {% endif %}href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
      <li><a {% if request.path == '/contact/' %}id="current" {% endif %}href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
   </ul></div>

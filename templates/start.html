@@ -4,70 +4,69 @@
 {% load babel %}
 {% block content %}
 <div id='global'>
-   <p>{% trans "Do you want to check whether your access provider is manipulating your internet traffic? Great! There are a lot of tools which make life easier for you. Here is a short selection." %}</p>
+   <p>{% trans "Do you want to check whether your access provider is manipulating your internet traffic? Great!" %}</p>
+   <p> {% trans "There are a lot of tools which make life easier for you. Here is a short selection." %}</p>
    <h3>{% trans "Recommended tools" %}</h3>
    <p>{% trans "These tools are probably the most helpful when it comes to tracking traffic discrimination." %}</p>
 <ul>
 <li><h4><a href="http://www.neubot.org/">neubot</a></h4>
-<p>{% trans "available for MacOS Ubuntu Windows" %}</p>
+<p>{% trans "<em>Available for Mac OS X, Ubuntu (GNU/Linux) and Windows.</em>" %}</p>
 <p>{% trans "Neubot is a research project on network neutrality of the NEXA Center for Internet & Society at Politecnico di Torino. The project is based on a lightweight open-source program that interested users can download and install on their computers. The program runs in background and periodically performs transmission tests with some test servers and with other instances of the program itself. These transmission tests probe the Internet using various application level protocols. The program saves tests results locally and uploads them on the project servers. The collected dataset contains samples from various Providers and allows to monitor network neutrality." %}</p>
 </li>
 <li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool2">Glasnost test</a></h4>
-<p>{% trans "in-browser java" %}</p>
+<p>{% trans "<em>In-browser Java.</em>" %}</p>
 <p>{% trans "Test whether certain applications or traffic are being blocked or throttled on your broadband connection.  Glasnost attempts to detect whether your Internet access provider is performing application-specific traffic shaping. Currently, you can test if your ISP is throttling or blocking email, HTTP or SSH transfer, Flash video, and P2P apps including BitTorrent, eMule and Gnutella." %}</p>
-       
-<li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool6">Mobile traffic test</a></h4>
-<p>{% trans "runs on PocketPCs" %}</p>
-<p>{% trans "Detect whether your mobile broadband provider is performing application or service specific differentiation." %}</p>
-       
+              
 </li>
 </ul>
 <h3>{% trans "Additional tools" %}</h3>
 <p>{% trans "These tools are interesting to test the overall quality of your Internet connections." %}</p>
 <ul>
    <li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool1">Network diagnostic tool</a></h4>
-   <p>{% trans 'runs on <a href="http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk">Android</a>' %}</p>
+   <p>{% trans "<em>Runs on any browser and on <a href='http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk'>Android</a>.</em>" %}</p>
    <p>{% trans "Test your connection speed and receive sophisticated diagnosis of problems limiting speed." %}</p>
    </li>
    <li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool3">Network path & application diagnostics</a></h4>
    <p>{% trans "Diagnose common problems that impact last-mile broadband networks." %}</p>
    </li>
    <li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool4">Bandwidth test</a></h4>
+   <p>{% trans "<em>Runs on Mac OS X, GNU/Linux and Windows</em>" %}</p>
    <p>{% trans "See how much bandwidth your connection provides" %}</p>
-   <p>{% trans "Windows, MacOSX, Linux" %}</p>
    </li>
    <li><h4><a href="http://www.measurementlab.net/measurement-lab-tools#tool5">Traffic shaping test</a></h4>
-   <p>{% trans "runs on Linux, MacOSX, Windows" %}</p>
+   <p>{% trans "<em>Runs on Mac OS X, GNU/Linux and Windows</em>" %}</p>
    <p>{% trans 'Determine whether an ISP is performing traffic shaping. ShaperProbe detects whether your ISP performs "traffic shaping". Traffic shaping means that your ISP automatically drops your access rate after you have downloaded or uploaded a certain number of bytes. ShaperProbe detects whether traffic shaping is used in either the upload or download directions, and in that case that it is used, ShaperProbe reports the shaping rate and the "maximum burst size" before shaping begins.' %}</p>
    </li>
-   <li><h4><a href="http://gtnoise.net/nano/">nano</a></h4>
+   <li><h4><a href="http://gtnoise.net/nano/">NANO</a></h4>
+   <p>{% trans "<em>Runs on GNU/Linux only for now, Mac OS X and Windows versions to come.</em>" %}
    <p>{% trans "Passive monitoring by NANO-agent: NANO-agent monitors the number of packets transferred for each active flow per unit time, as well as tracks for unexpected events like packet loss, and TCP RST packets.  NANO-agent coallates each flow with the application that owns the flow.  NANO agent also monitors the load on the client computer.  All these statistics are reported to collection servers located at Georgia Tech.  You may visualize your data by visiting this page." %}</p>
-   <p>{% trans "Privacy: NANO will monitor all of your Internet traffic and send back limited statistics, but does not collect data on what is being sent." %}</p>
+   <p>{% trans "<em>Privacy:</em> NANO will monitor all of your Internet traffic and send back limited statistics, but does not collect data on what is being sent." %}</p>
    </li>
-   <li><h4><a href="http://aqualab.cs.northwestern.edu/projects/NEWS.html">news</a></h4>
-   <p>{% trans "torrent-protocol based sensor plugin for vuze/azareus bittorrent client using a crowd approach sharing data with peers." %}</p>
+   <li><h4><a href="http://aqualab.cs.northwestern.edu/projects/NEWS.html">NEWS</a></h4>
+   <p>{% trans "Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client using a crowd approach sharing data with peers." %}</p>
    </li>
-   <li><h4><a href="http://www.aqualab.cs.northwestern.edu/projects/Dasu.html">dasu</a></h4>
-   <p>{% trans "torrent-protocol based sensor plugin for vuze/azareus bittorrent client" %}</p>
+   <li><h4><a href="http://www.aqualab.cs.northwestern.edu/projects/Dasu.html">DASU</a></h4>
+   <p>{% trans "Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client." %}</p>
    </li>
    <li><h4><a href="http://netalyzr.icsi.berkeley.edu/">netalyzr</a></h4>
    <p>{% trans "browser java applet" %}</p>
    <p>{% trans 'comprehensive tcp/udp and protocol level sensor see <a href="http://netalyzr.icsi.berkeley.edu/restore/id=example-session">example report</a> for capabilities' %}</p>
    </li>
 </ul>
-<h3>{% trans "what not to report" %}</h3>
-<p>{% trans "Sample of common ISP issues that DO NOT require a formal complaint (from: http://www.ispreview.co.uk/new/complain/complain.shtml)" %}</p>
+<h3>{% trans "What not to report" %}</h3>
+<p>{% trans "Sample of common ISP issues that DO NOT require a formal complaint (from: <a href='http://www.ispreview.co.uk/new/complain/complain.shtml'>http://www.ispreview.co.uk/new/complain/complain.shtml</a>)" %}</p>
 <ul>
    <li>
-   <p>{% trans "Brief and Uncommon Critical Service (Email, Website Browsing etc.) Outages." %}</p>
+   <p>{% trans "<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) Outages.</b>" %}</p>
    <p>{% trans "Sadly, ISPs experience occasional problems with online services, such as email access. These are  usually resolved after a few minutes or hours, an only very occasionally will they last longer than a day. Don't get too frustrated, inform them of your problem and allow some time for it to be resolved." %}</p>
     </li>
     <li>
-    <p>{% trans "General Fluctuations in Broadband Speed." %}</p>
+    <p>{% trans "<b>General Fluctuations in Broadband Speed.</b>" %}</p>
     <p>{% trans 'Broadband is a so-called "best efforts" service, which means it is shared between many users and open to fluctuations in performance (often more so in dense urban areas). For example, if you have an 8Mbps package but your line is only rated to cope with 2Mbps then you should not be surprised to see speeds vary from around 1 to 1.5Mbps (potentially lower during peak periods). Few get the advertised or even best estimated speed for their line.' %}</p>
     </li>
     <li>
-    <p>{% trans "Short and Uncommon Broadband Connection Problems.  Once again, connections do sometimes go down and fail to connect/reconnect, though usually for no more than one day at most. These issues should be very rare and 9 times out of 10 they will be fixed within a few minutes or hours." %}</p>
+    <p>{% trans "<b>Short and Uncommon Broadband Connection Problems.</b>" %}</p>
+    <p>{% trans "Once again, connections do sometimes go down and fail to connect/reconnect, though usually for no more than one day at most. These issues should be very rare and 9 times out of 10 they will be fixed within a few minutes or hours." %}</p>
     </li>
  </ul>
 </div>

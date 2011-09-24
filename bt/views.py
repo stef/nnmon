@@ -51,8 +51,8 @@ def activate(request):
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
-        msg = MIMEText(_("A new report was submitted. To approve click here: %s/moderate/?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', actid))
-        msg['Subject'] = _('NNMon submission approval')
+        msg = MIMEText(_("A new report was submitted. To approve click here: %s/moderate/?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', actid), _charset="utf-8")
+        msg['Subject'] = _('NNMon submission approval').encode("Utf-8")
         msg['From'] = 'nnmon@nnmon.lqdn.fr'
         msg['To'] = ', '.join(to)
         s = smtplib.SMTP('localhost')
@@ -60,7 +60,7 @@ def activate(request):
         s.quit()
         v.activationid=actid
         v.save()
-        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after we\'ve checked that the report is valid.'))
+        messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after we\'ve checked that the report is valid.').encode("Utf-8"))
     return HttpResponseRedirect('/') # Redirect after POST
 
 def moderate(request):
@@ -108,8 +108,8 @@ def confirm(request, id, name=None):
 
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid))
-    msg['Subject'] = _('NNMon submission verification')
+    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
+    msg['Subject'] = _('NNMon submission verification').encode("Utf-8")
     msg['From'] = 'nnmon@nnmon.lqdn.fr'
     msg['To'] = to
     s = smtplib.SMTP('localhost')
