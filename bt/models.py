@@ -21,6 +21,7 @@ COUNTRIES = (
     ('HU', _('Hungary')),
     ('MT', _('Malta')),
     ('NL', _('Netherlands')),
+    ('NO', _('Norway')),
     ('AT', _('Austria')),
     ('PL', _('Poland')),
     ('PT', _('Portugal')),

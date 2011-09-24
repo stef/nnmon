@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 16:35+0200\n"
+"POT-Creation-Date: 2011-09-22 17:44+0200\n"
 "PO-Revision-Date: 2011-09-22 01:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: se <LL@li.org>\n"
@@ -344,7 +344,7 @@ msgstr ""
 
 #: templates/about.html:7
 msgid ""
-"RespecyMyNet.eu is an online platform enabling citizens to become the "
+"RespectMyNet.eu is an online platform enabling citizens to become the "
 "watchmen of the Internet by reporting Net Neutrality violations. Everyone"
 " is invited to report undue blocking or throttling of their Internet "
 "access, and help  name and shame operators' harmful practices."
@@ -490,7 +490,7 @@ msgstr ""
 msgid "Confirmed"
 msgstr ""
 
-#: templates/index.html:137 templates/list.html:66
+#: templates/index.html:137 templates/list.html:69
 msgid ""
 "In order to <strong>validate your confirmation</strong> of this case, "
 "please enter your email address"
@@ -500,7 +500,7 @@ msgstr ""
 msgid "ok"
 msgstr ""
 
-#: templates/index.html:140 templates/list.html:70
+#: templates/index.html:140 templates/list.html:73
 msgid "cancel"
 msgstr ""
 
@@ -508,45 +508,45 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: templates/list.html:38
+#: templates/list.html:41
 msgid ""
 "This is a list of all reported violations of net neutrality. See <a "
 "href='/about'>What is net neutrality</a> for a short explanation. "
 msgstr ""
 
-#: templates/list.html:42
+#: templates/list.html:45
 msgid "country"
 msgstr ""
 
-#: templates/list.html:43
+#: templates/list.html:46
 msgid "operator"
 msgstr ""
 
-#: templates/list.html:44
+#: templates/list.html:47
 msgid "contract"
 msgstr ""
 
-#: templates/list.html:45
+#: templates/list.html:48
 msgid "resource"
 msgstr ""
 
-#: templates/list.html:46
+#: templates/list.html:49
 msgid "type"
 msgstr ""
 
-#: templates/list.html:47
+#: templates/list.html:50
 msgid "fixed / wireless"
 msgstr ""
 
-#: templates/list.html:48
+#: templates/list.html:51
 msgid "confirmations"
 msgstr ""
 
-#: templates/list.html:63 templates/view.html:85
+#: templates/list.html:66 templates/view.html:85
 msgid "confirm"
 msgstr ""
 
-#: templates/list.html:69
+#: templates/list.html:72
 msgid "OK"
 msgstr ""
 
@@ -973,4 +973,15 @@ msgstr ""
 #: templates/registration/registration_complete.html:8
 msgid "An email containing account-activation information has been sent."
 msgstr ""
+
+#~ msgid ""
+#~ "RespecyMyNet.eu is an online platform "
+#~ "enabling citizens to become the watchmen"
+#~ " of the Internet by reporting Net "
+#~ "Neutrality violations. Everyone is invited "
+#~ "to report undue blocking or throttling"
+#~ " of their Internet access, and help"
+#~ "  name and shame operators' harmful "
+#~ "practices."
+#~ msgstr ""
 
