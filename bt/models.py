@@ -31,6 +31,7 @@ COUNTRIES = (
     ('FI', _('Finland')),
     ('SE', _('Sweden')),
     ('UK', _('United Kingdom ')),
+    ('NO', _('Norway')),
     )
 
 RESOURCES = (
