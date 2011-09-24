@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nnmon 0.00000000000001\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 16:35+0200\n"
+"POT-Creation-Date: 2011-09-22 18:16+0200\n"
 "PO-Revision-Date: 2011-04-29 17:53+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: hu <LL@li.org>\n"
@@ -343,7 +343,7 @@ msgstr ""
 
 #: templates/about.html:7
 msgid ""
-"RespecyMyNet.eu is an online platform enabling citizens to become the "
+"RespectMyNet.eu is an online platform enabling citizens to become the "
 "watchmen of the Internet by reporting Net Neutrality violations. Everyone"
 " is invited to report undue blocking or throttling of their Internet "
 "access, and help  name and shame operators' harmful practices."
@@ -365,47 +365,51 @@ msgstr ""
 msgid "For enquiries about the project, please contact:"
 msgstr ""
 
-#: templates/add.html:30
+#: templates/add.html:31
 msgid "New Violation"
 msgstr ""
 
-#: templates/add.html:33 templates/index.html:104
+#: templates/add.html:34 templates/index.html:104
 msgid "Provide optional details"
 msgstr ""
 
-#: templates/add.html:44 templates/index.html:115
+#: templates/add.html:45 templates/index.html:115
 msgid "save"
 msgstr ""
 
-#: templates/base.html:28
+#: templates/base.html:24
+msgid "name and shame operators restricting access to the Internet"
+msgstr ""
+
+#: templates/base.html:29
 msgid "Logout"
 msgstr ""
 
-#: templates/base.html:30
+#: templates/base.html:31
 msgid "Admin"
 msgstr ""
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "Login"
 msgstr ""
 
-#: templates/base.html:37
+#: templates/base.html:38
 msgid "Home"
 msgstr ""
 
-#: templates/base.html:38
+#: templates/base.html:39
 msgid "Cases"
 msgstr ""
 
-#: templates/base.html:39
+#: templates/base.html:40
 msgid "What's Net Neutrality"
 msgstr ""
 
-#: templates/base.html:40
+#: templates/base.html:41
 msgid "Start Monitoring"
 msgstr ""
 
-#: templates/base.html:41
+#: templates/base.html:42
 msgid "Contact"
 msgstr ""
 
@@ -455,97 +459,110 @@ msgid "Add New Case"
 msgstr ""
 
 #: templates/index.html:119
-msgid "On Internet, you decide what you do, right? Not anymore!"
+msgid "On the Internet, <b>you</b> decide what you do, right? <i>Not anymore!</i>"
 msgstr ""
 
 #: templates/index.html:120
 msgid ""
-"We all rely more and more on our access to Internet to do serious things "
-"like find jobs and fun things like chat with friends. But telco's are "
-"increasingly trying to control your behavior online, by restricting the "
-"things you are doing on the internet. Now you have a chance to do "
-"something about that!"
+"Large telecommunication providers want to control what you do online. "
+"They want to block and throttle some of your communications, and charge "
+"you to use certain online services, content and applications."
 msgstr ""
 
 #: templates/index.html:121
-msgid ""
-"Help us chart all the ways that internet providers are violating our "
-"online freedom: Is your operator blocking or throttling your Internet "
-"communications, for instance by making it impossible to use chat programs"
-" or charging extra for Internet telephony? Let us know by filling up this"
-" form (it takes less than two minutes!). We will make sure that the "
-"relevant authorities are informed, so that we can put an end to this."
+msgid "Now is the time to fight back!"
 msgstr ""
 
 #: templates/index.html:122
+msgid ""
+"Help us chart all the ways that internet providers are violating our "
+"online freedom. Tell us about how your landline or mobile operator "
+"Internet provider restricts your connection. You can do so in less than "
+"two minutes!"
+msgstr ""
+
+#: templates/index.html:123
+msgid ""
+"We will report these violations to the European Commission and national "
+"authorities and demand action to address them."
+msgstr ""
+
+#: templates/index.html:124
+msgid ""
+"Don't hesitate to give us feedback on this application by reporting any "
+"idea or issue with RespectMyNet.eu here : <a "
+"href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>"
+msgstr ""
+
+#: templates/index.html:125
 msgid "Featured Cases"
 msgstr ""
 
-#: templates/index.html:126
+#: templates/index.html:129
 msgid "Infringing offering"
 msgstr ""
 
-#: templates/index.html:127
+#: templates/index.html:130
 msgid "Confirmed"
 msgstr ""
 
-#: templates/index.html:137 templates/list.html:66
+#: templates/index.html:140 templates/list.html:70
 msgid ""
 "In order to <strong>validate your confirmation</strong> of this case, "
 "please enter your email address"
 msgstr ""
 
-#: templates/index.html:139
+#: templates/index.html:142
 msgid "ok"
 msgstr ""
 
-#: templates/index.html:140 templates/list.html:70
+#: templates/index.html:143 templates/list.html:74
 msgid "cancel"
 msgstr ""
 
-#: templates/index.html:146
+#: templates/index.html:149
 msgid "Confirm"
 msgstr ""
 
-#: templates/list.html:38
+#: templates/list.html:42
 msgid ""
 "This is a list of all reported violations of net neutrality. See <a "
 "href='/about'>What is net neutrality</a> for a short explanation. "
 msgstr ""
 
-#: templates/list.html:42
+#: templates/list.html:46
 msgid "country"
 msgstr ""
 
-#: templates/list.html:43
+#: templates/list.html:47
 msgid "operator"
 msgstr ""
 
-#: templates/list.html:44
+#: templates/list.html:48
 msgid "contract"
 msgstr ""
 
-#: templates/list.html:45
+#: templates/list.html:49
 msgid "resource"
 msgstr ""
 
-#: templates/list.html:46
+#: templates/list.html:50
 msgid "type"
 msgstr ""
 
-#: templates/list.html:47
+#: templates/list.html:51
 msgid "fixed / wireless"
 msgstr ""
 
-#: templates/list.html:48
+#: templates/list.html:52
 msgid "confirmations"
 msgstr ""
 
-#: templates/list.html:63 templates/view.html:85
+#: templates/list.html:67 templates/view.html:85
 msgid "confirm"
 msgstr ""
 
-#: templates/list.html:69
+#: templates/list.html:73
 msgid "OK"
 msgstr ""
 
@@ -598,25 +615,30 @@ msgstr ""
 #: templates/start.html:7
 msgid ""
 "Do you want to check whether your access provider is manipulating your "
-"internet traffic? Great! There are a lot of tools which make life easier "
-"for you. Here is a short selection."
+"internet traffic? Great!"
 msgstr ""
 
 #: templates/start.html:8
-msgid "Recommended tools"
+msgid ""
+"There are a lot of tools which make life easier for you. Here is a short "
+"selection."
 msgstr ""
 
 #: templates/start.html:9
+msgid "Recommended tools"
+msgstr ""
+
+#: templates/start.html:10
 msgid ""
 "These tools are probably the most helpful when it comes to tracking "
 "traffic discrimination."
 msgstr ""
 
-#: templates/start.html:12
-msgid "available for MacOS Ubuntu Windows"
+#: templates/start.html:13
+msgid "Available for Mac OS X, Ubuntu (GNU/Linux) and Windows."
 msgstr ""
 
-#: templates/start.html:13
+#: templates/start.html:14
 msgid ""
 "Neubot is a research project on network neutrality of the NEXA Center for"
 " Internet & Society at Politecnico di Torino. The project is based on a "
@@ -630,11 +652,11 @@ msgid ""
 "monitor network neutrality."
 msgstr ""
 
-#: templates/start.html:16
-msgid "in-browser java"
+#: templates/start.html:17
+msgid "In-browser Java."
 msgstr ""
 
-#: templates/start.html:17
+#: templates/start.html:18
 msgid ""
 "Test whether certain applications or traffic are being blocked or "
 "throttled on your broadband connection.  Glasnost attempts to detect "
@@ -644,55 +666,49 @@ msgid ""
 " BitTorrent, eMule and Gnutella."
 msgstr ""
 
-#: templates/start.html:20
-msgid "runs on PocketPCs"
+#: templates/start.html:21
+msgid "Runs on PocketPCs."
 msgstr ""
 
-#: templates/start.html:21
+#: templates/start.html:22
 msgid ""
 "Detect whether your mobile broadband provider is performing application "
 "or service specific differentiation."
 msgstr ""
 
-#: templates/start.html:25
+#: templates/start.html:26
 msgid "Additional tools"
 msgstr ""
 
-#: templates/start.html:26
+#: templates/start.html:27
 msgid ""
 "These tools are interesting to test the overall quality of your Internet "
 "connections."
 msgstr ""
 
-#: templates/start.html:29
-msgid ""
-"runs on <a "
-"href=\"http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk\">Android</a>"
+#: templates/start.html:30
+msgid "Runs on <a href=\\"
 msgstr ""
 
-#: templates/start.html:30
+#: templates/start.html:31
 msgid ""
 "Test your connection speed and receive sophisticated diagnosis of "
 "problems limiting speed."
 msgstr ""
 
-#: templates/start.html:33
+#: templates/start.html:34
 msgid "Diagnose common problems that impact last-mile broadband networks."
 msgstr ""
 
-#: templates/start.html:36
+#: templates/start.html:37 templates/start.html:41
+msgid "Runs on Mac OS X, GNU/Linux and Windows"
+msgstr ""
+
+#: templates/start.html:38
 msgid "See how much bandwidth your connection provides"
 msgstr ""
 
-#: templates/start.html:37
-msgid "Windows, MacOSX, Linux"
-msgstr ""
-
-#: templates/start.html:40
-msgid "runs on Linux, MacOSX, Windows"
-msgstr ""
-
-#: templates/start.html:41
+#: templates/start.html:42
 msgid ""
 "Determine whether an ISP is performing traffic shaping. ShaperProbe "
 "detects whether your ISP performs \"traffic shaping\". Traffic shaping "
@@ -703,7 +719,7 @@ msgid ""
 "shaping rate and the \"maximum burst size\" before shaping begins."
 msgstr ""
 
-#: templates/start.html:44
+#: templates/start.html:45
 msgid ""
 "Passive monitoring by NANO-agent: NANO-agent monitors the number of "
 "packets transferred for each active flow per unit time, as well as tracks"
@@ -714,50 +730,50 @@ msgid ""
 "visualize your data by visiting this page."
 msgstr ""
 
-#: templates/start.html:45
+#: templates/start.html:46
 msgid ""
 "Privacy: NANO will monitor all of your Internet traffic and send back "
 "limited statistics, but does not collect data on what is being sent."
 msgstr ""
 
-#: templates/start.html:48
+#: templates/start.html:49
 msgid ""
-"torrent-protocol based sensor plugin for vuze/azareus bittorrent client "
+"Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client "
 "using a crowd approach sharing data with peers."
 msgstr ""
 
-#: templates/start.html:51
-msgid "torrent-protocol based sensor plugin for vuze/azareus bittorrent client"
-msgstr ""
-
-#: templates/start.html:54
-msgid "browser java applet"
+#: templates/start.html:52
+msgid "Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client."
 msgstr ""
 
 #: templates/start.html:55
+msgid "browser java applet"
+msgstr ""
+
+#: templates/start.html:56
 msgid ""
 "comprehensive tcp/udp and protocol level sensor see <a "
 "href=\"http://netalyzr.icsi.berkeley.edu/restore/id=example-"
 "session\">example report</a> for capabilities"
 msgstr ""
 
-#: templates/start.html:58
-msgid "what not to report"
+#: templates/start.html:59
+msgid "What not to report"
 msgstr ""
 
-#: templates/start.html:59
+#: templates/start.html:60
 msgid ""
 "Sample of common ISP issues that DO NOT require a formal complaint (from:"
 " http://www.ispreview.co.uk/new/complain/complain.shtml)"
 msgstr ""
 
-#: templates/start.html:62
+#: templates/start.html:63
 msgid ""
-"Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
-"Outages."
+"<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
+"Outages.</b>"
 msgstr ""
 
-#: templates/start.html:63
+#: templates/start.html:64
 msgid ""
 "Sadly, ISPs experience occasional problems with online services, such as "
 "email access. These are  usually resolved after a few minutes or hours, "
@@ -766,11 +782,11 @@ msgid ""
 " resolved."
 msgstr ""
 
-#: templates/start.html:66
-msgid "General Fluctuations in Broadband Speed."
+#: templates/start.html:67
+msgid "<b>General Fluctuations in Broadband Speed.</b>"
 msgstr ""
 
-#: templates/start.html:67
+#: templates/start.html:68
 msgid ""
 "Broadband is a so-called \"best efforts\" service, which means it is "
 "shared between many users and open to fluctuations in performance (often "
@@ -781,13 +797,26 @@ msgid ""
 " for their line."
 msgstr ""
 
-#: templates/start.html:70
+#: templates/start.html:71
+msgid "<b>Short and Uncommon Broadband Connection Problems.</b>"
+msgstr ""
+
+#: templates/start.html:72
 msgid ""
-"Short and Uncommon Broadband Connection Problems.  Once again, "
-"connections do sometimes go down and fail to connect/reconnect, though "
-"usually for no more than one day at most. These issues should be very "
-"rare and 9 times out of 10 they will be fixed within a few minutes or "
-"hours."
+"Once again, connections do sometimes go down and fail to "
+"connect/reconnect, though usually for no more than one day at most. These"
+" issues should be very rare and 9 times out of 10 they will be fixed "
+"within a few minutes or hours."
+msgstr ""
+
+#: templates/view.html:26
+msgid "It will appear here after moderation."
+msgstr ""
+
+#: templates/view.html:30
+msgid ""
+"Your comment was unable to be posted at this time.  We apologise for the "
+"inconvenience."
 msgstr ""
 
 #: templates/view.html:72
@@ -806,6 +835,14 @@ msgstr ""
 
 #: templates/view.html:99
 msgid "Add comment"
+msgstr ""
+
+#: templates/view.html:104
+msgid "Approve Submission"
+msgstr ""
+
+#: templates/view.html:105
+msgid "Delete Submission"
 msgstr ""
 
 #: templates/registration/activate.html:8
@@ -971,4 +1008,107 @@ msgstr ""
 #: templates/registration/registration_complete.html:8
 msgid "An email containing account-activation information has been sent."
 msgstr ""
+
+#~ msgid ""
+#~ "RespecyMyNet.eu is an online platform "
+#~ "enabling citizens to become the watchmen"
+#~ " of the Internet by reporting Net "
+#~ "Neutrality violations. Everyone is invited "
+#~ "to report undue blocking or throttling"
+#~ " of their Internet access, and help"
+#~ "  name and shame operators' harmful "
+#~ "practices."
+#~ msgstr ""
+
+#~ msgid "On Internet, you decide what you do, right? Not anymore!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "We all rely more and more on "
+#~ "our access to Internet to do "
+#~ "serious things like find jobs and "
+#~ "fun things like chat with friends. "
+#~ "But telco's are increasingly trying to"
+#~ " control your behavior online, by "
+#~ "restricting the things you are doing "
+#~ "on the internet. Now you have a"
+#~ " chance to do something about that!"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Help us chart all the ways that"
+#~ " internet providers are violating our "
+#~ "online freedom: Is your operator "
+#~ "blocking or throttling your Internet "
+#~ "communications, for instance by making "
+#~ "it impossible to use chat programs "
+#~ "or charging extra for Internet "
+#~ "telephony? Let us know by filling "
+#~ "up this form (it takes less than"
+#~ " two minutes!). We will make sure "
+#~ "that the relevant authorities are "
+#~ "informed, so that we can put an"
+#~ " end to this."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Do you want to check whether your"
+#~ " access provider is manipulating your "
+#~ "internet traffic? Great! There are a "
+#~ "lot of tools which make life "
+#~ "easier for you. Here is a short"
+#~ " selection."
+#~ msgstr ""
+
+#~ msgid "available for MacOS Ubuntu Windows"
+#~ msgstr ""
+
+#~ msgid "in-browser java"
+#~ msgstr ""
+
+#~ msgid "runs on PocketPCs"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "runs on <a "
+#~ "href=\"http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk\">Android</a>"
+#~ msgstr ""
+
+#~ msgid "Windows, MacOSX, Linux"
+#~ msgstr ""
+
+#~ msgid "runs on Linux, MacOSX, Windows"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "torrent-protocol based sensor plugin for"
+#~ " vuze/azareus bittorrent client using a "
+#~ "crowd approach sharing data with peers."
+#~ msgstr ""
+
+#~ msgid "torrent-protocol based sensor plugin for vuze/azareus bittorrent client"
+#~ msgstr ""
+
+#~ msgid "what not to report"
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Brief and Uncommon Critical Service "
+#~ "(Email, Website Browsing etc.) Outages."
+#~ msgstr ""
+
+#~ msgid "General Fluctuations in Broadband Speed."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "Short and Uncommon Broadband Connection "
+#~ "Problems.  Once again, connections do "
+#~ "sometimes go down and fail to "
+#~ "connect/reconnect, though usually for no "
+#~ "more than one day at most. These"
+#~ " issues should be very rare and "
+#~ "9 times out of 10 they will "
+#~ "be fixed within a few minutes or"
+#~ " hours."
+#~ msgstr ""
 

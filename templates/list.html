@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
+{% load babel %}
 {% block styles %}
 {% endblock %}
 {% block scripts %}
@@ -38,7 +39,7 @@
     {% endfor %}
 </ul>
 {% endif %}
-<p>{% trans "This is a list of all reported violations of net neutrality. See <a href='/about'>What is net neutrality</a> for a short explanation. " %}</p>
+<p>{% trans "This is a list of all reported Net Neutrality violations. See <a href='/about'>What is Net Neutrality?</a> for a short explanation. " %}</p>
 <table class="listing tablesorter zebra-striped" id='sortedlist'>
   <thead>
 <tr>

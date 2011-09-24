@@ -19,7 +19,7 @@ li { list-style: none; }
 #auth { float: right; clear: both; }
 
 #container { margin: 2em; }
-#addForm.index { min-height: 300px; width: 40%; padding: 0; margin: 0 1em 0 1em; float: right; }
+#addForm.index { min-height: 300px; width: 40%; padding: 0; margin: 0 0 0 1em; float: right; }
 #addForm .fieldWrapper label { display: inline-block; min-width: 6em; }
 #addForm.index .help_text { font-size: 0.7em; width: 30%; position: relative; float: right; left: 0; }
 .index #add_attach { cursor: pointer; }

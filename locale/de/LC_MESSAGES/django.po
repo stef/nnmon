@@ -1,442 +1,492 @@
-# German translations for nnmon.
+# Translations template for PROJECT.
 # Copyright (C) 2011 ORGANIZATION
-# This file is distributed under the same license as the nnmon project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
-#
+# This file is distributed under the same license as the PROJECT project.
+# 
+# Translators:
+#   <andre@nurpa.be>, 2011.
+#   <mihi@lo-res.org>, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: nnmon 0.00000000000001\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-22 16:35+0200\n"
-"PO-Revision-Date: 2011-04-29 17:53+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: de <LL@li.org>\n"
-"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"Project-Id-Version: nnmon\n"
+"Report-Msgid-Bugs-To: https://github.com/stef/nnmon/issues\n"
+"POT-Creation-Date: 2011-09-23 16:19+0200\n"
+"PO-Revision-Date: 2011-09-23 14:39+0000\n"
+"Last-Translator: benjamin_bot <benjamin-bot@octopuce.fr>\n"
+"Language-Team: German (http://www.transifex.net/projects/p/nnmon/team/de/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 #: bt/forms.py:20
 msgid "EU member state where the restriction is reported."
-msgstr ""
+msgstr "EU Mitgliedsland in dem die Einschränkung besteht"
 
 #: bt/forms.py:21
 msgid "The ISP or operator providing the Internet service."
 msgstr ""
+"Internetprovider oder Anbieter über den die Verbindung zum Internet besteht."
 
 #: bt/forms.py:22
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
+"Welchen Vertrag haben sie mit dem Provider abgeschlossen. (Bitte so "
+"detailliert wie möglich)"
 
 #: bt/forms.py:23
 msgid "Is the Internet connection over mobile or fixed line?"
 msgstr ""
+"Verbinden sie sich zum Internet über ein Mobilfunkservice oder über das "
+"Festnetz/Kabel"
 
 #: bt/forms.py:24
 msgid ""
-"Please describe the symptoms you are experiencing. What service or site, "
-"or person is unavailable or seems artificially slowed down."
+"Please describe the symptoms you are experiencing. What service or site, or "
+"person is unavailable or seems artificially slowed down."
 msgstr ""
+"Beschreiben sie, in welcher Art sie Einschränkungen erleben. Welches "
+"Service, Webseite oder Person kann nicht erreicht werden, oder ist "
+"ungewöhnlich Langsam."
 
 #: bt/forms.py:25
 msgid "Email (set this to enable saving)"
 msgstr ""
+"E-Mail (tragen sie eine E-Mail Adresse ein um Speichern zu aktivieren)"
 
 #: bt/forms.py:25
 msgid ""
 "We need your email to validate your report. Your email address is "
-"obligatory, but we will never use your personal data for anything else "
-"than checking the submission."
+"obligatory, but we will never use your personal data for anything else than "
+"checking the submission."
 msgstr ""
+"Wir brauchen ihre E-Mail Adresse um den Bericht zu Bestätigen. Ihre E-Mail "
+"ist obligatorisch. Ihre persönlichen Daten werden für nichts anderes als die"
+" Überprüfung des Eintrags verwendet."
 
 #: bt/forms.py:26
 msgid "Name or nickname"
-msgstr ""
+msgstr "Name oder Spitzname"
 
 #: bt/forms.py:26
 msgid "We need some name to display that instead of an email address."
 msgstr ""
+"Wir brauchen einen Namen, den wir statt der E-Mail Adresse anzeigen können."
 
 #: bt/forms.py:27
 msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
+"Hängen sie einen Screenshot, ein Dokument oder andere relevante "
+"Informationen an."
 
 #: bt/forms.py:28
 msgid "What is the affected resource. (optional)"
-msgstr ""
+msgstr "Welcher Dienst ist betroffen. (optional)"
 
 #: bt/forms.py:29
 msgid "Please specify the name of the affected resource. (optional)"
-msgstr ""
+msgstr "Bitte geben sie den Namen des betroffenen Dienstes an. (optional)"
 
 #: bt/forms.py:30
 msgid "Is the Resource Blocked or otherwise discrimated? (optional)"
-msgstr ""
+msgstr "Wird der Dienst blockiert oder anders behindert? (optional)"
 
 #: bt/forms.py:31
 msgid ""
-"Is the restriction only temporary, e.g. due to network overload? "
-"(optional)"
+"Is the restriction only temporary, e.g. due to network overload? (optional)"
 msgstr ""
+"Ist die Einschränkung nur temporär, z.b. wegen überlastung des Netzwerks? "
+"(optional)"
 
 #: bt/forms.py:32
 msgid ""
 "Is there another offer provided by this Operator which removes this "
 "restriction? (optional)"
 msgstr ""
+"Gibt es von diesem Anbieter ein anderes Angebot, das diese Beschränkung "
+"aufhebt? (optional)"
 
 #: bt/forms.py:33
 msgid "Is the restriction described in the subscribers contract? (optional)"
 msgstr ""
+"Wurde diese Einschränkung im Vertrag mit dem Kunden beschrieben (optional)"
 
 #: bt/forms.py:34
 msgid ""
-"Please copy the relevant section describing the restriction from the user"
-" contract. (optional)"
-msgstr ""
+"Please copy the relevant section describing the restriction from the user "
+"contract. (optional)"
+msgstr "Bitte relevante Abschnitte des Endkundenvertrags angeben. (optional)"
 
 #: bt/forms.py:35
 msgid ""
-"In order to protect against spam, please fill in the result of the "
-"following calculation. (note the + and the * are somewhat confusing)"
+"In order to protect against spam, please fill in the result of the following"
+" calculation. (note the + and the * are somewhat confusing)"
 msgstr ""
+"Um uns vor Spam zu schützen, lösen sie bitte die folgende Rechenaufgabe. "
+"(Achtung + und * schauen sehr ähnlich aus)"
 
 #: bt/models.py:6
 msgid "Belgium"
-msgstr ""
+msgstr "Belgien"
 
 #: bt/models.py:7
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarien"
 
 #: bt/models.py:8
 msgid "Czech Republic"
-msgstr ""
+msgstr "Tschechische Republik"
 
 #: bt/models.py:9
 msgid "Denmark"
-msgstr ""
+msgstr "Dänemark"
 
 #: bt/models.py:10
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 #: bt/models.py:11
 msgid "Estonia"
-msgstr ""
+msgstr "Estland"
 
 #: bt/models.py:12
 msgid "Ireland"
-msgstr ""
+msgstr "Irland"
 
 #: bt/models.py:13
 msgid "Greece"
-msgstr ""
+msgstr "Griechenland"
 
 #: bt/models.py:14
 msgid "Spain"
-msgstr ""
+msgstr "Spanien"
 
 #: bt/models.py:15 templates/about.html:12
 msgid "France"
-msgstr ""
+msgstr "Frankreich"
 
 #: bt/models.py:16
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 #: bt/models.py:17
 msgid "Cyprus"
-msgstr ""
+msgstr "Zypern"
 
 #: bt/models.py:18
 msgid "Latvia"
-msgstr ""
+msgstr "Lettland"
 
 #: bt/models.py:19
 msgid "Lithuania"
-msgstr ""
+msgstr "Littauen"
 
 #: bt/models.py:20
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxemburg"
 
 #: bt/models.py:21
 msgid "Hungary"
-msgstr ""
+msgstr "Ungarn"
 
 #: bt/models.py:22
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 #: bt/models.py:23 templates/about.html:13
 msgid "Netherlands"
-msgstr ""
+msgstr "Holland"
 
 #: bt/models.py:24
 msgid "Austria"
-msgstr ""
+msgstr "Österreich"
 
 #: bt/models.py:25
 msgid "Poland"
-msgstr ""
+msgstr "Polen"
 
 #: bt/models.py:26
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 #: bt/models.py:27
 msgid "Romania"
-msgstr ""
+msgstr "Rumänien"
 
 #: bt/models.py:28
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovenien"
 
 #: bt/models.py:29
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovakei"
 
 #: bt/models.py:30
 msgid "Finland"
-msgstr ""
+msgstr "Finnland"
 
 #: bt/models.py:31
 msgid "Sweden"
-msgstr ""
+msgstr "Schweden"
 
 #: bt/models.py:32
 msgid "United Kingdom "
-msgstr ""
+msgstr "Großbritannien"
 
-#: bt/models.py:36
-msgid "port"
+#: bt/models.py:33
+msgid "Norway"
 msgstr ""
 
 #: bt/models.py:37
-msgid "protocol"
-msgstr ""
+msgid "port"
+msgstr "Port"
 
 #: bt/models.py:38
-msgid "service"
-msgstr ""
+msgid "protocol"
+msgstr "Protokoll"
 
 #: bt/models.py:39
-msgid "site"
-msgstr ""
+msgid "service"
+msgstr "Service"
 
 #: bt/models.py:40
-msgid "user"
-msgstr ""
+msgid "site"
+msgstr "Webseite"
 
 #: bt/models.py:41
-msgid "ip"
-msgstr ""
+msgid "user"
+msgstr "Benutzer"
 
-#: bt/models.py:44
-msgid "Blocking"
-msgstr ""
+#: bt/models.py:42
+msgid "ip"
+msgstr "IP"
 
 #: bt/models.py:45
-msgid "Throttling"
-msgstr ""
+msgid "Blocking"
+msgstr "Blockiert"
 
-#: bt/models.py:48
-msgid "Fixed"
-msgstr ""
+#: bt/models.py:46
+msgid "Throttling"
+msgstr "Verlangsamt"
 
 #: bt/models.py:49
-msgid "Mobile"
-msgstr ""
+msgid "Fixed"
+msgstr "Festnetz/Kabel"
 
-#: bt/models.py:87
+#: bt/models.py:50
+msgid "Mobile"
+msgstr "Mobilfunknetz"
+
+#: bt/models.py:88
 #, python-format
 msgid "Comment #%s"
-msgstr ""
+msgstr "Kommentar #%s"
 
 #: bt/multifile.py:135
 msgid "No file was submitted. Check the encoding type on the form."
 msgstr ""
+"Es wurde keine Datei übertragen, bitte überprüfen sie die "
+"Zeichensatzeinstellungen des Formulars."
 
 #: bt/multifile.py:137
 msgid "No file was submitted."
-msgstr ""
+msgstr "Es wurde keine Datei übertragen."
 
 #: bt/multifile.py:141
 msgid "The submitted file is empty."
-msgstr ""
+msgstr "Die übertragene Datei ist leer."
 
 #: bt/multifile.py:144
 msgid "An incorrect number of files were uploaded."
-msgstr ""
+msgstr "Es wurde eine nicht korrekte Anzahl von Dateien übertragen."
 
 #: bt/views.py:50 bt/views.py:70
 msgid "Thank you, this has been already activated"
-msgstr ""
+msgstr "Danke, dieser Eintrag wurde schon aktiviert."
 
 #: bt/views.py:54
 #, python-format
 msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
 msgstr ""
+"Es wurde ein neuer Bericht eingereicht. Zum Bestätigen bitte hier klicken: "
+"%s/moderate/?key=%s\n"
 
 #: bt/views.py:55
 msgid "NNMon submission approval"
-msgstr ""
+msgstr "NNMon Eintragsbestätigung"
 
 #: bt/views.py:63
 msgid ""
-"Thank you for verifying your submission. It will be listed shortly, after"
-" we've checked that the report is valid."
+"Thank you for verifying your submission. It will be listed shortly, after "
+"we've checked that the report is valid."
 msgstr ""
+"Danke, dass sie ihre Einreichung bestätigt haben. Sie wird in kürze "
+"angezeigt, nachdem wir die Einreichung überprüft haben."
 
 #: bt/views.py:72
 msgid "No such key"
-msgstr ""
+msgstr "Schlüssel ist nicht vorhanden."
 
 #: bt/views.py:77
 #, python-format
 msgid "New infringement reported for %s (%s) %s"
-msgstr ""
+msgstr "Eine neue Übertretung wurde für %s (%s) %s gemeldet."
 
 #: bt/views.py:82
 msgid "Thank you for approving the submission."
-msgstr ""
+msgstr "Danke, dass sie die Einreichung bestätigt haben."
 
 #: bt/views.py:86
 msgid "Thank you for deleting the submission."
-msgstr ""
+msgstr "Danke, dass sie die Einreichung gelöscht haben."
 
 #: bt/views.py:97
 msgid "Thank you, this has been already confirmed"
-msgstr ""
+msgstr "Danke, die Einreichung wurde schon bestätigt."
 
 #: bt/views.py:99
 msgid "Thank you for your confirmation"
-msgstr ""
+msgstr "Danke, für die Bestätigung"
 
 #: bt/views.py:104
 msgid "Thank you for verifying your confirmation"
-msgstr ""
+msgstr "Danke für die Bestätigung."
 
 #: bt/views.py:109
 #, python-format
 msgid ""
-"Thank you for submitting a new report. To finalize your submission please"
-" confirm using your validation key.\n"
+"Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\n"
 "Your verification key is %s/%s%s\n"
-"Please note that reports are moderated, it might take some time before "
-"your report appears online. Thank you for your patience."
+"Please note that reports are moderated, it might take some time before your report appears online. Thank you for your patience."
 msgstr ""
+"Danke, dass sie einen neuen Bericht eingereicht haben. Um ihre Einreichung abzuschliessen, bitte bestätigen sie sie mit ihrem Bestätigungs-Passwort.\n"
+"Ihr Bestätigungs-Passwort ist %s/%s%s\n"
+"Da Berichte moderiert sind, kann es einige Zeit dauern, bis ihr Bericht online erscheint. Wir danken für ihre Geduld."
 
 #: bt/views.py:110
 msgid "NNMon submission verification"
-msgstr ""
+msgstr "Überprüfung des NNMON Berichts"
 
 #: bt/views.py:157
 msgid ""
-"Thank you for submitting this report, you will receive a verification "
-"email shortly."
+"Thank you for submitting this report, you will receive a verification email "
+"shortly."
 msgstr ""
+"Danke, dass sie diesen Bericht abgeschickt haben. Sie werden in Kürze eine "
+"E-Mail zur Bestätigung erhalten."
 
 #: templates/about.html:7
 msgid ""
-"RespecyMyNet.eu is an online platform enabling citizens to become the "
-"watchmen of the Internet by reporting Net Neutrality violations. Everyone"
-" is invited to report undue blocking or throttling of their Internet "
-"access, and help  name and shame operators' harmful practices."
+"RespectMyNet.eu is an online platform enabling citizens to become the "
+"watchmen of the Internet by reporting Net Neutrality violations. Everyone is"
+" invited to report undue blocking or throttling of their Internet access, "
+"and help  name and shame operators' harmful practices."
 msgstr ""
+"RespektMyNet.eu ist eine online platform, die Bürgen hilft Verletzungen der "
+"Netzneutralität zu dokumentieren. Jeder kann über Einschränkungen und "
+"Zugriffssperren seines Internetanschlusses berichten und mithelfen Übeltäter"
+" aufzuzeigen."
 
 #: templates/about.html:8
 msgid ""
-"This platform is a joint project by La Quadrature du Net, Bits of Freedom"
-" and individual contributors. It was launched on September 22nd, 2011."
+"This platform is a joint project by La Quadrature du Net, Bits of Freedom "
+"and individual contributors. It was launched on September 22nd, 2011."
 msgstr ""
+"Die Plattform ist ein gemeinsames Projekt von La Quadrature Du Net, Bits of "
+"Freedom und individuen. Sie wurde am 22. September 2011 gestarted. "
 
 #: templates/about.html:9
 msgid ""
-"Organisations will submit reports to national and EU regulatory "
-"authorities if appropriate."
+"Organisations will submit reports to national and EU regulatory authorities "
+"if appropriate."
 msgstr ""
+"Organisationen werden die Berichte gegebenenfalls nationalen und EU-Behörden"
+" weitergeben."
 
 #: templates/about.html:10
 msgid "For enquiries about the project, please contact:"
-msgstr ""
+msgstr "Für das Projekt betreffende Nachfragen, kontaktieren sie bitte: "
 
-#: templates/add.html:30
+#: templates/add.html:31
 msgid "New Violation"
-msgstr ""
+msgstr "Neue Übertretung"
 
-#: templates/add.html:33 templates/index.html:104
+#: templates/add.html:34 templates/index.html:104
 msgid "Provide optional details"
-msgstr ""
+msgstr "Bitte geben sie zusätzliche Details an"
 
-#: templates/add.html:44 templates/index.html:115
+#: templates/add.html:45 templates/index.html:115
 msgid "save"
-msgstr ""
+msgstr "speichern"
 
-#: templates/base.html:28
+#: templates/base.html:24
+msgid "name and shame operators restricting access to the Internet"
+msgstr ""
+"Stellen sie Provider, die den Zugriff aufs Internet beschränken, bloss."
+
+#: templates/base.html:29
 msgid "Logout"
-msgstr ""
+msgstr "Ausloggen"
 
-#: templates/base.html:30
+#: templates/base.html:31
 msgid "Admin"
-msgstr ""
+msgstr "Administrator"
 
-#: templates/base.html:32
+#: templates/base.html:33
 msgid "Login"
-msgstr ""
-
-#: templates/base.html:37
-msgid "Home"
-msgstr ""
+msgstr "Einloggen"
 
 #: templates/base.html:38
-msgid "Cases"
-msgstr ""
+msgid "Home"
+msgstr "Start"
 
 #: templates/base.html:39
-msgid "What's Net Neutrality"
-msgstr ""
+msgid "Cases"
+msgstr "Fälle"
 
 #: templates/base.html:40
-msgid "Start Monitoring"
+msgid "What is Net Neutrality?"
 msgstr ""
 
 #: templates/base.html:41
-msgid "Contact"
+msgid "Start Monitoring"
 msgstr ""
+
+#: templates/base.html:42
+msgid "Contact"
+msgstr "Kontakt"
 
 #: templates/feeditem.html:5 templates/view.html:54
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: templates/feeditem.html:11 templates/view.html:61
 msgid "Attachments"
-msgstr ""
+msgstr "Anhänge"
 
 #: templates/feeditem.html:22 templates/view.html:74
 msgid "Media"
-msgstr ""
+msgstr "Medien"
 
 #: templates/feeditem.html:23
 msgid "Affected Resource/service"
-msgstr ""
+msgstr "Betroffene Resource/Service"
 
 #: templates/feeditem.html:24 templates/view.html:73
 msgid "Type"
-msgstr ""
+msgstr "Art"
 
 #: templates/feeditem.html:25 templates/view.html:75
 msgid "Temporary restriction"
-msgstr ""
+msgstr "Temporäre Einschränkung"
 
-#: templates/feeditem.html:25 templates/feeditem.html:27 templates/view.html:76
-#: templates/view.html:77
+#: templates/feeditem.html:25 templates/feeditem.html:27
+#: templates/view.html:76 templates/view.html:77
 msgid "yes"
-msgstr ""
+msgstr "ja"
 
 #: templates/feeditem.html:26 templates/view.html:76
 msgid "Loophole offering"
@@ -444,532 +494,457 @@ msgstr ""
 
 #: templates/feeditem.html:27 templates/view.html:77
 msgid "Contractual restriction"
-msgstr ""
+msgstr "Vertragliche Einschränkung"
 
 #: templates/feeditem.html:29 templates/view.html:78
 msgid "Contract excerpt"
-msgstr ""
+msgstr "Vertragsauszug"
 
 #: templates/index.html:101
 msgid "Add New Case"
-msgstr ""
+msgstr "Neuen Fall hinzufügen"
 
 #: templates/index.html:119
-msgid "On Internet, you decide what you do, right? Not anymore!"
+msgid ""
+"On the Internet, <strong>you</strong> decide what you do, right? <i>Not "
+"anymore!</i>"
 msgstr ""
+"<strong>Du</strong> entscheidest, was du im Internet tust, stimmts? Nicht "
+"mehr!"
 
 #: templates/index.html:120
 msgid ""
-"We all rely more and more on our access to Internet to do serious things "
-"like find jobs and fun things like chat with friends. But telco's are "
-"increasingly trying to control your behavior online, by restricting the "
-"things you are doing on the internet. Now you have a chance to do "
-"something about that!"
+"Large telecommunication providers want to control what you do online. They "
+"want to block and throttle some of your communications, and charge you to "
+"use certain online services, content and applications."
 msgstr ""
+"Große Telekommunikationsprovider wollen kontrollieren, was Sie online tun. "
+"Sie wollen Kommunikationsdienste, die Sie jetzt benutzen sperrenoder "
+"verlangsamen und für manche Dienste, Inhalte oder Anwendungen extra Gebühren"
+" verlangen"
 
 #: templates/index.html:121
-msgid ""
-"Help us chart all the ways that internet providers are violating our "
-"online freedom: Is your operator blocking or throttling your Internet "
-"communications, for instance by making it impossible to use chat programs"
-" or charging extra for Internet telephony? Let us know by filling up this"
-" form (it takes less than two minutes!). We will make sure that the "
-"relevant authorities are informed, so that we can put an end to this."
-msgstr ""
+msgid "Now is the time to fight back!"
+msgstr "Jetzt ist es Zeit sich zu wehren."
 
 #: templates/index.html:122
-msgid "Featured Cases"
+msgid ""
+"Help us chart all the ways that internet providers are violating our online "
+"freedom. Tell us about how your landline or mobile operator Internet "
+"provider restricts your connection. You can do so in less than two minutes!"
 msgstr ""
+"Helft uns, die Wege aufzuzeigen, wie Provider unsere Freiheit online "
+"beschränken. Schreiben sie uns wie ihr Festnetz oder Mobilfunkanbieter ihre "
+"Verbindung beschränkt. Sie brauchen dazu weniger als zwei Minuten."
 
-#: templates/index.html:126
+#: templates/index.html:123
+msgid ""
+"We will report these violations to the European Commission and national "
+"authorities and demand action to address them."
+msgstr ""
+"Wir werden diese die Europäischen Kommission und Nationale Regierungen über "
+"diese Verletzungen informieren und verlangen, dass diese behandelt werden."
+
+#: templates/index.html:124
+msgid ""
+"Don't hesitate to give us feedback on this application by reporting any idea"
+" or issue with RespectMyNet.eu here : <a "
+"href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>"
+msgstr ""
+"Zögern sie nicht uns  <a "
+"href='https://nnmon.quadpad.lqdn.fr/feedback'>hier</a>feedback und neue "
+"Ideen zu geben sowie Probleme mit der bestehenden Applikation zu melden:  <a"
+" href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback</a>"
+
+#: templates/index.html:125
+msgid "Featured Cases"
+msgstr "Beispielfälle"
+
+#: templates/index.html:129
 msgid "Infringing offering"
 msgstr ""
 
-#: templates/index.html:127
+#: templates/index.html:130
 msgid "Confirmed"
-msgstr ""
-
-#: templates/index.html:137 templates/list.html:66
-msgid ""
-"In order to <strong>validate your confirmation</strong> of this case, "
-"please enter your email address"
-msgstr ""
-
-#: templates/index.html:139
-msgid "ok"
-msgstr ""
+msgstr "Bestätigt"
 
 #: templates/index.html:140 templates/list.html:70
-msgid "cancel"
-msgstr ""
-
-#: templates/index.html:146
-msgid "Confirm"
-msgstr ""
-
-#: templates/list.html:38
 msgid ""
-"This is a list of all reported violations of net neutrality. See <a "
-"href='/about'>What is net neutrality</a> for a short explanation. "
+"In order to <strong>validate your confirmation</strong> of this case, please"
+" enter your email address"
 msgstr ""
+"Um ihren Fall <strong>bestätigen zu können</strong>, geben sie bitte ihre "
+"E-Mail Addresse an"
+
+#: templates/index.html:142
+msgid "ok"
+msgstr "Ok"
+
+#: templates/index.html:143 templates/list.html:74
+msgid "cancel"
+msgstr "Abbrechen"
+
+#: templates/index.html:149
+msgid "Confirm"
+msgstr "Bestätigen"
 
 #: templates/list.html:42
-msgid "country"
-msgstr ""
-
-#: templates/list.html:43
-msgid "operator"
-msgstr ""
-
-#: templates/list.html:44
-msgid "contract"
-msgstr ""
-
-#: templates/list.html:45
-msgid "resource"
+msgid ""
+"This is a list of all reported Net Neutrality violations. See <a "
+"href='/about'>What is Net Neutrality?</a> for a short explanation. "
 msgstr ""
 
 #: templates/list.html:46
-msgid "type"
-msgstr ""
+msgid "country"
+msgstr "Land"
 
 #: templates/list.html:47
-msgid "fixed / wireless"
-msgstr ""
+msgid "operator"
+msgstr "Anbieter"
 
 #: templates/list.html:48
+msgid "contract"
+msgstr "Vertrag"
+
+#: templates/list.html:49
+msgid "resource"
+msgstr "Dienst"
+
+#: templates/list.html:50
+msgid "type"
+msgstr "Art"
+
+#: templates/list.html:51
+msgid "fixed / wireless"
+msgstr "Festnetz / Mobilfunk"
+
+#: templates/list.html:52
 msgid "confirmations"
-msgstr ""
+msgstr "Bestätigungen"
 
-#: templates/list.html:63 templates/view.html:85
+#: templates/list.html:67 templates/view.html:85
 msgid "confirm"
-msgstr ""
+msgstr "Bestätigen"
 
-#: templates/list.html:69
+#: templates/list.html:73
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: templates/nn.html:7
 msgid ""
-"On the Internet, <strong>you</strong> decide what you do, right? Not "
-"anymore!"
+"On the Internet, <strong>you</strong> decide what you do, right? <em>Not "
+"anymore!</em>"
 msgstr ""
 
 #: templates/nn.html:8
 msgid ""
-"Large telecommunication providers want to control what you do online. "
-"They want to restrict access to internet telephony in order to force you "
-"to use their telephone services. They want to charge you for viewing of "
-"videos. They want to prohibit the use of specific software on their "
-"networks, or throttle innovative applications such as peer-to-peer "
-"filesharing."
+"Large telecommunication providers want to control what you do online. They "
+"want to restrict access to internet telephony in order to force you to use "
+"their telephone services. They want to charge you for viewing of videos. "
+"They want to prohibit the use of specific software on their networks, or "
+"throttle innovative applications such as peer-to-peer filesharing."
 msgstr ""
+"Große Telekommunikationsanbieter wollen kontrollieren was ihr online tut. "
+"Sie wollen den Zugang zu Internettelephonie beschränken, damit ihre "
+"Telephonangebote wieder genutzt werden. Sie wollen Geld verlangen dafür, "
+"dass ihr Videos sehen könnt. Sie wollen verhindern, das bestimmte Programme "
+"in ihren Netzwerken benutzt werden oder innovative Anwendungen, wie z.b. "
+"Peer-to-peer Software verlangsamen."
 
 #: templates/nn.html:9
 msgid ""
-"This must stop. We want to ensure that your freedom online is protected "
-"and that you decide which content you access, and which applications and "
+"This must stop. We want to ensure that your freedom online is protected and "
+"that you decide which content you access, and which applications and "
 "services you use. Net neutrality is about your freedom online."
 msgstr ""
+"Das muss aufgehalten werden. Wir wollen sicherstellen, dass eure Freiheit "
+"online geschützt wird und dass ihr auch weiterhin entscheidet, welche "
+"Inhalte ihr anseht, welche Anwendungen und Dienste ihr benutzt. Bei "
+"Netzneutralität geht es um eure Freiheit im Internet."
 
 #: templates/nn.html:10
 msgid ""
-"Violations on Net Neutrality are bad for freedom of communication, "
-"freedom of choice, innovation and communication costs. They lead to a "
-"situation where the provider can decide what you do online, not you, and "
-"this restricts your freedom. It becomes more difficult for innovative "
-"companies to offer their services via the internet, because they may be "
-"blocked or slowed down by providers. And it leads to higher communication"
-" costs because you may have to pay extra to use cheap services such as "
-"internet telephony."
+"Violations on Net Neutrality are bad for freedom of communication, freedom "
+"of choice, innovation and communication costs. They lead to a situation "
+"where the provider can decide what you do online, not you, and this "
+"restricts your freedom. It becomes more difficult for innovative companies "
+"to offer their services via the internet, because they may be blocked or "
+"slowed down by providers. And it leads to higher communication costs because"
+" you may have to pay extra to use cheap services such as internet telephony."
 msgstr ""
+"Übertretungen der Netzneutralität schränken eure Freiheit zu Kommunizieren "
+"und freie Auswahlt zu treffen ein. Sie erhöhen die Kosten von Innovationen "
+"und Kommunikation und fürhen in eine Situation, in der Provider bestimmen, "
+"was ihr im Internet tut. Das beschränkt eure Freiheit. Es wird für junge "
+"innovative Unternehmen schwerer werden ihre Dienste über das Internet "
+"anzubieten, weil Zugang zu ihnen von Providern erschwert oder künstlich "
+"verlangsamt wird. Das erhöht den Preis von Kommunikation, weil auf einmal "
+"extra Gebühren anfallen, wenn man Dienste wie Internettelephonie benutzen "
+"will."
 
 #: templates/nn.html:11
 msgid ""
-"We need to ensure that the Internet remains free, open and accessible for"
-" all. This is what Net Neutrality is about. The European Commission and "
-"national regulators need to prohibit providers from restricting your "
-"online traffic and do so before it is too late. In order to convince them"
-" about the urgency of this problem, we aim to create a comprehensive "
-"report of Net Neutrality violations in Europe. This website is the way to"
-" report these violations."
+"We need to ensure that the Internet remains free, open and accessible for "
+"all. This is what Net Neutrality is about. The European Commission and "
+"national regulators need to prohibit providers from restricting your online "
+"traffic and do so before it is too late. In order to convince them about the"
+" urgency of this problem, we aim to create a comprehensive report of Net "
+"Neutrality violations in Europe. This website is the way to report these "
+"violations."
 msgstr ""
+"Wir müssen sicherstellen, dass das Internet offen, frei und zugänglich für "
+"alle bleibt. Darum geht es bei Netzneutralität. Die Europäische Kommission "
+"und die Regulationsbehörden der Mitgliedstaaten müssen Provider davon "
+"abhalten, Internetverbindungen zu beschränken, bevor es zu spät ist. Um sie "
+"von der Dringlichkeit dieses Problems zu überzeugen, wollen wir einen "
+"umfassenden Bericht über Verletzungen der Netzneutralität in Europa "
+"erstellen. Diese Webseite dient dazu die Fälle zu sammeln. "
 
 #: templates/start.html:7
 msgid ""
 "Do you want to check whether your access provider is manipulating your "
-"internet traffic? Great! There are a lot of tools which make life easier "
-"for you. Here is a short selection."
+"internet traffic? Great!"
 msgstr ""
+"Wollen sie überprüfen ob ihr Internetprovider ihren Internetzugang "
+"manipuliert?"
 
 #: templates/start.html:8
-msgid "Recommended tools"
+msgid ""
+"There are a lot of tools which make life easier for you. Here is a short "
+"selection."
 msgstr ""
+"Es gibt ein Menge Hilfsprogramme die Ihnen vereinfachen Netzneutralität zu "
+"kontrollieren. Hier finden sie eine Auswahl."
 
 #: templates/start.html:9
-msgid ""
-"These tools are probably the most helpful when it comes to tracking "
-"traffic discrimination."
-msgstr ""
+msgid "Recommended tools"
+msgstr "Empfohlene Hilfsprogramme"
 
-#: templates/start.html:12
-msgid "available for MacOS Ubuntu Windows"
+#: templates/start.html:10
+msgid ""
+"These tools are probably the most helpful when it comes to tracking traffic "
+"discrimination."
 msgstr ""
+"Diese Hilfsprogramme sind wahrscheinlich am hilfreichsten um Einschränkungen"
+" der Internetverbindung zu erkennen."
 
 #: templates/start.html:13
-msgid ""
-"Neubot is a research project on network neutrality of the NEXA Center for"
-" Internet & Society at Politecnico di Torino. The project is based on a "
-"lightweight open-source program that interested users can download and "
-"install on their computers. The program runs in background and "
-"periodically performs transmission tests with some test servers and with "
-"other instances of the program itself. These transmission tests probe the"
-" Internet using various application level protocols. The program saves "
-"tests results locally and uploads them on the project servers. The "
-"collected dataset contains samples from various Providers and allows to "
-"monitor network neutrality."
+msgid "<em>Available for Mac OS X, Ubuntu (GNU/Linux) and Windows.</em>"
 msgstr ""
 
-#: templates/start.html:16
-msgid "in-browser java"
+#: templates/start.html:14
+msgid ""
+"Neubot is a research project on network neutrality of the NEXA Center for "
+"Internet & Society at Politecnico di Torino. The project is based on a "
+"lightweight open-source program that interested users can download and "
+"install on their computers. The program runs in background and periodically "
+"performs transmission tests with some test servers and with other instances "
+"of the program itself. These transmission tests probe the Internet using "
+"various application level protocols. The program saves tests results locally"
+" and uploads them on the project servers. The collected dataset contains "
+"samples from various Providers and allows to monitor network neutrality."
 msgstr ""
 
 #: templates/start.html:17
-msgid ""
-"Test whether certain applications or traffic are being blocked or "
-"throttled on your broadband connection.  Glasnost attempts to detect "
-"whether your Internet access provider is performing application-specific "
-"traffic shaping. Currently, you can test if your ISP is throttling or "
-"blocking email, HTTP or SSH transfer, Flash video, and P2P apps including"
-" BitTorrent, eMule and Gnutella."
+msgid "<em>In-browser Java.</em>"
 msgstr ""
 
-#: templates/start.html:20
-msgid "runs on PocketPCs"
+#: templates/start.html:18
+msgid ""
+"Test whether certain applications or traffic are being blocked or throttled "
+"on your broadband connection.  Glasnost attempts to detect whether your "
+"Internet access provider is performing application-specific traffic shaping."
+" Currently, you can test if your ISP is throttling or blocking email, HTTP "
+"or SSH transfer, Flash video, and P2P apps including BitTorrent, eMule and "
+"Gnutella."
 msgstr ""
 
 #: templates/start.html:21
-msgid ""
-"Detect whether your mobile broadband provider is performing application "
-"or service specific differentiation."
+msgid "<em>Runs on PocketPCs.</em>"
 msgstr ""
 
-#: templates/start.html:25
-msgid "Additional tools"
+#: templates/start.html:22
+msgid ""
+"Detect whether your mobile broadband provider is performing application or "
+"service specific differentiation."
 msgstr ""
 
 #: templates/start.html:26
+msgid "Additional tools"
+msgstr "Zusätzliche Hilfsprogramme"
+
+#: templates/start.html:27
 msgid ""
 "These tools are interesting to test the overall quality of your Internet "
 "connections."
 msgstr ""
 
-#: templates/start.html:29
-msgid ""
-"runs on <a "
-"href=\"http://ndt.googlecode.com/files/AndroidNdt-1.0b1.apk\">Android</a>"
-msgstr ""
-
 #: templates/start.html:30
-msgid ""
-"Test your connection speed and receive sophisticated diagnosis of "
-"problems limiting speed."
+msgid "<em>Runs on any browser and on <a href=\\"
 msgstr ""
 
-#: templates/start.html:33
+#: templates/start.html:31
+msgid ""
+"Test your connection speed and receive sophisticated diagnosis of problems "
+"limiting speed."
+msgstr ""
+
+#: templates/start.html:34
 msgid "Diagnose common problems that impact last-mile broadband networks."
 msgstr ""
 
-#: templates/start.html:36
+#: templates/start.html:37 templates/start.html:41
+msgid "<em>Runs on Mac OS X, GNU/Linux and Windows</em>"
+msgstr ""
+
+#: templates/start.html:38
 msgid "See how much bandwidth your connection provides"
-msgstr ""
+msgstr "Finden sie heraus, wie schnell ihre Internetverbindung ist"
 
-#: templates/start.html:37
-msgid "Windows, MacOSX, Linux"
-msgstr ""
-
-#: templates/start.html:40
-msgid "runs on Linux, MacOSX, Windows"
-msgstr ""
-
-#: templates/start.html:41
+#: templates/start.html:42
 msgid ""
-"Determine whether an ISP is performing traffic shaping. ShaperProbe "
-"detects whether your ISP performs \"traffic shaping\". Traffic shaping "
-"means that your ISP automatically drops your access rate after you have "
-"downloaded or uploaded a certain number of bytes. ShaperProbe detects "
-"whether traffic shaping is used in either the upload or download "
-"directions, and in that case that it is used, ShaperProbe reports the "
-"shaping rate and the \"maximum burst size\" before shaping begins."
-msgstr ""
-
-#: templates/start.html:44
-msgid ""
-"Passive monitoring by NANO-agent: NANO-agent monitors the number of "
-"packets transferred for each active flow per unit time, as well as tracks"
-" for unexpected events like packet loss, and TCP RST packets.  NANO-agent"
-" coallates each flow with the application that owns the flow.  NANO agent"
-" also monitors the load on the client computer.  All these statistics are"
-" reported to collection servers located at Georgia Tech.  You may "
-"visualize your data by visiting this page."
+"Determine whether an ISP is performing traffic shaping. ShaperProbe detects "
+"whether your ISP performs \"traffic shaping\". Traffic shaping means that "
+"your ISP automatically drops your access rate after you have downloaded or "
+"uploaded a certain number of bytes. ShaperProbe detects whether traffic "
+"shaping is used in either the upload or download directions, and in that "
+"case that it is used, ShaperProbe reports the shaping rate and the \"maximum"
+" burst size\" before shaping begins."
 msgstr ""
 
 #: templates/start.html:45
 msgid ""
-"Privacy: NANO will monitor all of your Internet traffic and send back "
-"limited statistics, but does not collect data on what is being sent."
+"<em>Runs on GNU/Linux only for now, Mac OS X and Windows versions to "
+"come.</em>"
 msgstr ""
 
-#: templates/start.html:48
+#: templates/start.html:46
 msgid ""
-"torrent-protocol based sensor plugin for vuze/azareus bittorrent client "
+"Passive monitoring by NANO-agent: NANO-agent monitors the number of packets "
+"transferred for each active flow per unit time, as well as tracks for "
+"unexpected events like packet loss, and TCP RST packets.  NANO-agent "
+"coallates each flow with the application that owns the flow.  NANO agent "
+"also monitors the load on the client computer.  All these statistics are "
+"reported to collection servers located at Georgia Tech.  You may visualize "
+"your data by visiting this page."
+msgstr ""
+
+#: templates/start.html:47
+msgid ""
+"<em>Privacy:</em> NANO will monitor all of your Internet traffic and send "
+"back limited statistics, but does not collect data on what is being sent."
+msgstr ""
+
+#: templates/start.html:50
+msgid ""
+"Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client "
 "using a crowd approach sharing data with peers."
 msgstr ""
 
-#: templates/start.html:51
-msgid "torrent-protocol based sensor plugin for vuze/azareus bittorrent client"
+#: templates/start.html:53
+msgid ""
+"Torrent-protocol based sensor plugin for Vuze/Azureus BitTorrent client."
 msgstr ""
 
-#: templates/start.html:54
+#: templates/start.html:56
 msgid "browser java applet"
 msgstr ""
 
-#: templates/start.html:55
+#: templates/start.html:57
 msgid ""
 "comprehensive tcp/udp and protocol level sensor see <a "
 "href=\"http://netalyzr.icsi.berkeley.edu/restore/id=example-"
 "session\">example report</a> for capabilities"
 msgstr ""
 
-#: templates/start.html:58
-msgid "what not to report"
-msgstr ""
+#: templates/start.html:60
+msgid "What not to report"
+msgstr "Was nicht berichtet werden sollte"
 
-#: templates/start.html:59
+#: templates/start.html:61
 msgid ""
-"Sample of common ISP issues that DO NOT require a formal complaint (from:"
-" http://www.ispreview.co.uk/new/complain/complain.shtml)"
+"Sample of common ISP issues that DO NOT require a formal complaint (from: <a"
+" href=\\"
 msgstr ""
 
-#: templates/start.html:62
+#: templates/start.html:64
 msgid ""
-"Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
-"Outages."
-msgstr ""
+"<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
+"Outages.</b>"
+msgstr "<b>Kurze und Unübliche Ausfälle (z.b. Email, Webseiten etc.)</b>"
 
-#: templates/start.html:63
+#: templates/start.html:65
 msgid ""
 "Sadly, ISPs experience occasional problems with online services, such as "
-"email access. These are  usually resolved after a few minutes or hours, "
-"an only very occasionally will they last longer than a day. Don't get too"
-" frustrated, inform them of your problem and allow some time for it to be"
-" resolved."
+"email access. These are  usually resolved after a few minutes or hours, an "
+"only very occasionally will they last longer than a day. Don't get too "
+"frustrated, inform them of your problem and allow some time for it to be "
+"resolved."
 msgstr ""
 
-#: templates/start.html:66
-msgid "General Fluctuations in Broadband Speed."
+#: templates/start.html:68
+msgid "<b>General Fluctuations in Broadband Speed.</b>"
 msgstr ""
 
-#: templates/start.html:67
+#: templates/start.html:69
 msgid ""
-"Broadband is a so-called \"best efforts\" service, which means it is "
-"shared between many users and open to fluctuations in performance (often "
-"more so in dense urban areas). For example, if you have an 8Mbps package "
-"but your line is only rated to cope with 2Mbps then you should not be "
-"surprised to see speeds vary from around 1 to 1.5Mbps (potentially lower "
-"during peak periods). Few get the advertised or even best estimated speed"
-" for their line."
+"Broadband is a so-called \"best efforts\" service, which means it is shared "
+"between many users and open to fluctuations in performance (often more so in"
+" dense urban areas). For example, if you have an 8Mbps package but your line"
+" is only rated to cope with 2Mbps then you should not be surprised to see "
+"speeds vary from around 1 to 1.5Mbps (potentially lower during peak "
+"periods). Few get the advertised or even best estimated speed for their "
+"line."
 msgstr ""
 
-#: templates/start.html:70
+#: templates/start.html:72
+msgid "<b>Short and Uncommon Broadband Connection Problems.</b>"
+msgstr "<b>Kurze und Unübliche Verbindungsprobleme.</b>"
+
+#: templates/start.html:73
 msgid ""
-"Short and Uncommon Broadband Connection Problems.  Once again, "
-"connections do sometimes go down and fail to connect/reconnect, though "
-"usually for no more than one day at most. These issues should be very "
-"rare and 9 times out of 10 they will be fixed within a few minutes or "
+"Once again, connections do sometimes go down and fail to connect/reconnect, "
+"though usually for no more than one day at most. These issues should be very"
+" rare and 9 times out of 10 they will be fixed within a few minutes or "
 "hours."
 msgstr ""
 
+#: templates/view.html:26
+msgid "It will appear here after moderation."
+msgstr ""
+
+#: templates/view.html:30
+msgid ""
+"Your comment was unable to be posted at this time.  We apologise for the "
+"inconvenience."
+msgstr ""
+"Dein Kommentar konnte nicht veröffentlicht werden. Wir bitten um "
+"Entschuldigung."
+
 #: templates/view.html:72
 msgid "Resource"
-msgstr ""
+msgstr "Dienst"
 
 #: templates/view.html:82
 msgid ""
-"In order to <strong>validate your confirmation</strong>, please enter "
-"your email address"
-msgstr ""
+"In order to <strong>validate your confirmation</strong>, please enter your "
+"email address"
+msgstr "Um zu bestätigen, geben sie bitte ihre E-Mail addresse an. "
 
 #: templates/view.html:91
 msgid "Comments"
-msgstr ""
+msgstr "Kommentare"
 
 #: templates/view.html:99
 msgid "Add comment"
-msgstr ""
+msgstr "kommentieren"
 
-#: templates/registration/activate.html:8
-msgid "Your account activation might work now. If not mail me."
-msgstr ""
+#: templates/view.html:104
+msgid "Approve Submission"
+msgstr "Einreichung akzeptieren"
 
-#: templates/registration/activation_complete.html:8
-msgid "Your account is now active."
-msgstr ""
+#: templates/view.html:105
+msgid "Delete Submission"
+msgstr "Einreichung löschen"
 
-#: templates/registration/activation_email.txt:4
-msgid "Here's your activation key"
-msgstr ""
-
-#: templates/registration/activation_email.txt:7
-msgid "Please click on this link to activate your account"
-msgstr ""
-
-#: templates/registration/activation_email.txt:10
-msgid "This link will expire in:"
-msgstr ""
-
-#: templates/registration/activation_email.txt:10
-msgid "days."
-msgstr ""
-
-#: templates/registration/login.html:13
-#: templates/registration/password_reset_confirm.html:4
-#: templates/registration/password_reset_form.html:4
-msgid "Password reset"
-msgstr ""
-
-#: templates/registration/password_change_done.html:4
-msgid "Password change successful"
-msgstr ""
-
-#: templates/registration/password_change_done.html:8
-msgid "Your password was changed."
-msgstr ""
-
-#: templates/registration/password_change_form.html:4
-msgid "Password change"
-msgstr ""
-
-#: templates/registration/password_change_form.html:12
-msgid "Please correct the error below."
-msgid_plural "Please correct the errors below."
-msgstr[0] ""
-msgstr[1] ""
-
-#: templates/registration/password_change_form.html:16
-msgid ""
-"Please enter your old password, for security's sake, and then enter your "
-"new password twice so we can verify you typed it in correctly."
-msgstr ""
-
-#: templates/registration/password_change_form.html:22
-msgid "Old password"
-msgstr ""
-
-#: templates/registration/password_change_form.html:27
-msgid "New password"
-msgstr ""
-
-#: templates/registration/password_change_form.html:32
-msgid "Password (again)"
-msgstr ""
-
-#: templates/registration/password_change_form.html:38
-#: templates/registration/password_reset_confirm.html:19
-msgid "Change my password"
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:4
-msgid "Password reset complete"
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:8
-msgid "Your password has been set.  You may go ahead and log in now."
-msgstr ""
-
-#: templates/registration/password_reset_complete.html:10
-msgid "Log in"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:10
-msgid "Enter new password"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:12
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:16
-msgid "New password:"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:18
-msgid "Confirm password:"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:24
-msgid "Password reset unsuccessful"
-msgstr ""
-
-#: templates/registration/password_reset_confirm.html:26
-msgid ""
-"The password reset link was invalid, possibly because it has already been"
-" used.  Please request a new password reset."
-msgstr ""
-
-#: templates/registration/password_reset_done.html:4
-msgid "Password reset successful"
-msgstr ""
-
-#: templates/registration/password_reset_done.html:8
-msgid ""
-"We've e-mailed you instructions for setting your password to the e-mail "
-"address you submitted. You should be receiving it shortly."
-msgstr ""
-
-#: templates/registration/password_reset_email.html:2
-msgid "You're receiving this e-mail because you requested a password reset"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:3
-#, python-format
-msgid "for your user account at %(site_name)s"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:5
-msgid "Please go to the following page and choose a new password:"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:9
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:11
-msgid "Thanks for using our site!"
-msgstr ""
-
-#: templates/registration/password_reset_email.html:13
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
-
-#: templates/registration/password_reset_form.html:8
-msgid ""
-"Forgotten your password? Enter your e-mail address below, and we'll "
-"e-mail instructions for setting a new one."
-msgstr ""
-
-#: templates/registration/password_reset_form.html:12
-msgid "E-mail address:"
-msgstr ""
-
-#: templates/registration/password_reset_form.html:12
-msgid "Reset my password"
-msgstr ""
-
-#: templates/registration/registration_complete.html:8
-msgid "An email containing account-activation information has been sent."
-msgstr ""
 
