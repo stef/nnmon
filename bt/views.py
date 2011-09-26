@@ -15,6 +15,7 @@ from datetime import datetime
 import hashlib, os, re, json, smtplib
 from random import randint
 from email.mime.text import MIMEText
+from email.header import Header
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup, Comment as BComment
 
@@ -51,8 +52,8 @@ def activate(request):
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
-        msg = MIMEText(_("A new report was submitted. To approve click here: %s/moderate/?key=%s\n") % (settings.ROOT_URL or 'http://localhost:8001/', actid), _charset="utf-8")
-        msg['Subject'] = _('NNMon submission approval').encode("Utf-8")
+        msg = MIMEText("A new report was submitted. To approve click here: %s/moderate/?key=%s\n" % (settings.ROOT_URL or 'http://localhost:8001/', actid), _charset="utf-8")
+        msg['Subject'] = 'NNMon submission approval'.encode("Utf-8")
         msg['From'] = 'nnmon@nnmon.lqdn.fr'
         msg['To'] = ', '.join(to)
         s = smtplib.SMTP('localhost')
@@ -109,9 +110,9 @@ def confirm(request, id, name=None):
 def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
     msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
-    msg['Subject'] = _('NNMon submission verification').encode("Utf-8")
+    msg['Subject'] = Header(_('NNMon submission verification').encode("Utf-8"), 'utf-8')
     msg['From'] = 'nnmon@nnmon.lqdn.fr'
-    msg['To'] = to
+    msg['To'] = Header(to.encode("Utf-8"), 'utf-8')
     s = smtplib.SMTP('localhost')
     s.sendmail('nnmon@nnmon.lqdn.fr', [to], msg.as_string())
     s.quit()
