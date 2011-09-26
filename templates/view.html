@@ -79,7 +79,7 @@ $(document).ready(function() {
 </ul>
   <div class="info-validate" style="display: inline-block;">
     <form method="get" id="{{ violation.pk }}" class="confirm_form" >
-        <label>{% trans "In order to <strong>validate your confirmation</strong>, please enter your email address" %}</label>
+        <label>{% trans "In order to <strong>confirm</strong> this report, please enter your email address" %}</label>
         <input type="text" name="email" />
         <input type="hidden" value="{{ violation.pk }}" />
         <input type="submit" value="{% trans "confirm" %}" />
