@@ -606,6 +606,9 @@ div.comment {
   color: #404040;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
+ul.messages {
+  width: 580px;
+}
 .button{
   padding: 3px;
   font-family: Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
@@ -697,3 +700,7 @@ div.comment {
 .info-validate:target {
   display: block;
 }
+
+#similar_cases li { list-style: disc inside; margin-left: 0.3em; color: black; }
+
+.mceToolbar { display:none; }
