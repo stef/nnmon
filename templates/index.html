@@ -100,6 +100,7 @@ $(document).ready(function(){
   {% endif %}
   <div id='addForm' class='index'>
     <h2>{% trans "Add New Case" %}</h2>
+    <p>{% trans "Please report cases of operators restricting or throttling access to content, services or applications. For a more precise description of what to report, check our guidelines." %}
     <form name="addForm" enctype="multipart/form-data" action="{% root_url %}/add/" method="post">
       {% for field in form %}
       {% if field.html_name = 'comment' %}<div class="hidden errorlist">{% trans "There are already some reports for this Operator/Contract, please check if yours is already among them:" %}<ul id="similar_cases"></ul></div>{%endif%}
