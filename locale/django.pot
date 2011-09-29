@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2011-09-23 16:55+0200\n"
+"POT-Creation-Date: 2011-09-30 00:38+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,58 +18,74 @@ msgstr ""
 "Generated-By: Babel 0.9.6\n"
 
 #: bt/forms.py:20
+msgid "Please specify the affected resource"
+msgstr ""
+
+#: bt/forms.py:20
+msgid ""
+"What service or site, or person is unavailable or seems artificially "
+"slowed down. e.g. VoIP, p2p, filesharing, specific websites, etc."
+msgstr ""
+
+#: bt/forms.py:21 bt/forms.py:38
+msgid "Country"
+msgstr ""
+
+#: bt/forms.py:21 bt/forms.py:38
 msgid "EU member state where the restriction is reported."
 msgstr ""
 
-#: bt/forms.py:21
+#: bt/forms.py:22 bt/forms.py:39
+msgid "Operator"
+msgstr ""
+
+#: bt/forms.py:22 bt/forms.py:39
 msgid "The ISP or operator providing the Internet service."
 msgstr ""
 
-#: bt/forms.py:22
+#: bt/forms.py:23 bt/forms.py:40
+msgid "Contract"
+msgstr ""
+
+#: bt/forms.py:23 bt/forms.py:40
 msgid ""
 "The specific contract at the ISP provider. (please be as specific as "
 "possible)"
 msgstr ""
 
-#: bt/forms.py:23
+#: bt/forms.py:24 bt/forms.py:41
 msgid "Is the Internet connection over mobile or fixed line?"
 msgstr ""
 
-#: bt/forms.py:24
-msgid ""
-"Please describe the symptoms you are experiencing. What service or site, "
-"or person is unavailable or seems artificially slowed down."
+#: bt/forms.py:25
+msgid "Please describe the symptoms you are experiencing."
 msgstr ""
 
-#: bt/forms.py:25
+#: bt/forms.py:26
 msgid "Email (set this to enable saving)"
 msgstr ""
 
-#: bt/forms.py:25
+#: bt/forms.py:26
 msgid ""
 "We need your email to validate your report. Your email address is "
 "obligatory, but we will never use your personal data for anything else "
 "than checking the submission."
 msgstr ""
 
-#: bt/forms.py:26
+#: bt/forms.py:27
 msgid "Name or nickname"
 msgstr ""
 
-#: bt/forms.py:26
+#: bt/forms.py:27
 msgid "We need some name to display that instead of an email address."
 msgstr ""
 
-#: bt/forms.py:27
+#: bt/forms.py:28
 msgid "Attach screenshot, document or any other relevant information."
 msgstr ""
 
-#: bt/forms.py:28
-msgid "What is the affected resource. (optional)"
-msgstr ""
-
 #: bt/forms.py:29
-msgid "Please specify the name of the affected resource. (optional)"
+msgid "What is the affected resource type. (optional)"
 msgstr ""
 
 #: bt/forms.py:30
@@ -176,87 +192,87 @@ msgstr ""
 msgid "Netherlands"
 msgstr ""
 
-#: bt/models.py:24
-msgid "Austria"
-msgstr ""
-
-#: bt/models.py:25
-msgid "Poland"
-msgstr ""
-
-#: bt/models.py:26
-msgid "Portugal"
-msgstr ""
-
-#: bt/models.py:27
-msgid "Romania"
-msgstr ""
-
-#: bt/models.py:28
-msgid "Slovenia"
-msgstr ""
-
-#: bt/models.py:29
-msgid "Slovakia"
-msgstr ""
-
-#: bt/models.py:30
-msgid "Finland"
-msgstr ""
-
-#: bt/models.py:31
-msgid "Sweden"
-msgstr ""
-
-#: bt/models.py:32
-msgid "United Kingdom "
-msgstr ""
-
-#: bt/models.py:33
+#: bt/models.py:24 bt/models.py:34
 msgid "Norway"
 msgstr ""
 
-#: bt/models.py:37
-msgid "port"
+#: bt/models.py:25
+msgid "Austria"
+msgstr ""
+
+#: bt/models.py:26
+msgid "Poland"
+msgstr ""
+
+#: bt/models.py:27
+msgid "Portugal"
+msgstr ""
+
+#: bt/models.py:28
+msgid "Romania"
+msgstr ""
+
+#: bt/models.py:29
+msgid "Slovenia"
+msgstr ""
+
+#: bt/models.py:30
+msgid "Slovakia"
+msgstr ""
+
+#: bt/models.py:31
+msgid "Finland"
+msgstr ""
+
+#: bt/models.py:32
+msgid "Sweden"
+msgstr ""
+
+#: bt/models.py:33
+msgid "United Kingdom "
 msgstr ""
 
 #: bt/models.py:38
-msgid "protocol"
+msgid "port"
 msgstr ""
 
 #: bt/models.py:39
-msgid "service"
+msgid "protocol"
 msgstr ""
 
 #: bt/models.py:40
-msgid "site"
+msgid "service"
 msgstr ""
 
 #: bt/models.py:41
-msgid "user"
+msgid "site"
 msgstr ""
 
 #: bt/models.py:42
+msgid "user"
+msgstr ""
+
+#: bt/models.py:43
 msgid "ip"
 msgstr ""
 
-#: bt/models.py:45
+#: bt/models.py:46
 msgid "Blocking"
 msgstr ""
 
-#: bt/models.py:46
+#: bt/models.py:47
 msgid "Throttling"
 msgstr ""
 
-#: bt/models.py:49
+#: bt/models.py:50
 msgid "Fixed"
 msgstr ""
 
-#: bt/models.py:50
+#: bt/models.py:51
 msgid "Mobile"
 msgstr ""
 
-#: bt/models.py:88
+#: bt/models.py:89
 #, python-format
 msgid "Comment #%s"
 msgstr ""
@@ -277,55 +293,58 @@ msgstr ""
 msgid "An incorrect number of files were uploaded."
 msgstr ""
 
-#: bt/views.py:50 bt/views.py:70
-msgid "Thank you, this has been already activated"
+#: bt/views.py:52 bt/views.py:74
+msgid "Thank you, this key has been already activated"
 msgstr ""
 
-#: bt/views.py:54
-#, python-format
-msgid "A new report was submitted. To approve click here: %s/moderate/?key=%s\n"
-msgstr ""
-
-#: bt/views.py:55
-msgid "NNMon submission approval"
-msgstr ""
-
-#: bt/views.py:63
+#: bt/views.py:67
 msgid ""
 "Thank you for verifying your submission. It will be listed shortly, after"
 " we've checked that the report is valid."
 msgstr ""
 
-#: bt/views.py:72
+#: bt/views.py:76
 msgid "No such key"
 msgstr ""
 
-#: bt/views.py:77
+#: bt/views.py:79
 #, python-format
-msgid "New infringement reported for %s (%s) %s"
+msgid "Thank you for approving the <a href=\"/view/%s\">submission</a>."
+msgstr ""
+
+#: bt/views.py:81
+#, python-format
+msgid ""
+"Your report has been approved.\n"
+"To see it, please visit: %s/view/%s"
 msgstr ""
 
 #: bt/views.py:82
-msgid "Thank you for approving the submission."
+msgid "NNMon submission approved"
 msgstr ""
 
-#: bt/views.py:86
+#: bt/views.py:90
+#, python-format
+msgid "New case reported for %s (%s) %s %s/view/%s"
+msgstr ""
+
+#: bt/views.py:98
 msgid "Thank you for deleting the submission."
 msgstr ""
 
-#: bt/views.py:97
+#: bt/views.py:109 bt/views.py:115
 msgid "Thank you, this has been already confirmed"
 msgstr ""
 
-#: bt/views.py:99
+#: bt/views.py:111
 msgid "Thank you for your confirmation"
 msgstr ""
 
-#: bt/views.py:104
+#: bt/views.py:118
 msgid "Thank you for verifying your confirmation"
 msgstr ""
 
-#: bt/views.py:109
+#: bt/views.py:123
 #, python-format
 msgid ""
 "Thank you for submitting a new report. To finalize your submission please"
@@ -335,11 +354,11 @@ msgid ""
 "your report appears online. Thank you for your patience."
 msgstr ""
 
-#: bt/views.py:110
+#: bt/views.py:124
 msgid "NNMon submission verification"
 msgstr ""
 
-#: bt/views.py:157
+#: bt/views.py:171
 msgid ""
 "Thank you for submitting this report, you will receive a verification "
 "email shortly."
@@ -373,11 +392,11 @@ msgstr ""
 msgid "New Violation"
 msgstr ""
 
-#: templates/add.html:34 templates/index.html:104
+#: templates/add.html:34 templates/index.html:107
 msgid "Provide optional details"
 msgstr ""
 
-#: templates/add.html:45 templates/index.html:115
+#: templates/add.html:45 templates/index.html:118
 msgid "save"
 msgstr ""
 
@@ -458,28 +477,41 @@ msgstr ""
 msgid "Contract excerpt"
 msgstr ""
 
-#: templates/index.html:101
+#: templates/index.html:102
 msgid "Add New Case"
 msgstr ""
 
-#: templates/index.html:119
+#: templates/index.html:103
+msgid ""
+"Please report cases of operators restricting or throttling access to "
+"content, services or applications. For a more precise description of what"
+" to report, check our guidelines."
+msgstr ""
+
+#: templates/index.html:106
+msgid ""
+"There are already some reports for this Operator/Contract, please check "
+"if yours is already among them:"
+msgstr ""
+
+#: templates/index.html:122
 msgid ""
 "On the Internet, <strong>you</strong> decide what you do, right? <i>Not "
 "anymore!</i>"
 msgstr ""
 
-#: templates/index.html:120
+#: templates/index.html:123
 msgid ""
 "Large telecommunication providers want to control what you do online. "
 "They want to block and throttle some of your communications, and charge "
 "you to use certain online services, content and applications."
 msgstr ""
 
-#: templates/index.html:121
+#: templates/index.html:124
 msgid "Now is the time to fight back!"
 msgstr ""
 
-#: templates/index.html:122
+#: templates/index.html:125
 msgid ""
 "Help us chart all the ways that internet providers are violating our "
 "online freedom. Tell us about how your landline or mobile operator "
@@ -487,88 +519,93 @@ msgid ""
 "two minutes!"
 msgstr ""
 
-#: templates/index.html:123
+#: templates/index.html:126
 msgid ""
 "We will report these violations to the European Commission and national "
 "authorities and demand action to address them."
 msgstr ""
 
-#: templates/index.html:124
+#: templates/index.html:127
 msgid ""
 "Don't hesitate to give us feedback on this application by reporting any "
 "idea or issue with RespectMyNet.eu here : <a "
 "href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>"
 msgstr ""
 
-#: templates/index.html:125
+#: templates/index.html:128
 msgid "Featured Cases"
 msgstr ""
 
-#: templates/index.html:129
+#: templates/index.html:132
 msgid "Infringing offering"
 msgstr ""
 
-#: templates/index.html:130
+#: templates/index.html:133
 msgid "Confirmed"
 msgstr ""
 
-#: templates/index.html:140 templates/list.html:70
+#: templates/index.html:143 templates/list.html:71
 msgid ""
 "In order to <strong>validate your confirmation</strong> of this case, "
 "please enter your email address"
 msgstr ""
 
-#: templates/index.html:142
+#: templates/index.html:145
 msgid "ok"
 msgstr ""
 
-#: templates/index.html:143 templates/list.html:74
+#: templates/index.html:146 templates/list.html:75
 msgid "cancel"
 msgstr ""
 
-#: templates/index.html:149
+#: templates/index.html:152
 msgid "Confirm"
 msgstr ""
 
 #: templates/list.html:42
 msgid ""
-"This is a list of all reported Net Neutrality violations. See <a "
-"href='/about'>What is Net Neutrality?</a> for a short explanation. "
-msgstr ""
-
-#: templates/list.html:46
-msgid "country"
+"This is a list of all reported cases of Net Neutrality violations by our "
+"users. Please note that we do not validate the accuracy of these reports "
+"before they are published on this list, but rather rely on confirmations "
+"and supporting evidence offered by users. If you are subjected to one of "
+"the listed restrictions, please confirm it. Cases that are not considered"
+" violations of Net Neutrality under our guidelines will be removed or not"
+" be validated."
 msgstr ""
 
 #: templates/list.html:47
-msgid "operator"
+msgid "country"
 msgstr ""
 
 #: templates/list.html:48
-msgid "contract"
+msgid "operator"
 msgstr ""
 
 #: templates/list.html:49
-msgid "resource"
+msgid "contract"
 msgstr ""
 
 #: templates/list.html:50
-msgid "type"
+msgid "resource"
 msgstr ""
 
 #: templates/list.html:51
-msgid "fixed / wireless"
+msgid "type"
 msgstr ""
 
 #: templates/list.html:52
+msgid "fixed / wireless"
+msgstr ""
+
+#: templates/list.html:53
 msgid "confirmations"
 msgstr ""
 
-#: templates/list.html:67 templates/view.html:85
+#: templates/list.html:68 templates/view.html:85
 msgid "confirm"
 msgstr ""
 
-#: templates/list.html:73
+#: templates/list.html:74
 msgid "OK"
 msgstr ""
 
@@ -616,6 +653,73 @@ msgid ""
 " about the urgency of this problem, we aim to create a comprehensive "
 "report of Net Neutrality violations in Europe. This website is the way to"
 " report these violations."
+msgstr ""
+
+#: templates/nn.html:12
+msgid "Guidelines for reporting cases"
+msgstr ""
+
+#: templates/nn.html:13
+msgid ""
+"In reporting violations of Net Neutrality on RespectMyNet.eu, please "
+"describe only connection issues that are related to traffic "
+"discrimination, that is to say cases where Internet access providers "
+"discriminate traffic according to the source, destination, type or actual"
+" content of the data transmitted over the network (i.e. if your provider "
+"blocks traffic coming from YouTube or slows down Usenet traffic). If "
+"possible, please verify whether indeed the provider can be blamed: "
+"sometimes it is just the server itself which is not working (i.e. if a "
+"website is down, this is obviously not the fault of the internet access "
+"provider)."
+msgstr ""
+
+#: templates/nn.html:14
+msgid ""
+"Sample of common ISP issues that DO NOT require a formal complaint (from:"
+" <a "
+"href='http://www.ispreview.co.uk/new/complain/complain.shtml'>http://www.ispreview.co.uk/new/complain/complain.shtml</a>)"
+msgstr ""
+
+#: templates/nn.html:17
+msgid ""
+"<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
+"Outages.</b>"
+msgstr ""
+
+#: templates/nn.html:18
+msgid ""
+"Sadly, ISPs experience occasional problems with online services, such as "
+"email access. These are  usually resolved after a few minutes or hours, "
+"an only very occasionally will they last longer than a day. Don't get too"
+" frustrated, inform them of your problem and allow some time for it to be"
+" resolved."
+msgstr ""
+
+#: templates/nn.html:21
+msgid "<b>General Fluctuations in Broadband Speed.</b>"
+msgstr ""
+
+#: templates/nn.html:22
+msgid ""
+"Broadband is a so-called \"best efforts\" service, which means it is "
+"shared between many users and open to fluctuations in performance (often "
+"more so in dense urban areas). For example, if you have an 8Mbps package "
+"but your line is only rated to cope with 2Mbps then you should not be "
+"surprised to see speeds vary from around 1 to 1.5Mbps (potentially lower "
+"during peak periods). Few get the advertised or even best estimated speed"
+" for their line."
+msgstr ""
+
+#: templates/nn.html:25
+msgid "<b>Short and Uncommon Broadband Connection Problems.</b>"
+msgstr ""
+
+#: templates/nn.html:26
+msgid ""
+"Once again, connections do sometimes go down and fail to "
+"connect/reconnect, though usually for no more than one day at most. These"
+" issues should be very rare and 9 times out of 10 they will be fixed "
+"within a few minutes or hours."
 msgstr ""
 
 #: templates/start.html:7
@@ -762,59 +866,6 @@ msgid ""
 "session\">example report</a> for capabilities"
 msgstr ""
 
-#: templates/start.html:56
-msgid "What not to report"
-msgstr ""
-
-#: templates/start.html:57
-msgid ""
-"Sample of common ISP issues that DO NOT require a formal complaint (from:"
-" <a "
-"href='http://www.ispreview.co.uk/new/complain/complain.shtml'>http://www.ispreview.co.uk/new/complain/complain.shtml</a>)"
-msgstr ""
-
-#: templates/start.html:60
-msgid ""
-"<b>Brief and Uncommon Critical Service (Email, Website Browsing etc.) "
-"Outages.</b>"
-msgstr ""
-
-#: templates/start.html:61
-msgid ""
-"Sadly, ISPs experience occasional problems with online services, such as "
-"email access. These are  usually resolved after a few minutes or hours, "
-"an only very occasionally will they last longer than a day. Don't get too"
-" frustrated, inform them of your problem and allow some time for it to be"
-" resolved."
-msgstr ""
-
-#: templates/start.html:64
-msgid "<b>General Fluctuations in Broadband Speed.</b>"
-msgstr ""
-
-#: templates/start.html:65
-msgid ""
-"Broadband is a so-called \"best efforts\" service, which means it is "
-"shared between many users and open to fluctuations in performance (often "
-"more so in dense urban areas). For example, if you have an 8Mbps package "
-"but your line is only rated to cope with 2Mbps then you should not be "
-"surprised to see speeds vary from around 1 to 1.5Mbps (potentially lower "
-"during peak periods). Few get the advertised or even best estimated speed"
-" for their line."
-msgstr ""
-
-#: templates/start.html:68
-msgid "<b>Short and Uncommon Broadband Connection Problems.</b>"
-msgstr ""
-
-#: templates/start.html:69
-msgid ""
-"Once again, connections do sometimes go down and fail to "
-"connect/reconnect, though usually for no more than one day at most. These"
-" issues should be very rare and 9 times out of 10 they will be fixed "
-"within a few minutes or hours."
-msgstr ""
-
 #: templates/view.html:26
 msgid "It will appear here after moderation."
 msgstr ""
@@ -831,8 +882,8 @@ msgstr ""
 
 #: templates/view.html:82
 msgid ""
-"In order to <strong>validate your confirmation</strong>, please enter "
-"your email address"
+"In order to <strong>confirm</strong> this report, please enter your email"
+" address"
 msgstr ""
 
 #: templates/view.html:91
@@ -843,11 +894,11 @@ msgstr ""
 msgid "Add comment"
 msgstr ""
 
-#: templates/view.html:104
+#: templates/view.html:105
 msgid "Approve Submission"
 msgstr ""
 
-#: templates/view.html:105
+#: templates/view.html:106
 msgid "Delete Submission"
 msgstr ""
 
