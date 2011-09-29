@@ -33,6 +33,7 @@ $(document).ready(function(){
   init_form();
   {% if not form.is_bound %}
   $(".fieldWrapper").hide();
+  $("#id_resource_name").parent().parent().show();
   $("#id_country").parent().parent().show();
   $("#id_operator").parent().parent().show();
   $("#id_contract").parent().parent().show();
@@ -50,7 +51,6 @@ $(document).ready(function(){
                                $("#show_optionals").show();
                              }
   {% endif %}
-  $("#sortedlist").tablesorter();
   $('.confirm_form').submit(function() {
      var self=this;
      $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
@@ -63,7 +63,8 @@ $(document).ready(function(){
                theme : "advanced",
                theme_advanced_toolbar_align : "left",
                theme_advanced_toolbar_location : "top",
-               theme_advanced_buttons1 : "bold,italic,underline,bullist,numlist,outdent,indent,blockquote,undo,",
+               //theme_advanced_buttons1 : "bold,italic,underline,bullist,numlist,outdent,indent,blockquote,undo,",
+               theme_advanced_buttons1 : "",
                theme_advanced_buttons2 : "",
                theme_advanced_buttons3 : "",
                plugins : "paste",
@@ -93,7 +94,7 @@ $(document).ready(function(){
   {% if messages %}
   <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message|safe }}</li>
     {% endfor %}
   </ul>
   {% endif %}
@@ -101,6 +102,7 @@ $(document).ready(function(){
     <h2>{% trans "Add New Case" %}</h2>
     <form name="addForm" enctype="multipart/form-data" action="{% root_url %}/add/" method="post">
       {% for field in form %}
+      {% if field.html_name = 'comment' %}<div class="hidden errorlist">{% trans "There are already some reports for this Operator/Contract, please check if yours is already among them:" %}<ul id="similar_cases"></ul></div>{%endif%}
       {% if field.html_name = 'resource' %}<div id="show_optionals">{% trans "Provide optional details" %}</div><div id="optional">{%endif%}
       <div class="fieldWrapper">
          {% if field.help_text %}<span class="help_text">{{ field.help_text }}</span>{% endif %}

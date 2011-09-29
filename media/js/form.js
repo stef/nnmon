@@ -3,12 +3,32 @@ function empty(node) {
    return true;
 }
 function check1st4() {
-  if($('#id_country').val() && $('#id_operator').val() && $('#id_contract').val() && $('#id_media').val() ) {
-     $('#id_comment').parent().parent().show();
+  var country=$('#id_country').val();
+  var op=$('#id_operator').val();
+  var contract=$('#id_contract').val();
+  var media=$('#id_media').val();
+  var div=$('#similar_cases');
+  if(country && op && contract && media) {
+     //http://localhost:8001/lookup/?country=HU&contract=asdf&operator=Voda&media=fixed
+     $.getJSON('/lookup/?country='+country+'&contract='+contract+'&operator='+op+'&media='+media, function(data) {
+        if (data.length>0) {
+           div.parent().removeClass('hidden');
+        } else {
+           div.parent().addClass('hidden');
+        }
+        while(data) {
+           var val=data.pop();
+           div.append('<li><a href="/view/'+val[0]+'">'+(val[1] || "no resource given")+'</a></li>');
+        };
+     });
+     $('#id_comment').parent().parent().show().focus();
+     $('#id_comment_ifr').focus();
      $('#id_email').parent().parent().show();
      $('#id_nick').parent().parent().show();
      $('#id_attachments0').parent().parent().show();
      $("#save_button").attr('disabled','true').show();
+  } else {
+     div.parent().addClass('hidden');
   }
 }
 function init_form() {

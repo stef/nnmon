@@ -1,4 +1,4 @@
-from forms import AddViolation
+from forms import AddViolation, SearchViolation
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
@@ -18,6 +18,7 @@ from email.mime.text import MIMEText
 from email.header import Header
 from urlparse import urljoin
 from BeautifulSoup import BeautifulSoup, Comment as BComment
+from operator import itemgetter
 
 def sanitizeHtml(value, base_url=None):
     rjs = r'[\s]*(&#x.{1,7})?'.join(list('javascript:'))
@@ -48,16 +49,18 @@ def activate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse(_("Thank you, this has been already activated"))
+        return HttpResponse(_('Thank you, this key has been already activated' % v.id))
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
-        msg = MIMEText("A new report was submitted. To approve click here: %s/moderate/?key=%s\n" % (settings.ROOT_URL or 'http://localhost:8001/', actid), _charset="utf-8")
+        details='\n'.join(["%s: %s" % (k.capitalize(), val) for k,val in v.__dict__.items() if not k.startswith('_') and val])
+        msg = MIMEText("A new report was submitted. To approve click here: %s/moderate/?key=%s\n\nDetails follow:\n%s\n%s" %
+                       (settings.ROOT_URL or 'http://localhost:8001/', actid, details, v.comment_set.get().comment), _charset="utf-8")
         msg['Subject'] = 'NNMon submission approval'.encode("Utf-8")
-        msg['From'] = 'nnmon@nnmon.lqdn.fr'
+        msg['From'] = 'nnmon@respectmynet.eu'
         msg['To'] = ', '.join(to)
         s = smtplib.SMTP('localhost')
-        s.sendmail('nnmon@nnmon.lqdn.fr', to, msg.as_string())
+        s.sendmail('nnmon@respectmynet.eu', to, msg.as_string())
         s.quit()
         v.activationid=actid
         v.save()
@@ -68,19 +71,27 @@ def moderate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse(_("Thank you, this has been already activated"))
+        return HttpResponse(_('Thank you, this key has been already activated'))
     if not v:
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
+        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="/view/%s">submission</a>.' % v.id))
+
+        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s/view/%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.id), _charset="utf-8")
+        msg['Subject'] = Header(_('NNMon submission approved').encode("Utf-8"), 'utf-8')
+        msg['From'] = 'nnmon@respectmynet.eu'
+        msg['To'] = v.comment_set.get().submitter_email
+        s = smtplib.SMTP('localhost')
+        s.sendmail('nnmon@respectmynet.eu', [msg['To']], msg.as_string())
+        s.quit()
         if settings.TWITTER_API:
             try:
-                settings.TWITTER_API.PostUpdate(_("New infringement reported for %s (%s) %s") % (v.operator, v.country, v.contract))
+                settings.TWITTER_API.PostUpdate(_("New case reported for %s (%s) %s %s/view/%s") % (v.operator, v.country, v.contract, settings.ROOT_URL or 'http://localhost:8001/', v.id))
             except:
                 pass
         v.activationid=''
         v.save()
-        messages.add_message(request, messages.INFO, _('Thank you for approving the submission.'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='delete':
         v.delete()
@@ -111,10 +122,10 @@ def sendverifymail(service,to):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
     msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
     msg['Subject'] = Header(_('NNMon submission verification').encode("Utf-8"), 'utf-8')
-    msg['From'] = 'nnmon@nnmon.lqdn.fr'
+    msg['From'] = 'nnmon@respectmynet.eu'
     msg['To'] = Header(to.encode("Utf-8"), 'utf-8')
     s = smtplib.SMTP('localhost')
-    s.sendmail('nnmon@nnmon.lqdn.fr', [to], msg.as_string())
+    s.sendmail('nnmon@respectmynet.eu', [to], msg.as_string())
     s.quit()
     return actid
 
@@ -194,3 +205,20 @@ def view(request,id):
     if v.activationid:
         raise Http404
     return render_to_response('view.html', { 'v': v, },context_instance=RequestContext(request))
+
+def lookup(request):
+    if request.method == 'GET':
+        form = SearchViolation(request.GET)
+        print 'asdf'
+        if form.is_valid():
+            print 'valid asdf'
+            v=Violation.objects.filter(
+                country = form.cleaned_data['country'],
+                operator = form.cleaned_data['operator'],
+                contract = form.cleaned_data['contract'],
+                media = form.cleaned_data['media'],
+                activationid = ''
+                )
+            res=json.dumps(sorted([(x.id,x.resource_name) for x in v],reverse=True))
+            return HttpResponse(res)
+    return HttpResponse('')
