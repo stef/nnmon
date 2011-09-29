@@ -101,6 +101,7 @@ $(document).ready(function() {
     {% render_comment_form for v %}
   </div>
   {% else %}
+  <br />
   <a class="button" href='/moderate/?key={{key}}&action=approve'>{% trans "Approve Submission" %}</a>
   <a class="button" href='/moderate/?key={{key}}&action=delete'>{% trans "Delete Submission" %}</a>
   </div>
