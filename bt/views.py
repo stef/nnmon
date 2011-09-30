@@ -49,7 +49,7 @@ def activate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse(_('Thank you, this key has been already activated' % v.id))
+        return HttpResponse(_('Thank you, this key has been already activated'))
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
@@ -92,7 +92,7 @@ def moderate(request):
                 pass
         v.activationid=''
         v.save()
-        return HttpResponseRedirect('/') # Redirect after POST
+        return HttpResponseRedirect('/view/%s' % v.id ) # Redirect after POST
     if request.GET.get('action','')=='delete':
         v.delete()
         messages.add_message(request, messages.INFO, _('Thank you for deleting the submission.'))
