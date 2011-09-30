@@ -209,9 +209,7 @@ def view(request,id):
 def lookup(request):
     if request.method == 'GET':
         form = SearchViolation(request.GET)
-        print 'asdf'
         if form.is_valid():
-            print 'valid asdf'
             v=Violation.objects.filter(
                 country = form.cleaned_data['country'],
                 operator = form.cleaned_data['operator'],
