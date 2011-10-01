@@ -23,12 +23,11 @@ function bindPostCommentHandler() {
             cache: false,
             dataType: "html",
             success: function(html, textStatus) {
-                $('#comment_form form').replaceWith(html+" "+"{% trans "It will appear here after moderation." %}");
+                $('#comment_form form').replaceWith(html+" "+"{% trans 'It will appear here after moderation.' %}");
                 bindPostCommentHandler();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                {% trans "Your comment was unable to be posted at this time. We apologise for the inconvenience." as msg %}
-                $('#comment_form form').replaceWith('{{msg|addslashes}}');
+                $('#comment_form form').replaceWith("{% trans 'Your comment was unable to be posted at this time. We apologise for the inconvenience.' %}");
             }
         });
         return false;
