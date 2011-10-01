@@ -27,7 +27,8 @@ function bindPostCommentHandler() {
                 bindPostCommentHandler();
             },
             error: function (XMLHttpRequest, textStatus, errorThrown) {
-                $('#comment_form form').replaceWith('{% trans "Your comment was unable to be posted at this time.  We apologise for the inconvenience." %}');
+                {% trans "Your comment was unable to be posted at this time. We apologise for the inconvenience." as msg %}
+                $('#comment_form form').replaceWith('{{msg|addslashes}}');
             }
         });
         return false;
