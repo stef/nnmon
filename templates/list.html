@@ -24,7 +24,7 @@
               $(this).parent().parent().parent().find('.info-validate').toggle();
            });
      $(".cancel-button").click(function(){
-              $(this).parent().parent().hide();
+              $(this).parent().hide();
            });
      });
   </script>
@@ -72,8 +72,8 @@
           <input type="text" name="email" />
           <input type="hidden" value="{{ violation.pk }}" />
           <input type="submit" value="{% trans "OK" %}" />
-          <input class="cancel-button" type="button" value="{% trans "cancel" %}" />
        </form>
+       <input class="cancel-button" type="button" value="{% trans "Close" %}" />
      </div>
     </td>
 </tr>
