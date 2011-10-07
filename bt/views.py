@@ -102,7 +102,8 @@ def moderate(request):
 def confirm(request, id, name=None):
     if name:
         if Confirmation.objects.filter(email=name, violation=id).count()==0:
-            actid=sendverifymail('confirm/',name)
+            msg=_("Thank you for confirming a case. To finalize your confirmation please validate using your confirmation key.\nYour confirmation key is %s/%s%s")
+            actid=sendverifymail('confirm/',name, msg)
             try:
                 c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
             except:
@@ -118,9 +119,9 @@ def confirm(request, id, name=None):
     messages.add_message(request, messages.INFO, unicode(_('Thank you for verifying your confirmation')))
     return HttpResponseRedirect('/') # Redirect after POST
 
-def sendverifymail(service,to):
+def sendverifymail(service,to,msg):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.") % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
+    msg = MIMEText(msg % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
     msg['Subject'] = Header(_('NNMon submission verification').encode("Utf-8"), 'utf-8')
     msg['From'] = 'nnmon@respectmynet.eu'
     msg['To'] = Header(to.encode("Utf-8"), 'utf-8')
@@ -133,7 +134,8 @@ def add(request):
     if request.method == 'POST':
         form = AddViolation(request.POST)
         if form.is_valid():
-            actid=sendverifymail('activate?key=',form.cleaned_data['email'])
+            msg=_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.")
+            actid=sendverifymail('activate?key=',form.cleaned_data['email'], msg)
             v=Violation(
                 country = form.cleaned_data['country'],
                 operator = form.cleaned_data['operator'],
