@@ -38,7 +38,13 @@ $(document).ready(function() {
     bindPostCommentHandler();
   $('.confirm_form').submit(function() {
      var self=this;
-     $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+$(this).children('input:first').attr('value'), success: function(data) { $(self).html(data); }});
+     var email=$(this).children('input:first').attr('value');
+     if( email.length>0) {
+        $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+email, success: function(data) { $(self).html(data); }});
+     } else {
+        console.log($(this).find('[type=submit]'));
+        $(this).find('[type=text]').focus();
+     }
      return false;
      });
 });
