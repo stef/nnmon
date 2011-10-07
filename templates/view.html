@@ -84,10 +84,10 @@ $(document).ready(function() {
    {%if v.contract_excerpt%}<li><dl><dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
 </ul>
   <div class="info-validate" style="display: inline-block;">
-    <form method="get" id="{{ violation.pk }}" class="confirm_form" >
+    <form method="get" id="{{ v.pk }}" class="confirm_form" >
         <label>{% trans "In order to <strong>confirm</strong> this report, please enter your email address" %}</label>
         <input type="text" name="email" />
-        <input type="hidden" value="{{ violation.pk }}" />
+        <input type="hidden" value="{{ v.pk }}" />
         <input type="submit" value="{% trans "confirm" %}" />
       </form>
    </div>
