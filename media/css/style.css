@@ -704,3 +704,12 @@ ul.messages {
 #similar_cases li { list-style: disc inside; margin-left: 0.3em; color: black; }
 
 .mceToolbar { display:none; }
+
+ul#report li#description {
+  margin: 1em 0;
+  padding: .8em 1em;
+}
+#comments {
+  margin-top: 1em;
+  padding: .8em 1em;
+} 
