@@ -9,7 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
-from models import Violation, Attachment, Comment, Confirmation
+from models import Violation, Attachment, Comment, Confirmation, COUNTRIES
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json, smtplib
@@ -197,6 +197,15 @@ def index(request):
         { 'form': form,
           'violations': v_list },
         context_instance=RequestContext(request))
+
+def filter_violations(request, country, operator=None):
+    if country not in map(itemgetter(0),COUNTRIES):
+        raise Http404
+    if not operator:
+        violations = Violation.objects.filter(activationid='', country=country)
+    else:
+        violations = Violation.objects.filter(activationid='', country=country, operator=operator)
+    return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
