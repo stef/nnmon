@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
-{% load babel %}
 {% block styles %}
   <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/jquery.autocomplete.css" />
 {% endblock %}
@@ -157,7 +156,7 @@ $(document).ready(function(){
           <div id="description" class='round-box'>
             {%for c in violation.comment_set.all%}
             <div class="description">{{c.comment|safe}}</div>
-            <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
+            <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
             </div>
             {%endfor%}
           </div>

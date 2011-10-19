@@ -106,7 +106,7 @@ TEMPLATE_LOADERS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'babeldjango.middleware.LocaleMiddleware',
+    #'babeldjango.middleware.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -133,7 +133,7 @@ INSTALLED_APPS = (
     'tinymce',
     'registration',
     'bt',
-    'babeldjango',
+    #'babeldjango',
     'captcha',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
