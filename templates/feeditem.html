@@ -1,11 +1,10 @@
 {% load bt %}
 {% load i18n %}
-{% load babel %}
 {%if obj.comment_set.all.0%}
  <h3>{%trans "Description" %}</h3>
  <div class="description-node">
    <div class="description">{{obj.comment_set.all.0.comment|safe}}</div>
-   <span class="submitter">Submitter: {%if obj.comment_set.all.0.submitter_name%}{{obj.comment_set.all.0.submitter_name}}{%else%}{{obj.comment_set.all.0.submitter_email}}{%endif%}</span> - <span class="comment_date">{{obj.comment_set.all.0.timestamp|datetimefmt:"short" }}</span>
+   <span class="submitter">Submitter: {%if obj.comment_set.all.0.submitter_name%}{{obj.comment_set.all.0.submitter_name}}{%else%}{{obj.comment_set.all.0.submitter_email}}{%endif%}</span> - <span class="comment_date">{{obj.comment_set.all.0.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
    {%if obj.comment_set.all.0.attachment_set.all%}
    <div class="attachs">
       {% trans "Attachments" %}

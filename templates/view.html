@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
-{% load babel %}
 {% load comments %}
 {% block styles %}
 {% endblock %}
@@ -68,7 +67,7 @@ $(document).ready(function() {
     {%for c in v.comment_set.all%}
     <div class="description-node">
       <div class="description">{{c.comment|safe}}</div>
-      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|datetimefmt:"short" }}</span>
+      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
       {%if c.attachment_set.all%}
       <div class="attachs">
          {% trans "Attachments" %}
