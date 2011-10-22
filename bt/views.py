@@ -87,7 +87,7 @@ def moderate(request):
         s.quit()
         if settings.TWITTER_API:
             try:
-                settings.TWITTER_API.PostUpdate("New New #NetNeutrality violation reported for %s (%s) %s %s/%s" % (v.operator, v.country, v.contract, settings.ROOT_URL or 'http://localhost:8001/', v.id))
+                settings.TWITTER_API.PostUpdate("New #NetNeutrality violation reported for %s (%s) %s %s/%s" % (v.operator, v.country, v.contract, settings.ROOT_URL or 'http://localhost:8001/', v.id))
             except:
                 pass
         v.activationid=''
