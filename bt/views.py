@@ -151,8 +151,8 @@ def add(request):
                 activationid = actid
                 )
             v.save()
-            c=Confirmation(key='', email=form.cleaned_data['email'], violation=v)
-            c.save()
+            #c=Confirmation(key='', email=form.cleaned_data['email'], violation=v)
+            #c.save()
             c = Comment(
                 comment=form.cleaned_data['comment'],
                 submitter_email=form.cleaned_data['email'],
