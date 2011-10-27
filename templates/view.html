@@ -77,16 +77,18 @@ $(document).ready(function() {
 {%block content%}
 <div id='global'>
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
-<ul id="report">
-  {%if v.resource_name%}<li><dl><dt>{% trans "Resource" %}</dt><dd>{{v.resource_name}}</dd></dl></li>{%endif%}
-  {%if v.type%}<li><dl><dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd></dl></li>{%endif%}
-  {%if v.media%}<li><dl><dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd></dl></li>{%endif%}
-  {%if v.temporary%}<li><dl><dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd></dl></li>{%endif%}
-  {%if v.loophole%}<li><dl><dt>{% trans "Loophole offering" %}</dt><dd>{% trans "yes" %}</dd></dl></li>{%endif%}
-  {%if v.contractual%}<li><dl><dt>{% trans "Contractual restriction" %}</dt><dd>{% trans "yes" %}</dd></dl></li>{%endif%}
-  {%if v.contract_excerpt%}<li><dl><dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd></dl></li>{%endif%}
-  {%if v.comment_set.all%}
-  <li id="description" class='round-box'>
+<div id="report">
+  <dl>{%if v.resource_name%}<dt>{% trans "Resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
+  {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd>{%endif%}
+  {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd>{%endif%}
+  {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd>{%endif%}
+  {%if v.loophole%}<dt>{% trans "Loophole offering" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
+  {%if v.contractual%}<dt>{% trans "Contractual restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
+  {%if v.contract_excerpt%}<dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd>{%endif%}
+  {%if v.comment_set.all%}</dl>
+</div>
+
+<div id="description" class='round-box'>
     <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
     <div class="description-node">
@@ -104,8 +106,9 @@ $(document).ready(function() {
       {%endif%}
     </div>
     {%endfor%}
-  </li>
-</ul>
+</div>
+
+
   <h3>{%trans "Confirm this restriction if you experience it as well" %}</h3>
   <div class="info-validate" style="display: inline-block;">
     <form method="get" id="{{ v.pk }}" class="confirm_form" >
