@@ -39,6 +39,8 @@ p label { width: 7em; display: inline-block; }
 
 #global ol li { list-style: decimal; }
 
+#global ul.with-disc li { list-style: disc; margin-left: 2em; }
+
 .confirm { display: inline; position: relative; }
 /*.confirm:hover > div { display: block; }*/
 .confirm_popup { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; opacity: 30%; }
@@ -336,6 +338,11 @@ h1 span {
   font-family: 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: 20px;
   font-weight: normal;
+}
+
+#global h3 {
+  font: 24px 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
+  margin-top: 1em;
 }
 
 
