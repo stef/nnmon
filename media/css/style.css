@@ -24,7 +24,7 @@ li { list-style: none; }
 #addForm.index .help_text { font-size: 0.7em; width: 30%; position: relative; float: right; left: 0; }
 .index #add_attach { cursor: pointer; }
 #id_captcha_1 { width: 2em; }
-.innerfield { display: inline-block; }
+.innerfield { display: inline-block; margin-top: 0.5em;}
 .align-right { text-align: right;}
 dd.text { width: 30%; display: block !important; }
 p label { width: 7em; display: inline-block; }
@@ -219,52 +219,36 @@ h1 span {
   font-family: 'DroidSansRegular', Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;
   font-size: .8em;
   font-weight: normal;
+  color: orange;
 }
 
 /* User */
 
-#user {
+#header #user {
   position: absolute;
   top: 0; right: 0;
   width: 100%;
-  margin: 0; padding: .3em 0;
-  color: #fff;
-  background: #2d2d2d;
+  margin: 0;
+  padding: .3em 0;
+  background: #3d3d3d;
 }
+
+#user a {
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 #user p {
   width: 960px;
   margin: 0 auto;
   text-align: right;
 }
-#user span,
-#user a {
-  padding: .2em .5em;
-}
-#user a {
-  text-decoration: none;
-  color: #fff;
-}
-#user a:hover,
-#user a:active,
-#user a:focus {
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  outline: none;
-}
-#user #login {
-  background: orange;
-}
-#user #login:hover,
-#user #login:active,
-#user #login:focus {
-  background: #ff6c00;
-}
-#user #register:hover,
-#user #register:active,
-#user #register:focus {
-  background: #6a6a6a;
+
+#user a:hover {
+  color: orange;
 }
 
 /* Navigation menu */
@@ -496,11 +480,11 @@ div.comment {
   );
   border-color: #444444;
 }
-#addForm.index label {
-  font-weight: bold;
-}
+
 #addForm.index p {
   position: relative;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 1em;
 }
 #addForm.index .help_text {
   position: absolute;
