@@ -162,6 +162,12 @@ table.listing thead {
 
 table.listing thead td { font-weight: bold; }
 
+table#featured_cases thead {
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f5f5f5');
+	background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f5f5f5));
+	background: -moz-linear-gradient(top, #fcfcfc,  #f5f5f5);
+}
+
 
 /* Main and bug fix
 ---------------------------*/
