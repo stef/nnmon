@@ -9,6 +9,7 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
+from django.db.models import Count
 from models import Violation, Attachment, Comment, Confirmation, COUNTRIES
 from tempfile import mkstemp
 from datetime import datetime
@@ -209,7 +210,18 @@ def filter_violations(request, country, operator=None):
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
-    return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
+    countries=sorted([(i['total'],i['country'])
+                      for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
+                     reverse=True)
+    countries=json.dumps(dict([(c.lower(),"#ff%x00" % (3*int(64*(float(w)/countries[0][0]))+63)) for w,c in countries]))
+    #confirms=sorted([(i['total'],i['country'])
+    #                 for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
+    #                reverse=True)
+    return render_to_response('list.html',
+                              {"violations": violations,
+                               "countries": countries,},
+                               #"confirms": confirms,},
+                              context_instance=RequestContext(request))
 
 def view(request,id):
     v = get_object_or_404(Violation, pk=id)
