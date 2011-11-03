@@ -13,6 +13,7 @@ COUNTRIES = (
     ('EL', _('Greece')),
     ('ES', _('Spain')),
     ('FR', _('France')),
+    ('IS', _('Iceland')),
     ('IT', _('Italy')),
     ('CY', _('Cyprus')),
     ('LV', _('Latvia')),
@@ -31,7 +32,6 @@ COUNTRIES = (
     ('FI', _('Finland')),
     ('SE', _('Sweden')),
     ('UK', _('United Kingdom ')),
-    ('NO', _('Norway')),
     )
 
 RESOURCES = (
