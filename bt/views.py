@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.files import File
+from django.core.servers.basehttp import FileWrapper
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
@@ -163,7 +164,7 @@ def add(request):
                 )
             c.save()
             for f in request.FILES.getlist('attachments[]'):
-                a=Attachment(comment=c, name=f.name)
+                a=Attachment(comment=c, name=f.name, type=f.content_type)
                 m = hashlib.sha256()
                 for chunk in f.chunks():
                     m.update(chunk)
@@ -228,6 +229,14 @@ def view(request,id):
     if v.activationid:
         raise Http404
     return render_to_response('view.html', { 'v': v, },context_instance=RequestContext(request))
+
+def get_attach(request,id):
+    f = get_object_or_404(Attachment, pk=id)
+    wrapper = FileWrapper(f.storage)
+    response=HttpResponse(wrapper, mimetype=f.type)
+    response['Content-Disposition'] = 'attachment; filename=%s' % f.name
+    response['Content-Length'] = f.storage.size
+    return response
 
 def lookup(request):
     if request.method == 'GET':
