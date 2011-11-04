@@ -234,7 +234,7 @@ def get_attach(request,id):
     f = get_object_or_404(Attachment, pk=id)
     wrapper = FileWrapper(f.storage)
     response=HttpResponse(wrapper, mimetype=f.type)
-    response['Content-Disposition'] = 'attachment; filename=%s' % f.name
+    response['Content-Disposition'] = 'attachment; filename="%s"' % f.name
     response['Content-Length'] = f.storage.size
     return response
 
