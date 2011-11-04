@@ -626,3 +626,6 @@ ul.messages {
 #similar_cases li { list-style: disc inside; margin-left: 0.3em; color: black; }
 
 .mceToolbar { display:none; }
+#legend { text-align: center; margin-bottom: .5em; font-size: .7em; }
+#legend li { padding: .1em; display: inline; }
+#map { float: right; }

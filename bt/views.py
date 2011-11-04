@@ -214,13 +214,16 @@ def list_violations(request):
     countries=sorted([(i['total'],i['country'])
                       for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
                      reverse=True)
-    countries=json.dumps(dict([(c.lower(),"#ff%x00" % (3*int(64*(float(w)/countries[0][0]))+63)) for w,c in countries]))
+    legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
+    countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
     #confirms=sorted([(i['total'],i['country'])
     #                 for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
     #                reverse=True)
     return render_to_response('list.html',
                               {"violations": violations,
-                               "countries": countries,},
+                               "countries": dict([(y,x) for x,y in countries]),
+                               "countrycolors": countrycolors,
+                               "legend": legend,},
                                #"confirms": confirms,},
                               context_instance=RequestContext(request))
 
