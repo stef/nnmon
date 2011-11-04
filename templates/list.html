@@ -24,7 +24,6 @@
      var data={{countries|safe}};
      for(key in data) {
         $('#'+key+' path').css('fill', data[key]);
-        console.log(($('#'+key+' path'),data[key]));
      }
      $("#sortedlist").tablesorter({
          headers: { 7: { sorter: false },},
@@ -37,7 +36,6 @@
         if( email.length>0) {
            $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+email, success: function(data) { $(self).html(data); }});
         } else {
-           console.log($(this).find('[type=submit]'));
            $(this).find('[type=text]').focus();
         }
         return false;
