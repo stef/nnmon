@@ -78,7 +78,7 @@ $(document).ready(function() {
 <div id='global'>
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
 <div id="report">
-  <dl>{%if v.resource_name%}<dt>{% trans "What resource is affected?" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
+  <dl>{%if v.resource_name%}<dt>{% trans "Affected resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
   {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd>{%endif%}
   {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd>{%endif%}
