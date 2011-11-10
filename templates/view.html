@@ -103,11 +103,9 @@ $(document).ready(function() {
     <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
     <div class="description-node">
-      <div class="description">{{c.comment|safe}}</div>
-      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
-      {%if c.attachment_set.all%}
-      <div class="attachs">
-         {% trans "Attachments" %}
+	  {%if c.attachment_set.all%}
+	  <div class="attachs">
+         <h4>{% trans "Attachments" %}</h4>
         <ul>
           {%for a in c.attachment_set.all%}
           <li><a href="{%media_url%}/{{a.storage.url}}">{{a.name}}</a></li>
@@ -115,6 +113,8 @@ $(document).ready(function() {
         </ul>
       </div>
       {%endif%}
+      <div class="description">{{c.comment|safe}}</div>
+      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
     </div>
     {%endfor%}
 </div>

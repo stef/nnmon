@@ -413,6 +413,12 @@ div.comment {
 	font-weight: normal;
 }
 
+#description .description-node .attachs {
+	float: right;
+	padding: 0.5em;
+	text-align: right;
+}
+
 
 /* General inputs */
 
