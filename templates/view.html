@@ -70,6 +70,8 @@ $(document).ready(function() {
                                 + "-h6,hr[size|noshade],dd,dl,dt,cite,abbr,acronym,"
                                 + "del[datetime|cite],ins[datetime|cite]",
              });
+
+	$('span').hover(function(){$('span#'+this.id+'_tooltip').fadeIn();}, function(){$('span#'+this.id+'_tooltip').hide();});
 });
 </script>
 {% endblock %}
@@ -77,7 +79,16 @@ $(document).ready(function() {
 {%block content%}
 <div id='global'>
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
+
 <div id="report">
+	<div id="icons">
+		<span id="verified_tooltip" class="tooltip">{% trans "This case was verified by the management team" %}</span>
+		<span id="confirmations_tooltip" class="tooltip">{%if v.confirmations == 0 %} {% trans "Nobody has yet confirmed the case. Feel free to do it" %} {%else%} {{v.confirmations}} {% trans "people confirmed this case" %} {%endif%}</span>
+		<span id="verified"></span> |
+		<span id="confirmations">{{v.confirmations}}</span> |
+		<span id="invalidations">{%if v.invalidations %} {{v.invalidations}} {%else%} 0 {%endif%}</span>
+	</div>
+
   <dl>{%if v.resource_name%}<dt>{% trans "Resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
   {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd>{%endif%}
