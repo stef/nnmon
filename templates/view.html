@@ -79,7 +79,6 @@ $(document).ready(function() {
 {%block content%}
 <div id='global'>
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
-
 <div id="report">
 	<div id="icons">
 		<span id="verified_tooltip" class="tooltip">{% trans "This case was verified by the management team" %}</span>
@@ -89,11 +88,11 @@ $(document).ready(function() {
 		<span id="invalidations">{%if v.invalidations %} {{v.invalidations}} {%else%} 0 {%endif%}</span>
 	</div>
 
-  <dl>{%if v.resource_name%}<dt>{% trans "Resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
+  <dl>{%if v.resource_name%}<dt>{% trans "Affected resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
   {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd>{%endif%}
   {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd>{%endif%}
-  {%if v.loophole%}<dt>{% trans "Loophole offering" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
+  {%if v.loophole%}<dt>{% trans "Another offer provided by the same operator removes this restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
   {%if v.contractual%}<dt>{% trans "Contractual restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
   {%if v.contract_excerpt%}<dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd>{%endif%}
   {%if v.comment_set.all%}</dl>
@@ -108,7 +107,7 @@ $(document).ready(function() {
          <h4>{% trans "Attachments" %}</h4>
         <ul>
           {%for a in c.attachment_set.all%}
-          <li><a href="{%media_url%}/{{a.storage.url}}">{{a.name}}</a></li>
+          <li><a href="/attach/{{a.id}}">{{a.name}}</a></li>
           {%endfor%}
         </ul>
       </div>
@@ -136,8 +135,8 @@ $(document).ready(function() {
   {% get_comment_list for v as cmt_list %}
   {% for comment in cmt_list %}
   <div class="comment">
-     <p><a href="{{ comment.user_url }}">{{ comment.user_name }}</a> - {{ comment.submit_date }}</p>
-     <p>{{ comment.comment }}</p>
+     <p>{{ comment.user_name }} - {{ comment.submit_date }}</p>
+     <p>{{ comment.comment|striptags|urlize|linebreaks }}</p>
   </div>
   {% endfor %}
   <div class="toggle button">{% trans "Add comment" %}</div>

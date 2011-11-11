@@ -13,6 +13,7 @@ COUNTRIES = (
     ('EL', _('Greece')),
     ('ES', _('Spain')),
     ('FR', _('France')),
+    ('IS', _('Iceland')),
     ('IT', _('Italy')),
     ('CY', _('Cyprus')),
     ('LV', _('Latvia')),
@@ -30,8 +31,7 @@ COUNTRIES = (
     ('SK', _('Slovakia')),
     ('FI', _('Finland')),
     ('SE', _('Sweden')),
-    ('UK', _('United Kingdom ')),
-    ('NO', _('Norway')),
+    ('UK', _('United Kingdom')),
     )
 
 RESOURCES = (
@@ -91,6 +91,7 @@ class Comment(models.Model):
 class Attachment(models.Model):
     storage = models.FileField(upload_to='static')
     name= models.CharField(max_length=512)
+    type= models.CharField(max_length=512)
     comment = models.ForeignKey(Comment)
 
     class Admin:

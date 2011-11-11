@@ -3,6 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.files import File
+from django.core.servers.basehttp import FileWrapper
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
@@ -163,7 +164,7 @@ def add(request):
                 )
             c.save()
             for f in request.FILES.getlist('attachments[]'):
-                a=Attachment(comment=c, name=f.name)
+                a=Attachment(comment=c, name=f.name, type=f.content_type)
                 m = hashlib.sha256()
                 for chunk in f.chunks():
                     m.update(chunk)
@@ -213,13 +214,16 @@ def list_violations(request):
     countries=sorted([(i['total'],i['country'])
                       for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
                      reverse=True)
-    countries=json.dumps(dict([(c.lower(),"#ff%x00" % (3*int(64*(float(w)/countries[0][0]))+63)) for w,c in countries]))
+    legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
+    countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
     #confirms=sorted([(i['total'],i['country'])
     #                 for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
     #                reverse=True)
     return render_to_response('list.html',
                               {"violations": violations,
-                               "countries": countries,},
+                               "countries": dict([(y,x) for x,y in countries]),
+                               "countrycolors": countrycolors,
+                               "legend": legend,},
                                #"confirms": confirms,},
                               context_instance=RequestContext(request))
 
@@ -228,6 +232,14 @@ def view(request,id):
     if v.activationid:
         raise Http404
     return render_to_response('view.html', { 'v': v, },context_instance=RequestContext(request))
+
+def get_attach(request,id):
+    f = get_object_or_404(Attachment, pk=id)
+    wrapper = FileWrapper(f.storage)
+    response=HttpResponse(wrapper, mimetype=f.type)
+    response['Content-Disposition'] = 'attachment; filename="%s"' % f.name
+    response['Content-Length'] = f.storage.size
+    return response
 
 def lookup(request):
     if request.method == 'GET':
