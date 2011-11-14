@@ -629,3 +629,12 @@ ul.messages {
 #legend { text-align: center; margin-bottom: .5em; font-size: .7em; }
 #legend li { padding: .1em; display: inline; }
 #map { float: right; }
+
+
+/*tr.new-status td { background: green !important; }
+tr.duplicate-status td { background: #999 !important; }
+tr.closed-status td { background: #888 !important; }
+tr.confirmed-status td { background: #fff !important; }
+tr.moreinfo-status td { background: yellow !important; }
+tr.ooscope-status td { background: #aaa !important; }
+*/
