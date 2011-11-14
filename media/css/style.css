@@ -24,18 +24,20 @@ li { list-style: none; }
 #report dt {
   float: left;
   clear: left;
-  width: 160px;
+  width: 250px;
   text-align: right;
   font-weight: bold;
-}
-
-#report dt:after {
-  content: ":";
+  padding: 0 0 0.5em 0;
 }
 
 #report dd {
-  margin: 0 0 0 170px;
-  padding: 0 0 0.5em 0;
+  float: left;
+  margin-left: 1em;
+}
+
+#report dl:after {
+  content:''; display: block;
+  clear: both;	
 }
 
 #report dd p { margin: 0;}
