@@ -279,14 +279,11 @@ h1 span {
 
 /* Navigation menu */
 
-#wrapper {
-	border-bottom: 1px solid #ddd;
-}
-
 #nav {
   height: 36px;
   margin: 0; padding: 0;
   list-style-type: none;
+  border-bottom: 1px solid #ddd;
 }
 #nav li {
   display: inline-block;
