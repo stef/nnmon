@@ -54,7 +54,7 @@ STATUS = (
     ('new', _('New')),
     ('duplicate', _('Duplicate')),
     ('closed', _('Closed')),
-    ('confirmed', _('Confirmed')),
+    ('verified', _('Verified')),
     ('moreinfo', _('Need more info')),
     ('ooscope', _('Out of scope')),
     )
