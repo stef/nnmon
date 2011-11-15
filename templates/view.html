@@ -49,6 +49,7 @@ $(document).ready(function() {
      }
      return false;
      });
+    $('span').hover(function(){$('span#'+this.id+'_tooltip').fadeIn();}, function(){$('span#'+this.id+'_tooltip').hide();});	
 });
 </script>
 {% endblock %}
