@@ -24,18 +24,20 @@ li { list-style: none; }
 #report dt {
   float: left;
   clear: left;
-  width: 160px;
+  width: 250px;
   text-align: right;
   font-weight: bold;
-}
-
-#report dt:after {
-  content: ":";
+  padding: 0 0 0.5em 0;
 }
 
 #report dd {
-  margin: 0 0 0 170px;
-  padding: 0 0 0.5em 0;
+  float: left;
+  margin-left: 1em;
+}
+
+#report dl:after {
+  content:''; display: block;
+  clear: both;	
 }
 
 #report dd p { margin: 0;}
@@ -386,6 +388,39 @@ div.comment {
   margin-top: 1em;
   padding: .8em 1em;
 }
+
+#report #icons {
+	float: right;
+	margin-right: 0.5em;
+	font-weight: bold;
+	font-size: 120%;
+	width: 100%;
+	text-align: right;
+	color: #eee;
+}
+
+#report #icons span {
+	padding: 0 0 2px 20px;
+	background-clip: pading-box;
+	background-repeat: no-repeat;
+	color: #000;
+}
+
+#report #icons span#confirmations {	background-image: url(../img/plus_alt.png); }
+#report #icons span#invalidations {	background-image: url(../img/minus_alt.png); }
+#report #icons span#verified      {	background-image: url(../img/eye.png); padding-left: 28px;}
+
+#report #icons span.tooltip {
+	display: none;
+	font-weight: normal;
+}
+
+#description .description-node .attachs {
+	float: right;
+	padding: 0.5em;
+	text-align: right;
+}
+
 
 /* General inputs */
 

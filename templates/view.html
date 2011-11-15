@@ -57,6 +57,14 @@ $(document).ready(function() {
 <div id='global'>
   <h2>{{v.operator}} ({{v.country}}) {{v.contract}}</h2>
 <div id="report">
+	<div id="icons">
+		<span id="verified_tooltip" class="tooltip">{% trans "This case was verified by the management team" %}</span>
+		<span id="confirmations_tooltip" class="tooltip">{%if v.confirmations == 0 %} {% trans "Nobody has yet confirmed the case. Feel free to do it" %} {%else%} {{v.confirmations}} {% trans "people confirmed this case" %} {%endif%}</span>
+		<span id="verified"></span> |
+		<span id="confirmations">{{v.confirmations}}</span> |
+		<span id="invalidations">{%if v.invalidations %} {{v.invalidations}} {%else%} 0 {%endif%}</span>
+	</div>
+
   <dl>{%if v.resource_name%}<dt>{% trans "Affected resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
   {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media}}</dd>{%endif%}
@@ -78,11 +86,9 @@ $(document).ready(function() {
     <h3>{%trans "Description" %}</h3>
     {%for c in v.comment_set.all%}
     <div class="description-node">
-      <div class="description">{{c.comment|safe}}</div>
-      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
-      {%if c.attachment_set.all%}
-      <div class="attachs">
-         {% trans "Attachments" %}
+	  {%if c.attachment_set.all%}
+	  <div class="attachs">
+         <h4>{% trans "Attachments" %}</h4>
         <ul>
           {%for a in c.attachment_set.all%}
           <li><a href="/attach/{{a.id}}">{{a.name}}</a></li>
@@ -90,6 +96,8 @@ $(document).ready(function() {
         </ul>
       </div>
       {%endif%}
+      <div class="description">{{c.comment|safe}}</div>
+      <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>
     </div>
     {%endfor%}
 </div>
