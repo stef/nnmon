@@ -26,8 +26,8 @@
         $('#'+key+' path').css('fill', data[key]);
      }
      $("#sortedlist").tablesorter({
-         headers: { 7: { sorter: false },},
-         sortList: [[0,0],[6,1]],
+         headers: { 8: { sorter: false },},
+         sortList: [[1,0],[7,1]],
      });
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
@@ -245,6 +245,7 @@
 <table class="listing tablesorter zebra-striped" id='sortedlist'>
   <thead>
 <tr>
+   <th filter-type='ddl'>{% trans "Status" %}</th>
    <th filter-type='ddl'>{% trans "country" %}</th>
    <th filter-type='ddl'>{% trans "operator" %}</th>
    <th filter-type='ddl'>{% trans "contract" %}</th>
@@ -257,7 +258,8 @@
   </thead>
   <tbody>
 {% for violation in violations %}
-<tr>
+<tr class="{%if violation.state%}{{violation.state}}{%else%}new{%endif%}-status">
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{%if violation.state%}{{violation.state}}{%else%}new{%endif%}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country|country }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>

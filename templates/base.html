@@ -29,6 +29,8 @@
       <a href="{%root_url%}/accounts/logout">{% trans "Logout" %}</a>
       <span>or</span>
       <a href="{%root_url%}/admin/">{% trans "Admin" %}</a>
+      {% block adminext %}
+      {% endblock %}
 	{% else %}
       <a href="{%root_url%}/admin/" id="login">{% trans "Login" %}</a>
    {% endif %}

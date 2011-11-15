@@ -50,6 +50,14 @@ MEDIA = (
     ('fixed', _('Fixed')),
     ('mobile', _('Mobile')),
     )
+STATUS = (
+    ('new', _('New')),
+    ('duplicate', _('Duplicate')),
+    ('closed', _('Closed')),
+    ('verified', _('Verified')),
+    ('moreinfo', _('Need more info')),
+    ('ooscope', _('Out of scope')),
+    )
 
 class Violation(models.Model):
     country = models.CharField(max_length=2, choices=COUNTRIES)
@@ -64,6 +72,8 @@ class Violation(models.Model):
     contract_excerpt = models.TextField(blank=True)
     loophole = models.BooleanField()
     activationid= models.CharField(max_length=128, blank=True)
+    state = models.CharField(max_length=20, choices=STATUS, default='new', blank=True)
+    editorial = models.TextField(blank=True)
 
     def confirmations(self):
         return self.confirmation_set.filter(key='').count()
