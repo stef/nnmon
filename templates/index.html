@@ -154,6 +154,7 @@ $(document).ready(function(){
     <tr>
        <td colspan="3">
           <div id="description" class='round-box'>
+             {% trans "Affected Resource" %}: {{violation.resource_name}}
             {%for c in violation.comment_set.all%}
             <div class="description">{{c.comment|safe}}</div>
             <span class="submitter">{%if c.submitter_name%}{{c.submitter_name}}{%else%}{{c.submitter_email}}{%endif%}</span> - <span class="comment_date">{{c.timestamp|date:"SHORT_DATE_FORMAT" }}</span>

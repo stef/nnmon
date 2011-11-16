@@ -249,7 +249,7 @@
   <tbody>
 {% for violation in violations %}
 <tr class="{%if violation.state%}{{violation.state}}{%else%}new{%endif%}-status">
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{%if violation.state%}{{violation.state}}{%else%}new{%endif%}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{%if violation.state%}{{violation.state|status}}{%else%}{% trans "New" %}{%endif%}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country|country }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
