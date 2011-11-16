@@ -2,8 +2,8 @@ from django.contrib import admin
 from bt import models
 
 class ViolationAdmin(admin.ModelAdmin):
-   list_display = ('country', 'operator', 'contract', 'resource_name', 'media', 'activationid')
-   list_filter = ('operator', 'contract', 'resource_name', 'media', 'country')
+   list_display = ('state', 'country', 'operator', 'contract', 'resource_name', 'media', 'activationid')
+   list_filter = ('state', 'operator', 'contract', 'resource_name', 'media', 'country')
 admin.site.register(models.Violation, ViolationAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
