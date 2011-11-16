@@ -665,6 +665,7 @@ ul.messages {
 #legend li { padding: .1em; display: inline; }
 #map { float: right; }
 
+.logo-org { display: inline-block; width: 114px; text-align: center; vertical-align: top; }
 
 /*tr.new-status td { background: green !important; }
 tr.duplicate-status td { background: #999 !important; }

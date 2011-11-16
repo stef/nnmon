@@ -2,7 +2,7 @@
 {% load bt %}
 {% load i18n %}
 {% block styles %}
-<style type="text/css">
+<style type="text/css" media="all">
 .map { margin: 0 0 1em 0; float: right; }
 .map-eu { border: thin solid black; display: block; }
 #europe-map {margin-left: 1.5em;}
@@ -32,9 +32,9 @@
      $('#sortedlist').tableFilter();
      $('.confirm_form').submit(function() {
         var self=this;
-        var email=$(this).children('input:first').attr('value');
+        var email=$(this).find('input:first').attr('value');
         if( email.length>0) {
-           $.ajax({url: '/confirm/'+$(this).attr('id')+'/'+email, success: function(data) { $(self).html(data); }});
+           $.ajax({url: '/confirm/'+$(this).attr('id').slice(1)+'/'+email, success: function(data) { $(self).html(data); }});
         } else {
            $(this).find('[type=text]').focus();
         }
@@ -61,17 +61,7 @@
 {% endif %}
 {% if countries %}
 <div id="map">
-<svg  id="europe-map" class="map map-eu" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:space="preserve" height="260" width="340" version="1.0" viewBox="1754 161 9938 7945">
-    <metadata>
-        <rdf:RDF>
-            <cc:Work rdf:about="">
-                <dc:format>image/svg+xml</dc:format>
-                <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-                <dc:title>Countries of Europe</dc:title>
-            </cc:Work>
-        </rdf:RDF>
-    </metadata>
-    
+<svg id="europe-map" class="map map-eu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" height="260" width="340" version="1.0" viewBox="1754 161 9938 7945">
     <rect id="ocean" height="7935" width="12386" y="162.75" x="-340.66"/>
     <g id="outlines" stroke-linejoin="round" stroke-linecap="round">
         <rect id="rect3096" height="8316.9" width="11049" stroke="#fff" y="-64.132" x="1334" stroke-width="16.018"/>
@@ -269,15 +259,18 @@
     <td>{{ violation.confirmations }}</td>
    <td>
       <div class="confirm"><a class="button">{% trans "confirm" %}</a>
-    <div class="info-validate float-confirm">
-      <form method="get" id="{{ violation.pk }}" class="confirm_form" >
-          <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
-          <input type="text" name="email" />
-          <input type="hidden" value="{{ violation.pk }}" />
-          <input type="submit" value="{% trans "OK" %}" />
-       </form>
-       <input class="cancel-button" type="button" value="{% trans "Close" %}" />
-     </div>
+         <div class="info-validate float-confirm">
+            <form method="get" action="" id="i{{ violation.pk }}" class="confirm_form" >
+               <div>
+                  <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
+                  <input type="text" name="email" />
+                  <input type="hidden" value="{{ violation.pk }}" />
+                  <input type="submit" value="{% trans "OK" %}" />
+               </div>
+            </form>
+            <input class="cancel-button" type="button" value="{% trans "Close" %}" />
+         </div>
+      </div>
     </td>
 </tr>
 {% endfor %}
