@@ -415,6 +415,20 @@ div.comment {
 	font-weight: normal;
 }
 
+#editorial {
+  margin-top: .7em; margin-bottom: 1em; padding: 0.5em;
+  background-color: #EEDC94;
+  background-image: -moz-linear-gradient(center top , #FCEEC1, #EEDC94);
+  background-repeat: repeat-x;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset;
+  color: #404040;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
 #description .description-node .attachs {
 	float: right;
 	padding: 0.5em;
