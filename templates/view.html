@@ -78,7 +78,8 @@ $(document).ready(function() {
 
 {% if v.editorial %}
 <div id="editorial" class='round-box'>
-   {{v.editorial}}
+   <h3>{% trans "RespectMyNet note" %}</h3>
+   {{v.editorial|striptags|urlize|linebreaks}}
 </div>
 {% endif %}
 
