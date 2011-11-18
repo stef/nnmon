@@ -21,10 +21,12 @@
   <script type="text/javascript" src="{%media_url%}/js/picnet.table.filter.min.js"></script>
   <script type="text/javascript">
    $(document).ready(function() {
+     {% if countrycolors %}
      var data={{countrycolors|safe}};
      for(key in data) {
         $('#'+key+' path').css('fill', data[key]);
      }
+     {% endif %}
      $("#sortedlist").tablesorter({
          headers: { 8: { sorter: false },},
          sortList: [[1,0],[7,1]],
