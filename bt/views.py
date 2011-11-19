@@ -216,8 +216,30 @@ def list_violations(request):
                      reverse=True)
     legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
     countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
+    tmp=sorted(set([w for w, c in countries]),reverse=True)
+    legend=[]
+    countrycolors={}
+    tmpd={}
+    itemspercol=len(tmp)/4
+    for w,c in countries:
+        if w not in tmpd.keys():
+            if len(tmpd.keys())>=itemspercol and len(legend)<3:
+                countrycolors.update([(c1.lower(), "#ff%02x00" % (68*(4-len(legend)) if len(legend) else 255)) for w1 in tmpd.keys() for c1 in tmpd[w1]])
+                legend.append(("%s - %s" % (max(tmpd.keys()),min(tmpd.keys())), len(legend)))
+                tmpd={w: [c]}
+            else:
+                tmpd[w]=[c]
+        else:
+            tmpd[w].append(c)
+    if tmpd:
+        countrycolors.update([(c1.lower(), "#ff%02x00" % (68*(4-len(legend)))) for w1 in tmpd.keys() for c1 in tmpd[w1]])
+        legend.append(("%s - %s" % (max(tmpd.keys()),min(tmpd.keys())), len(legend)))
+    countrycolors=json.dumps(countrycolors)
+    #legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
+    #countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
     #confirms=sorted([(i['total'],i['country'])
-    #                 for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
+    #                 for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))
+    #                 if i['total']>1],
     #                reverse=True)
     return render_to_response('list.html',
                               {"violations": violations,

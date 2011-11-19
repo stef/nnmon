@@ -688,3 +688,9 @@ tr.confirmed-status td { background: #fff !important; }
 tr.moreinfo-status td { background: yellow !important; }
 tr.ooscope-status td { background: #aaa !important; }
 */
+
+.legendclass4 { background: rgba(255, 00, 00, 0.4); }
+.legendclass3 { background: rgba(255, 68, 00, 0.4); }
+.legendclass2 { background: rgba(255, 138, 00, 0.4);}
+.legendclass1 { background: rgba(255, 204, 00, 0.4);}
+.legendclass0 { background: rgba(255, 255, 00, 0.4);}
