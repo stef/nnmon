@@ -31,7 +31,8 @@
          headers: { 8: { sorter: false },},
          sortList: [[1,0],[7,1]],
      });
-     $('#sortedlist').tableFilter();
+     var options = { enableCookies: false };
+     $('#sortedlist').tableFilter(options);
      $('.confirm_form').submit(function() {
         var self=this;
         var email=$(this).find('input:first').attr('value');
