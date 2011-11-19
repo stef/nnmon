@@ -1,7 +1,5 @@
 from django.contrib import admin
 from bt import models
-from django.contrib.comments.models import Comment as DComment
-from django.contrib.contenttypes import generic
 
 class CommentInline(admin.TabularInline):
    model = models.Comment
