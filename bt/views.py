@@ -193,10 +193,28 @@ def ajax(request, country=None, operator=None):
 def index(request):
     v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
     form = AddViolation()
+    reports=sorted([(i['total'],i['id'])
+                     for i in Violation.objects.values('id').filter(activationid='').annotate(total=Count('confirmation'))],
+                    reverse=True)
+    countries=sorted([(i['total'],i['country'])
+                      for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
+                     reverse=True)
+    confirms=sorted([(i['total'],i['country'])
+                     for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
+                    reverse=True)
+    operators=sorted([(i['total'],i['operator'])
+                     for i in Violation.objects.values('operator').filter(activationid='').annotate(total=Count('confirmation'))],
+                     reverse=True)
 
     return render_to_response(
         'index.html',
         { 'form': form,
+          'stats': [ ('Countries with reports(confirmed)', len(countries), len([i for i,_ in confirms if i>1])),
+                     ('Total reports (confirmed)', sum([i for i,_ in countries]),len([i for i,_ in reports if i>1])),
+                     ('Total Operators with reports(confirmed)', len(operators), len([x for x in operators if x[0]>1])),
+
+                     ('Total confirmations(most)', sum([i for i, _ in confirms]), reports[0][0]),
+                     ],
           'violations': v_list },
         context_instance=RequestContext(request))
 

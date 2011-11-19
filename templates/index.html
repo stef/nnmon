@@ -12,6 +12,7 @@
 <script type="text/javascript" src="{%media_url%}/js/jquery.tablesorter.min.js"> </script>
 <script type="text/javascript" src="{%media_url%}/js/form.js"></script>
 <script type="text/javascript">
+var json = {{stats_graph|safe}};
 function focushandlers(ed) {
     var s = ed.settings;
     var realID = $('#'+ed.id+'_tbl');
@@ -124,6 +125,13 @@ $(document).ready(function(){
      <p>{% trans "Help us chart all the ways that internet providers are violating our online freedom. Tell us about how your landline or mobile operator Internet provider restricts your connection. You can do so in less than two minutes!" %}
      <p>{% trans "We will report these violations to the European Commission and national authorities and demand action to address them." %}</p>
      <p>{% trans "Don't hesitate to give us feedback on this application by reporting any idea or issue with RespectMyNet.eu here : <a href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>" %}</p>
+   <h2>{% trans "Statistics" %}</h2>
+   <div id="stats_graph" ></div>
+   <ul id="stats">
+   {% for t, n, n1 in stats %}
+     <li class="stat"><dl><dt class="inline">{{t}}</dt><dd class="inline">{{n}}({{n1}})</dd></dl></li>
+   {% endfor %}
+   </ul>
    <h2>{% trans "Featured Cases" %}</h2>
   <table id="featured_cases">
     <thead>

@@ -694,3 +694,7 @@ tr.ooscope-status td { background: #aaa !important; }
 .legendclass2 { background: rgba(255, 138, 00, 0.4);}
 .legendclass1 { background: rgba(255, 204, 00, 0.4);}
 .legendclass0 { background: rgba(255, 255, 00, 0.4);}
+
+.inline { display: inline; }
+
+.stat dt { width: 20em; display: inline-block; }
