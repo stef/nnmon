@@ -1,9 +1,16 @@
 from django.contrib import admin
 from bt import models
+from django.contrib.comments.models import Comment as DComment
+from django.contrib.contenttypes import generic
+
+class CommentInline(admin.TabularInline):
+   model = models.Comment
+   max_num = 1
 
 class ViolationAdmin(admin.ModelAdmin):
    list_display = ('state', 'country', 'operator', 'contract', 'resource_name', 'media', 'activationid')
    list_filter = ('state', 'operator', 'contract', 'resource_name', 'media', 'country')
+   inlines = [CommentInline, ]
 admin.site.register(models.Violation, ViolationAdmin)
 
 class CommentAdmin(admin.ModelAdmin):
