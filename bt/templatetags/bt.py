@@ -2,7 +2,7 @@ from django.template import Library, Variable
 from django.conf import settings
 from django import template
 import random
-from nnmon.bt.models import COUNTRIES, STATUS
+from nnmon.bt.models import COUNTRIES, STATUS, TYPES, MEDIA
 
 register = Library()
 
@@ -23,3 +23,13 @@ status_map=dict(STATUS)
 @register.filter(name='status')
 def status(code):
     return status_map[code]
+
+type_map=dict(TYPES)
+@register.filter(name='type')
+def type(code):
+    return type_map[code]
+
+media_map=dict(MEDIA)
+@register.filter(name='media')
+def media(code):
+    return media_map[code]
