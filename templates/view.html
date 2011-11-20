@@ -66,7 +66,7 @@ $(document).ready(function() {
 	</div>
 
   <dl>{%if v.resource_name%}<dt>{% trans "Affected resource" %}</dt><dd>{{v.resource_name}}</dd>{%endif%}
-  {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type|types}}</dd>{%endif%}
+  {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type|type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media|media}}</dd>{%endif%}
   {%if v.state%}<dt>{% trans "Status" %}</dt><dd>{{v.state|status}}</dd>{%endif%}
   {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd>{%endif%}

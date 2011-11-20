@@ -257,8 +257,8 @@
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource_name }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type|type }}</a></td>
+    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media|media }}</a></td>
     <td>{{ violation.confirmations }}</td>
    <td>
       <div class="confirm"><a class="button">{% trans "confirm" %}</a>

@@ -24,10 +24,10 @@ status_map=dict(STATUS)
 def status(code):
     return status_map[code]
 
-types_map=dict(TYPES)
-@register.filter(name='types')
-def types(code):
-    return types_map[code]
+type_map=dict(TYPES)
+@register.filter(name='type')
+def type(code):
+    return type_map[code]
 
 media_map=dict(MEDIA)
 @register.filter(name='media')
