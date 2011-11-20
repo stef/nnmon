@@ -209,10 +209,9 @@ def index(request):
     return render_to_response(
         'index.html',
         { 'form': form,
-          'stats': [ (_('Countries with reports (confirmed)'), len(countries), len([i for i,z in confirms if i>1])),
-                     (_('Total reports (confirmed)'), sum([i for i,z in countries]),len([i for i,z in reports if i>1])),
-                     (_('Total Operators with reports (confirmed)'), len(operators), len([x for x in operators if x[0]>1])),
-                     (_('Total confirmations (most)'), sum([i for i, z in confirms]), reports[0][0]),
+          'stats': [ (_('Total reports (confirmed)'), sum([i for i,z in countries]),len([i for i,z in reports if i>1])),
+                     (_('Countries with reports (confirmed)'), len(countries), len([i for i,z in confirms if i>1])),
+                     (_('Operators with reports (confirmed)'), len(operators), len([x for x in operators if x[0]>1])),
                      ],
           'violations': v_list },
         context_instance=RequestContext(request))
