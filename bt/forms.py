@@ -1,6 +1,6 @@
 from django import forms
 from django.conf import settings
-from django.utils.translation import ugettext as _
+from django.utils.translation import ugettext_lazy as _
 from bt.models import Violation, COUNTRIES, RESOURCES, TYPES, MEDIA
 from bt.multifile import MultiFileField
 from operator import itemgetter
