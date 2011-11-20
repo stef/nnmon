@@ -22,14 +22,23 @@ def country(code):
 status_map=dict(STATUS)
 @register.filter(name='status')
 def status(code):
-    return status_map[code]
+    try:
+        return status_map[code]
+    except:
+        return code
 
 type_map=dict(TYPES)
 @register.filter(name='type')
 def type(code):
-    return type_map[code]
+    try:
+        return type_map[code]
+    except:
+        return code
 
 media_map=dict(MEDIA)
 @register.filter(name='media')
 def media(code):
-    return media_map[code]
+    try:
+        return media_map[code]
+    except:
+        return code
