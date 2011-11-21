@@ -127,10 +127,11 @@ $(document).ready(function(){
    <h2>{% trans "Statistics" %}</h2>
    <div id="stats_graph" ></div>
    <ul id="stats">
-   {% for t, n, n1 in stats %}
-     <li class="stat"><dl><dt class="inline">{{t}}</dt><dd class="inline">{{n}}({{n1}})</dd></dl></li>
+   {% for t, n in stats %}
+     <li class="stat"><dl><dt class="inline">{{t}}</dt><dd class="inline"><strong>{{n}}</strong></dd></dl></li>
    {% endfor %}
    </ul>
+
    <h2>{% trans "Featured Cases" %}</h2>
   <table id="featured_cases">
     <thead>

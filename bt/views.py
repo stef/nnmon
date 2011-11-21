@@ -194,24 +194,24 @@ def index(request):
     v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
     form = AddViolation()
     reports=sorted([(i['total'],i['id'])
-                     for i in Violation.objects.values('id').filter(activationid='').annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('id').filter(activationid='').exclude(state=['ooscope', 'closed', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
-    countries=sorted([(i['total'],i['country'])
-                      for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
-                     reverse=True)
+#    countries=sorted([(i['total'],i['country'])
+#                      for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
+#                     reverse=True)
     confirms=sorted([(i['total'],i['country'])
-                     for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('country').filter(activationid='').exclude(state=['ooscope', 'closed', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
     operators=sorted([(i['total'],i['operator'])
-                     for i in Violation.objects.values('operator').filter(activationid='').annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('operator').filter(activationid='').exclude(state=['ooscope', 'closed', 'duplicate']).annotate(total=Count('confirmation'))],
                      reverse=True)
 
     return render_to_response(
         'index.html',
         { 'form': form,
-          'stats': [ (_('Total reports (confirmed)'), sum([i for i,z in countries]),len([i for i,z in reports if i>1])),
-                     (_('Countries with reports (confirmed)'), len(countries), len([i for i,z in confirms if i>1])),
-                     (_('Operators with reports (confirmed)'), len(operators), len([x for x in operators if x[0]>1])),
+          'stats': [ (_('Total confirmed reports'), len([i for i,z in reports if i>1])),
+                     (_('Countries with some confirmed reports'), len([i for i,z in confirms if i>1])),
+                     (_('Operators with some confirmed reports'), len([i for i,z in operators if i>1])),
                      ],
           'violations': v_list },
         context_instance=RequestContext(request))
