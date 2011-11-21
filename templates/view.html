@@ -60,7 +60,7 @@ $(document).ready(function() {
 <div id="report">
 	<div id="icons">
 		<span id="verified_tooltip" class="tooltip">{% trans "This case was verified by the management team" %}</span>
-		<span id="confirmations_tooltip" class="tooltip">{%if v.confirmations == 0 %} {% trans "Nobody has yet confirmed the case. Feel free to do it" %} {%else%} {{v.confirmations}} {% trans "people confirmed this case" %} {%endif%}</span>
+		<span id="confirmations_tooltip" class="tooltip">{%if v.confirmations == 0 %} {% trans "Nobody has yet confirmed the case. Feel free to do it" %} {%else%} {{v.confirmations}} {%if v.confirmations == 1 %} {% trans "person has confirmed this case" %} {%else%} {% trans "persons have confirmed this case" %} {%endif%} {%endif%}</span>
 		{% if v.state == 'verified' %}<span id="verified"></span> |{% endif %}
 		<span id="confirmations">{{v.confirmations}}</span> |
 	</div>
