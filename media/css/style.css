@@ -626,6 +626,14 @@ input[type=submit]:hover, input[type=button]:hover, .button:hover {
 .zebra-striped tbody tr:hover td {
   background-color: #ffdd55;
 }
+#content .zebra-striped tbody tr:hover td a,
+.zebra-striped tbody tr:hover td a {
+  color: #114394;
+}
+#content .zebra-striped tbody tr:hover td a:hover,
+.zebra-striped tbody tr:hover td a:hover {
+  border-bottom: none;
+}
 #content .zebra-striped .header {
   cursor: pointer;
 }
