@@ -69,7 +69,7 @@ $(document).ready(function() {
   {%if v.type%}<dt>{% trans "Type" %}</dt><dd>{{v.type|type}}</dd>{%endif%}
   {%if v.media%}<dt>{% trans "Media" %}</dt><dd>{{v.media|media}}</dd>{%endif%}
   {%if v.state%}<dt>{% trans "Status" %}</dt><dd>{{v.state|status}}</dd>{%endif%}
-  {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{{v.temporary}}</dd>{%endif%}
+  {%if v.temporary%}<dt>{% trans "Temporary restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
   {%if v.loophole%}<dt>{% trans "Another offer provided by the same operator removes this restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
   {%if v.contractual%}<dt>{% trans "Contractual restriction" %}</dt><dd>{% trans "yes" %}</dd>{%endif%}
   {%if v.contract_excerpt%}<dt>{% trans "Contract excerpt" %}</dt><dd class='text'>{{v.contract_excerpt|safe}}</dd>{%endif%}
