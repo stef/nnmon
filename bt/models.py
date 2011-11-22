@@ -53,7 +53,6 @@ MEDIA = (
 STATUS = (
     ('new', _('New')),
     ('duplicate', _('Duplicate')),
-    ('closed', _('Closed')),
     ('verified', _('Verified')),
     ('moreinfo', _('Need more info')),
     ('ooscope', _('Out of scope')),
