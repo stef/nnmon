@@ -124,7 +124,7 @@ $(document).ready(function(){
      <p>{% trans "Help us chart all the ways that internet providers are violating our online freedom. Tell us about how your landline or mobile operator Internet provider restricts your connection. You can do so in less than two minutes!" %}
      <p>{% trans "We will report these violations to the European Commission and national authorities and demand action to address them." %}</p>
      <p>{% trans "Don't hesitate to give us feedback on this application by reporting any idea or issue with RespectMyNet.eu here : <a href='https://nnmon.quadpad.lqdn.fr/feedback'>Feedback pad page</a>" %}</p>
-   <h2>{% trans "Statistics" %}</h2>
+   <h2 id="stats-title">{% trans "Statistics" %}</h2>
    <div id="stats_graph" ></div>
    <ul id="stats">
    {% for t, n in stats %}
@@ -132,7 +132,7 @@ $(document).ready(function(){
    {% endfor %}
    </ul>
 
-   <h2>{% trans "Featured Cases" %}</h2>
+   <h2 id="featured-title">{% trans "Featured Cases" %}</h2>
   <table id="featured_cases">
     <thead>
       <tr>
