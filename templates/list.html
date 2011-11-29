@@ -261,11 +261,11 @@
     <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media|media }}</a></td>
     <td>{{ violation.confirmations }}</td>
    <td>
-      <div class="confirm"><a class="button">{% trans "confirm" %}</a>
+      <div class="confirm"><a class="button">{% trans "Me too!" %}</a>
          <div class="info-validate float-confirm">
             <form method="get" action="" id="i{{ violation.pk }}" class="confirm_form" >
                <div>
-                  <label>{% trans "In order to <strong>validate your confirmation</strong> of this case, please enter your email address" %}</label>
+                  <label>{% trans "In order to <strong>confirm</strong> this report, please enter your email address" %}</label>
                   <input type="text" name="email" />
                   <input type="hidden" value="{{ violation.pk }}" />
                   <input type="submit" value="{% trans "OK" %}" />

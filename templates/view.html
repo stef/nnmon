@@ -104,13 +104,13 @@ $(document).ready(function() {
 </div>
 
 
-  <h3>{%trans "Confirm this restriction if you experience it as well" %}</h3>
+  <h3>{%trans "This restriction affects me too" %}</h3>
   <div class="info-validate" style="display: inline-block;">
     <form method="get" id="{{ v.pk }}" class="confirm_form" >
         <label>{% trans "In order to <strong>confirm</strong> this report, please enter your email address" %}</label>
         <input type="text" name="email" />
         <input type="hidden" value="{{ v.pk }}" />
-        <input type="submit" value="{% trans "confirm" %}" />
+        <input type="submit" value="{% trans "Me too!" %}" />
       </form>
    </div>
   {%endif%}
