@@ -415,6 +415,11 @@ div.comment {
 	font-weight: normal;
 }
 
+#report #icons span.tooltip_on {
+	font-weight: normal;
+	margin-right: 0.3em;
+}
+
 #editorial {
   margin-top: .7em; margin-bottom: 1em; padding: 0.5em;
   background-color: #EEDC94;
