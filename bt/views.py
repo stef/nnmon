@@ -1,7 +1,7 @@
 from forms import AddViolation, SearchViolation
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from django.shortcuts import render_to_response, get_object_or_404
-from django.template import RequestContext
+from django.template import RequestContext, loader, Context
 from django.core.files import File
 from django.core.servers.basehttp import FileWrapper
 from django.conf import settings
@@ -228,7 +228,7 @@ def filter_violations(request, country, operator=None):
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
     countries=sorted([(i['total'],i['country'])
-                      for i in Violation.objects.values('country').filter(activationid='').exclude(state=['duplicate', 'ooscope']).annotate(total=Count('country'))],
+                      for i in Violation.objects.values('country').filter(activationid='').exclude(state=['duplicate', 'ooscope', 'closed']).annotate(total=Count('country'))],
                      reverse=True)
     legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
     countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
@@ -293,3 +293,17 @@ def lookup(request):
             res=json.dumps(sorted([(x.id,x.resource_name) for x in v],reverse=True))
             return HttpResponse(res)
     return HttpResponse('')
+
+def ascsv(request):
+    response = HttpResponse(mimetype='text/csv')
+    response['Content-Disposition'] = 'attachment; filename=respectmynet.csv'
+
+    res=[]
+    for v in Violation.objects.filter(activationid=''):
+        res.append((v.state, v.country, v.operator, v.contract, v.resource, v.resource_name, v.type, v.media, v.temporary, v.contractual, v.contract_excerpt, v.loophole, v.editorial,v.comment_set.get().comment))
+    t = loader.get_template('csv.tmpl')
+    c = Context({
+        'data': res,
+    })
+    response.write(t.render(c))
+    return response
