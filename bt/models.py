@@ -56,6 +56,7 @@ STATUS = (
     ('verified', _('Verified')),
     ('moreinfo', _('Need more info')),
     ('ooscope', _('Out of scope')),
+    ('closed', _('Closed')),
     )
 
 class Violation(models.Model):
