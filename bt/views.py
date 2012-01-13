@@ -195,16 +195,16 @@ def index(request):
     v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
     form = AddViolation()
     reports=sorted([(i['total'],i['id'])
-                     for i in Violation.objects.values('id').filter(activationid='').exclude(state=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('id').filter(activationid='').exclude(state__in=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
 #    countries=sorted([(i['total'],i['country'])
 #                      for i in Violation.objects.values('country').filter(activationid='').annotate(total=Count('country'))],
 #                     reverse=True)
     confirms=sorted([(i['total'],i['country'])
-                     for i in Violation.objects.values('country').filter(activationid='').exclude(state=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('country').filter(activationid='').exclude(state__in=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
     operators=sorted([(i['total'],i['operator'])
-                     for i in Violation.objects.values('operator').filter(activationid='').exclude(state=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
+                     for i in Violation.objects.values('operator').filter(activationid='').exclude(state__in=['ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                      reverse=True)
 
     return render_to_response(
@@ -219,18 +219,22 @@ def index(request):
         context_instance=RequestContext(request))
 
 def filter_violations(request, country, operator=None):
-    if country not in map(itemgetter(0),COUNTRIES):
-        raise Http404
     if not operator:
         violations = Violation.objects.filter(activationid='', country=country)
+        if not violations.count():
+            violations = Violation.objects.filter(activationid='', operator=country)
     else:
         violations = Violation.objects.filter(activationid='', country=country, operator=operator)
+    if not request.GET.get('all'):
+        violations = violations.exclude(state__in=['duplicate', 'ooscope', 'closed'])
     return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
+    if not request.GET.get('all'):
+        violations = violations.exclude(state__in=['duplicate', 'ooscope', 'closed'])
     countries=sorted([(i['total'],i['country'])
-                      for i in Violation.objects.values('country').filter(activationid='').exclude(state=['duplicate', 'ooscope', 'closed']).annotate(total=Count('country'))],
+                      for i in Violation.objects.values('country').filter(activationid='').exclude(state__in=['duplicate', 'ooscope', 'closed']).annotate(total=Count('country'))],
                      reverse=True)
     legend=sorted(set([(w, "rgba(255,%d, 00, 0.4)" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]),reverse=True)
     countrycolors=json.dumps(dict([(c.lower(),"#ff%02x00" % (w*768/(countries[0][0]+1)%256)) for w,c in countries]))
