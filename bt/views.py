@@ -181,8 +181,7 @@ def add(request):
     return render_to_response(
         'index.html',
         { 'form': form,
-          'violations': v_list,
-          'status': STATUS },
+          'violations': v_list },
         context_instance=RequestContext(request))
 
 def ajax(request, country=None, operator=None):
@@ -214,7 +213,6 @@ def index(request):
                      (_('Countries with some confirmed reports'), len([i for i,z in confirms if i>1])),
                      (_('Operators with some confirmed reports'), len([i for i,z in operators if i>1])),
                      ],
-          'status': STATUS,
           'violations': v_list },
         context_instance=RequestContext(request))
 
@@ -227,7 +225,10 @@ def filter_violations(request, country, operator=None):
         violations = Violation.objects.filter(activationid='', country=country, operator=operator)
     if not request.GET.get('all'):
         violations = violations.exclude(state__in=['duplicate', 'ooscope', 'closed'])
-    return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
+    return render_to_response('list.html',
+                              { "violations": violations,
+                                "status": STATUS },
+                              context_instance=RequestContext(request))
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
@@ -267,7 +268,8 @@ def list_violations(request):
                               {"violations": violations,
                                "countries": dict([(y,x) for x,y in countries]),
                                "countrycolors": countrycolors,
-                               "legend": legend,},
+                               "legend": legend,
+                               "status": STATUS,},
                                #"confirms": confirms,},
                               context_instance=RequestContext(request))
 
