@@ -629,7 +629,7 @@ input[type=submit]:hover, input[type=button]:hover, .button:hover {
 }
 #content .zebra-striped tbody tr:hover td,
 .zebra-striped tbody tr:hover td {
-  background-color: rgba(255, 240, 0, 0.4);;
+  background-color: rgba(255, 240, 0, 0.3);;
 }
 #content .zebra-striped .header {
   cursor: pointer;
