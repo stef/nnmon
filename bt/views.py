@@ -217,16 +217,20 @@ def index(request):
         context_instance=RequestContext(request))
 
 def filter_violations(request, country, operator=None):
-    if country not in map(itemgetter(0),COUNTRIES):
-        raise Http404
     if not operator:
         violations = Violation.objects.filter(activationid='', country=country)
+        if not violations.count():
+            violations = Violation.objects.filter(activationid='', operator=country)
     else:
         violations = Violation.objects.filter(activationid='', country=country, operator=operator)
+    if not request.GET.get('all'):
+        violations = violations.exclude(state=['duplicate', 'ooscope', 'closed'])
     return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
+    if not request.GET.get('all'):
+        violations = violations.exclude(state=['duplicate', 'ooscope', 'closed'])
     countries=sorted([(i['total'],i['country'])
                       for i in Violation.objects.values('country').filter(activationid='').exclude(state=['duplicate', 'ooscope', 'closed']).annotate(total=Count('country'))],
                      reverse=True)
