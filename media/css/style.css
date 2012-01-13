@@ -629,7 +629,7 @@ input[type=submit]:hover, input[type=button]:hover, .button:hover {
 }
 #content .zebra-striped tbody tr:hover td,
 .zebra-striped tbody tr:hover td {
-  background-color: rgba(255, 240, 0, 0.4);;
+  background-color: rgba(255, 240, 0, 0.3);;
 }
 #content .zebra-striped .header {
   cursor: pointer;
@@ -686,13 +686,12 @@ ul.messages {
 
 .logo-org { display: inline-block; width: 114px; text-align: center; vertical-align: top; }
 
-/*tr.new-status td { background: green !important; }
-tr.duplicate-status td { background: #999 !important; }
-tr.closed-status td { background: #888 !important; }
-tr.confirmed-status td { background: #fff !important; }
-tr.moreinfo-status td { background: yellow !important; }
-tr.ooscope-status td { background: #aaa !important; }
-*/
+/*tr.new-status td { background: green !important; }*/
+tr.duplicate-status td { background: #aaa !important; }
+tr.closed-status td { background: #999 !important; }
+tr.ooscope-status td { background: #bbb !important; }
+/*tr.verified-status td { background: #fff !important; }*/
+tr.moreinfo-status td { background: #ff6 !important; }
 
 .legendclass4 { background: rgba(255, 00, 00, 0.4); }
 .legendclass3 { background: rgba(255, 68, 00, 0.4); }

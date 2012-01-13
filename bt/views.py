@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Count
-from models import Violation, Attachment, Comment, Confirmation, COUNTRIES
+from models import Violation, Attachment, Comment, Confirmation, COUNTRIES, STATUS
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json, smtplib
@@ -225,7 +225,10 @@ def filter_violations(request, country, operator=None):
         violations = Violation.objects.filter(activationid='', country=country, operator=operator)
     if not request.GET.get('all'):
         violations = violations.exclude(state__in=['duplicate', 'closed'])
-    return render_to_response('list.html', {"violations": violations},context_instance=RequestContext(request))
+    return render_to_response('list.html',
+                              { "violations": violations,
+                                "status": STATUS },
+                              context_instance=RequestContext(request))
 
 def list_violations(request):
     violations = Violation.objects.filter(activationid='')
@@ -265,7 +268,8 @@ def list_violations(request):
                               {"violations": violations,
                                "countries": dict([(y,x) for x,y in countries]),
                                "countrycolors": countrycolors,
-                               "legend": legend,},
+                               "legend": legend,
+                               "status": STATUS,},
                                #"confirms": confirms,},
                               context_instance=RequestContext(request))
 

@@ -27,9 +27,24 @@
         $('#'+key+' path').css('fill', data[key]);
      }
      {% endif %}
+     $.tablesorter.addParser({
+         // set a unique id
+         id: 'stateparser',
+         is: function(s) {
+             // return false so this parser is not auto detected
+             return false;
+         },
+         format: function(s) {
+             // format your data for normalization
+             return s{% for s, translation in status %}.replace(/{{translation}}/,{{forloop.counter}}){% endfor %};
+         },
+         // set type, either numeric or text
+         type: 'numeric'
+     });
      $("#sortedlist").tablesorter({
-         headers: { 8: { sorter: false },},
-         sortList: [[1,0],[7,1]],
+         headers: { 8: { sorter: false },
+                    0: { sorter: 'stateparser' }},
+         sortList: [[1,0],[0,0],[7,1]],
      });
      var options = { enableCookies: false };
      $('#sortedlist').tableFilter(options);
