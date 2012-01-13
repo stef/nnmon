@@ -51,10 +51,10 @@ MEDIA = (
     ('mobile', _('Mobile')),
     )
 STATUS = (
-    ('new', _('New')),
-    ('duplicate', _('Duplicate')),
-    ('verified', _('Verified')),
     ('moreinfo', _('Need more info')),
+    ('new', _('New')),
+    ('verified', _('Verified')),
+    ('duplicate', _('Duplicate')),
     ('ooscope', _('Out of scope')),
     ('closed', _('Closed')),
     )

@@ -11,7 +11,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Count
-from models import Violation, Attachment, Comment, Confirmation, COUNTRIES
+from models import Violation, Attachment, Comment, Confirmation, COUNTRIES, STATUS
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json, smtplib
@@ -181,7 +181,8 @@ def add(request):
     return render_to_response(
         'index.html',
         { 'form': form,
-          'violations': v_list },
+          'violations': v_list,
+          'status': STATUS },
         context_instance=RequestContext(request))
 
 def ajax(request, country=None, operator=None):
@@ -213,6 +214,7 @@ def index(request):
                      (_('Countries with some confirmed reports'), len([i for i,z in confirms if i>1])),
                      (_('Operators with some confirmed reports'), len([i for i,z in operators if i>1])),
                      ],
+          'status': STATUS,
           'violations': v_list },
         context_instance=RequestContext(request))
 
