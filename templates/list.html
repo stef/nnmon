@@ -36,7 +36,7 @@
          },
          format: function(s) {
              // format your data for normalization
-             return s.toLowerCase(){% for s, translation in status %}.replace(/{{translation}}/,{{forloop.counter}}){% endfor %};
+             return s{% for s, translation in status %}.replace(/{{translation}}/,{{forloop.counter}}){% endfor %};
          },
          // set type, either numeric or text
          type: 'numeric'
