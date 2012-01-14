@@ -315,3 +315,13 @@ def ascsv(request):
     })
     response.write(t.render(c))
     return response
+
+from sheet import save_ods
+def asods(request):
+    response = HttpResponse(mimetype='application/vnd.oasis.opendocument.spreadsheet')
+    response['Content-Disposition'] = 'attachment; filename=respectmynet-ec_berec_tm_questionnaire.ods'
+    save_ods()
+    f=open('/tmp/ec_berec_tm_questionnaire.ods','r')
+    response.write(f.read())
+    f.close()
+    return response
