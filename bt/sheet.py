@@ -5,6 +5,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = "nnmon.settings"
 from django.conf import settings
 from bt.models import Violation
 
+from django.db.models import Count
 import ooolib
 from django.utils.html import strip_tags
 import re, htmlentitydefs
@@ -63,17 +64,18 @@ def save_ods():
     doc.set_cell_property('bold', False)
 
     row=3
-    for v in Violation.objects.filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']):
-        doc.set_row_property(row, 'height', '16.5pt')
-        doc.set_cell_property('wrap-option', 'wrap')
-        doc.set_cell_value(1, row, "string", v.country)
-        doc.set_cell_value(2, row, "string", v.operator)
-        doc.set_cell_value(3, row, "string", "%s %s" % (v.type, v.resource_name))
-        doc.set_cell_value(5, row, "string", "%s\n\n%s" % ( v.editorial, unescape(v.comment_set.get().comment)))
-        doc.set_cell_value(9, row, "string", "%s %s" % ("Contractual" if v.contractual else "", unescape(v.contract_excerpt)))
-        doc.set_cell_value(10, row, "string", "can update to a different dataplan" if v.loophole else "")
-        row+=1
-        #(v.state, v.country, v.operator, v.contract, v.resource, v.resource_name, v.type, v.media, v.temporary, v.contractual, v.contract_excerpt, v.loophole, v.editorial,v.comment_set.get().comment)
+    for v in Violation.objects.filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation')):
+        if v.total>0 or v.state=='verified':
+            doc.set_row_property(row, 'height', '16.5pt')
+            doc.set_cell_property('wrap-option', 'wrap')
+            doc.set_cell_value(1, row, "string", v.country)
+            doc.set_cell_value(2, row, "string", v.operator)
+            doc.set_cell_value(3, row, "string", "%s %s" % (v.type, v.resource_name))
+            doc.set_cell_value(5, row, "string", "%s\n\n%s" % ( v.editorial, unescape(v.comment_set.get().comment)))
+            doc.set_cell_value(9, row, "string", "%s %s" % ("Contractual" if v.contractual else "", unescape(v.contract_excerpt)))
+            doc.set_cell_value(10, row, "string", "can update to a different dataplan" if v.loophole else "")
+            row+=1
+            #(v.state, v.country, v.operator, v.contract, v.resource, v.resource_name, v.type, v.media, v.temporary, v.contractual, v.contract_excerpt, v.loophole, v.editorial,v.comment_set.get().comment)
 
     # Save the document to the file you want to create
     doc.save("/tmp/ec_berec_tm_questionnaire.ods")
