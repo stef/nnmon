@@ -24,6 +24,7 @@ function check1st4() {
      $('#id_comment').parent().parent().show().focus();
      $('#id_comment_ifr').focus();
      $('#id_email').parent().parent().show();
+     $('#id_consent').parent().parent().show();
      $('#id_nick').parent().parent().show();
      $('#id_attachments0').parent().parent().show();
      $("#save_button").attr('disabled','true').show();

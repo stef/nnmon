@@ -88,6 +88,7 @@ class Violation(models.Model):
 class Comment(models.Model):
     submitter_email = models.EmailField()
     submitter_name = models.CharField(max_length=20)
+    consent = models.BooleanField( )
     comment = models.TextField()
     timestamp = models.DateTimeField()
     violation = models.ForeignKey(Violation)

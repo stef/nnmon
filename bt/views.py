@@ -159,6 +159,7 @@ def add(request):
                 comment=form.cleaned_data['comment'],
                 submitter_email=form.cleaned_data['email'],
                 submitter_name=form.cleaned_data['nick'],
+                consent=form.cleaned_data['consent'],
                 timestamp=datetime.now(),
                 violation=v,
                 )
