@@ -74,6 +74,7 @@ def save_ods():
             doc.set_cell_value(5, row, "string", "%s\n\n%s" % ( v.editorial, unescape(v.comment_set.get().comment)))
             doc.set_cell_value(9, row, "string", "%s %s" % ("Contractual" if v.contractual else "", unescape(v.contract_excerpt)))
             doc.set_cell_value(10, row, "string", "can update to a different dataplan" if v.loophole else "")
+            doc.set_cell_value(12, row, "string", v.media)
             row+=1
             #(v.state, v.country, v.operator, v.contract, v.resource, v.resource_name, v.type, v.media, v.temporary, v.contractual, v.contract_excerpt, v.loophole, v.editorial,v.comment_set.get().comment)
 
