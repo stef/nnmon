@@ -6,5 +6,5 @@ nnmon is the project running [respectmynet.eu](http://respectmynet.eu/).
 Installation
 ------------
 
-See /docs/SETUP.md
+See [/docs/SETUP.md](nnmon/blob/master/docs/SETUP.md)
 

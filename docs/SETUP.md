@@ -56,5 +56,5 @@ Run the server
     python manage.py syncdb # run the database migrations
     python manage.py runserver 8080
 
-Your application is available on http://localhost:8080/
+Your application is available on [http://localhost:8080/](http://localhost:8080/)
 
