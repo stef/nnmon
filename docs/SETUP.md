@@ -8,7 +8,7 @@ Install the base dependencies
 
 Install the following packages:
 
-    sudo aptitude install python-sqlite python-ooolib
+    sudo aptitude install python-sqlite python-ooolib python-imaging
 
 Install the base python virtualenv tools:
 
