@@ -1,0 +1,55 @@
+#map {
+	border: 2px solid #745C1B;
+	background: #fff url(../img/noise.png);
+	border-radius: 5px;
+   margin: 1em;
+   width: 300px; 
+   height: 280px;
+}
+
+svg path { stroke-linejoin: round }
+
+svg .sea { 
+	fill: #fff;
+	stroke-width: .25px; 
+}
+
+svg .graticule {
+	fill: none;
+	stroke-width: .2px;
+}
+svg .bg, svg .bgback {
+	stroke: none;
+	fill: #fff;
+	fill-opacity: 1;
+}
+svg .bgstroke {
+	stroke: #7C5B27;
+	stroke-width:.7px;
+	fill:none;
+}
+svg .context {
+	stroke: #D1BEB0;
+	stroke-opacity: .3;
+	fill: #D1BEB0;
+	fill-opacity: .23;
+}
+svg .fg {
+	stroke: #cbb;
+	stroke-opacity: 1;
+	stroke-dasharray: 3,5;
+	fill-opacity: .5;
+}
+svg .fg:hover {
+	fill: #ada;
+	fill-opacity: .37;
+}
+
+.k-layer-toggle h2 {
+	margin: 20px 0 10px;
+	font-size: 20px;
+}
+.k-layer-toggle label {
+	margin-left: 3px;
+}
+
