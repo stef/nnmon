@@ -226,8 +226,13 @@ def filter_violations(request, country, operator=None):
         violations = Violation.objects.filter(activationid='', country=country, operator=operator)
     if not request.GET.get('all'):
         violations = violations.exclude(state__in=['duplicate', 'closed'])
+    countries=sorted([(i['total'],i['country'])
+                      for i in Violation.objects.values('country').filter(activationid='',country=country).exclude(state__in=['duplicate', 'closed']).annotate(total=Count('country'))],
+                     reverse=True)
+    countryweights=json.dumps([{'iso2': y, 'w': x} for x, y in countries])
     return render_to_response('list.html',
                               { "violations": violations,
+                               "country": country,
                                 "status": STATUS },
                               context_instance=RequestContext(request))
 

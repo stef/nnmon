@@ -6,20 +6,52 @@ $script.ready('kartograph', function() {
         window.map = $K.map('#map');
         map.loadMap('/site_media/eu.svg', function(map) {
             map
-                .addLayer('eu', 'bgback')
-                .addLayer('eu', 'bg')
-                .addLayer('eu', 'bgstroke')
+                .addLayer({'id': 'eu',
+                           'className': 'bgback',
+                           filter: function(d) {
+                                 if(country.length==2) {
+                                    return d.iso2 == country;
+                                 } 
+                                 return true;
+                           }
+                        })
+                .addLayer({'id': 'eu',
+                           'className': 'bg',
+                           filter: function(d) {
+                                 if(country.length==2) {
+                                    return d.iso2 == country;
+                                 } 
+                                 return true;
+                           }
+                        })
+                .addLayer({'id': 'eu',
+                           'className': 'bgstroke',
+                           filter: function(d) {
+                                 if(country.length==2) {
+                                    return d.iso2 == country;
+                                 } 
+                                 return true;
+                           }
+                        })
                 .addLayer({'id': 'countries', 'className': 'context'})
                 .addLayer('graticule')
                 .addLayer({'id': 'eu',
                            'className': 'fg',
+                           filter: function(d) {
+                                 if(country.length==2) {
+                                    return d.iso2 == country;
+                                 } 
+                                 return true;
+                           },
                            'tooltip': {
                               content: function(obj,foo) {
                                  var count=0;
-                                 for(var i=0;i<data.length;i++) {
-                                    if(data[i].iso2==foo.data.iso2) {
-                                       count=data[i].w;
-                                       break;
+                                 if(data) {
+                                    for(var i=0;i<data.length;i++) {
+                                       if(data[i].iso2==foo.data.iso2) {
+                                          count=data[i].w;
+                                          break;
+                                       }
                                     }
                                  }
                                  if(count>0) {
@@ -45,16 +77,18 @@ $script.ready('kartograph', function() {
 					limits: chroma.limits(data, 'q', 6, 'w')
 				});
 
-				map.choropleth({
-					data: data,
-               layer: 'fg',
-					key: 'iso2',
-					colors: function(d) {
-						if (d == null) return '#fff';
-						return colorscale.getColor(d['w']);
-					},
-					duration: 0
-				});
+            if(data) {
+               map.choropleth({
+                  data: data,
+                  layer: 'fg',
+                  key: 'iso2',
+                  colors: function(d) {
+                     if (d == null) return '#fff';
+                     return colorscale.getColor(d['w']);
+                  },
+                  duration: 0
+               });
+            } 
         });
     });
 });

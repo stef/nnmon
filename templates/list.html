@@ -18,9 +18,8 @@
      $script(['{{ MEDIA_URL }}/js/raphael.min.js', '{{ MEDIA_URL }}/js/kartograph.min.js', '{{ MEDIA_URL }}/js/chroma.min.js', '{{ MEDIA_URL }}/js/qtip.min.js'], 'kartograph');
   </script>
   <script type="text/javascript">
-     {% if countryweights %}
-     var data={{countryweights|safe}};
-     {% endif %}
+     var data={% if countryweights %}{{countryweights|safe}}{%else%}null{% endif %};
+     var country="{{country}}";
      $script.ready(['jquery','tables'], function() {
         $(document).ready(function() {
           $.tablesorter.addParser({
