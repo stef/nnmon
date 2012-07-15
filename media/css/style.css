@@ -110,6 +110,7 @@ table.tablesorter tr th, table.tablesorter tr td {
 	/*min-width: 75px;*/
    max-width: 5em;
 	padding: 0.5em;
+   word-wrap: break-word;
 }
 
 table.tablesorter tr th {
