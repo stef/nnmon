@@ -51,7 +51,8 @@ def activate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse(_('Thank you, this key has been already activated'))
+        messages.add_message(request, messages.INFO, unicode(_('Thank you, this key has been already activated')))
+        return HttpResponseRedirect('/') # Redirect after POST
     if v:
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
@@ -73,7 +74,8 @@ def moderate(request):
     try:
         v=Violation.objects.get(activationid=request.GET.get('key','asdf'))
     except:
-        return HttpResponse(_('Thank you, this key has been already activated'))
+        messages.add_message(request, messages.INFO, unicode(_('Thank you, this key has been already activated')))
+        return HttpResponseRedirect('/') # Redirect after POST
     if not v:
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
@@ -109,13 +111,16 @@ def confirm(request, id, name=None):
             try:
                 c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
             except:
-                return HttpResponse(unicode(_("Thank you, this has been already confirmed")))
+                messages.add_message(request, messages.INFO, unicode(_('Thank you, this has been already confirmed')))
+                return HttpResponseRedirect('/') # Redirect after POST
             c.save()
-        return HttpResponse('<div class="confirm_thanks">%s</div>' % unicode(_('Thank you for your confirmation')) )
+        messages.add_message(request, messages.INFO, unicode(_('Thank you for your confirmation')))
+        return HttpResponseRedirect('/') # Redirect after POST
     try:
         c = get_object_or_404(Confirmation, key=id)
     except:
-        return HttpResponse(unicode(_("Thank you, this has been already confirmed")))
+        messages.add_message(request, messages.INFO, unicode(_("Thank you, this has been already confirmed")))
+        return HttpResponseRedirect('/') # Redirect after POST
     c.key=''
     c.save()
     messages.add_message(request, messages.INFO, unicode(_('Thank you for verifying your confirmation')))
@@ -173,7 +178,7 @@ def add(request):
                 a.storage.save(sname,f)
                 a.save()
 
-            messages.add_message(request, messages.INFO, _('Thank you for submitting this report, you will receive a verification email shortly.'))
+            messages.add_message(request, messages.INFO, _('Thank you for submitting this report, you will receive a verification email immediately, if not check your spam folder.'))
             return HttpResponseRedirect('/') # Redirect after POST
     else:
         form = AddViolation()
