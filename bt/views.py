@@ -111,11 +111,9 @@ def confirm(request, id, name=None):
             try:
                 c=Confirmation(key=actid, email=name, violation=Violation.objects.get(pk=id))
             except:
-                messages.add_message(request, messages.INFO, unicode(_('Thank you, this has been already confirmed')))
-                return HttpResponseRedirect('/') # Redirect after POST
+                return HttpResponse(unicode(_('Thank you, this has been already confirmed')))
             c.save()
-        messages.add_message(request, messages.INFO, unicode(_('Thank you for your confirmation')))
-        return HttpResponseRedirect('/') # Redirect after POST
+        return HttpResponse(unicode(_('Thank you for your confirmation')))
     try:
         c = get_object_or_404(Confirmation, key=id)
     except:
