@@ -14,11 +14,13 @@
   <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.min.js"></script>
   <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.tablesorter.min.js"></script>
   <script type="text/javascript" src="{{ MEDIA_URL }}/js/picnet.table.filter.min.js"></script>
-  <script type="text/javascript" src='{{ MEDIA_URL }}/js/raphael.min.js'></script>
-  <script type="text/javascript" src='{{ MEDIA_URL }}/js/kartograph.min.js'></script>
-  <script type="text/javascript" src='{{ MEDIA_URL }}/js/chroma.min.js'></script>
-  <script type="text/javascript" src='{{ MEDIA_URL }}/js/qtip.min.js'></script>
-  <script type="text/javascript" src="{{ MEDIA_URL }}/js/map.js"></script>
+  {% if not country %}
+     <script type="text/javascript" src='{{ MEDIA_URL }}/js/raphael.min.js'></script>
+     <script type="text/javascript" src='{{ MEDIA_URL }}/js/kartograph.min.js'></script>
+     <script type="text/javascript" src='{{ MEDIA_URL }}/js/chroma.min.js'></script>
+     <script type="text/javascript" src='{{ MEDIA_URL }}/js/qtip.min.js'></script>
+     <script type="text/javascript" src="{{ MEDIA_URL }}/js/map.js"></script>
+  {% endif %}
   <script type="text/javascript">
      var data={% if countryweights %}{{countryweights|safe}}{%else%}[]{% endif %};
      var country="{{country}}";
@@ -74,7 +76,7 @@
 </ul>
 {% endif %}
 {% trans "Reported Cases" %}
-<div id="map"> </div>
+{% if not country %}<div id="map"> </div>{% endif %}
 <p>{% trans "This is a list of all reported cases of Net Neutrality violations by our users. Please note that we do not validate the accuracy of these reports before they are published on this list, but rather rely on confirmations and supporting evidence offered by users. If you are subjected to one of the listed restrictions, please confirm it. Cases that are not considered violations of Net Neutrality under our guidelines will be removed or not be validated." %}</p>
 </div>
 
