@@ -11,58 +11,57 @@
 
 
 {% block scripts %}
-  <script type="text/javascript" src="{{ MEDIA_URL }}/js/script.min.js"></script>
-  <script type="text/javascript">
-     $script(['{{ MEDIA_URL }}/js/jquery.min.js'], 'jquery');
-     $script(["{{ MEDIA_URL }}/js/jquery.tablesorter.min.js", "{{ MEDIA_URL }}/js/picnet.table.filter.min.js"], 'tables');
-     $script(['{{ MEDIA_URL }}/js/raphael.min.js', '{{ MEDIA_URL }}/js/kartograph.min.js', '{{ MEDIA_URL }}/js/chroma.min.js', '{{ MEDIA_URL }}/js/qtip.min.js'], 'kartograph');
-  </script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.min.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}/js/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}/js/picnet.table.filter.min.js"></script>
+  <script type="text/javascript" src='{{ MEDIA_URL }}/js/raphael.min.js'></script>
+  <script type="text/javascript" src='{{ MEDIA_URL }}/js/kartograph.min.js'></script>
+  <script type="text/javascript" src='{{ MEDIA_URL }}/js/chroma.min.js'></script>
+  <script type="text/javascript" src='{{ MEDIA_URL }}/js/qtip.min.js'></script>
+  <script type="text/javascript" src="{{ MEDIA_URL }}/js/map.js"></script>
   <script type="text/javascript">
      var data={% if countryweights %}{{countryweights|safe}}{%else%}[]{% endif %};
      var country="{{country}}";
-     $script.ready(['jquery','tables'], function() {
-        $(document).ready(function() {
-          $.tablesorter.addParser({
-              // set a unique id
-              id: 'stateparser',
-              is: function(s) {
-                  // return false so this parser is not auto detected
-                  return false;
-              },
-              format: function(s) {
-                  // format your data for normalization
-                  return s{% for s, translation in status %}.replace(/{{translation}}/,{{forloop.counter}}){% endfor %};
-              },
-              // set type, either numeric or text
-              type: 'numeric'
-          });
-          $("#sortedlist").tablesorter({
-              headers: { 8: { sorter: false },
-                         0: { sorter: 'stateparser' }},
-              sortList: [[1,0],[0,0],[7,1]],
-          });
-          var options = { enableCookies: false };
-          $('#sortedlist').tableFilter(options);
-          $('.confirm_form').submit(function() {
-             var self=this;
-             var email=$(this).find('input:first').attr('value');
-             if( email.length>0) {
-                $.ajax({url: '/confirm/'+$(this).attr('id').slice(1)+'/'+email, success: function(data) { $(self).html(data); }});
-             } else {
-                $(this).find('[type=text]').focus();
-             }
-             return false;
-          });
-          $(".confirm > .button").click(function(){
-                   $(this).parent().parent().parent().find('.info-validate').toggle();
-                });
-          $(".cancel-button").click(function(){
-                   $(this).parent().hide();
-                });
-          });
-     });
+     $(document).ready(function() {
+       $.tablesorter.addParser({
+           // set a unique id
+           id: 'stateparser',
+           is: function(s) {
+               // return false so this parser is not auto detected
+               return false;
+           },
+           format: function(s) {
+               // format your data for normalization
+               return s{% for s, translation in status %}.replace(/{{translation}}/,{{forloop.counter}}){% endfor %};
+           },
+           // set type, either numeric or text
+           type: 'numeric'
+       });
+       $("#sortedlist").tablesorter({
+           headers: { 8: { sorter: false },
+                      0: { sorter: 'stateparser' }},
+           sortList: [[1,0],[0,0],[7,1]],
+       });
+       var options = { enableCookies: false };
+       $('#sortedlist').tableFilter(options);
+       $('.confirm_form').submit(function() {
+          var self=this;
+          var email=$(this).find('input:first').attr('value');
+          if( email.length>0) {
+             $.ajax({url: '/confirm/'+$(this).attr('id').slice(1)+'/'+email, success: function(data) { $(self).html(data); }});
+          } else {
+             $(this).find('[type=text]').focus();
+          }
+          return false;
+       });
+       $(".confirm > .button").click(function(){
+                $(this).parent().parent().parent().find('.info-validate').toggle();
+             });
+       $(".cancel-button").click(function(){
+                $(this).parent().hide();
+             });
+       });
   </script>
-  <script type="text/javascript" src="{{ MEDIA_URL }}/js/map.js"></script>
 {% endblock %}
 
 {%block content%}

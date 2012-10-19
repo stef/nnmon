@@ -1,4 +1,4 @@
-$script.ready('kartograph', function() {
+$(document).ready(function() {
    var onCountryClick = function(target) {
       window.location='/list/'+target.iso2+"/";
    };
@@ -6,43 +6,13 @@ $script.ready('kartograph', function() {
         window.map = $K.map('#map');
         map.loadMap('/site_media/eu.svg', function(map) {
             map
-                .addLayer({'id': 'eu',
-                           'className': 'bgback',
-                           filter: function(d) {
-                                 if(country.length==2) {
-                                    return d.iso2 == country;
-                                 } 
-                                 return true;
-                           }
-                        })
-                .addLayer({'id': 'eu',
-                           'className': 'bg',
-                           filter: function(d) {
-                                 if(country.length==2) {
-                                    return d.iso2 == country;
-                                 } 
-                                 return true;
-                           }
-                        })
-                .addLayer({'id': 'eu',
-                           'className': 'bgstroke',
-                           filter: function(d) {
-                                 if(country.length==2) {
-                                    return d.iso2 == country;
-                                 } 
-                                 return true;
-                           }
-                        })
+                .addLayer('eu', 'bgback')
+                .addLayer('eu', 'bg')
+                .addLayer('eu', 'bgstroke')
                 .addLayer({'id': 'countries', 'className': 'context'})
                 .addLayer('graticule')
                 .addLayer({'id': 'eu',
                            'className': 'fg',
-                           filter: function(d) {
-                                 if(country.length==2) {
-                                    return d.iso2 == country;
-                                 } 
-                                 return true;
-                           },
                            'tooltip': {
                               content: function(obj,foo) {
                                  var count=0;
