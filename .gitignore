@@ -5,4 +5,5 @@
 # ignore setup.py build dirs
 build/
 nnmon.egg-info/
-
+# ignore sqlite db
+nnmon.db
