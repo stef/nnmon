@@ -1,5 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
-from django.views.generic.simple import direct_to_template
+from django.views.generic.simple import direct_to_template, redirect_to
 from django.conf import settings
 from django.contrib import admin
 from bt import views as bt
@@ -24,15 +24,17 @@ urlpatterns = patterns('',
     url(r'^add/$',
         view=bt.add,
         name="add"),
+    # violation cannonical url and redirections
+    url(r'^(?P<id>[0-9]*)$',
+        redirect_to,
+        {'url': '/view/%(id)s'}),
     url(r'^view/(?P<id>[0-9]*)$',
         view=bt.view,
-        name="view"),
+        name="violation_url"),
     url(r'^attach/(?P<id>[0-9]*)$',
         view=bt.get_attach,
         name="attach"),
-    url(r'^(?P<id>[0-9]*)$',
-        view=bt.view,
-        name="violation_view"),
+    # different data outputs
     url(r'^csv$',
         view=bt.ascsv,
         name="csv_output"),

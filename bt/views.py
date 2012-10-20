@@ -1,6 +1,6 @@
 from forms import AddViolation, SearchViolation
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext, loader, Context
 from django.core.files import File
 from django.core.servers.basehttp import FileWrapper
@@ -80,9 +80,9 @@ def moderate(request):
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
-        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="/view/%s">submission</a>.' % v.id))
+        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="%s">submission</a>.' % v.get_absolute_url))
 
-        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s/view/%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.id), _charset="utf-8")
+        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.get_absolute_url()), _charset="utf-8")
         msg['Subject'] = Header(_('NNMon submission approved').encode("Utf-8"), 'utf-8')
         msg['From'] = 'nnmon@respectmynet.eu'
         msg['To'] = v.comment_set.get().submitter_email
@@ -96,7 +96,7 @@ def moderate(request):
                 pass
         v.activationid=''
         v.save()
-        return HttpResponseRedirect('/view/%s' % v.id ) # Redirect after POST
+        return redirect(v) # Redirect after POST to violation url
     if request.GET.get('action','')=='delete':
         v.delete()
         messages.add_message(request, messages.INFO, _('Thank you for deleting the submission.'))

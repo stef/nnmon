@@ -12,7 +12,7 @@ class RssSiteNewsFeed(Feed):
         return Violation.objects.filter(activationid='').order_by('-id')[:10]
 
     def item_link(self, item):
-        return "/view/%s" % item.pk
+        return item.get_absolute_url()
 
     def item_title(self, item):
         return "%s (%s) %s" % (item.operator, item.country, item.contract)

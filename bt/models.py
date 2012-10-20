@@ -81,6 +81,11 @@ class Violation(models.Model):
     class Admin:
         pass
 
+    @models.permalink
+    def get_absolute_url(self):
+        return ('violation_url', (), 
+            {'id': self.pk })
+
     def __unicode__(self):
         return "#%s %s/%s" % (self.pk, self.country, self.operator)
 
