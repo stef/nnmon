@@ -188,11 +188,12 @@ def add(request):
           'violations': v_list },
         context_instance=RequestContext(request))
 
-def ajax(request, country=None, operator=None):
-    if not operator:
-        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country,activationid='')])))))
-    else:
-        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
+# XXX obsoleted by API
+#def ajax(request, country=None, operator=None):
+#    if not operator:
+#        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country,activationid='')])))))
+#    else:
+#        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
 
 def index(request):
     v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
