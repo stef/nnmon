@@ -7,6 +7,7 @@ from django.core.servers.basehttp import FileWrapper
 from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.mail import send_mail
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
@@ -14,7 +15,7 @@ from django.db.models import Count
 from models import Violation, Attachment, Comment, Confirmation, COUNTRIES, STATUS
 from tempfile import mkstemp
 from datetime import datetime
-import hashlib, os, re, json, smtplib
+import hashlib, os, re, json
 from random import randint
 from email.mime.text import MIMEText
 from email.header import Header
@@ -57,14 +58,15 @@ def activate(request):
         actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
         to=[x.email for x in User.objects.filter(groups__name='moderator')]
         details='\n'.join(["%s: %s" % (k.capitalize(), val) for k,val in v.__dict__.items() if not k.startswith('_') and val])
-        msg = MIMEText("A new report was submitted. To approve click here: %s/moderate/?key=%s\n\nDetails follow:\n%s\n%s" %
-                       (settings.ROOT_URL or 'http://localhost:8001/', actid, details, v.comment_set.get().comment), _charset="utf-8")
-        msg['Subject'] = 'NNMon submission approval'.encode("Utf-8")
-        msg['From'] = 'nnmon@respectmynet.eu'
-        msg['To'] = ', '.join(to)
-        s = smtplib.SMTP('localhost')
-        s.sendmail('nnmon@respectmynet.eu', to, msg.as_string())
-        s.quit()
+
+        msg = {'from': 'nnmon@respectmynet.eu',
+               'to': to,
+               'subject': 'NNMon submission approval'.encode("Utf-8"),
+               'body': "A new report was submitted. To approve click here: %s/moderate/?key=%s\n\nDetails follow:\n%s\n%s" %
+                       (settings.ROOT_URL or 'http://localhost:8001/', actid, details, v.comment_set.get().comment)
+               }
+        send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
+
         v.activationid=actid
         v.save()
         messages.add_message(request, messages.INFO, _('Thank you for verifying your submission. It will be listed shortly, after we\'ve checked that the report is valid.').encode("Utf-8"))
@@ -82,12 +84,14 @@ def moderate(request):
     if request.GET.get('action','')=='approve':
         messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="/view/%s">submission</a>.' % v.id))
 
-        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s/view/%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.id), _charset="utf-8")
-        msg['Subject'] = Header(_('NNMon submission approved').encode("Utf-8"), 'utf-8')
-        msg['From'] = 'nnmon@respectmynet.eu'
-        msg['To'] = v.comment_set.get().submitter_email
-        s = smtplib.SMTP('localhost')
-        s.sendmail('nnmon@respectmynet.eu', [msg['To']], msg.as_string())
+        msg = {'from': 'nnmon@respectmynet.eu',
+               'to': [v.comment_set.get().submitter_email],
+               'subject': _('NNMon submission approved').encode("Utf-8"),
+               'body': _("Your report has been approved.\nTo see it, please visit: %s/view/%s") %
+                      (settings.ROOT_URL or 'http://localhost:8001/', v.id)
+               }
+        send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
+
         s.quit()
         if settings.TWITTER_API:
             try:
@@ -126,13 +130,13 @@ def confirm(request, id, name=None):
 
 def sendverifymail(service,to,msg):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
-    msg = MIMEText(msg % (settings.ROOT_URL or 'http://localhost:8001/', service, actid), _charset="utf-8")
-    msg['Subject'] = Header(_('NNMon submission verification').encode("Utf-8"), 'utf-8')
-    msg['From'] = 'nnmon@respectmynet.eu'
-    msg['To'] = Header(to.encode("Utf-8"), 'utf-8')
-    s = smtplib.SMTP('localhost')
-    s.sendmail('nnmon@respectmynet.eu', [to], msg.as_string())
-    s.quit()
+    msg = {'from': 'nnmon@respectmynet.eu',
+           'to': [to.encode("Utf-8")],
+           'subject': _('NNMon submission verification').encode("Utf-8"),
+           'body': msg % (settings.ROOT_URL or 'http://localhost:8001/', service, actid),
+           }
+    send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
+
     return actid
 
 def add(request):
