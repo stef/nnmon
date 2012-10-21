@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
+{% block active_tab_cases %}id="current"{% endblock %}
 {% block styles %}
    <link rel="stylesheet" href="{{ MEDIA_URL }}/css/map.css" type="text/css" />
 {% endblock %}
@@ -97,13 +98,13 @@
   <tbody>
 {% for violation in violations %}
 <tr class="{%if violation.state%}{{violation.state}}{%else%}new{%endif%}-status">
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{%if violation.state%}{{violation.state|status}}{%else%}{% trans "New" %}{%endif%}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.country|country }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.operator }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.contract }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.resource_name }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.type|type }}</a></td>
-    <td><a class="cell-link" href="/view/{{violation.pk}}">{{ violation.media|media }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{%if violation.state%}{{violation.state|status}}{%else%}{% trans "New" %}{%endif%}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.country|country }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.operator }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.contract }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.resource_name }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.type|type }}</a></td>
+    <td><a class="cell-link" href="{{ violation.get_absolute_url }}">{{ violation.media|media }}</a></td>
     <td>{{ violation.confirmations }}</td>
    <td>
       <div class="confirm"><a class="button">{% trans "Me too!" %}</a>

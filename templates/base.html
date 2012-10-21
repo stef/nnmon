@@ -8,8 +8,8 @@
     <meta name="keywords" content="internet network neutrality" />
     <title>{% block title %}[!] Respect My Net {% endblock %}</title>
     <meta name="robots" content="archive,index,follow" />
-    <link rel="alternate" type="application/atom+xml" title="Atom feed" href="/atom/" />
-    <link rel="alternate" type="application/rss+xml" title="RSS feed" href="/rss/" />
+    <link rel="alternate" type="application/atom+xml" title="Atom feed" href="{% url atom_output %}" />
+    <link rel="alternate" type="application/rss+xml" title="RSS feed" href="{% url rss_output %}" />
     <meta http-equiv="content-language" content="{{LANGUAGE_CODE}}" />
     {% block rss %}
     {% endblock %}
@@ -21,7 +21,7 @@
 <div id="wrapper">
 <div id="header-container">
 <div id="header">
-   <h1><a href="/">Respect My Net <span>{% trans "name and shame operators restricting access to the Internet" %}</span></a></h1>
+   <h1><a href="{% url homepage %}">Respect My Net <span>{% trans "name and shame operators restricting access to the Internet" %}</span></a></h1>
 
   <div id="user"><p>
 	{% if user.is_authenticated %}
@@ -37,11 +37,11 @@
   </p></div>
 
   <ul id="nav">
-     <li><a {% if request.path == '/' %}id="current" {% endif %}href="{%root_url%}/">{% trans "Home" %}</a></li>
-     <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{%root_url%}/list">{% trans "Cases" %}</a></li>
-     <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What is Net Neutrality?" %}</a></li>
-     <li><a {% if request.path == '/start/' %}id="current" {% endif %}href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
-     <li><a {% if request.path == '/contact/' %}id="current" {% endif %}href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
+     <li><a {% block active_tab_home %}{% endblock %} href="{% url homepage %}">{% trans "Home" %}</a></li>
+     <li><a {% block active_tab_cases %}{% endblock %} href="{% url list_violations %}">{% trans "Cases" %}</a></li>
+     <li><a {% block active_tab_about %}{% endblock %} href="{%root_url%}/about">{% trans "What is Net Neutrality?" %}</a></li>
+     <li><a {% block active_tab_start %}{% endblock %} href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
+     <li><a {% block active_tab_contact %}{% endblock %} href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
   </ul></div>
 </div>
 </div>
