@@ -48,7 +48,7 @@ function init_form() {
   $('#id_country').change(function() {
                             var country=$(this).attr('value');
                             if(country.length>0) {
-                              $.getJSON('/ajax/'+country, function(data) {
+                              $.getJSON('/api/'+country, function(data) {
                                           $("#id_operator").autocomplete(data, { minChars: 0, autoFill: true });
                                           $('#id_operator').focus();
                                         });
@@ -59,7 +59,7 @@ function init_form() {
                              var country=$('#id_country').attr('value');
                              var operator=$(this).val();
                              if(operator.length>0) {
-                               $.getJSON('/ajax/'+country+'/'+operator, function(data) {
+                               $.getJSON('/api/'+country+'/'+operator, function(data) {
                                            $("#id_contract").autocomplete(data,{ minChars: 0 });
                                            $('#id_contract').focus();
                                          });
