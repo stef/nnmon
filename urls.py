@@ -5,6 +5,10 @@ from django.contrib import admin
 from bt import views as bt
 from bt.feeds import RssSiteNewsFeed, AtomSiteNewsFeed
 
+from bt.api import APIResource
+
+api_resource = APIResource()
+
 
 admin.autodiscover()
 
@@ -18,9 +22,6 @@ urlpatterns = patterns('',
     url(r'^list/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$',
         view=bt.filter_violations,
         name="filter"),
-    url(r'^ajax/(?P<country>[^/]*)(/(?P<operator>[^/]*))?$',
-        view=bt.ajax,
-        name="ajax_call"),
     url(r'^add/$',
         view=bt.add,
         name="add_violation"),
@@ -78,6 +79,8 @@ urlpatterns = patterns('',
         include('captcha.urls')),
     url(r'^admin/',
         include(admin.site.urls)),
+    url(r'^api/',
+        include(api_resource.urls)),
 )
 
 if settings.DEV_SERVER:

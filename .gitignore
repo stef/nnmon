@@ -6,4 +6,5 @@
 build/
 nnmon.egg-info/
 # ignore sqlite db
-nnmon.db
+*.db
+*.pyc
