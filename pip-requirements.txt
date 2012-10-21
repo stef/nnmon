@@ -10,3 +10,4 @@ PIL>=1.1.7
 flup>=1.0.3.dev-20110405
 BeautifulSoup>=3.2.0
 python-twitter==0.8.2
+lxml
