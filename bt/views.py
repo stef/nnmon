@@ -1,6 +1,6 @@
 from forms import AddViolation, SearchViolation
 from django.http import HttpResponse, HttpResponseRedirect, Http404
-from django.shortcuts import render_to_response, get_object_or_404
+from django.shortcuts import render_to_response, get_object_or_404, redirect
 from django.template import RequestContext, loader, Context
 from django.core.files import File
 from django.core.servers.basehttp import FileWrapper
@@ -80,9 +80,9 @@ def moderate(request):
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
-        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="/view/%s">submission</a>.' % v.id))
+        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="%s">submission</a>.' % v.get_absolute_url))
 
-        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s/view/%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.id), _charset="utf-8")
+        msg = MIMEText(_("Your report has been approved.\nTo see it, please visit: %s%s") % (settings.ROOT_URL or 'http://localhost:8001/', v.get_absolute_url()), _charset="utf-8")
         msg['Subject'] = Header(_('NNMon submission approved').encode("Utf-8"), 'utf-8')
         msg['From'] = 'nnmon@respectmynet.eu'
         msg['To'] = v.comment_set.get().submitter_email
@@ -96,7 +96,7 @@ def moderate(request):
                 pass
         v.activationid=''
         v.save()
-        return HttpResponseRedirect('/view/%s' % v.id ) # Redirect after POST
+        return redirect(v) # Redirect after POST to violation url
     if request.GET.get('action','')=='delete':
         v.delete()
         messages.add_message(request, messages.INFO, _('Thank you for deleting the submission.'))
@@ -141,9 +141,10 @@ def add(request):
         if form.is_valid():
             msg=_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.")
             actid=sendverifymail('activate?key=',form.cleaned_data['email'], msg)
+            operator, created = Operator.objects.get_or_create(name=form.cleaned_data['operator'])
             v=Violation(
                 country = form.cleaned_data['country'],
-                operator = form.cleaned_data['operator'],
+                operator_ref = operator,
                 contract = form.cleaned_data['contract'],
                 resource = form.cleaned_data['resource'],
                 resource_name = form.cleaned_data['resource_name'],
@@ -188,11 +189,12 @@ def add(request):
           'violations': v_list },
         context_instance=RequestContext(request))
 
-def ajax(request, country=None, operator=None):
-    if not operator:
-        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country,activationid='')])))))
-    else:
-        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
+# XXX obsoleted by API
+#def ajax(request, country=None, operator=None):
+#    if not operator:
+#        return HttpResponse(json.dumps(sorted(list(set([x.operator for x in Violation.objects.filter(country=country,activationid='')])))))
+#    else:
+#        return HttpResponse(json.dumps(sorted(list(set([x.contract for x in Violation.objects.filter(country=country,activationid='',operator=operator)])))))
 
 def index(request):
     v_list = Violation.objects.filter(activationid='',featuredcase__isnull=False).order_by('id').reverse()[:3]
@@ -206,8 +208,8 @@ def index(request):
     confirms=sorted([(i['total'],i['country'])
                      for i in Violation.objects.values('country').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
-    operators=sorted([(i['total'],i['operator'])
-                     for i in Violation.objects.values('operator').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
+    operators=sorted([(i['total'],i['operator_ref__name'])
+                     for i in Violation.objects.values('operator_ref__name').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                      reverse=True)
 
     return render_to_response(
@@ -224,9 +226,9 @@ def filter_violations(request, country, operator=None):
     if not operator:
         violations = Violation.objects.filter(activationid='', country=country)
         if not violations.count():
-            violations = Violation.objects.filter(activationid='', operator=country)
+            violations = Violation.objects.filter(activationid='', operator_ref__name=country)
     else:
-        violations = Violation.objects.filter(activationid='', country=country, operator=operator)
+        violations = Violation.objects.filter(activationid='', country=country, operator_ref__name=operator)
     if not request.GET.get('all'):
         violations = violations.exclude(state__in=['duplicate', 'closed'])
     countries=sorted([(i['total'],i['country'])
@@ -280,7 +282,7 @@ def lookup(request):
         if form.is_valid():
             v=Violation.objects.filter(
                 country = form.cleaned_data['country'],
-                operator = form.cleaned_data['operator'],
+                operator_ref__name = form.cleaned_data['operator'],
                 contract = form.cleaned_data['contract'],
                 media = form.cleaned_data['media'],
                 activationid = ''

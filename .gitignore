@@ -1,0 +1,10 @@
+# ignore python compiled files
+*.pyc
+# ignore mac files
+.DS_Store
+# ignore setup.py build dirs
+build/
+nnmon.egg-info/
+# ignore sqlite db
+*.db
+*.pyc

@@ -2,6 +2,7 @@
 {% load bt %}
 {% load i18n %}
 {% load comments %}
+{% block active_tab_cases %}id="current"{% endblock %}
 {% block styles %}
 {% endblock %}
 {% block adminext %}
@@ -92,7 +93,7 @@ $(document).ready(function() {
          <h4>{% trans "Attachments" %}</h4>
         <ul>
           {%for a in c.attachment_set.all%}
-          <li><a href="/attach/{{a.id}}">{{a.name}}</a></li>
+          <li><a href="{% url attach a.id %}">{{a.name}}</a></li>
           {%endfor%}
         </ul>
       </div>

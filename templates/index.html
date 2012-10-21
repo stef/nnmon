@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
+{% block active_tab_home %}id="current"{% endblock %}
 {% block styles %}
   <link rel="stylesheet" type="text/css" media="all" href="{% media_url %}/css/jquery.autocomplete.css" />
 {% endblock %}
@@ -144,7 +145,7 @@ $(document).ready(function(){
   <tbody>
   {% for violation in violations %}
     <tr>
-       <td><a href="/view/{{violation.pk}}">{{ violation.operator }} ({{ violation.country|country }}) {{ violation.contract }}</a>
+       <td><a href="{{ violation.get_absolute_url }}">{{ violation.operator }} ({{ violation.country|country }}) {{ violation.contract }}</a>
           <div class="info-validate">
             <form method="get" id="{{ violation.pk }}" class="confirm_form" >
                 <label>{% trans "In order to <strong>confirm</strong> this report, please enter your email address" %}</label>
