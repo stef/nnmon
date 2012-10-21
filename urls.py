@@ -23,7 +23,7 @@ urlpatterns = patterns('',
         name="ajax_call"),
     url(r'^add/$',
         view=bt.add,
-        name="add"),
+        name="add_violation"),
     # violation cannonical url and redirections
     url(r'^(?P<id>[0-9]*)$',
         redirect_to,
