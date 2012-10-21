@@ -12,7 +12,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 from django.utils.translation import ugettext_lazy as _
 from django.db.models import Count
-from models import Violation, Attachment, Comment, Confirmation, COUNTRIES, STATUS
+from models import Violation, Attachment, Comment, Confirmation, COUNTRIES, STATUS, Operator
 from tempfile import mkstemp
 from datetime import datetime
 import hashlib, os, re, json
@@ -92,7 +92,6 @@ def moderate(request):
                }
         send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
 
-        s.quit()
         if settings.TWITTER_API:
             try:
                 settings.TWITTER_API.PostUpdate("New #NetNeutrality violation reported for %s (%s) %s %s/%s" % (v.operator, v.country, v.contract, settings.ROOT_URL or 'http://localhost:8001/', v.id))
