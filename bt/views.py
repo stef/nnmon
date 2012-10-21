@@ -128,12 +128,12 @@ def confirm(request, id, name=None):
     messages.add_message(request, messages.INFO, unicode(_('Thank you for verifying your confirmation')))
     return HttpResponseRedirect('/') # Redirect after POST
 
-def sendverifymail(service,to,msg):
+def sendverifymail(service,to,body):
     actid = hashlib.sha1(''.join([chr(randint(32, 122)) for x in range(12)])).hexdigest()
     msg = {'from': 'nnmon@respectmynet.eu',
            'to': [to.encode("Utf-8")],
            'subject': _('NNMon submission verification').encode("Utf-8"),
-           'body': msg % (settings.ROOT_URL or 'http://localhost:8001/', service, actid),
+           'body': body % (settings.ROOT_URL or 'http://localhost:8001/', service, actid),
            }
     send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
 
