@@ -59,9 +59,24 @@ STATUS = (
     ('closed', _('Closed')),
     )
 
+class Operator(models.Model):
+    """
+    Define the concept of an internet provider/network operator
+    """
+    name = models.CharField(max_length=256)
+    logo = models.ImageField(upload_to='operator_logo', null=True, blank=True)
+
+    def reported_violations(self):
+        return self.violations.count()
+    reported_violations.short_description = 'Reported Violations'
+
+    def __unicode__(self):
+        return self.name
+
+
 class Violation(models.Model):
     country = models.CharField(max_length=2, choices=COUNTRIES)
-    operator = models.CharField(max_length=256)
+    operator_ref = models.ForeignKey(Operator, related_name="violations")
     contract = models.CharField(max_length=256, blank=True)
     resource = models.CharField(max_length=20, choices=RESOURCES, blank=True)
     resource_name = models.CharField(max_length=4096, blank=True)
@@ -80,6 +95,10 @@ class Violation(models.Model):
 
     class Admin:
         pass
+
+    @property
+    def operator(self):
+        return self.operator_ref.name
 
     @models.permalink
     def get_absolute_url(self):

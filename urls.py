@@ -5,10 +5,10 @@ from django.contrib import admin
 from bt import views as bt
 from bt.feeds import RssSiteNewsFeed, AtomSiteNewsFeed
 
-from bt.api import APIResource
+from bt.api import APIResource, OperatorResource
 
 api_resource = APIResource()
-
+operator_api_resource = OperatorResource()
 
 admin.autodiscover()
 
@@ -81,6 +81,8 @@ urlpatterns = patterns('',
         include(admin.site.urls)),
     url(r'^api/',
         include(api_resource.urls)),
+    url(r'^api/',
+        include(operator_api_resource.urls)),
 )
 
 if settings.DEV_SERVER:

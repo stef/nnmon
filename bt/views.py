@@ -141,9 +141,10 @@ def add(request):
         if form.is_valid():
             msg=_("Thank you for submitting a new report. To finalize your submission please confirm using your validation key.\nYour verification key is %s/%s%s\nPlease note that reports are moderated, it might take some time before your report appears online. Thank you for your patience.")
             actid=sendverifymail('activate?key=',form.cleaned_data['email'], msg)
+            operator, created = Operator.objects.get_or_create(name=form.cleaned_data['operator'])
             v=Violation(
                 country = form.cleaned_data['country'],
-                operator = form.cleaned_data['operator'],
+                operator_ref = operator,
                 contract = form.cleaned_data['contract'],
                 resource = form.cleaned_data['resource'],
                 resource_name = form.cleaned_data['resource_name'],
@@ -207,8 +208,8 @@ def index(request):
     confirms=sorted([(i['total'],i['country'])
                      for i in Violation.objects.values('country').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                     reverse=True)
-    operators=sorted([(i['total'],i['operator'])
-                     for i in Violation.objects.values('operator').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
+    operators=sorted([(i['total'],i['operator_ref__name'])
+                     for i in Violation.objects.values('operator_ref__name').filter(activationid='').exclude(state__in=['closed', 'ooscope', 'duplicate']).annotate(total=Count('confirmation'))],
                      reverse=True)
 
     return render_to_response(
@@ -225,9 +226,9 @@ def filter_violations(request, country, operator=None):
     if not operator:
         violations = Violation.objects.filter(activationid='', country=country)
         if not violations.count():
-            violations = Violation.objects.filter(activationid='', operator=country)
+            violations = Violation.objects.filter(activationid='', operator_ref__name=country)
     else:
-        violations = Violation.objects.filter(activationid='', country=country, operator=operator)
+        violations = Violation.objects.filter(activationid='', country=country, operator_ref__name=operator)
     if not request.GET.get('all'):
         violations = violations.exclude(state__in=['duplicate', 'closed'])
     countries=sorted([(i['total'],i['country'])
@@ -281,7 +282,7 @@ def lookup(request):
         if form.is_valid():
             v=Violation.objects.filter(
                 country = form.cleaned_data['country'],
-                operator = form.cleaned_data['operator'],
+                operator_ref__name = form.cleaned_data['operator'],
                 contract = form.cleaned_data['contract'],
                 media = form.cleaned_data['media'],
                 activationid = ''
