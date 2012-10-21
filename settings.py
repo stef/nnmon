@@ -174,6 +174,10 @@ LOGGING = {
     }
 }
 
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+    EMAIL_FILE_PATH = '/tmp/app-messages'
+
 TINYMCE_COMPRESSOR = True
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.file'
