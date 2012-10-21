@@ -37,11 +37,11 @@
   </p></div>
 
   <ul id="nav">
-     <li><a {% if request.path == '/' %}id="current" {% endif %}href="{% url homepage %}">{% trans "Home" %}</a></li>
-     <li><a {% if request.path == '/list/' or '/view' in request.path %}id="current" {% endif %}href="{% url list_violations %}">{% trans "Cases" %}</a></li>
-     <li><a {% if request.path == '/about/' %}id="current" {% endif %}href="{%root_url%}/about">{% trans "What is Net Neutrality?" %}</a></li>
-     <li><a {% if request.path == '/start/' %}id="current" {% endif %}href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
-     <li><a {% if request.path == '/contact/' %}id="current" {% endif %}href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
+     <li><a {% block active_tab_home %}{% endblock %} href="{% url homepage %}">{% trans "Home" %}</a></li>
+     <li><a {% block active_tab_cases %}{% endblock %} href="{% url list_violations %}">{% trans "Cases" %}</a></li>
+     <li><a {% block active_tab_about %}{% endblock %} href="{%root_url%}/about">{% trans "What is Net Neutrality?" %}</a></li>
+     <li><a {% block active_tab_start %}{% endblock %} href="{%root_url%}/start">{% trans "Start Monitoring" %}</a></li>
+     <li><a {% block active_tab_contact %}{% endblock %} href="{%root_url%}/contact">{% trans "Contact" %}</a></li>
   </ul></div>
 </div>
 </div>

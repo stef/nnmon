@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load bt %}
 {% load i18n %}
+{% block active_tab_start %}id="current"{% endblock %}
 {% block content %}
 <div id='global'>
    <p>{% trans "Do you want to check whether your access provider is manipulating your internet traffic? Great!" %}</p>
