@@ -45,33 +45,39 @@ function init_form() {
                                $("#optional .fieldWrapper").show();
                                $("#id_contract_excerpt_parent").parent().parent().hide();
                              });
-  $('#id_country').change(function() {
-                            var country=$(this).attr('value');
-                            if(country.length>0) {
-                              $.getJSON('/api/'+country, function(data) {
-                                          $("#id_operator").autocomplete(data, { minChars: 0, autoFill: true });
-                                          $('#id_operator').focus();
-                                        });
-                            }
-                            check1st4();
-                          });
-  $('#id_operator').change(function() {
-                             var country=$('#id_country').attr('value');
-                             var operator=$(this).val();
-                             if(operator.length>0) {
-                               $.getJSON('/api/'+country+'/'+operator, function(data) {
-                                           $("#id_contract").autocomplete(data,{ minChars: 0 });
-                                           $('#id_contract').focus();
-                                         });
-                             }
-                            check1st4();
-                           });
-  $('#id_contract').change(function() {
-                            check1st4();
-                           });
-  $('#id_media').change(function() {
-                            check1st4();
-                           });
+  $('#id_country').change(function() { check1st4(); });
+  $('#id_operator').autocomplete({
+     source: function( request, response ) {
+        if(request.term.length>0) {
+           var country=$('#id_country').attr('value');
+           $.getJSON('/api/operators/?name__startswith='+request.term, function(data) { 
+               var res=[];
+               for(var i=0;i<data.objects.length;i++) {
+                  res.push(data.objects[i].name);
+               }
+               response(res);
+           });
+        }
+     }
+  });
+  $('#id_contract').autocomplete({
+     source: function( request, response ) {
+        if(request.term.length>0) {
+           var operator=$('#id_operator').attr('value');
+           var country=$('#id_country').attr('value');
+           $.getJSON('/api/violations/?country='+country+'&operator_ref__name='+operator+'&contract__contains='+request.term, function(data) { 
+               var res=[];
+               for(var i=0;i<data.objects.length;i++) {
+                  res.push(data.objects[i].contract);
+               }
+               response(res);
+           });
+        }
+     }
+  });
+  $('#id_operator').change(function() { check1st4(); });
+  $('#id_contract').change(function() { check1st4(); });
+  $('#id_media').change(function() { check1st4(); });
   $('#id_email').change(function() {
                              if($(this).val().length>0) {
                                $('#id_captcha_0').parent().parent().show();

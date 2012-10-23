@@ -21,6 +21,7 @@ class OperatorResource(ModelResource):
         authorization = DjangoAuthorization()
         filtering = {
             'name': ALL,
+            'activationid': '',
         }
 
 
@@ -36,6 +37,7 @@ class APIResource(ModelResource):
         authorization = DjangoAuthorization()
         filtering = {
             'country': ALL,
+            'contract': ALL,
             'operator_ref': ALL_WITH_RELATIONS,
-            'activationid': ALL,
+            'activationid': '',
         }
