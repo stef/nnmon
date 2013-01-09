@@ -82,7 +82,7 @@ def moderate(request):
         messages.add_message(request, messages.INFO, _('No such key'))
         return HttpResponseRedirect('/') # Redirect after POST
     if request.GET.get('action','')=='approve':
-        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="%s">submission</a>.' % v.get_absolute_url))
+        messages.add_message(request, messages.INFO, _('Thank you for approving the <a href="%s">submission</a>.' % v.get_absolute_url()))
 
         msg = {'from': 'nnmon@respectmynet.eu',
                'to': [v.comment_set.get().submitter_email],
