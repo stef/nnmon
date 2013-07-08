@@ -87,7 +87,7 @@ def moderate(request):
         msg = {'from': 'nnmon@respectmynet.eu',
                'to': [v.comment_set.get().submitter_email],
                'subject': _('NNMon submission approved').encode("Utf-8"),
-               'body': _("Your report has been approved.\nTo see it, please visit: %s/view/%s") %
+               'body': _("Your report has been approved.\nTo see it, please visit: %s/%s") %
                       (settings.ROOT_URL or 'http://localhost:8001/', v.get_absolute_url())
                }
         send_mail(msg['subject'], msg['body'], msg['from'], msg['to'], fail_silently=False)
